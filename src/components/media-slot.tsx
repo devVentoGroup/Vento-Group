@@ -19,7 +19,7 @@ export function MediaSlot({ label, mediaUrl, mediaType, className }: MediaSlotPr
   if (type === "video") {
     return (
       <div className={`media-shell ${className ?? ""}`}>
-        <video className="media" src={mediaUrl} controls muted playsInline />
+        <video className="media" src={mediaUrl} autoPlay muted loop playsInline controls={false} />
       </div>
     );
   }

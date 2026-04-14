@@ -7,6 +7,7 @@ import type { HeroSlide } from "@/lib/content";
 
 type HeroMediaCarouselProps = {
   slides: HeroSlide[];
+  variant?: "default" | "immersive";
 };
 
 function inferMediaType(mediaUrl: string | null): "image" | "video" {
@@ -23,12 +24,13 @@ function inferMediaType(mediaUrl: string | null): "image" | "video" {
   return "image";
 }
 
-export function HeroMediaCarousel({ slides }: HeroMediaCarouselProps) {
+export function HeroMediaCarousel({ slides, variant = "default" }: HeroMediaCarouselProps) {
   const orderedSlides = useMemo(
     () => [...slides].sort((a, b) => a.sortOrder - b.sortOrder),
     [slides],
   );
   const safeSlides = orderedSlides.length > 0 ? orderedSlides : [];
+  const isImmersive = variant === "immersive";
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -175,7 +177,7 @@ export function HeroMediaCarousel({ slides }: HeroMediaCarouselProps) {
 
   return (
     <div
-      className="hero-carousel"
+      className={`hero-carousel ${isImmersive ? "hero-carousel-immersive" : ""}`.trim()}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}
@@ -183,7 +185,7 @@ export function HeroMediaCarousel({ slides }: HeroMediaCarouselProps) {
     >
       <div
         ref={stageRef}
-        className={`hero-carousel-stage ${isDragging ? "dragging" : ""}`}
+        className={`hero-carousel-stage ${isDragging ? "dragging" : ""} ${isImmersive ? "hero-carousel-stage-immersive" : ""}`.trim()}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}

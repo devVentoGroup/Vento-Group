@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { ItemCard } from "@/components/item-card";
+import { MediaSlot } from "@/components/media-slot";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
@@ -15,6 +16,9 @@ type CategoryPageProps = {
 };
 
 export function CategoryPage({ title, description, items, backLabel = "Volver al inicio" }: CategoryPageProps) {
+  const lead = items[0] ?? null;
+  const leadMediaUrl = lead ? lead.video_url ?? lead.image_url : null;
+  const leadMediaType = lead?.video_url ? "video" : "image";
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -32,21 +36,32 @@ export function CategoryPage({ title, description, items, backLabel = "Volver al
     <>
       <StructuredData data={itemListSchema} />
       <SiteHeader />
-      <main>
-        <section className="hero">
-          <div className="container hero-panel">
-            <div className="eyebrow">Vento Group</div>
-            <h1 className="hero-title">{title}</h1>
-            <p className="hero-copy">{description}</p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/">
-                {backLabel}
-              </Link>
+      <main className="category-main">
+        <section className="category-hero">
+          <div className="category-hero-media-wrap" aria-hidden="true">
+            <MediaSlot
+              label={`${title} lead media`}
+              mediaUrl={leadMediaUrl}
+              mediaType={leadMediaType}
+              className="category-hero-media-shell"
+            />
+          </div>
+          <div className="category-hero-shade" aria-hidden="true" />
+          <div className="container category-hero-content">
+            <div className="category-hero-panel">
+              <div className="eyebrow">Vento Group</div>
+              <h1 className="hero-title">{title}</h1>
+              <p className="hero-copy">{description}</p>
+              <div className="hero-actions">
+                <Link className="button button-primary" href="/">
+                  {backLabel}
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section category-list-section">
           <div className="container">
             <div className="cards">
               {items.map((item) => (

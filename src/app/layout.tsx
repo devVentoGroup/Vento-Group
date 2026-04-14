@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import Script from "next/script";
 
 import { getMetadataBase } from "@/lib/seo";
 import "./globals.css";
@@ -44,7 +45,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
+      <body className={`${display.variable} ${sans.variable}`}>
+        <Script id="vento-number-wheel-guard" strategy="afterInteractive">
+          {`(() => {
+            if (window.__ventoNumberWheelGuard) return;
+            window.__ventoNumberWheelGuard = true;
+            document.addEventListener('wheel', (event) => {
+              const target = event.target;
+              if (!(target instanceof Element)) return;
+              const input = target.closest('input[type="number"]');
+              if (!input) return;
+              if (document.activeElement === input) {
+                input.blur();
+                event.preventDefault();
+              }
+            }, { passive: false });
+          })();`}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

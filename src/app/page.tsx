@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { HomeEditorialBand } from "@/components/editorial-band";
 import { HeroMediaCarousel } from "@/components/hero-media-carousel";
-import { ItemCard } from "@/components/item-card";
-import { ItemCarousel } from "@/components/item-carousel";
+import { HomeVenuesShowcase } from "@/components/home-venues-showcase";
 import { MediaSlot } from "@/components/media-slot";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
@@ -38,18 +36,52 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const [blocks, restaurants, jobs, services, events, apps] = await Promise.all([
     getPageBlocks("home"),
-    getItems("restaurant", 3),
-    getItems("job", 3),
-    getItems("service", 3),
-    getItems("event", 3),
+    getItems("restaurant", 12),
+    getItems("job", 2),
+    getItems("service", 2),
+    getItems("event", 2),
     getItems("app", 6),
   ]);
 
   const hero = getBlock(blocks, "hero_main");
   const heroSlides = getHeroSlides(blocks);
-  const editorialBands = getHomeEditorialBands(blocks).slice(0, 2);
+  const editorialBands = getHomeEditorialBands(blocks);
+  const introBand = editorialBands[0] ?? null;
+  const statementBand = editorialBands[1] ?? introBand;
   const eventSpacesFeature = getHomeEventSpacesFeature(blocks);
-  const eventSpaceCards = restaurants.slice(0, 2);
+  const quickCards: Array<{
+    title: string;
+    body: string;
+    href: string;
+    cta: string;
+    mediaUrl: string | null;
+    mediaType: "image" | "video";
+  }> = [
+    {
+      title: "Gift Vouchers",
+      body: "Experiencias para regalar en restaurantes y espacios del grupo.",
+      href: "/servicios",
+      cta: "Shop",
+      mediaUrl: services[0]?.video_url ?? services[0]?.image_url ?? null,
+      mediaType: services[0]?.video_url ? "video" : ("image" as const),
+    },
+    {
+      title: "Careers",
+      body: "Vacantes activas y rutas de crecimiento para equipos Vento.",
+      href: "/empleos",
+      cta: "Explore",
+      mediaUrl: jobs[0]?.video_url ?? jobs[0]?.image_url ?? null,
+      mediaType: jobs[0]?.video_url ? "video" : ("image" as const),
+    },
+    {
+      title: "Contact",
+      body: "Alianzas, reservas de eventos y oportunidades estratégicas.",
+      href: "mailto:hola@ventogroup.co",
+      cta: "Get in touch",
+      mediaUrl: events[0]?.video_url ?? events[0]?.image_url ?? null,
+      mediaType: events[0]?.video_url ? "video" : ("image" as const),
+    },
+  ];
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -86,10 +118,12 @@ export default async function HomePage() {
       <StructuredData data={[organizationSchema, websiteSchema, featuredItemsSchema]} />
       <SiteHeader />
       <main>
-        <section className="hero">
-          <div className="container hero-grid">
+        <section className="home-hero">
+          <HeroMediaCarousel slides={heroSlides} variant="immersive" />
+          <div className="home-hero-shade" aria-hidden="true" />
+          <div className="container home-hero-content">
             <Reveal>
-              <article className="hero-panel">
+              <article className="home-hero-panel">
                 <div className="eyebrow">{hero?.subtitle ?? "Grupo gastronomico y tecnologico"}</div>
                 <h1 className="hero-title">{hero?.title ?? "Vento Group"}</h1>
                 <p className="hero-copy">
@@ -106,183 +140,139 @@ export default async function HomePage() {
                 </div>
               </article>
             </Reveal>
-
-            <Reveal delayMs={140}>
-              <HeroMediaCarousel slides={heroSlides} />
-            </Reveal>
           </div>
         </section>
 
-        {editorialBands.length > 0 ? (
-          <section className="section">
-            <div className="container editorial-stack">
-              {editorialBands.map((band, index) => (
-                <Reveal key={band.id} delayMs={60 + index * 110}>
-                  <HomeEditorialBand band={band} reverse={index % 2 === 1} />
-                </Reveal>
-              ))}
-            </div>
-          </section>
-        ) : null}
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">{eventSpacesFeature?.title ?? "Event Spaces"}</h2>
-                <p className="section-copy">
-                  {eventSpacesFeature?.body ??
-                    "Discover venues crafted for private celebrations, brand activations and corporate gatherings."}
-                </p>
-              </div>
-              <Link href={eventSpacesFeature?.ctaUrl ?? "/eventos"} className="section-link">
-                {eventSpacesFeature?.ctaLabel ?? "Planear evento"}
-              </Link>
-            </Reveal>
-
-            <Reveal delayMs={120} className="event-spaces-grid">
-              <div className="event-spaces-feature">
+        <section className="section home-intro-section">
+          <div className="container home-intro-grid">
+            <Reveal className="home-intro-main">
+              <h2 className="home-display-title">
+                {introBand?.title ?? "Experience unforgettable hospitality within the Vento ecosystem."}
+              </h2>
+              <div className="home-intro-main-media">
                 <MediaSlot
-                  label={eventSpacesFeature?.title ?? "Event spaces feature"}
-                  mediaUrl={eventSpacesFeature?.mediaUrl ?? null}
-                  mediaType={eventSpacesFeature?.mediaType}
+                  label={introBand?.title ?? "Hospitality intro"}
+                  mediaUrl={introBand?.mediaUrl ?? restaurants[0]?.image_url ?? null}
+                  mediaType={introBand?.mediaType ?? (restaurants[0]?.video_url ? "video" : "image")}
                 />
               </div>
-              <div className="event-spaces-side">
-                {eventSpaceCards.map((item) => (
-                  <article key={item.id} className="event-space-mini-card">
-                    <h3>{item.title}</h3>
-                    <p>{item.excerpt ?? "Venue listo para eventos y experiencias privadas."}</p>
-                    <Link href={item.action_url ?? "/restaurantes"}>{item.action_label ?? "Ver venue"}</Link>
-                  </article>
+            </Reveal>
+
+            <Reveal delayMs={120} className="home-intro-side">
+              <p>
+                {introBand?.body ??
+                  "Vento Group integra restaurantes, talento, servicios y eventos bajo una misma visión de hospitalidad."}
+              </p>
+              <p>
+                Cada unidad se conecta a nivel operativo y de marca para mantener estándar premium en experiencia de
+                cliente, cultura de equipo y ejecución.
+              </p>
+              <Link className="button button-outline" href={introBand?.ctaUrl ?? "/restaurantes"}>
+                {introBand?.ctaLabel ?? "Our venues"}
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
+        <HomeVenuesShowcase items={restaurants} />
+
+        <section className="section home-statement-section">
+          <div className="container home-statement-grid">
+            <Reveal className="home-statement-side">
+              <p>
+                Establecidos para escalar hospitalidad con diseño, consistencia operativa y experiencias memorables en
+                cada punto de contacto.
+              </p>
+              <Link className="button button-outline" href="/restaurantes">
+                Our venues
+              </Link>
+            </Reveal>
+
+            <Reveal delayMs={100} className="home-statement-main">
+              <h2 className="home-display-title home-display-title-tight">
+                {statementBand?.title ??
+                  "With craft, dedication and top talent, hospitality becomes a complete experience."}
+              </h2>
+              <div className="home-statement-media">
+                <MediaSlot
+                  label={statementBand?.title ?? "Statement media"}
+                  mediaUrl={statementBand?.mediaUrl ?? restaurants[1]?.image_url ?? null}
+                  mediaType={statementBand?.mediaType ?? (restaurants[1]?.video_url ? "video" : "image")}
+                />
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container home-event-grid">
+            <Reveal className="home-event-media">
+              <MediaSlot
+                label={eventSpacesFeature?.title ?? "Event spaces feature"}
+                mediaUrl={eventSpacesFeature?.mediaUrl ?? restaurants[2]?.image_url ?? null}
+                mediaType={eventSpacesFeature?.mediaType ?? (restaurants[2]?.video_url ? "video" : "image")}
+              />
+            </Reveal>
+
+            <Reveal delayMs={120} className="home-event-panel">
+              <h2>{eventSpacesFeature?.title ?? "Unique event spaces for any occasion."}</h2>
+              <p>
+                {eventSpacesFeature?.body ??
+                  "Espacios diseñados para reuniones privadas, activaciones de marca y celebraciones de alto impacto."}
+              </p>
+              <p>
+                Desde formato íntimo hasta eventos corporativos, el ecosistema Vento conecta venue, operación y
+                servicio en una ejecución coordinada.
+              </p>
+              <Link className="button button-outline" href={eventSpacesFeature?.ctaUrl ?? "/eventos"}>
+                {eventSpacesFeature?.ctaLabel ?? "Enquire now"}
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <Reveal className="home-cards-grid">
+              {quickCards.map((card) => (
+                <article key={card.title} className="home-cta-card">
+                  <div className="home-cta-card-media">
+                    <MediaSlot
+                      label={card.title}
+                      mediaUrl={card.mediaUrl}
+                      mediaType={card.mediaType}
+                    />
+                  </div>
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                  <a className="button button-outline" href={card.href}>
+                    {card.cta}
+                  </a>
+                </article>
+              ))}
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="section home-ecosystem-strip-section">
+          <div className="container">
+            <Reveal className="home-ecosystem-strip">
+              <div className="eyebrow">Ecosystem</div>
+              <div className="home-ecosystem-links">
+                {apps.map((app) => (
+                  <a key={app.id} href={app.action_url ?? "/ecosistema"}>
+                    {app.title}
+                  </a>
                 ))}
               </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Ecosistema</h2>
-                <p className="section-copy">Links centrales para descargar apps y entrar a Vento OS.</p>
-              </div>
               <Link href="/ecosistema" className="section-link">
-                Ver todo
+                Entrar a Vento OS
               </Link>
-            </Reveal>
-            <Reveal delayMs={100} className="cards">
-              {apps.slice(0, 3).map((item) => (
-                <ItemCard key={item.id} item={item} mediaLabel={`Media ${item.title}`} />
-              ))}
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Restaurantes</h2>
-                <p className="section-copy">Marcas, experiencias y ubicaciones activas del grupo.</p>
-              </div>
-              <Link href="/restaurantes" className="section-link">
-                Ver todos
-              </Link>
-            </Reveal>
-            <Reveal delayMs={120}>
-              <ItemCarousel items={restaurants} mediaPrefix="Restaurante" />
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Gift, Careers & Contact</h2>
-                <p className="section-copy">
-                  Tres accesos directos para convertir visitas en experiencias, talento y nuevas oportunidades.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delayMs={100} className="quick-links-grid">
-              <Link href="/servicios" className="quick-link-card">
-                <span className="quick-link-title">Gift Cards</span>
-                <span className="quick-link-body">Diseña regalos corporativos o experiencias para clientes y equipos.</span>
-                <span className="quick-link-cta">Explorar</span>
-              </Link>
-              <Link href="/empleos" className="quick-link-card">
-                <span className="quick-link-title">Careers</span>
-                <span className="quick-link-body">Conecta talento con vacantes activas en toda la operación Vento.</span>
-                <span className="quick-link-cta">Postularse</span>
-              </Link>
-              <a href="mailto:hola@ventogroup.co" className="quick-link-card">
-                <span className="quick-link-title">Contact</span>
-                <span className="quick-link-body">Hablemos de alianzas, eventos y oportunidades estratégicas.</span>
-                <span className="quick-link-cta">Escribir</span>
-              </a>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Empleos</h2>
-                <p className="section-copy">Vacantes y oportunidades para crecer dentro del ecosistema.</p>
-              </div>
-              <Link href="/empleos" className="section-link">
-                Ver vacantes
-              </Link>
-            </Reveal>
-            <Reveal delayMs={100} className="cards">
-              {jobs.map((item) => (
-                <ItemCard key={item.id} item={item} mediaLabel={`Vacante ${item.title}`} />
-              ))}
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Servicios</h2>
-                <p className="section-copy">Capacidades transversales para operacion, tecnologia y expansion.</p>
-              </div>
-              <Link href="/servicios" className="section-link">
-                Ver servicios
-              </Link>
-            </Reveal>
-            <Reveal delayMs={100} className="cards">
-              {services.map((item) => (
-                <ItemCard key={item.id} item={item} mediaLabel={`Servicio ${item.title}`} />
-              ))}
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <Reveal className="section-header">
-              <div>
-                <h2 className="section-title">Eventos</h2>
-                <p className="section-copy">Agenda activa para experiencias de marca y comunidad.</p>
-              </div>
-              <Link href="/eventos" className="section-link">
-                Ver agenda
-              </Link>
-            </Reveal>
-            <Reveal delayMs={120}>
-              <ItemCarousel items={events} mediaPrefix="Evento" />
             </Reveal>
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter venues={restaurants.map((item) => item.title)} />
     </>
   );
 }
