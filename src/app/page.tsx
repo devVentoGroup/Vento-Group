@@ -49,6 +49,9 @@ export default async function HomePage() {
   const introBand = editorialBands[0] ?? null;
   const statementBand = editorialBands[1] ?? introBand;
   const eventSpacesFeature = getHomeEventSpacesFeature(blocks);
+  const heroVenueNames = restaurants
+    .slice(0, 6)
+    .map((item) => item.title.toUpperCase());
   const quickCards: Array<{
     title: string;
     body: string;
@@ -57,31 +60,31 @@ export default async function HomePage() {
     mediaUrl: string | null;
     mediaType: "image" | "video";
   }> = [
-    {
-      title: "Gift Vouchers",
-      body: "Experiencias para regalar en restaurantes y espacios del grupo.",
-      href: "/servicios",
-      cta: "Shop",
-      mediaUrl: services[0]?.video_url ?? services[0]?.image_url ?? null,
-      mediaType: services[0]?.video_url ? "video" : ("image" as const),
-    },
-    {
-      title: "Careers",
-      body: "Vacantes activas y rutas de crecimiento para equipos Vento.",
-      href: "/empleos",
-      cta: "Explore",
-      mediaUrl: jobs[0]?.video_url ?? jobs[0]?.image_url ?? null,
-      mediaType: jobs[0]?.video_url ? "video" : ("image" as const),
-    },
-    {
-      title: "Contact",
-      body: "Alianzas, reservas de eventos y oportunidades estratégicas.",
-      href: "mailto:hola@ventogroup.co",
-      cta: "Get in touch",
-      mediaUrl: events[0]?.video_url ?? events[0]?.image_url ?? null,
-      mediaType: events[0]?.video_url ? "video" : ("image" as const),
-    },
-  ];
+      {
+        title: "Gift Vouchers",
+        body: "Experiencias para regalar en restaurantes y espacios del grupo.",
+        href: "/servicios",
+        cta: "Shop",
+        mediaUrl: services[0]?.video_url ?? services[0]?.image_url ?? null,
+        mediaType: services[0]?.video_url ? "video" : ("image" as const),
+      },
+      {
+        title: "Careers",
+        body: "Vacantes activas y rutas de crecimiento para equipos Vento.",
+        href: "/empleos",
+        cta: "Explore",
+        mediaUrl: jobs[0]?.video_url ?? jobs[0]?.image_url ?? null,
+        mediaType: jobs[0]?.video_url ? "video" : ("image" as const),
+      },
+      {
+        title: "Contact",
+        body: "Alianzas, reservas de eventos y oportunidades estratégicas.",
+        href: "mailto:hola@ventogroup.co",
+        cta: "Get in touch",
+        mediaUrl: events[0]?.video_url ?? events[0]?.image_url ?? null,
+        mediaType: events[0]?.video_url ? "video" : ("image" as const),
+      },
+    ];
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -118,27 +121,46 @@ export default async function HomePage() {
       <StructuredData data={[organizationSchema, websiteSchema, featuredItemsSchema]} />
       <SiteHeader />
       <main>
-        <section className="home-hero">
+        <section className="home-hero home-hero-editorial">
           <HeroMediaCarousel slides={heroSlides} variant="immersive" />
           <div className="home-hero-shade" aria-hidden="true" />
-          <div className="container home-hero-content">
-            <Reveal>
-              <article className="home-hero-panel">
-                <div className="eyebrow">{hero?.subtitle ?? "Grupo gastronomico y tecnologico"}</div>
-                <h1 className="hero-title">{hero?.title ?? "Vento Group"}</h1>
-                <p className="hero-copy">
-                  {hero?.body ??
-                    "Conectamos experiencias de restaurantes con tecnologia, talento y servicios para escalar la operacion."}
-                </p>
-                <div className="hero-actions">
-                  <Link className="button button-primary" href={hero?.cta_url ?? "/ecosistema"}>
-                    {hero?.cta_label ?? "Explorar ecosistema"}
-                  </Link>
-                  <Link className="button button-ghost" href="/restaurantes">
-                    Ver restaurantes
-                  </Link>
-                </div>
-              </article>
+
+          <div className="container home-hero-editorial-shell">
+            <Reveal className="home-hero-editorial-top">
+              <div className="eyebrow home-hero-editorial-eyebrow">
+                {hero?.subtitle ?? "Hospitality ecosystem"}
+              </div>
+            </Reveal>
+
+            <Reveal delayMs={40} className="home-hero-wordmark-wrap">
+              <h1 className="home-hero-wordmark" aria-label={hero?.title ?? "Vento Group"}>
+                <span className="home-hero-word home-hero-word-top">VENTO</span>
+                <span className="home-hero-word home-hero-word-bottom">GROUP</span>
+              </h1>
+            </Reveal>
+
+            <Reveal delayMs={100} className="home-hero-center-stack">
+              {heroVenueNames.map((name) => (
+                <span key={name} className="home-hero-center-stack-item">
+                  {name}
+                </span>
+              ))}
+            </Reveal>
+
+            <Reveal delayMs={160} className="home-hero-editorial-footer">
+              <p className="home-hero-editorial-copy">
+                {hero?.body ??
+                  "Conectamos restaurantes, talento, tecnologia y experiencias bajo una sola direccion de hospitalidad."}
+              </p>
+
+              <div className="home-hero-editorial-actions">
+                <Link className="button button-outline button-outline-light" href="/restaurantes">
+                  Our venues
+                </Link>
+                <Link className="button button-outline button-outline-light" href={hero?.cta_url ?? "/ecosistema"}>
+                  {hero?.cta_label ?? "Explore ecosystem"}
+                </Link>
+              </div>
             </Reveal>
           </div>
         </section>
