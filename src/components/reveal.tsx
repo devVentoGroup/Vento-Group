@@ -6,9 +6,19 @@ type RevealProps = {
   children: React.ReactNode;
   className?: string;
   delayMs?: number;
+  mode?: "once" | "toggle";
+  threshold?: number;
+  rootMargin?: string;
 };
 
-export function Reveal({ children, className, delayMs = 0 }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  delayMs = 0,
+  mode = "once",
+  threshold = 0.18,
+  rootMargin = "0px 0px -8% 0px",
+}: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -23,18 +33,25 @@ export function Reveal({ children, className, delayMs = 0 }: RevealProps) {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const hit = entries.some((entry) => entry.isIntersecting);
-        if (hit) {
+        const entry = entries[0];
+        if (!entry) return;
+
+        if (mode === "toggle") {
+          setVisible(entry.isIntersecting);
+          return;
+        }
+
+        if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.18 },
+      { rootMargin, threshold },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [mode, rootMargin, threshold]);
 
   return (
     <div

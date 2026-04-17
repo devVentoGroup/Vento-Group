@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "/restaurantes", label: "Restaurantes", description: "Venues, conceptos y reservas" },
+  { href: "/restaurantes", label: "Restaurantes", description: "Espacios, conceptos y reservas" },
   { href: "/empleos", label: "Empleos", description: "Vacantes y oportunidades" },
   { href: "/servicios", label: "Servicios", description: "Capacidades y soluciones" },
   { href: "/eventos", label: "Eventos", description: "Agenda y experiencias" },
@@ -13,59 +13,27 @@ const NAV = [
 ];
 
 const HIGHLIGHTS = [
-  { href: "/servicios", title: "Gift Cards", subtitle: "Experiencias para regalar" },
-  { href: "/empleos", title: "Careers", subtitle: "Join Vento Group" },
-  { href: "/eventos", title: "Private Events", subtitle: "Book your next moment" },
+  { href: "/servicios", title: "Bonos", subtitle: "Experiencias para regalar" },
+  { href: "/empleos", title: "Empleos", subtitle: "Haz parte de Vento Group" },
+  { href: "/eventos", title: "Eventos Privados", subtitle: "Reserva tu próximo momento" },
+];
+
+const HOME_LEFT_NAV = [
+  { href: "/restaurantes", label: "Restaurantes" },
+  { href: "/eventos", label: "Eventos" },
+  { href: "/servicios", label: "Bonos" },
+];
+
+const HOME_RIGHT_NAV = [
+  { href: "/empleos", label: "Empleos" },
+  { href: "/ecosistema", label: "Nosotros" },
+  { href: "mailto:hola@ventogroup.co", label: "Contacto", external: true },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastScrollYRef = useRef(0);
-  const tickingRef = useRef(false);
   const isHome = pathname === "/";
-
-  useEffect(() => {
-    if (!isHome) {
-      setScrolled(false);
-      setHidden(false);
-      return;
-    }
-
-    const THRESHOLD = 8;
-    const SHOW_AT_TOP = 72;
-
-    const update = () => {
-      const currentY = window.scrollY;
-      const delta = currentY - lastScrollYRef.current;
-
-      setScrolled(currentY > 28);
-
-      if (open || currentY <= SHOW_AT_TOP) {
-        setHidden(false);
-      } else if (delta > THRESHOLD) {
-        setHidden(true);
-      } else if (delta < -THRESHOLD) {
-        setHidden(false);
-      }
-
-      lastScrollYRef.current = currentY;
-      tickingRef.current = false;
-    };
-
-    const onScroll = () => {
-      if (tickingRef.current) return;
-      tickingRef.current = true;
-      window.requestAnimationFrame(update);
-    };
-
-    lastScrollYRef.current = window.scrollY;
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome, open]);
 
   useEffect(() => {
     setOpen(false);
@@ -93,39 +61,42 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
-        className={`site-header ${isHome ? "site-header-home" : ""} ${isHome && scrolled ? "site-header-home-scrolled" : ""} ${isHome && hidden && !open ? "site-header-home-hidden" : ""}`.trim()}
+            <header
+        className={`site-header ${isHome ? "site-header-home site-header-home-scrolled" : ""}`.trim()}
       >
         <div className={`container site-header-inner ${isHome ? "site-header-home-inner" : ""}`.trim()}>
           {isHome ? (
             <>
               <nav className="home-nav-group" aria-label="Principal izquierda">
-                <Link href="/restaurantes" className="home-nav-link">
-                  Restaurantes
-                </Link>
-                <Link href="/eventos" className="home-nav-link">
-                  Eventos
-                </Link>
-                <Link href="/ecosistema" className="home-nav-link">
-                  Ecosistema
-                </Link>
+                {HOME_LEFT_NAV.map((item) => (
+                  <Link key={item.href} href={item.href} className="home-nav-link">
+                    {item.label}
+                  </Link>
+                ))}
               </nav>
 
-              <Link href="/" aria-label="Vento Group" className="home-brand-link">
-                <div className="brand">Vento Group</div>
-                <div className="brand-subtitle">Hospitality Ecosystem</div>
+              <Link href="/" aria-label="Vento Group" className="home-brand-link home-brand-link-asset">
+                <img
+                  className="home-brand-wordmark"
+                  src="/branding/vento-wordmark-white.svg"
+                  alt="Vento Group"
+                  loading="eager"
+                  decoding="async"
+                />
               </Link>
 
               <nav className="home-nav-group home-nav-group-right" aria-label="Principal derecha">
-                <Link href="/empleos" className="home-nav-link">
-                  Empleos
-                </Link>
-                <Link href="/servicios" className="home-nav-link">
-                  Servicios
-                </Link>
-                <a href="mailto:hola@ventogroup.co" className="home-nav-link">
-                  Contacto
-                </a>
+                {HOME_RIGHT_NAV.map((item) =>
+                  item.external ? (
+                    <a key={item.href} href={item.href} className="home-nav-link">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link key={item.href} href={item.href} className="home-nav-link">
+                      {item.label}
+                    </Link>
+                  ),
+                )}
                 <button
                   type="button"
                   className={`nav-menu-btn nav-menu-btn-light ${open ? "nav-menu-btn-open" : ""}`}
@@ -133,7 +104,7 @@ export function SiteHeader() {
                   aria-expanded={open}
                   aria-controls="site-overlay-menu"
                 >
-                  Menu
+                  Menú
                 </button>
               </nav>
             </>
@@ -157,7 +128,7 @@ export function SiteHeader() {
                   aria-expanded={open}
                   aria-controls="site-overlay-menu"
                 >
-                  Menu
+                  Menú
                 </button>
                 <Link href="/ecosistema" className="nav-cta">
                   Entrar a Vento OS
@@ -177,10 +148,10 @@ export function SiteHeader() {
           <div className="site-menu-top">
             <div>
               <div className="brand">Vento Group</div>
-              <div className="brand-subtitle">Explore the full portfolio</div>
+              <div className="brand-subtitle">Explora el portafolio completo</div>
             </div>
             <button type="button" className="nav-menu-btn nav-menu-btn-open" onClick={() => setOpen(false)}>
-              Close
+              Cerrar
             </button>
           </div>
 
