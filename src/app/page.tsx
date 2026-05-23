@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { HomeHeroIntro } from "@/components/home-hero-intro";
 import { HomeVenuesShowcase } from "@/components/home-venues-showcase";
+import { ImageBanner } from "@/components/image-banner";
 import { MediaSlot } from "@/components/media-slot";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
@@ -218,6 +219,12 @@ export default async function HomePage() {
             <HomeVenuesShowcase items={restaurants} />
           </Reveal>
         </section>
+
+        <ImageBanner
+          label="Vento Group"
+          mediaUrl={restaurants[3]?.video_url ?? restaurants[3]?.image_url ?? restaurants[0]?.image_url ?? null}
+          mediaType={restaurants[3]?.video_url ? "video" : "image"}
+        />
 
         <section className="darling-section darling-statement-section">
           <div className="container darling-statement-grid">

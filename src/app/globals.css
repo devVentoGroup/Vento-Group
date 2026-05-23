@@ -3182,3 +3182,397 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* =========================================================
+   FASE 1 — Mejoras globales estilo Darling Group
+   (scroll suave, transicion de pagina, stagger, banners, hover)
+   ========================================================= */
+
+/* --- Lenis: scroll suave --- */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* --- Transicion entre paginas --- */
+.page-transition {
+  animation: pageFade 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Stagger / cascada en grillas --- */
+.reveal-grid > * {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 560ms ease,
+    transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-grid.is-in > * {
+  opacity: 1;
+  transform: none;
+}
+.reveal-grid.is-in > *:nth-child(1) { transition-delay: 40ms; }
+.reveal-grid.is-in > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-grid.is-in > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-grid.is-in > *:nth-child(4) { transition-delay: 220ms; }
+.reveal-grid.is-in > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-grid.is-in > *:nth-child(6) { transition-delay: 340ms; }
+.reveal-grid.is-in > *:nth-child(7) { transition-delay: 400ms; }
+.reveal-grid.is-in > *:nth-child(8) { transition-delay: 460ms; }
+.reveal-grid.is-in > *:nth-child(9) { transition-delay: 520ms; }
+.reveal-grid.is-in > *:nth-child(n + 10) { transition-delay: 580ms; }
+
+/* --- Image banner full-bleed con parallax --- */
+.image-banner {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 56vh, 640px);
+  overflow: hidden;
+  background: #18120f;
+}
+.image-banner-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+.image-banner-media .media-shell {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.image-banner-media img,
+.image-banner-media video {
+  width: 100%;
+  height: 100%;
+}
+.image-banner-media img,
+.image-banner-media video {
+  object-fit: cover;
+  display: block;
+  transform: translate3d(0, calc(var(--parallax, 0) * 1px), 0) scale(1.12);
+  transition: transform 120ms linear;
+}
+.image-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 24px;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(24, 18, 15, 0.12), rgba(24, 18, 15, 0.5));
+}
+.image-banner-overlay .eyebrow {
+  color: rgba(255, 255, 255, 0.82);
+}
+.image-banner-title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-weight: 600;
+  max-width: 20ch;
+  line-height: 1.06;
+}
+
+/* --- CTA banner (estilo "Join the crew") --- */
+.cta-banner {
+  position: relative;
+  padding: clamp(56px, 9vw, 120px) 24px;
+  text-align: center;
+  background: #18120f;
+  color: #fff;
+  overflow: hidden;
+}
+.cta-banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.cta-banner-title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+.cta-banner-copy {
+  margin: 0;
+  max-width: 52ch;
+  opacity: 0.85;
+}
+
+/* --- Micro-interacciones de hover en tarjetas --- */
+.card .media-shell,
+.darling-cta-card-media .media-shell {
+  overflow: hidden;
+}
+.card .media,
+.darling-cta-card-media .media {
+  transition: transform 760ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover .media,
+.darling-cta-card:hover .media {
+  transform: scale(1.05);
+}
+.card-action::after,
+.section-link::after {
+  content: " \2192";
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+.card:hover .card-action::after,
+.section-link:hover::after {
+  transform: translateX(5px);
+}
+
+/* --- Respeto a reduced-motion para lo nuevo --- */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+  .reveal-grid > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .image-banner-media img,
+  .image-banner-media video {
+    transform: scale(1.05);
+  }
+  .card:hover .media,
+  .darling-cta-card:hover .media {
+    transform: none;
+  }
+  .card-action::after,
+  .section-link::after {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   FASE 2 — Páginas internas: /servicios y /eventos
+   ========================================================= */
+
+/* ── /servicios — Intro con pilares ─────────────────────── */
+
+.servicios-intro {
+  padding: clamp(56px, 8vw, 100px) 0;
+  background: var(--paper);
+}
+
+.servicios-intro-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.servicios-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.servicios-intro-title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.06;
+  color: var(--ink);
+  max-width: 22ch;
+}
+
+.servicios-intro-copy {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.68;
+  max-width: 54ch;
+}
+
+.servicios-pilares {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.servicios-pilar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 20px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+.servicios-pilar:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px);
+}
+
+.servicios-pilar-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.servicios-pilar-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.servicios-pilar-copy {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.servicios-grid-header {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .servicios-intro-inner {
+    grid-template-columns: 1fr;
+  }
+  .servicios-pilares {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicios-pilares {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── /eventos — Espacios feature section ─────────────────── */
+
+.eventos-spaces-section {
+  /* sin padding: la sección es full-bleed */
+}
+
+.eventos-spaces-feature {
+  position: relative;
+  width: 100%;
+  min-height: clamp(460px, 70vh, 760px);
+  display: flex;
+  align-items: center;
+  background: #18120f;
+  overflow: hidden;
+}
+
+.eventos-spaces-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eventos-spaces-media .media-shell {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.eventos-spaces-media img,
+.eventos-spaces-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.eventos-spaces-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(12, 8, 6, 0.78) 0%,
+      rgba(12, 8, 6, 0.52) 50%,
+      rgba(12, 8, 6, 0.18) 100%
+    );
+}
+
+.eventos-spaces-content-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(48px, 7vw, 80px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+.eventos-spaces-content {
+  max-width: 52ch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eventos-spaces-eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.eventos-spaces-title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.9rem, 3.8vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  color: #fff;
+  max-width: 20ch;
+}
+
+.eventos-spaces-copy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.68;
+  max-width: 50ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .servicios-pilar:hover {
+    transform: none;
+  }
+}

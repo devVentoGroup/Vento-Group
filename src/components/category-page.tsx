@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ItemCard } from "@/components/item-card";
 import { MediaSlot } from "@/components/media-slot";
+import { RevealGrid } from "@/components/reveal-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
@@ -63,11 +64,11 @@ export function CategoryPage({ title, description, items, backLabel = "Volver al
 
         <section className="section category-list-section">
           <div className="container">
-            <div className="cards">
+            <RevealGrid className="cards">
               {items.map((item) => (
                 <ItemCard key={item.id} item={item} mediaLabel={`${title} ${item.title}`} />
               ))}
-            </div>
+            </RevealGrid>
           </div>
         </section>
       </main>
