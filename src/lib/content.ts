@@ -1,4 +1,4 @@
-import { getSupabaseClient } from "@/lib/supabase";
+import { getServerSupabaseClient } from "@/lib/supabase";
 
 export type WebsiteBlock = {
   id: string;
@@ -388,7 +388,7 @@ export function getHomeEventSpacesFeature(blocks: WebsiteBlock[]): EditorialBand
 }
 
 export async function getPageBlocks(pageSlug: string): Promise<WebsiteBlock[]> {
-  const supabase = getSupabaseClient();
+  const supabase = getServerSupabaseClient();
 
   if (!supabase) {
     return pageSlug === "home" ? FALLBACK_BLOCKS : [];
@@ -426,7 +426,7 @@ export async function getPageBlocksFromCandidates(pageSlugs: string[]): Promise<
 }
 
 export async function getItems(category: WebsiteItemCategory, limit?: number): Promise<WebsiteItem[]> {
-  const supabase = getSupabaseClient();
+  const supabase = getServerSupabaseClient();
 
   if (!supabase) {
     return fallbackItemsByCategory(category);
@@ -464,7 +464,7 @@ export async function getItemByCategoryAndSlug(
   category: WebsiteItemCategory,
   slug: string,
 ): Promise<WebsiteItem | null> {
-  const supabase = getSupabaseClient();
+  const supabase = getServerSupabaseClient();
 
   if (!supabase) {
     return (
