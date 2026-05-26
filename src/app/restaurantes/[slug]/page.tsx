@@ -99,12 +99,12 @@ export default async function RestaurantDetailPage({
 
   const relatedRestaurants = allRestaurants.filter((item) => item.slug !== venue.slug).slice(0, 6);
   const detailHero = detailBlocks.find((block) => block.block_type === "detail_hero" || block.block_key === "detail_hero");
-  const galleryBlocks = detailBlocks
-    .filter((block) => block.block_type === "gallery_media" || block.block_key.startsWith("gallery_"))
+  const galeriaBlocks = detailBlocks
+    .filter((block) => block.block_type === "galeria_media" || block.block_key.startsWith("galeria_"))
     .sort((a, b) => a.sort_order - b.sort_order);
 
   const { description, features } = splitBodyAndFeatures(venue.body);
-  const narrative = description || venue.excerpt || "Completa la historia de este venue desde VISO.";
+  const narrative = description || venue.excerpt || "Completa la historia de este restaurante desde VISO.";
   const reservationHref = venue.action_url && venue.action_url !== "#" ? venue.action_url : "/eventos";
   const heroMediaUrl = detailHero?.media_url ?? venue.video_url ?? venue.image_url;
   const heroMediaType = detailHero?.media_type ?? (venue.video_url ? "video" : "image");
@@ -185,15 +185,15 @@ export default async function RestaurantDetailPage({
             <Reveal className="section-header">
               <div>
                 <h2 className="section-title">Gallery</h2>
-                <p className="section-copy">Colección visual del espacio, ambiente y experiencias del venue.</p>
+                <p className="section-copy">Colección visual del espacio, ambiente y experiencias del restaurante.</p>
               </div>
             </Reveal>
 
-            <Reveal delayMs={120} className="venue-gallery-grid">
-              {(galleryBlocks.length > 0 ? galleryBlocks : [detailHero].filter(Boolean)).slice(0, 4).map((block, index) => (
-                <div key={block!.id} className={`venue-gallery-item ${index === 0 ? "venue-gallery-item-featured" : ""}`}>
+            <Reveal delayMs={120} className="venue-galeria-grid">
+              {(galeriaBlocks.length > 0 ? galeriaBlocks : [detailHero].filter(Boolean)).slice(0, 4).map((block, index) => (
+                <div key={block!.id} className={`venue-galeria-item ${index === 0 ? "venue-galeria-item-featured" : ""}`}>
                   <MediaSlot
-                    label={block?.title ?? `${venue.title} gallery`}
+                    label={block?.title ?? `${venue.title} galeria`}
                     mediaUrl={block?.media_url ?? null}
                     mediaType={block?.media_type}
                   />
@@ -265,7 +265,7 @@ export default async function RestaurantDetailPage({
                 </Link>
               </Reveal>
               <Reveal delayMs={120}>
-                <ItemCarousel items={relatedRestaurants} mediaPrefix="Venue" />
+                <ItemCarousel items={relatedRestaurants} mediaPrefix="Restaurante" />
               </Reveal>
             </div>
           </section>

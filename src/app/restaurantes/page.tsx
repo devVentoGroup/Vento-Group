@@ -15,11 +15,11 @@ import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Restaurantes | Vento Group",
-  description: "Portafolio de restaurantes y venues del ecosistema Vento Group.",
+  description: "Portafolio de restaurantes del ecosistema Vento Group.",
   alternates: { canonical: "/restaurantes" },
   openGraph: {
     title: "Restaurantes | Vento Group",
-    description: "Portafolio de restaurantes y venues del ecosistema Vento Group.",
+    description: "Portafolio de restaurantes del ecosistema Vento Group.",
     url: "/restaurantes",
     type: "website",
   },

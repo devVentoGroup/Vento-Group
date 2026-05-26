@@ -53,9 +53,9 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
         <header className="venues-showcase-header">
           <div>
             <div className="eyebrow">Restaurantes</div>
-            <h2 className="venues-showcase-heading">Portafolio de hospitalidad</h2>
+            <h2 className="venues-showcase-heading">Nuestros restaurantes</h2>
           </div>
-          <div className="venues-showcase-list" role="tablist" aria-label="Seleccion de venues">
+          <div className="venues-showcase-list" role="tablist" aria-label="Seleccion de restaurantes">
             {safeItems.map((item, index) => (
               <button
                 key={item.id}
@@ -86,7 +86,7 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
           <article className="venues-showcase-detail">
             <div className="venues-showcase-detail-top">
               <div className="venues-showcase-carousel-top">
-                <button type="button" className="venues-showcase-arrow" onClick={goPrev} aria-label="Venue anterior">
+                <button type="button" className="venues-showcase-arrow" onClick={goPrev} aria-label="Restaurante anterior">
                   Anterior
                 </button>
                 <div className="venues-showcase-count">
@@ -101,7 +101,7 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
               <p className="venues-showcase-detail-copy">
                 {current.body ??
                   current.excerpt ??
-                  "Portfolio de venues para hospitalidad, eventos y experiencias premium."}
+                  "Portafolio de restaurantes y experiencias gastronómicas unicas."}
               </p>
             </div>
 
@@ -135,7 +135,7 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
                 >
                   {current.action_label ?? "Explorar"}
                 </a>
-                <button type="button" className="venues-showcase-arrow" onClick={goNext} aria-label="Venue siguiente">
+                <button type="button" className="venues-showcase-arrow" onClick={goNext} aria-label="Restaurante siguiente">
                   Siguiente
                 </button>
               </div>

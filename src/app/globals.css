@@ -41,13 +41,17 @@ a {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 60;
-  background: rgba(247, 243, 234, 0.86);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(121, 100, 83, 0.15);
-  transition: background 260ms ease, border-color 260ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition:
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.48s ease;
   will-change: transform;
 }
 
@@ -670,24 +674,12 @@ a {
   pointer-events: none;
 }
 
-.site-header-home {
-  position: fixed;
-  inset: 0 0 auto 0;
-  background: rgba(250, 247, 242, 0.98);
-  border-bottom: 1px solid rgba(180, 168, 157, 0.32);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 3px 8px rgba(180, 168, 157, 0.12);
-}
+/* site-header-home: transparent overlay — defined in Darling section below */
 
-.site-header-home-scrolled {
-  background: rgba(250, 247, 242, 0.98);
-  border-bottom-color: rgba(180, 168, 157, 0.32);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 3px 8px rgba(180, 168, 157, 0.12);
-}
+/* site-header-home-scrolled: defined in Darling section below */
 
 .site-header-home-hidden {
-  transform: none;
+  transform: translateY(-110%);
 }
 
 .site-header-home .container {
@@ -2475,19 +2467,49 @@ body {
   color: #242322;
 }
 
+/* ── Home header: transparent at top ── */
 .site-header-home {
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.28) 0%, rgba(8, 8, 8, 0.08) 58%, rgba(8, 8, 8, 0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(4px);
   box-shadow: none;
+  backdrop-filter: none;
   opacity: 0;
   transform: translateY(-16px);
-  transition: opacity 480ms ease, transform 680ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 480ms ease,
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body.home-intro-complete .site-header-home {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Inner pages: always solid dark */
+.site-header:not(.site-header-home) {
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Scrolled up (home): solid dark */
+.site-header-home.site-header-scrolled {
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Hidden: slide off top — !important overrides intro-complete transform */
+.site-header-hidden {
+  transform: translateY(-110%) !important;
+}
+
+/* Menu open: keep header visible */
+.site-header-menu-open {
+  transform: translateY(0) !important;
 }
 
 .site-header-home .container {
@@ -2645,33 +2667,34 @@ body.home-intro-complete .site-header-home {
 .darling-splash-logo-half {
   overflow: hidden;
   display: block;
-  /* SVG viewBox: 1200 × 760.99 → each half ≈ 380.5 px tall */
-  /* aspect-ratio: width / half-height = 1200 / 380.5 */
-  aspect-ratio: 1200 / 380.5;
 }
 
 .darling-splash-logo-half img {
   width: 100%;
   display: block;
-  /* prevent flicker from browser image decode */
   image-rendering: auto;
 }
 
 .darling-splash-logo-top {
+  /* SVG viewBox: 1200 × 760.99
+     "Vento" ends around y≈311. Split at y=350 gives good breathing room. */
+  aspect-ratio: 1200 / 350;
   opacity: 0;
   animation: darlingTitleTopIn 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .darling-splash-logo-bottom {
+  /* Bottom portion: 760.99 - 350 = 410.99 */
+  aspect-ratio: 1200 / 411;
   opacity: 0;
   animation: darlingTitleBottomIn 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .darling-splash-logo-bottom img {
-  /* Shift up to show only the bottom half of the SVG.
+  /* Shift up to show only the bottom portion of the SVG.
      margin-top % is relative to container width (W).
-     Shift needed = W × (380.5/1200) ≈ 31.71% */
-  margin-top: -31.71%;
+     Shift = W × (350/1200) = 29.17% */
+  margin-top: -29.17%;
 }
 
 .darling-splash-links {
@@ -2709,6 +2732,23 @@ body.home-intro-complete .site-header-home {
 .darling-intro-grid {
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr);
   align-items: start;
+}
+
+/* Sin media: seccion mas compacta, padding vertical generoso */
+.darling-intro-section:has(.darling-intro-grid-no-media) {
+  padding: 80px 0 72px;
+}
+
+.darling-intro-grid-no-media {
+  /* Solo 2 columnas, sin fila de media debajo */
+  align-items: center;
+  padding: 16px 0;
+}
+
+/* Sin media en statement: el copy ocupa todo el ancho */
+.darling-statement-grid-no-media {
+  grid-template-columns: 1fr;
+  max-width: 780px;
 }
 
 .darling-intro-copy h2,
@@ -3672,37 +3712,45 @@ input[type="number"]::-webkit-inner-spin-button {
   max-width: 50ch;
 }
 
-/* ── Botón outline-light — secciones oscuras de FASE 2 ───────
-   Solo se define aquí si no existe ya en el tema base.         */
+/* ── Botón outline-light — secciones oscuras de FASE
 
-:where(.button-outline-light) {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 26px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  border: 1.5px solid rgba(255, 255, 255, 0.72);
-  border-radius: 6px;
-  color: #fff;
-  background: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background 240ms ease,
-    border-color 240ms ease;
+/* ── Inner page fixed header: white text on dark background ── */
+.site-header:not(.site-header-home) .brand {
+  color: rgba(250, 247, 242, 0.96);
 }
 
-:where(.button-outline-light):hover,
-:where(.button-outline-light):focus-visible {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
+.site-header:not(.site-header-home) .brand-subtitle {
+  color: rgba(250, 247, 242, 0.55);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .restaurantes-experience-feature,
-  .eventos-spaces-feature {
-    /* sin cambios de comportamiento de movimiento */
-  }
+.site-header:not(.site-header-home) .nav-link {
+  color: rgba(250, 247, 242, 0.88);
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+}
+
+.site-header:not(.site-header-home) .nav-link:hover {
+  color: rgba(250, 247, 242, 1);
+}
+
+.site-header:not(.site-header-home) .nav-menu-btn {
+  border-color: rgba(250, 247, 242, 0.3);
+  background: rgba(250, 247, 242, 0.08);
+  color: rgba(250, 247, 242, 0.92);
+}
+
+.site-header:not(.site-header-home) .nav-menu-btn:hover {
+  background: rgba(250, 247, 242, 0.14);
+  border-color: rgba(250, 247, 242, 0.5);
+}
+
+.site-header:not(.site-header-home) .nav-cta {
+  background: rgba(250, 247, 242, 0.12);
+  border: 1px solid rgba(250, 247, 242, 0.25);
+  color: rgba(250, 247, 242, 0.95);
+}
+
+.site-header:not(.site-header-home) .nav-cta:hover {
+  background: rgba(250, 247, 242, 0.2);
+  border-color: rgba(250, 247, 242, 0.45);
 }

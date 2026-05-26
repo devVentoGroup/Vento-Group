@@ -5,7 +5,7 @@ type SiteFooterProps = {
 };
 
 export function SiteFooter({ venues = [] }: SiteFooterProps) {
-  const topVenues = venues.length > 0 ? venues.slice(0, 10) : ["Restaurantes", "Eventos", "Servicios", "Empleos"];
+  const topVenues = venues.length > 0 ? venues.slice(0, 10) : ["Restaurantes", "Servicios", "Empleos", "Ecosistema"];
 
   return (
     <footer className="site-footer">
@@ -31,7 +31,7 @@ export function SiteFooter({ venues = [] }: SiteFooterProps) {
             <label htmlFor="footer-email" className="sr-only">
               Correo
             </label>
-            <input id="footer-email" type="email" placeholder="Correo electrónico" />
+            <input id="footer-email" type="email" placeholder="Correo electronico" />
             <button type="button" className="button button-outline-light">
               Suscribirse
             </button>
@@ -52,9 +52,9 @@ export function SiteFooter({ venues = [] }: SiteFooterProps) {
 
         <div className="footer-bottom-row">
           <div className="footer-links-group">
-            <Link href="/servicios">Bonos</Link>
-            <Link href="/eventos">Eventos</Link>
             <Link href="/restaurantes">Restaurantes</Link>
+            <Link href="/servicios">Servicios</Link>
+            <Link href="/empleos">Empleos</Link>
           </div>
           <span>© 2026 Vento Group. Todos los derechos reservados.</span>
         </div>

@@ -13,7 +13,6 @@ import {
   getBlock,
   getHeroSlides,
   getHomeEditorialBands,
-  getHomeEventSpacesFeature,
   getItemHref,
   getItems,
   getPageBlocks,
@@ -21,40 +20,38 @@ import {
 import { absoluteUrl, truncateForMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Vento Group | Hospitality Ecosystem",
-  description: "Restaurantes, eventos, empleos y plataformas digitales conectadas en un solo ecosistema.",
-  alternates: {
-    canonical: "/",
-  },
+  title: "Vento Group | Gastronomia y Hospitalidad",
+  description: "Restaurantes, servicios, empleos y plataformas digitales conectadas en un solo ecosistema.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Vento Group | Hospitality Ecosystem",
-    description: "Restaurantes, eventos, empleos y plataformas digitales conectadas en un solo ecosistema.",
+    title: "Vento Group | Gastronomia y Hospitalidad",
+    description: "Restaurantes, servicios, empleos y plataformas digitales conectadas en un solo ecosistema.",
     url: "/",
     type: "website",
   },
 };
 
 export default async function HomePage() {
-  const [blocks, restaurants, jobs, services, events, apps] = await Promise.all([
+  const [blocks, restaurants, jobs, services, apps] = await Promise.all([
     getPageBlocks("home"),
     getItems("restaurant", 12),
     getItems("job", 2),
     getItems("service", 2),
-    getItems("event", 2),
     getItems("app", 6),
   ]);
 
-  const hero = getBlock(blocks, "hero_main");
   const heroSlides = getHeroSlides(blocks);
   const editorialBands = getHomeEditorialBands(blocks);
   const introBand = editorialBands[0] ?? null;
   const statementBand = editorialBands[1] ?? introBand;
-  const eventSpacesFeature = getHomeEventSpacesFeature(blocks);
-  const heroSlidesWithMedia = heroSlides.filter((slide) => Boolean(slide.mediaUrl));
+  const resolvedHeroSlides = heroSlides.filter((s) => Boolean(s.mediaUrl));
 
-  // Solo usar slides que tengan media cargada explícitamente desde VISO.
-  // No usar imágenes de restaurantes como fondo del hero — eso mezcla logos en el carousel.
-  const resolvedHeroSlides = heroSlidesWithMedia;
+  // Solo mostrar imagenes si fueron cargadas explicitamente en VISO.
+  // Nunca usar logos de restaurantes como fallback visual.
+  const introBandMedia = introBand?.mediaUrl ?? null;
+  const statementBandMedia = statementBand?.mediaUrl ?? null;
+  const imageBannerMedia = blocks.find((b) => b.block_key === "home_image_banner")?.media_url ?? null;
+
   const quickCards: Array<{
     title: string;
     body: string;
@@ -64,14 +61,6 @@ export default async function HomePage() {
     mediaType: "image" | "video";
   }> = [
     {
-      title: "Bonos",
-      body: "Experiencias para regalar en restaurantes y espacios del grupo.",
-      href: "/servicios",
-      cta: "Comprar",
-      mediaUrl: services[0]?.video_url ?? services[0]?.image_url ?? null,
-      mediaType: services[0]?.video_url ? "video" : "image",
-    },
-    {
       title: "Empleos",
       body: "Vacantes activas y rutas de crecimiento para equipos Vento.",
       href: "/empleos",
@@ -80,12 +69,20 @@ export default async function HomePage() {
       mediaType: jobs[0]?.video_url ? "video" : "image",
     },
     {
+      title: "Servicios",
+      body: "Consultoria, tecnologia y soporte operativo para el sector hospitalidad.",
+      href: "/servicios",
+      cta: "Conocer mas",
+      mediaUrl: services[0]?.video_url ?? services[0]?.image_url ?? null,
+      mediaType: services[0]?.video_url ? "video" : "image",
+    },
+    {
       title: "Contacto",
-      body: "Alianzas, reservas de eventos y oportunidades estratégicas.",
+      body: "Alianzas, reservas y oportunidades estrategicas con el grupo.",
       href: "mailto:hola@ventogroup.co",
       cta: "Escribir",
-      mediaUrl: events[0]?.video_url ?? events[0]?.image_url ?? null,
-      mediaType: events[0]?.video_url ? "video" : "image",
+      mediaUrl: null,
+      mediaType: "image",
     },
   ];
 
@@ -94,7 +91,7 @@ export default async function HomePage() {
     "@type": "Organization",
     name: "Vento Group",
     url: absoluteUrl("/"),
-    description: "Ecosistema de restaurantes, talento, servicios y eventos de Vento Group.",
+    description: "Ecosistema de restaurantes, talento y servicios de Vento Group.",
   };
 
   const websiteSchema = {
@@ -112,8 +109,8 @@ export default async function HomePage() {
   const featuredItemsSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Vento Group Featured",
-    itemListElement: [...restaurants.slice(0, 3), ...events.slice(0, 3)].map((item, index) => ({
+    name: "Vento Group Destacados",
+    itemListElement: restaurants.slice(0, 6).map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.title,
@@ -127,71 +124,83 @@ export default async function HomePage() {
       <StructuredData data={[organizationSchema, websiteSchema, featuredItemsSchema]} />
       <SiteHeader />
       <main className="darling-home">
+
+        {/* ── Seccion 1: Splash + Hero ── */}
         <HomeHeroIntro
           slides={resolvedHeroSlides}
           venues={restaurants.slice(0, 11).map((item) => ({ title: item.title, href: getItemHref(item) }))}
         />
 
+        {/* ── Seccion 2: Intro editorial ── */}
         <section className="darling-section darling-intro-section">
-          <div className="container darling-intro-grid">
+          <div className={`container darling-intro-grid ${introBandMedia ? "" : "darling-intro-grid-no-media"}`}>
             <Reveal className="darling-intro-copy" mode="toggle" threshold={0.22}>
-              <span className="darling-kicker">The Vento touch</span>
+              <span className="darling-kicker">La experiencia Vento</span>
               <h2>
-                {introBand?.title ?? "Hospitalidad inolvidable construida desde restaurantes, talento y operación."}
+                {introBand?.title ?? "Hospitalidad inolvidable construida desde restaurantes, talento y operacion."}
               </h2>
             </Reveal>
 
             <Reveal className="darling-intro-side" delayMs={100} mode="toggle" threshold={0.22}>
               <p>
                 {introBand?.body ??
-                  "Vento Group integra restaurantes, talento, servicios y eventos bajo una misma visión de hospitalidad premium, con ejecución consistente en cada punto de contacto."}
+                  "Vento Group integra restaurantes, talento y servicios bajo una misma vision de hospitalidad premium, con ejecucion consistente en cada punto de contacto."}
               </p>
               <Link className="button button-outline" href={introBand?.ctaUrl ?? "/restaurantes"}>
                 {introBand?.ctaLabel ?? "Nuestros restaurantes"}
               </Link>
             </Reveal>
 
-            <Reveal className="darling-intro-media" mode="toggle" threshold={0.22}>
-              <MediaSlot
-                label={introBand?.title ?? "Hospitality intro"}
-                mediaUrl={introBand?.mediaUrl ?? restaurants[0]?.image_url ?? null}
-                mediaType={introBand?.mediaType ?? (restaurants[0]?.video_url ? "video" : "image")}
-              />
-            </Reveal>
+            {introBandMedia && (
+              <Reveal className="darling-intro-media" mode="toggle" threshold={0.22}>
+                <MediaSlot
+                  label={introBand?.title ?? "Imagen editorial"}
+                  mediaUrl={introBandMedia}
+                  mediaType={introBand?.mediaType ?? "image"}
+                />
+              </Reveal>
+            )}
           </div>
         </section>
 
+        {/* ── Seccion 3: Grid de restaurantes ── */}
         <section className="darling-section darling-venues-section">
           <Reveal className="container" mode="toggle" threshold={0.18}>
             <HomeVenuesShowcase items={restaurants} />
           </Reveal>
         </section>
 
-        <ImageBanner
-          label="Vento Group"
-          mediaUrl={restaurants[3]?.video_url ?? restaurants[3]?.image_url ?? restaurants[0]?.image_url ?? null}
-          mediaType={restaurants[3]?.video_url ? "video" : "image"}
-        />
+        {/* ── Image banner: solo si hay media en VISO ── */}
+        {imageBannerMedia && (
+          <ImageBanner
+            label="Vento Group"
+            mediaUrl={imageBannerMedia}
+            mediaType="image"
+          />
+        )}
 
+        {/* ── Seccion 4: Statement editorial ── */}
         <section className="darling-section darling-statement-section">
-          <div className="container darling-statement-grid">
-            <Reveal className="darling-statement-media" mode="toggle" threshold={0.22}>
-              <MediaSlot
-                label={statementBand?.title ?? "Statement media"}
-                mediaUrl={statementBand?.mediaUrl ?? restaurants[1]?.image_url ?? null}
-                mediaType={statementBand?.mediaType ?? (restaurants[1]?.video_url ? "video" : "image")}
-              />
-            </Reveal>
+          <div className={`container darling-statement-grid ${statementBandMedia ? "" : "darling-statement-grid-no-media"}`}>
+            {statementBandMedia && (
+              <Reveal className="darling-statement-media" mode="toggle" threshold={0.22}>
+                <MediaSlot
+                  label={statementBand?.title ?? "Imagen editorial"}
+                  mediaUrl={statementBandMedia}
+                  mediaType={statementBand?.mediaType ?? "image"}
+                />
+              </Reveal>
+            )}
 
             <Reveal className="darling-statement-copy" delayMs={100} mode="toggle" threshold={0.22}>
-              <span className="darling-kicker">Crafted scale</span>
+              <span className="darling-kicker">Con escala</span>
               <h2>
                 {statementBand?.title ??
-                  "Con oficio, dedicación y gran talento, la hospitalidad se vuelve una experiencia completa."}
+                  "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa."}
               </h2>
               <p>
-                Establecidos para escalar hospitalidad con diseño, consistencia operativa y experiencias memorables en
-                cada venue, evento y plataforma del grupo.
+                Establecidos para escalar hospitalidad con diseno, consistencia operativa y experiencias memorables en
+                cada restaurante y plataforma del grupo.
               </p>
               <Link className="button button-outline" href="/restaurantes">
                 Ver restaurantes
@@ -200,44 +209,16 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="darling-section darling-event-section">
-          <div className="container darling-event-grid">
-            <Reveal className="darling-event-copy" mode="toggle" threshold={0.22}>
-              <span className="darling-kicker">Eventos</span>
-              <h2>{eventSpacesFeature?.title ?? "Espacios únicos para cualquier ocasión."}</h2>
-              <p>
-                {eventSpacesFeature?.body ??
-                  "Espacios diseñados para reuniones privadas, activaciones de marca y celebraciones de alto impacto."}
-              </p>
-              <p>
-                Desde formatos íntimos hasta eventos corporativos, Vento conecta venue, operación y servicio bajo una
-                sola dirección.
-              </p>
-              <Link className="button button-outline" href={eventSpacesFeature?.ctaUrl ?? "/eventos"}>
-                {eventSpacesFeature?.ctaLabel ?? "Consultar ahora"}
-              </Link>
-            </Reveal>
-
-            <Reveal className="darling-event-media" delayMs={120} mode="toggle" threshold={0.22}>
-              <MediaSlot
-                label={eventSpacesFeature?.title ?? "Event spaces feature"}
-                mediaUrl={eventSpacesFeature?.mediaUrl ?? restaurants[2]?.image_url ?? null}
-                mediaType={eventSpacesFeature?.mediaType ?? (restaurants[2]?.video_url ? "video" : "image")}
-              />
-            </Reveal>
-          </div>
-        </section>
-
+        {/* ── Seccion 5: Cierre ecosistema + quick cards ── */}
         <section className="darling-section darling-closing-section">
           <div className="container darling-closing-grid">
             <Reveal className="darling-closing-copy" mode="toggle" threshold={0.22}>
-              <span className="darling-kicker">Ecosystem</span>
-              <h2>Explora el ecosistema completo de Vento entre restaurantes, talento y herramientas operativas.</h2>
+              <span className="darling-kicker">Ecosistema</span>
+              <h2>Explora el ecosistema completo de Vento: restaurantes, talento y herramientas operativas.</h2>
               <p>
-                Vento Group conecta restaurantes, eventos, empleos, servicios y flujos operativos desde una misma capa
-                estratégica.
+                Vento Group conecta restaurantes, empleos, servicios y flujos operativos desde una misma capa
+                estrategica.
               </p>
-
               <div className="darling-ecosystem-links">
                 {apps.map((app) => (
                   <a key={app.id} href={app.action_url ?? "/ecosistema"}>
@@ -245,18 +226,19 @@ export default async function HomePage() {
                   </a>
                 ))}
               </div>
-
               <Link href="/ecosistema" className="section-link">
-                Entrar a Vento OS
+                Acceder a Vento OS
               </Link>
             </Reveal>
 
             <Reveal className="darling-card-grid" delayMs={120} mode="toggle" threshold={0.22}>
               {quickCards.map((card) => (
                 <article key={card.title} className="darling-cta-card">
-                  <div className="darling-cta-card-media">
-                    <MediaSlot label={card.title} mediaUrl={card.mediaUrl} mediaType={card.mediaType} />
-                  </div>
+                  {card.mediaUrl && (
+                    <div className="darling-cta-card-media">
+                      <MediaSlot label={card.title} mediaUrl={card.mediaUrl} mediaType={card.mediaType} />
+                    </div>
+                  )}
                   <h3>{card.title}</h3>
                   <p>{card.body}</p>
                   <a className="button button-outline" href={card.href}>
@@ -267,6 +249,7 @@ export default async function HomePage() {
             </Reveal>
           </div>
         </section>
+
       </main>
       <SiteFooter venues={restaurants.map((item) => item.title)} />
     </>
