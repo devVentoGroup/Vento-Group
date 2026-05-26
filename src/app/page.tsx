@@ -17,7 +17,6 @@ import {
   getItemHref,
   getItems,
   getPageBlocks,
-  type HeroSlide,
 } from "@/lib/content";
 import { absoluteUrl, truncateForMeta } from "@/lib/seo";
 
@@ -53,61 +52,9 @@ export default async function HomePage() {
   const eventSpacesFeature = getHomeEventSpacesFeature(blocks);
   const heroSlidesWithMedia = heroSlides.filter((slide) => Boolean(slide.mediaUrl));
 
-  const fallbackHeroSlidesRaw: HeroSlide[] = [
-    {
-      id: "fallback-restaurant-1",
-      title: restaurants[0]?.title ?? "Vento Group",
-      subtitle: restaurants[0]?.excerpt ?? "Hospitality ecosystem",
-      ctaLabel: "Explorar restaurantes",
-      ctaUrl: restaurants[0] ? getItemHref(restaurants[0]) : "/restaurantes",
-      mediaUrl: restaurants[0]?.video_url ?? restaurants[0]?.image_url ?? null,
-      mediaType: restaurants[0]?.video_url ? "video" : "image",
-      sortOrder: 10,
-    },
-    {
-      id: "fallback-editorial-1",
-      title: introBand?.title ?? restaurants[1]?.title ?? "Experiences",
-      subtitle:
-        introBand?.subtitle ??
-        introBand?.body ??
-        restaurants[1]?.excerpt ??
-        "Crafted hospitality across venues, events and brand experiences.",
-      ctaLabel: introBand?.ctaLabel ?? "Our venues",
-      ctaUrl: introBand?.ctaUrl ?? "/restaurantes",
-      mediaUrl:
-        introBand?.mediaUrl ??
-        restaurants[1]?.video_url ??
-        restaurants[1]?.image_url ??
-        null,
-      mediaType:
-        introBand?.mediaType ??
-        (restaurants[1]?.video_url ? "video" : "image"),
-      sortOrder: 20,
-    },
-    {
-      id: "fallback-event-spaces",
-      title: eventSpacesFeature?.title ?? restaurants[2]?.title ?? "Eventos privados",
-      subtitle:
-        eventSpacesFeature?.subtitle ??
-        eventSpacesFeature?.body ??
-        restaurants[2]?.excerpt ??
-        "Spaces designed for private dining, celebrations and corporate moments.",
-      ctaLabel: eventSpacesFeature?.ctaLabel ?? "Consultar ahora",
-      ctaUrl: eventSpacesFeature?.ctaUrl ?? "/eventos",
-      mediaUrl:
-        eventSpacesFeature?.mediaUrl ??
-        restaurants[2]?.video_url ??
-        restaurants[2]?.image_url ??
-        null,
-      mediaType:
-        eventSpacesFeature?.mediaType ??
-        (restaurants[2]?.video_url ? "video" : "image"),
-      sortOrder: 30,
-    },
-  ];
-
-  const fallbackHeroSlides = fallbackHeroSlidesRaw.filter((slide) => Boolean(slide.mediaUrl));
-  const resolvedHeroSlides = heroSlidesWithMedia.length > 0 ? heroSlidesWithMedia : fallbackHeroSlides;
+  // Solo usar slides que tengan media cargada explícitamente desde VISO.
+  // No usar imágenes de restaurantes como fondo del hero — eso mezcla logos en el carousel.
+  const resolvedHeroSlides = heroSlidesWithMedia;
   const quickCards: Array<{
     title: string;
     body: string;

@@ -2630,41 +2630,48 @@ body.home-intro-complete .site-header-home {
   gap: 24px;
 }
 
-.darling-splash-title {
-  display: grid;
-  justify-items: center;
-  gap: 0;
-  font-family: var(--font-display), serif;
-  font-size: clamp(5.8rem, 12vw, 10rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: rgba(247, 241, 232, 0.92);
-  text-transform: uppercase;
-  text-align: center;
+/* ── Splash logo SVG (replaces text title) ── */
+.darling-splash-logo {
+  width: clamp(200px, 38vw, 480px);
   transition: opacity 480ms ease;
+  user-select: none;
+  pointer-events: none;
 }
 
-.darling-splash-softened .darling-splash-title {
+.darling-splash-softened .darling-splash-logo {
   opacity: 0.34;
 }
 
-.darling-splash-title-top,
-.darling-splash-title-bottom {
+.darling-splash-logo-half {
+  overflow: hidden;
   display: block;
+  /* SVG viewBox: 1200 × 760.99 → each half ≈ 380.5 px tall */
+  /* aspect-ratio: width / half-height = 1200 / 380.5 */
+  aspect-ratio: 1200 / 380.5;
+}
+
+.darling-splash-logo-half img {
+  width: 100%;
+  display: block;
+  /* prevent flicker from browser image decode */
+  image-rendering: auto;
+}
+
+.darling-splash-logo-top {
   opacity: 0;
-  animation-duration: 950ms;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  animation-fill-mode: forwards;
+  animation: darlingTitleTopIn 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.darling-splash-title-top {
-  transform: translateY(-34vh);
-  animation-name: darlingTitleTopIn;
+.darling-splash-logo-bottom {
+  opacity: 0;
+  animation: darlingTitleBottomIn 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.darling-splash-title-bottom {
-  transform: translateY(34vh);
-  animation-name: darlingTitleBottomIn;
+.darling-splash-logo-bottom img {
+  /* Shift up to show only the bottom half of the SVG.
+     margin-top % is relative to container width (W).
+     Shift needed = W × (380.5/1200) ≈ 31.71% */
+  margin-top: -31.71%;
 }
 
 .darling-splash-links {
@@ -3085,8 +3092,8 @@ body.home-intro-complete .site-header-home {
     width: min(320px, calc(100vw - 32px));
   }
 
-  .darling-splash-title {
-    font-size: clamp(3.8rem, 17vw, 5.4rem);
+  .darling-splash-logo {
+    width: min(240px, calc(100vw - 64px));
   }
 
   .darling-splash-links {

@@ -44,9 +44,15 @@ export function HomeHeroIntro({ slides, venues }: HomeHeroIntroProps) {
         aria-hidden={phase === "complete"}
       >
         <div className="darling-splash-inner">
-          <div className="darling-splash-title" aria-hidden="true">
-            <span className="darling-splash-title-top">VENTO</span>
-            <span className="darling-splash-title-bottom">GROUP</span>
+          <div className="darling-splash-logo" aria-hidden="true">
+            <div className="darling-splash-logo-half darling-splash-logo-top">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/branding/vento-wordmark-white.svg" alt="" draggable={false} />
+            </div>
+            <div className="darling-splash-logo-half darling-splash-logo-bottom">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/branding/vento-wordmark-white.svg" alt="" draggable={false} />
+            </div>
           </div>
 
           <div className={`darling-splash-links ${phase === "links" ? "darling-splash-links-visible" : ""}`}>
