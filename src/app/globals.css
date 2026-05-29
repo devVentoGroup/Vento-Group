@@ -2487,19 +2487,35 @@ body.home-intro-complete .site-header-home {
   transform: translateY(0);
 }
 
-/* Inner pages: always solid dark */
+/* Inner pages: always white/cream with dark text */
 .site-header:not(.site-header-home) {
-  background: rgba(10, 10, 10, 0.97);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(250, 247, 242, 0.98);
+  border-bottom: 1px solid rgba(180, 168, 157, 0.28);
   backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(180, 168, 157, 0.2);
 }
 
 /* Scrolled up (home): solid dark */
 .site-header-home.site-header-scrolled {
-  background: rgba(10, 10, 10, 0.97);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(250, 247, 242, 0.98);
+  border-bottom: 1px solid rgba(180, 168, 157, 0.28);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(180, 168, 157, 0.2);
+}
+
+/* Scrolled home: dark text on light background */
+.site-header-home.site-header-scrolled .home-nav-link {
+  color: rgba(36, 35, 34, 0.88);
+}
+
+.site-header-home.site-header-scrolled .home-brand-wordmark {
+  filter: brightness(0) saturate(100%);
+}
+
+.site-header-home.site-header-scrolled .nav-menu-btn {
+  border-color: rgba(36, 35, 34, 0.3);
+  background: rgba(36, 35, 34, 0.06);
+  color: rgba(36, 35, 34, 0.88);
 }
 
 /* Hidden: slide off top — !important overrides intro-complete transform */
@@ -3714,43 +3730,42 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* ── Botón outline-light — secciones oscuras de FASE
 
-/* ── Inner page fixed header: white text on dark background ── */
+/* ── Inner page fixed header: dark text on light background ── */
 .site-header:not(.site-header-home) .brand {
-  color: rgba(250, 247, 242, 0.96);
+  color: rgba(36, 35, 34, 0.96);
 }
 
 .site-header:not(.site-header-home) .brand-subtitle {
-  color: rgba(250, 247, 242, 0.55);
+  color: rgba(36, 35, 34, 0.55);
 }
 
 .site-header:not(.site-header-home) .nav-link {
-  color: rgba(250, 247, 242, 0.88);
+  color: rgba(36, 35, 34, 0.82);
   letter-spacing: 0.12em;
   font-size: 0.82rem;
 }
 
 .site-header:not(.site-header-home) .nav-link:hover {
-  color: rgba(250, 247, 242, 1);
+  color: rgba(36, 35, 34, 1);
 }
 
 .site-header:not(.site-header-home) .nav-menu-btn {
-  border-color: rgba(250, 247, 242, 0.3);
-  background: rgba(250, 247, 242, 0.08);
-  color: rgba(250, 247, 242, 0.92);
+  border-color: rgba(36, 35, 34, 0.28);
+  background: rgba(36, 35, 34, 0.05);
+  color: rgba(36, 35, 34, 0.85);
 }
 
 .site-header:not(.site-header-home) .nav-menu-btn:hover {
-  background: rgba(250, 247, 242, 0.14);
-  border-color: rgba(250, 247, 242, 0.5);
+  background: rgba(36, 35, 34, 0.1);
+  border-color: rgba(36, 35, 34, 0.45);
 }
 
 .site-header:not(.site-header-home) .nav-cta {
-  background: rgba(250, 247, 242, 0.12);
-  border: 1px solid rgba(250, 247, 242, 0.25);
+  background: rgba(36, 35, 34, 0.9);
+  border: 1px solid transparent;
   color: rgba(250, 247, 242, 0.95);
 }
 
 .site-header:not(.site-header-home) .nav-cta:hover {
-  background: rgba(250, 247, 242, 0.2);
-  border-color: rgba(250, 247, 242, 0.45);
+  background: rgba(36, 35, 34, 1);
 }
