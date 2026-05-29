@@ -87,7 +87,7 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
             <div className="venues-showcase-detail-top">
               <div className="venues-showcase-carousel-top">
                 <button type="button" className="venues-showcase-arrow" onClick={goPrev} aria-label="Restaurante anterior">
-                  Anterior
+                  ←
                 </button>
                 <div className="venues-showcase-count">
                   <span>{activeIndex + 1}</span>
@@ -136,7 +136,7 @@ export function HomeVenuesShowcase({ items }: HomeVenuesShowcaseProps) {
                   {current.action_label ?? "Explorar"}
                 </a>
                 <button type="button" className="venues-showcase-arrow" onClick={goNext} aria-label="Restaurante siguiente">
-                  Siguiente
+                  →
                 </button>
               </div>
             </div>

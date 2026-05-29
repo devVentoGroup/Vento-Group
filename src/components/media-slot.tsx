@@ -11,7 +11,7 @@ export function MediaSlot({ label, mediaUrl, mediaType, className }: MediaSlotPr
   if (!mediaUrl) {
     return (
       <div className={`media-shell ${className ?? ""}`}>
-        <div className="placeholder">{label} · media pendiente</div>
+        <div className="placeholder" aria-label={label}>{label}</div>
       </div>
     );
   }
