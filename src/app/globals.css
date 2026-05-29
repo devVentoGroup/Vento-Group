@@ -355,8 +355,9 @@ a {
 .hero-title {
   margin: 12px 0 0;
   font-family: var(--font-display), serif;
-  font-size: clamp(2.1rem, 4vw, 3.6rem);
-  line-height: 1.05;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 }
 
 .home-hero-panel .hero-title {
@@ -365,8 +366,8 @@ a {
 
 .hero-copy {
   margin: 16px 0 0;
-  color: #4a3f3a;
-  line-height: 1.7;
+  color: rgba(250, 247, 242, 0.82);
+  line-height: 1.68;
   max-width: 58ch;
 }
 
@@ -1362,12 +1363,12 @@ a {
 }
 
 .category-main {
-  background: linear-gradient(180deg, rgba(255, 254, 251, 0.55) 0%, rgba(255, 252, 246, 0.78) 100%);
+  background: #faf7f2;
 }
 
 .category-hero {
   position: relative;
-  min-height: clamp(420px, 64vh, 680px);
+  min-height: clamp(520px, 72vh, 800px);
   overflow: clip;
 }
 
@@ -1378,6 +1379,7 @@ a {
   height: 100%;
   border-radius: 0;
   border: none;
+  background: #1a1614;
 }
 
 .category-hero-media-shell .placeholder {
@@ -1388,33 +1390,26 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 8, 8, 0.74) 0%, rgba(8, 8, 8, 0.36) 45%, rgba(8, 8, 8, 0.15) 100%),
-    linear-gradient(180deg, rgba(8, 8, 8, 0.24) 0%, rgba(8, 8, 8, 0.5) 100%);
+    linear-gradient(180deg, rgba(6,5,4,0.52) 0%, rgba(6,5,4,0.68) 60%, rgba(6,5,4,0.82) 100%);
 }
 
 .category-hero-content {
   position: relative;
   z-index: 2;
-  min-height: clamp(420px, 64vh, 680px);
+  min-height: clamp(520px, 72vh, 800px);
   display: flex;
   align-items: flex-end;
-  padding: 118px 0 56px;
+  padding: 120px 0 72px;
 }
 
 .category-hero-panel {
-  width: min(620px, 100%);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: linear-gradient(180deg, rgba(20, 16, 13, 0.62), rgba(12, 10, 8, 0.78));
-  backdrop-filter: blur(4px);
-  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.24);
-  padding: 30px;
+  width: min(720px, 100%);
 }
 
 .category-hero-panel .eyebrow,
 .category-hero-panel .hero-title,
 .category-hero-panel .hero-copy {
-  color: #fff;
+  color: rgba(250, 247, 242, 0.92);
 }
 
 .category-list-section {
