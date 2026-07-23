@@ -1,0 +1,44 @@
+name: WEB-AUD-009 Visual Baseline
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/web-aud-009-visual-baseline.yml'
+      - 'scripts/capture-visual-baseline.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Capture production baseline
+        env:
+          VISUAL_BASE_URL: https://www.ventogroup.co
+          VISUAL_OUT_DIR: artifacts/web-aud-009
+        run: node scripts/capture-visual-baseline.mjs
+
+      - name: Upload visual baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-aud-009-visual-baseline
+          path: artifacts/web-aud-009
+          if-no-files-found: error
+          retention-days: 30
