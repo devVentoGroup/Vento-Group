@@ -1,0 +1,106 @@
+name: WEB-AUD-010 Performance Baseline
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Chrome and Lighthouse
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser jq
+          npm install --no-save lighthouse@12.8.2
+
+      - name: Capture Lighthouse reports
+        env:
+          BASE_URL: https://www.ventogroup.co
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/web-aud-010/lighthouse
+
+          routes=(
+            "home:/"
+            "restaurants:/restaurantes"
+            "vento-cafe:/restaurantes/vento-cafe"
+            "saudo:/restaurantes/saudo"
+            "molka:/restaurantes/molka"
+            "jobs:/empleos"
+            "services:/servicios"
+            "ecosystem:/ecosistema"
+            "events:/eventos"
+            "not-found:/ruta-inexistente-web-aud-010"
+          )
+
+          for item in "${routes[@]}"; do
+            name="${item%%:*}"
+            route="${item#*:}"
+            url="${BASE_URL}${route}"
+
+            for mode in mobile desktop; do
+              preset=""
+              if [ "$mode" = "desktop" ]; then
+                preset="--preset=desktop"
+              fi
+
+              echo "Auditing $mode $url"
+              npx lighthouse "$url" \
+                $preset \
+                --output=json \
+                --output-path="artifacts/web-aud-010/lighthouse/${mode}-${name}.json" \
+                --only-categories=performance,accessibility,best-practices,seo \
+                --chrome-path=/usr/bin/chromium-browser \
+                --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
+                --quiet
+            done
+          done
+
+      - name: Capture headers and transfer inventory
+        env:
+          BASE_URL: https://www.ventogroup.co
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/web-aud-010/headers
+          routes=(
+            "home:/"
+            "restaurants:/restaurantes"
+            "vento-cafe:/restaurantes/vento-cafe"
+            "saudo:/restaurantes/saudo"
+            "molka:/restaurantes/molka"
+            "jobs:/empleos"
+            "services:/servicios"
+            "ecosystem:/ecosistema"
+            "events:/eventos"
+            "not-found:/ruta-inexistente-web-aud-010"
+          )
+
+          for item in "${routes[@]}"; do
+            name="${item%%:*}"
+            route="${item#*:}"
+            curl -sS -L -D "artifacts/web-aud-010/headers/${name}.txt" -o /dev/null "${BASE_URL}${route}"
+          done
+
+      - name: Summarize reports
+        run: node scripts/web-aud-010-summarize.mjs artifacts/web-aud-010
+
+      - name: Upload performance baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-aud-010-performance-baseline
+          path: artifacts/web-aud-010
+          retention-days: 30
