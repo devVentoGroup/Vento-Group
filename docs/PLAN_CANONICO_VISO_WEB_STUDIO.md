@@ -6043,14 +6043,1524 @@ WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
 | `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-004` con verificación de base activa y jerarquía Markdown validada | Propuesta vigente |
 
 
-# [ ] **WEB-AUD-005 — Auditar VISO Website CMS**
-  - Flujos existentes.
-  - Campos.
-  - Permisos.
-  - Validaciones.
-  - Errores.
-  - Experiencia de usuario.
-  - Acciones peligrosas.
+# WEB-AUD-005 — Auditoría canónica de VISO Website CMS
+
+> Auditoría funcional, técnica, de seguridad y experiencia de usuario del CMS actual utilizado para administrar `ventogroup.co` desde VISO.
+
+## 0. Control documental
+
+| Campo                  | Valor                                                                     |
+| ---------------------- | ------------------------------------------------------------------------- |
+| Identificador          | `WEB-AUD-005`                                                             |
+| Nombre                 | Auditar VISO Website CMS                                                  |
+| Fase                   | FASE 1 — Auditoría y línea base                                           |
+| Estado                 | **PROPUESTA PARA APROBACIÓN**                                             |
+| Fecha                  | `2026-07-23`                                                              |
+| Repositorio auditado   | `devVentoGroup/vento-viso`                                                |
+| Aplicación             | VISO                                                                      |
+| Ruta principal         | `/website-cms`                                                            |
+| Alcance                | Flujos, campos, permisos, validaciones, errores, UX y acciones peligrosas |
+| Cambios en código      | Ninguno                                                                   |
+| Cambios en Supabase    | Ninguno                                                                   |
+| Cambios en producción  | Ninguno                                                                   |
+| Próxima tarea canónica | `WEB-AUD-006 — Auditar Supabase`                                          |
+
+## 1. Corrección de continuidad
+
+La entrega previa de `WEB-ARC-005` fue realizada fuera de secuencia.
+
+Para efectos del plan canónico:
+
+- `WEB-ARC-005` **no queda aprobada**;
+- `WEB-ARC-005` **no debe marcarse como completada**;
+- su archivo puede conservarse únicamente como borrador de referencia;
+- deberá revisarse nuevamente cuando se complete la Fase 1 y corresponda entrar al bloque de arquitectura.
+
+La secuencia vigente es:
+
+```text
+[x] WEB-AUD-001 — Inventariar todas las rutas públicas
+[x] WEB-AUD-002 — Inventariar todos los componentes públicos
+[x] WEB-AUD-003 — Inventariar contenido hardcodeado
+[ ] WEB-AUD-004 — Inventariar contenido administrable
+[ ] WEB-AUD-005 — Auditar VISO Website CMS
+[ ] WEB-AUD-006 — Auditar Supabase
+```
+
+`WEB-AUD-004` fue desarrollada, pero no se marca aprobada dentro de este documento porque no existe una aprobación explícita registrada.
+
+## 2. Objetivo
+
+Evaluar el CMS actual de VISO como producto operativo y como superficie administrativa crítica.
+
+La auditoría debe determinar:
+
+1. qué flujos existen;
+2. qué acciones puede ejecutar un usuario;
+3. qué campos se administran;
+4. cómo se autorizan las acciones;
+5. qué validaciones existen;
+6. cómo se manejan los errores;
+7. qué tan comprensible es la experiencia;
+8. qué acciones pueden causar pérdida, corrupción o publicación accidental;
+9. qué brechas deben resolverse antes de reemplazar el CMS por VISO Web Studio;
+10. qué controles temporales necesita el CMS mientras siga operativo.
+
+## 3. Alcance técnico
+
+### 3.1 Rutas auditadas
+
+| Ruta                             | Función                                 |
+| -------------------------------- | --------------------------------------- |
+| `/website-cms`                   | Dashboard general                       |
+| `/website-cms/blocks/new`        | Crear bloque                            |
+| `/website-cms/blocks/[id]`       | Editar bloque                           |
+| `/website-cms/items/new`         | Crear item                              |
+| `/website-cms/items/[id]`        | Editar o eliminar item                  |
+| `/website-cms/venues`            | Administrar restaurantes                |
+| `/website-cms/venues/[slug]`     | Editar detalle y galería de restaurante |
+| `/api/viso/upload-website-media` | Subir archivos                          |
+
+### 3.2 Utilidades auditadas
+
+- `src/lib/website-cms.ts`;
+- `src/lib/auth/guard.ts`;
+- `src/lib/supabase/admin.ts`;
+- `src/components/viso/website-media-upload-field.tsx`;
+- `src/app/website-cms/items/category-meta.ts`.
+
+### 3.3 Elementos excluidos
+
+Esta tarea no implementa:
+
+- nuevo editor;
+- nuevos permisos;
+- migraciones;
+- borradores;
+- publicación versionada;
+- correcciones del CMS;
+- cambios de producción.
+
+## 4. Resultado ejecutivo
+
+### 4.1 Evaluación general
+
+| Área                   | Estado                   | Diagnóstico                                                            |
+| ---------------------- | ------------------------ | ---------------------------------------------------------------------- |
+| Flujos CRUD            | 🟡 Parciales              | Existen, pero dependen de formularios técnicos y filas legacy          |
+| Campos                 | 🟡 Amplios pero genéricos | Muchos campos no corresponden semánticamente a cada categoría          |
+| Permisos               | 🔴 Críticos               | Acceso general a VISO habilita acciones CMS con cliente administrativo |
+| Validaciones           | 🔴 Insuficientes          | Solo validaciones básicas y no bloqueantes                             |
+| Errores                | 🔴 Frágiles               | Mensajes crudos, pérdida de formulario y operaciones parciales         |
+| Experiencia de usuario | 🟡 Inconsistente          | Items guiados; bloques siguen siendo técnicos                          |
+| Publicación            | 🔴 Peligrosa              | Creación publicada por defecto y cambios directos                      |
+| Eliminación            | 🔴 Peligrosa              | Borrado permanente sin confirmación ni restauración                    |
+| Medios                 | 🔴 Inconsistente          | Permisos distintos, sin preview y entrega pública contradictoria       |
+| Integridad             | 🔴 Crítica                | Cambios de slug/categoría pueden romper referencias                    |
+| Auditoría              | 🔴 Inexistente            | No hay autor, historial, diff ni rollback                              |
+| Escalabilidad          | 🟡 Limitada               | Sin paginación, búsqueda, schemas ni separación por dominio            |
+
+### 4.2 Nivel de madurez
+
+```text
+CRUD BÁSICO                  ███████░░░  Funcional
+GUÍA PARA USUARIO           ██████░░░░  Parcial
+VALIDACIÓN DE DATOS         ███░░░░░░░  Insuficiente
+AUTORIZACIÓN GRANULAR       █░░░░░░░░░  Inexistente
+BORRADORES                  ██░░░░░░░░  Checkbox de visibilidad
+PUBLICACIÓN CONTROLADA      ░░░░░░░░░░  Inexistente
+PREVIEW REAL                ██░░░░░░░░  Solo tarjeta de restaurante
+VERSIONES Y ROLLBACK        ░░░░░░░░░░  Inexistente
+SEGURIDAD OPERATIVA         ██░░░░░░░░  Crítica
+```
+
+### 4.3 Conclusión principal
+
+El CMS actual es útil como herramienta administrativa provisional, pero no es seguro ni suficiente para convertirse en el editor definitivo.
+
+La principal debilidad no es visual. Es la combinación de:
+
+```text
+acceso amplio a VISO
+        +
+cliente service_role
+        +
+edición directa de filas publicadas
+        +
+validación mínima
+        +
+sin historial ni rollback
+```
+
+## 5. Mapa de flujos existentes
+
+### 5.1 Flujo del dashboard
+
+```text
+/website-cms
+├── accesos rápidos
+├── conteos de items
+├── filtros por categoría
+├── tabla de items
+├── filtros por página
+└── tabla de bloques
+```
+
+### 5.2 Flujo de creación de bloque
+
+```text
+Agregar sección
+   ↓
+escribir page_slug
+   ↓
+escribir block_key
+   ↓
+seleccionar block_type limitado
+   ↓
+completar contenido
+   ↓
+Publicado marcado por defecto
+   ↓
+insert directo en website_blocks
+```
+
+### 5.3 Flujo de edición de bloque
+
+```text
+Editar bloque
+   ↓
+modificar page_slug / block_key / block_type
+   ↓
+modificar contenido y medio
+   ↓
+guardar
+   ↓
+update directo de la fila
+```
+
+### 5.4 Flujo de creación de item
+
+```text
+Agregar contenido
+   ↓
+seleccionar categoría
+   ↓
+completar nombre y campos básicos
+   ↓
+slug automático
+   ↓
+orden automático
+   ↓
+Publicado marcado por defecto
+   ↓
+insert directo en website_items
+   ↓
+redirigir al editor completo
+```
+
+### 5.5 Flujo de edición de item
+
+```text
+Editar item
+├── guía por categoría
+├── indicador de completitud
+├── contenido
+├── contexto
+├── CTA
+├── medios
+├── publicación
+├── opciones avanzadas
+└── eliminación permanente
+```
+
+### 5.6 Flujo de restaurantes
+
+```text
+Restaurantes
+├── crear manualmente
+├── importar negocios activos
+├── editar tarjeta
+└── editar detalle
+    ├── hero
+    ├── historia
+    └── tres slots de galería
+```
+
+### 5.7 Flujo de medios
+
+```text
+input de URL
+   o
+selector de archivo
+   ↓
+POST /api/viso/upload-website-media
+   ↓
+Storage
+   ↓
+URL devuelta al input
+   ↓
+guardar formulario por separado
+```
+
+## 6. Auditoría del dashboard
+
+### 6.1 Aspectos positivos
+
+El dashboard:
+
+- utiliza nombres amigables para varias páginas y categorías;
+- separa tarjetas de contenido y bloques editoriales;
+- ofrece filtros;
+- muestra estado publicado u oculto;
+- muestra accesos rápidos;
+- muestra conteos por categoría;
+- proporciona estados vacíos;
+- vincula restaurantes con su editor especializado.
+
+### 6.2 Error de conteos al filtrar
+
+La consulta de items se filtra antes de calcular los conteos.
+
+Consecuencia:
+
+- al filtrar por una categoría, las tarjetas rápidas de las demás categorías pueden mostrar cero;
+- el usuario puede interpretar que no existen contenidos cuando en realidad quedaron fuera de la consulta.
+
+### 6.3 Acciones rápidas mal dirigidas
+
+Los botones:
+
+- `+ Publicar vacante`;
+- `+ Agregar evento`;
+- `+ Agregar servicio`;
+
+dirigen a:
+
+```text
+/website-cms/items/new
+```
+
+La página de creación selecciona por defecto:
+
+```text
+restaurant
+```
+
+Consecuencia:
+
+- el usuario hace clic en “Publicar vacante”;
+- llega a un formulario de restaurante;
+- debe cambiar manualmente el tipo.
+
+Destino correcto esperado:
+
+```text
+/website-cms/items/new?tipo=job
+/website-cms/items/new?tipo=event
+/website-cms/items/new?tipo=service
+```
+
+### 6.4 Información pública incorrecta
+
+La tarjeta de Eventos afirma:
+
+```text
+Agenda de eventos y activaciones en ventogroup.co/eventos.
+```
+
+Pero `/eventos` redirige a `/restaurantes`.
+
+El CMS presenta como funcional una superficie pública inexistente.
+
+### 6.5 Mapeo incompleto de bloques
+
+`PAGE_NAMES` y `PAGE_FILTERS` contemplan páginas generales, pero no las claves de detalle como:
+
+```text
+restaurant:<slug>
+restaurant_<slug>
+restaurante:<slug>
+```
+
+Consecuencias:
+
+- los detalles pueden mostrarse con nombres técnicos;
+- no pueden filtrarse fácilmente por restaurante;
+- los bloques de galería no tienen nombres amigables completos;
+- el usuario ve claves como `gallery_1`.
+
+### 6.6 Codificación visual dañada
+
+En el código visible existen secuencias mojibake para emojis, por ejemplo:
+
+```text
+ðŸ½
+ðŸ’¼
+ðŸŽ‰
+ðŸ› 
+```
+
+Esto puede producir iconos corruptos en la interfaz.
+
+### 6.7 Mensaje peligroso de producto
+
+El subtítulo principal afirma:
+
+```text
+Los cambios se reflejan de inmediato.
+```
+
+El mensaje normaliza una operación peligrosa:
+
+- no hay borrador real;
+- no hay revisión;
+- no hay diff;
+- no hay rollback;
+- no hay confirmación de publicación.
+
+La interfaz debería distinguir claramente:
+
+```text
+Guardado como borrador
+Vista previa
+Publicado
+```
+
+## 7. Auditoría de campos
+
+### 7.1 Campos de bloque
+
+| Campo          |             Crear |      Editar | Riesgo                                    |
+| -------------- | ----------------: | ----------: | ----------------------------------------- |
+| `page_slug`    |                Sí |          Sí | Puede mover contenido a otra página       |
+| `block_key`    |                Sí |          Sí | Puede romper la clave consumida por React |
+| `block_type`   | Selector limitado | Texto libre | Puede crear tipo desconocido              |
+| `title`        |                Sí |          Sí | Sin límites                               |
+| `subtitle`     |                Sí |          Sí | Sin límites                               |
+| `body`         |                Sí |          Sí | Sin schema ni sanitización específica     |
+| `cta_label`    |                Sí |          Sí | No se valida correspondencia con URL      |
+| `cta_url`      |                Sí |          Sí | No se valida                              |
+| `media_url`    |                Sí |          Sí | URL libre                                 |
+| `media_type`   |                Sí |          Sí | Puede no coincidir con el archivo         |
+| `sort_order`   |                Sí |          Sí | Cualquier número                          |
+| `is_published` |                Sí |          Sí | Marcado por defecto                       |
+
+### 7.2 Inconsistencia de tipos de bloque
+
+La creación ofrece:
+
+```text
+content
+hero_slide
+editorial_band
+```
+
+El resto del sistema utiliza además:
+
+```text
+hero
+media
+detail_hero
+gallery_media
+event_spaces
+```
+
+En edición, `block_type` es un input libre.
+
+No existe un catálogo único.
+
+### 7.3 Campos de item
+
+| Campo           | Uso actual                              |
+| --------------- | --------------------------------------- |
+| `category`      | Tipo de entidad                         |
+| `slug`          | URL interna                             |
+| `title`         | Nombre                                  |
+| `excerpt`       | Descripción corta                       |
+| `body`          | Descripción extendida                   |
+| `location`      | Dirección, sede, lugar o disponibilidad |
+| `schedule_text` | Horario, contrato, fecha o modalidad    |
+| `start_at`      | Inicio del evento                       |
+| `end_at`        | Fin del evento                          |
+| `image_url`     | Imagen                                  |
+| `video_url`     | Video                                   |
+| `action_label`  | Texto de CTA                            |
+| `action_url`    | Destino                                 |
+| `sort_order`    | Orden                                   |
+| `is_published`  | Visibilidad                             |
+
+### 7.4 Ambigüedad semántica
+
+Los mismos campos se reutilizan para cinco dominios.
+
+Ejemplos:
+
+- `location` significa dirección, sede laboral, lugar del evento o disponibilidad;
+- `schedule_text` significa horario, contrato, fecha textual o modalidad;
+- `action_url` significa reserva, aplicación, inscripción, contacto o acceso a app.
+
+La guía cambia el label, pero la base y las validaciones continúan siendo genéricas.
+
+### 7.5 Campos peligrosos en opciones avanzadas
+
+El editor permite cambiar:
+
+- categoría;
+- slug;
+- orden.
+
+Cambiar categoría o slug puede:
+
+- cambiar la URL pública;
+- romper enlaces externos;
+- perder posicionamiento SEO;
+- dejar bloques de restaurante asociados al slug anterior;
+- volver inaccesible una galería;
+- convertir una entidad en otra sin migrar campos;
+- generar colisión de unicidad.
+
+No existe una operación de migración ni redirección asociada.
+
+### 7.6 Galería rígida
+
+El editor de restaurante dispone de exactamente:
+
+```text
+gallery_1
+gallery_2
+gallery_3
+```
+
+No permite:
+
+- agregar más;
+- eliminar dinámicamente;
+- reordenar;
+- arrastrar;
+- indicar alt text;
+- seleccionar desde biblioteca;
+- definir focal point.
+
+## 8. Auditoría de permisos
+
+### 8.1 Guardia aplicada
+
+Todas las rutas CMS ejecutan:
+
+```text
+requireAppAccess({ appId: "viso" })
+```
+
+No pasan:
+
+- `permissionCode`;
+- permiso de lectura web;
+- permiso de edición;
+- permiso de publicación;
+- permiso de eliminación;
+- permiso de medios;
+- permiso de importación.
+
+### 8.2 Consecuencia
+
+Cualquier usuario que supere el acceso general a VISO puede, según las rutas actuales:
+
+- consultar todo el CMS;
+- crear bloques;
+- modificar bloques;
+- crear items;
+- modificar items;
+- cambiar estado publicado;
+- eliminar items;
+- importar restaurantes;
+- modificar detalles;
+- modificar galerías.
+
+### 8.3 Uso de cliente administrativo
+
+Después de la guardia general, las acciones usan:
+
+```text
+createAdminClient()
+```
+
+Ese cliente utiliza:
+
+```text
+SUPABASE_SERVICE_ROLE_KEY
+```
+
+y omite RLS.
+
+La seguridad de cada acción depende completamente de que la guardia previa sea correcta y suficientemente específica.
+
+Actualmente no lo es, porque solo valida acceso general a la aplicación.
+
+### 8.4 Dispositivos compartidos
+
+`requireAppAccess` contempla sesiones de dispositivo compartido.
+
+Si un dispositivo compartido tiene permitido acceder a VISO, las rutas CMS no exigen un permiso adicional específico.
+
+Debe prohibirse explícitamente la edición web desde dispositivos compartidos salvo una decisión canónica excepcional.
+
+### 8.5 Simulación de rol
+
+La guardia soporta role override, pero las rutas no solicitan permisos específicos.
+
+La simulación afecta principalmente el acceso general, no una matriz editorial granular.
+
+### 8.6 Permisos de subida inconsistentes
+
+El endpoint de medios no usa `requireAppAccess` ni el catálogo canónico de permisos.
+
+Consulta directamente:
+
+```text
+employees.role
+```
+
+y solo acepta:
+
+```text
+propietario
+gerente_general
+```
+
+Consecuencias:
+
+- un editor con acceso al CMS puede no poder subir archivos;
+- la autorización de medios no respeta permisos efectivos;
+- no respeta necesariamente role override;
+- no utiliza contexto operativo;
+- no usa una capacidad `website.media.upload`.
+
+### 8.7 Matriz actual efectiva
+
+| Acción             | Requisito actual                           |
+| ------------------ | ------------------------------------------ |
+| Ver CMS            | Acceso general a VISO                      |
+| Crear bloque       | Acceso general a VISO                      |
+| Editar bloque      | Acceso general a VISO                      |
+| Crear item         | Acceso general a VISO                      |
+| Editar item        | Acceso general a VISO                      |
+| Publicar u ocultar | Acceso general a VISO                      |
+| Eliminar item      | Acceso general a VISO                      |
+| Importar negocios  | Acceso general a VISO                      |
+| Subir medio        | Rol base `propietario` o `gerente_general` |
+
+### 8.8 Diagnóstico
+
+La autorización actual es:
+
+- demasiado amplia para datos;
+- demasiado estrecha e inconsistente para medios;
+- incompatible con el modelo canónico de permisos;
+- de alto riesgo debido al uso de `service_role`.
+
+## 9. Auditoría de validaciones
+
+### 9.1 Validaciones existentes
+
+#### Bloques
+
+- `page_slug` obligatorio;
+- `block_key` obligatorio;
+- fallback de `block_type`;
+- parseo básico de número;
+- checkbox a booleano.
+
+#### Items
+
+- categoría obligatoria;
+- título obligatorio;
+- categoría dentro de cinco valores;
+- slug automático al crear;
+- prevención básica de colisión de slug;
+- orden automático;
+- parseo de fechas.
+
+#### Restaurantes
+
+- nombre obligatorio;
+- normalización básica del tipo de medio.
+
+#### Medios
+
+- usuario autenticado;
+- dos roles permitidos;
+- archivo presente;
+- tamaño máximo;
+- MIME de imagen o video;
+- sanitización del scope.
+
+### 9.2 Validaciones inexistentes
+
+No se valida:
+
+- longitud mínima o máxima;
+- ortografía;
+- URL válida;
+- esquema permitido;
+- destino `#`;
+- relación CTA label/URL;
+- slug reservado;
+- cambio de slug con redirección;
+- contenido requerido antes de publicar;
+- fecha fin posterior a inicio;
+- fecha pasada;
+- evento vencido;
+- imagen requerida;
+- dimensiones;
+- relación de aspecto;
+- peso recomendado;
+- alt text;
+- focal point;
+- media type contra MIME;
+- existencia pública del medio;
+- schema según bloque;
+- block key contra catálogo;
+- page slug contra página real;
+- duplicidad semántica;
+- HTML o estructura enriquecida;
+- compatibilidad de categoría y campos.
+
+### 9.3 Completitud no bloqueante
+
+El editor de items calcula completitud para restaurantes y vacantes.
+
+Sin embargo:
+
+- solo es informativa;
+- no impide publicar;
+- no cubre servicios, eventos o apps;
+- no valida contenido extendido;
+- no valida fechas;
+- no valida SEO;
+- no valida medios públicos.
+
+### 9.4 Completitud inconsistente
+
+La lista de restaurantes considera “Completo” si existen:
+
+```text
+imagen + descripción corta
+```
+
+El editor detallado considera además:
+
+- ubicación;
+- horario;
+- CTA válido.
+
+Un restaurante puede aparecer como “Completo” en la lista y “Incompleto” al abrirlo.
+
+### 9.5 Guía que recomienda un valor inválido
+
+La guía de restaurantes indica:
+
+```text
+Si no tienes [link], deja #.
+```
+
+El mismo sistema de completitud considera `#` como enlace incompleto.
+
+La interfaz enseña una práctica que luego marca como incorrecta y que puede llegar al sitio público.
+
+### 9.6 Fechas silenciosamente descartadas
+
+`asNullableDate` convierte una fecha inválida en `null`.
+
+No informa al usuario que el valor fue inválido.
+
+### 9.7 Allowlist MIME inconsistente
+
+El uploader define una lista exacta, pero también permite cualquier MIME que comience por:
+
+```text
+image/
+video/
+```
+
+La lista exacta no funciona como allowlist estricta.
+
+El bucket puede rechazar el archivo después, generando una experiencia inconsistente.
+
+### 9.8 SVG
+
+Se permite SVG sin un proceso explícito de:
+
+- sanitización;
+- inspección;
+- normalización;
+- política de uso.
+
+Debe definirse si SVG se limita a logos internos o se procesa antes de publicarse.
+
+## 10. Auditoría de errores
+
+### 10.1 Patrón actual
+
+La mayoría de errores se manejan mediante:
+
+```text
+redirect("?error=" + encodeURIComponent(error.message))
+```
+
+### 10.2 Problemas del patrón
+
+- expone mensajes crudos de Supabase;
+- puede revelar nombres de tablas, constraints o políticas;
+- escribe el error en la URL y el historial;
+- pierde todos los datos no guardados del formulario;
+- no vincula el error con un campo;
+- no ofrece recuperación;
+- no asigna un identificador de incidente;
+- no registra contexto operativo.
+
+### 10.3 Mensajes manipulables por URL
+
+El dashboard muestra `ok` y `error` provenientes de query params.
+
+React escapa el contenido, pero un usuario puede construir una URL que muestre un mensaje falso de éxito o error.
+
+Los mensajes de operación deberían provenir de estado controlado o códigos conocidos.
+
+### 10.4 Ausencia de transacción
+
+Guardar el detalle de restaurante ejecuta:
+
+1. update de `website_items`;
+2. upsert de bloques.
+
+Si el primer paso funciona y el segundo falla:
+
+- la tarjeta queda actualizada;
+- el detalle queda sin actualizar;
+- el usuario recibe error;
+- no hay rollback.
+
+### 10.5 Importación parcial
+
+La importación de restaurantes:
+
+- consulta satélites;
+- consulta sitios;
+- consulta items existentes;
+- inserta nuevos items.
+
+Problemas:
+
+- el error de consulta de sitios no se procesa;
+- el error de consulta usado para el conteo de no sincronizados no se procesa;
+- una dirección puede quedar vacía sin explicación;
+- no existe transacción;
+- no existe reporte por restaurante;
+- no existe rollback.
+
+### 10.6 Actualización sin verificar filas afectadas
+
+Updates y deletes filtran por ID, pero no comprueban que se haya modificado o eliminado exactamente una fila.
+
+Una operación puede reportar éxito aun cuando no afectó el registro esperado.
+
+### 10.7 Revalidación incompleta
+
+Las acciones revalidan rutas internas de VISO.
+
+No existe en estas acciones un mecanismo explícito para:
+
+- invalidar caché de `ventogroup.co`;
+- revalidar la página pública afectada;
+- revalidar sitemap;
+- revalidar navegación;
+- revalidar colecciones relacionadas.
+
+### 10.8 Error de subida
+
+El componente asume que toda respuesta puede convertirse a JSON.
+
+Si el endpoint devuelve HTML o una respuesta inesperada, el usuario recibe un error genérico.
+
+No existe:
+
+- retry;
+- cancelación;
+- porcentaje;
+- reanudación;
+- log de archivo.
+
+## 11. Auditoría de experiencia de usuario
+
+### 11.1 Aspectos positivos
+
+- lenguaje más amigable en items;
+- labels por categoría;
+- guías rápidas;
+- placeholders contextualizados;
+- generación automática de slug;
+- cálculo automático de orden;
+- indicador de completitud;
+- editor especializado de restaurantes;
+- vista aproximada de la tarjeta;
+- enlace al sitio público;
+- estados visibles de publicación.
+
+### 11.2 Fragmentación de experiencia
+
+Existen tres niveles distintos de UX:
+
+1. dashboard relativamente amigable;
+2. editor de items guiado;
+3. editor de bloques técnico.
+
+El usuario debe aprender conceptos como:
+
+- `page_slug`;
+- `block_key`;
+- `block_type`;
+- `sort_order`;
+- `media_type`.
+
+Esto contradice el objetivo de un editor no técnico.
+
+### 11.3 Preview insuficiente
+
+Solo el restaurante tiene una maqueta parcial de tarjeta.
+
+No existe:
+
+- preview de página completa;
+- preview de hero;
+- preview de galería;
+- preview de bloques;
+- preview responsive;
+- preview de servicios;
+- preview de vacantes;
+- preview de eventos;
+- preview de apps;
+- preview de estado oculto;
+- preview de cambios antes de guardar.
+
+### 11.4 Vista de tarjeta no idéntica a producción
+
+La tarjeta de restaurante se reimplementa dentro de VISO.
+
+No utiliza el mismo componente público.
+
+Puede divergir en:
+
+- tipografía;
+- dimensiones;
+- estilos;
+- truncamiento;
+- CTA;
+- media.
+
+### 11.5 Sin advertencia de cambios no guardados
+
+El usuario puede:
+
+- editar;
+- usar Volver;
+- cambiar de ruta;
+- cerrar la pestaña;
+
+sin advertencia de pérdida.
+
+### 11.6 Sin estado de envío
+
+Los formularios no muestran:
+
+- guardando;
+- guardado;
+- error de red;
+- botón deshabilitado;
+- prevención de doble clic.
+
+### 11.7 Orden manual poco comprensible
+
+El orden se administra mediante números.
+
+No existe:
+
+- drag-and-drop;
+- botones subir/bajar;
+- detección de duplicados;
+- normalización;
+- vista previa del orden.
+
+### 11.8 Medios sin preview
+
+El campo de medios muestra:
+
+- URL;
+- file input;
+- mensaje de estado.
+
+No muestra:
+
+- miniatura;
+- video;
+- dimensiones;
+- tamaño;
+- tipo;
+- nombre;
+- uso actual;
+- error visual.
+
+### 11.9 Formulario largo
+
+El detalle de restaurante guarda en una sola acción:
+
+- tarjeta;
+- publicación;
+- hero;
+- contenido;
+- CTA;
+- tres medios;
+- orden.
+
+Un error en cualquier parte obliga a revisar todo el formulario.
+
+### 11.10 Ortografía y consistencia
+
+Existen labels y textos sin tildes:
+
+- `Pagina`;
+- `Subtitulo`;
+- `Boton`;
+- `Galeria`;
+- `Numero`;
+- `Mas opciones`;
+- `Ver mas`.
+
+También existen ejemplos centrados en Bogotá y Zona G, aunque la operación real es Cúcuta.
+
+### 11.11 Accesibilidad
+
+Aspectos positivos:
+
+- la mayoría de inputs está dentro de `label`;
+- hay IDs para varios checkboxes;
+- se usa estructura semántica básica.
+
+Brechas:
+
+- no existe resumen de errores;
+- no se mueve foco al error;
+- estados de upload no tienen `aria-live`;
+- los mensajes de éxito no usan región anunciable;
+- color participa en estados de completitud;
+- no hay confirmación accesible para borrado;
+- no hay focus management entre redirects.
+
+## 12. Auditoría de acciones peligrosas
+
+### 12.1 Publicar por defecto
+
+Crear bloque e item marca publicación por defecto.
+
+Riesgo:
+
+- contenido incompleto se vuelve visible;
+- errores de usuario afectan producción;
+- la guía indica completar después, pero el registro ya puede estar publicado.
+
+### 12.2 Edición directa de producción
+
+Guardar un registro publicado modifica el mismo registro que consulta el sitio.
+
+No existe:
+
+- copia de trabajo;
+- revisión;
+- aprobación;
+- diff;
+- ventana de publicación.
+
+### 12.3 Eliminación permanente sin confirmación
+
+El editor de item incluye un botón de eliminación permanente.
+
+La advertencia es texto estático, pero no existe:
+
+- confirmación;
+- nombre a escribir;
+- modal;
+- segunda acción;
+- soft delete;
+- papelera;
+- restauración.
+
+### 12.4 Eliminación huérfana
+
+Eliminar un restaurante de `website_items` no elimina ni archiva:
+
+- bloques de detalle;
+- galerías;
+- archivos;
+- enlaces;
+- referencias futuras.
+
+Puede dejar contenido huérfano.
+
+### 12.5 Cambio de slug
+
+Cambiar el slug de un restaurante no migra:
+
+- `restaurant:<slug>`;
+- `restaurant_<slug>`;
+- `restaurante:<slug>`;
+- URLs indexadas;
+- enlaces externos;
+- redirecciones.
+
+### 12.6 Cambio de categoría
+
+Un item puede cambiar de categoría sin migración.
+
+Ejemplo:
+
+```text
+restaurant → job
+```
+
+Los campos y referencias anteriores permanecen, pero cambian significado y destino.
+
+### 12.7 Modificación de claves de bloque
+
+Editar `page_slug`, `block_key` o `block_type` puede:
+
+- hacer desaparecer una sección;
+- moverla;
+- romper la página;
+- crear un tipo no renderizable;
+- colisionar con otra clave.
+
+### 12.8 `page_slug` oculto manipulable
+
+El detalle de restaurante envía `page_slug` como input oculto.
+
+La acción acepta ese valor y no verifica que corresponda al slug del restaurante.
+
+Un request modificado podría escribir bloques en otra agrupación.
+
+### 12.9 Upsert de slots vacíos
+
+Guardar un detalle crea o actualiza siempre:
+
+- hero;
+- gallery 1;
+- gallery 2;
+- gallery 3.
+
+Los checkboxes se inicializan como visibles.
+
+Es posible crear bloques publicados sin medio.
+
+### 12.10 Importación masiva sin selección
+
+`Importar negocios existentes`:
+
+- importa todos los negocios activos faltantes;
+- los publica;
+- no muestra preview;
+- no permite elegir;
+- no pide confirmación;
+- no conserva relación de origen.
+
+### 12.11 Archivos huérfanos
+
+La subida ocurre antes de guardar el formulario.
+
+Si el usuario:
+
+- cancela;
+- cambia de archivo;
+- abandona;
+- falla al guardar;
+
+el archivo queda almacenado sin referencia.
+
+### 12.12 Sobrescritura de archivos
+
+El endpoint usa:
+
+```text
+upsert: true
+```
+
+y nombres basados en timestamp.
+
+Aunque la colisión es poco probable, no se utiliza UUID ni hash de contenido.
+
+### 12.13 Entrega pública incorrecta
+
+El endpoint devuelve `getPublicUrl()` para un bucket actualmente privado.
+
+El formulario puede guardar una URL que el visitante público no puede cargar.
+
+### 12.14 Falta de auditoría
+
+No se registra:
+
+- quién creó;
+- quién editó;
+- quién publicó;
+- quién eliminó;
+- valor anterior;
+- motivo;
+- IP;
+- fecha de publicación;
+- rollback.
+
+## 13. Matriz de riesgos por acción
+
+| Acción                                      | Impacto | Probabilidad | Nivel   |
+| ------------------------------------------- | ------- | ------------ | ------- |
+| Publicar contenido incompleto               | Alto    | Alta         | Crítico |
+| Usuario VISO no editorial modifica el sitio | Alto    | Alta         | Crítico |
+| Borrar item sin recuperación                | Alto    | Media        | Crítico |
+| Cambiar slug y romper detalle               | Alto    | Media        | Alto    |
+| Cambiar block key y ocultar sección         | Alto    | Media        | Alto    |
+| Guardado parcial de restaurante             | Alto    | Media        | Alto    |
+| Importar negocios no deseados               | Medio   | Media        | Alto    |
+| Subir archivo que no carga públicamente     | Alto    | Alta         | Crítico |
+| Crear evento para ruta inexistente          | Medio   | Alta         | Alto    |
+| Perder formulario tras error                | Medio   | Alta         | Alto    |
+| Dejar archivos huérfanos                    | Medio   | Alta         | Alto    |
+| Duplicar orden                              | Bajo    | Alta         | Medio   |
+
+## 14. Controles temporales requeridos
+
+Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de contención antes de ampliar su uso.
+
+### 14.1 Autorización
+
+- permisos específicos;
+- prohibición en dispositivo compartido;
+- eliminar autorización directa por rol para medios;
+- separar ver, editar, publicar, eliminar e importar.
+
+### 14.2 Publicación
+
+- crear oculto por defecto;
+- bloquear publicación incompleta;
+- separar guardar y publicar;
+- confirmar publicación;
+- registrar actor y fecha.
+
+### 14.3 Eliminación
+
+- soft delete;
+- confirmación;
+- ver dependencias;
+- restauración;
+- impedir borrar entidades publicadas sin despublicar.
+
+### 14.4 Integridad
+
+- bloquear edición libre de claves técnicas;
+- migración controlada de slug;
+- transacciones;
+- validar una fila afectada;
+- limpiar o reasignar dependencias.
+
+### 14.5 Medios
+
+- resolver bucket privado;
+- miniatura;
+- validación real;
+- UUID;
+- limpieza de huérfanos;
+- alt text;
+- prohibir SVG hasta definir política.
+
+### 14.6 Errores
+
+- códigos de error controlados;
+- no mostrar error crudo de base;
+- preservar formulario;
+- registrar incidente;
+- estados de envío.
+
+## 15. Modelo de permisos requerido
+
+La definición definitiva corresponde a `WEB-PRD-002`, pero la auditoría establece las capacidades mínimas:
+
+```text
+website.view
+website.content.create
+website.content.edit
+website.content.hide
+website.content.publish
+website.content.delete
+website.media.view
+website.media.upload
+website.media.replace
+website.media.delete
+website.venues.import
+website.settings.manage
+```
+
+### 15.1 Reglas mínimas
+
+- `view` no implica editar;
+- `edit` no implica publicar;
+- `publish` no implica eliminar;
+- `media.upload` no depende de nombre de rol;
+- `venues.import` es sensible;
+- `delete` requiere confirmación y auditoría;
+- dispositivos compartidos no editan por defecto.
+
+## 16. Registro canónico de brechas
+
+| Brecha        | Descripción                                                       | Severidad | Tareas responsables                         |
+| ------------- | ----------------------------------------------------------------- | --------- | ------------------------------------------- |
+| `WEB-GAP-085` | Acceso general a VISO permite administrar el CMS                  | Crítica   | `WEB-PRD-002`, `WEB-SEC-018`                |
+| `WEB-GAP-086` | Acciones CMS usan `service_role` sin permiso editorial específico | Crítica   | `WEB-SEC-018`                               |
+| `WEB-GAP-087` | Dispositivos compartidos no están excluidos del CMS               | Crítica   | `WEB-PRD-002`, `WEB-SEC-018`                |
+| `WEB-GAP-088` | Permisos de medios dependen de roles hardcodeados                 | Alta      | `WEB-PRD-002`, `WEB-MED-013`, `WEB-SEC-018` |
+| `WEB-GAP-089` | Contenido nuevo se publica por defecto                            | Crítica   | `WEB-PUB-001`, `WEB-SEC-018`                |
+| `WEB-GAP-090` | Guardado modifica directamente producción                         | Crítica   | `ADR-WEB-004`, `WEB-PUB-002`, `WEB-PUB-008` |
+| `WEB-GAP-091` | Eliminación permanente no tiene confirmación ni rollback          | Crítica   | `WEB-SEC-018`, `WEB-PUB-011`                |
+| `WEB-GAP-092` | Eliminar items deja bloques y medios huérfanos                    | Alta      | `WEB-MIG-022`, `WEB-SEC-018`                |
+| `WEB-GAP-093` | Cambio de slug no migra bloques ni crea redirección               | Crítica   | `WEB-PRD-016`, `WEB-SEC-018`                |
+| `WEB-GAP-094` | Cambio libre de categoría puede corromper semántica               | Alta      | `WEB-RND-002`, `WEB-SEC-018`                |
+| `WEB-GAP-095` | Claves técnicas de bloques son editables                          | Crítica   | `ADR-WEB-002`, `WEB-SEC-018`                |
+| `WEB-GAP-096` | No existe validación central por schema                           | Crítica   | `WEB-RND-002`, `WEB-EDT-007`                |
+| `WEB-GAP-097` | Completitud es inconsistente y no bloquea publicación             | Alta      | `WEB-PRD-013`, `WEB-PUB-005`                |
+| `WEB-GAP-098` | Guía recomienda CTA `#`                                           | Alta      | `WEB-QA-021`, `WEB-SEC-018`                 |
+| `WEB-GAP-099` | Errores de Supabase se exponen en URL                             | Alta      | `WEB-EDT-013`, `WEB-SEC-018`                |
+| `WEB-GAP-100` | Errores destruyen el estado del formulario                        | Alta      | `WEB-EDT-011`, `WEB-EDT-013`                |
+| `WEB-GAP-101` | Guardado de restaurante no es transaccional                       | Crítica   | `WEB-PUB-015`                               |
+| `WEB-GAP-102` | No existe invalidación explícita de la web pública                | Alta      | `WEB-RND-015`, `WEB-PUB-008`                |
+| `WEB-GAP-103` | Acciones rápidas de empleo, evento y servicio abren restaurante   | Alta      | `WEB-SEC-018`                               |
+| `WEB-GAP-104` | Conteos del dashboard son incorrectos al filtrar                  | Media     | `WEB-SEC-018`                               |
+| `WEB-GAP-105` | CMS afirma que Eventos está activo cuando la ruta redirige        | Alta      | `WEB-PAG-040`, `WEB-SEC-018`                |
+| `WEB-GAP-106` | No existe preview real compartido con la web                      | Crítica   | `WEB-EDT-006`, `WEB-PUB-007`                |
+| `WEB-GAP-107` | Vista de tarjeta puede divergir del componente público            | Alta      | `WEB-EDT-006`, `WEB-EDT-010`                |
+| `WEB-GAP-108` | No existe protección de cambios sin guardar                       | Alta      | `WEB-EDT-012`                               |
+| `WEB-GAP-109` | Formularios no tienen estado pending ni doble envío               | Alta      | `WEB-EDT-011`                               |
+| `WEB-GAP-110` | Medios no tienen preview, metadata ni progreso                    | Alta      | `WEB-MED-002` a `WEB-MED-009`               |
+| `WEB-GAP-111` | Subidas previas al guardado producen huérfanos                    | Alta      | `WEB-MED-012`, `WEB-SEC-018`                |
+| `WEB-GAP-112` | El uploader devuelve URL pública para bucket privado              | Crítica   | `WEB-MED-014`, `WEB-SEC-017`                |
+| `WEB-GAP-113` | Allowlist MIME no es estricta                                     | Alta      | `WEB-SEC-018`                               |
+| `WEB-GAP-114` | SVG se acepta sin política de sanitización                        | Alta      | `WEB-SEC-018`                               |
+| `WEB-GAP-115` | Importación publica todo sin selección ni confirmación            | Alta      | `WEB-ARC-007`, `WEB-SEC-018`                |
+| `WEB-GAP-116` | Importación no conserva relación con Negocios                     | Alta      | `WEB-ARC-007`                               |
+| `WEB-GAP-117` | `page_slug` oculto no se verifica contra restaurante              | Alta      | `WEB-SEC-018`                               |
+| `WEB-GAP-118` | Galería crea slots vacíos visibles por defecto                    | Alta      | `WEB-BLD-005`, `WEB-SEC-018`                |
+| `WEB-GAP-119` | No existe historial de acciones administrativas                   | Crítica   | `WEB-DB-012`, `WEB-PUB-014`                 |
+| `WEB-GAP-120` | Interfaz presenta mojibake y microcopia inconsistente             | Media     | `WEB-QA-023`                                |
+
+## 17. Cambios obligatorios al plan maestro
+
+### 17.1 No integrar todavía `WEB-ARC-005`
+
+No marcar:
+
+```text
+[ ] WEB-ARC-005 — Definir arquitectura canónica de componentes públicos
+```
+
+Debe retomarse en su secuencia correcta después de completar y aprobar la Fase 1.
+
+### 17.2 Agregar `WEB-SEC-018`
+
+Ubicación recomendada: después de `WEB-SEC-017`.
+
+```text
+[ ] WEB-SEC-018 — Endurecer el CMS legacy mientras continúe operativo
+```
+
+Alcance:
+
+- permisos editoriales específicos;
+- prohibición por defecto en dispositivos compartidos;
+- eliminar roles hardcodeados de medios;
+- crear contenido oculto por defecto;
+- bloquear publicación incompleta;
+- confirmar publicación;
+- confirmar eliminación;
+- soft delete;
+- validar URL y slug;
+- impedir edición libre de claves técnicas;
+- verificar filas afectadas;
+- ocultar errores internos;
+- corregir acciones rápidas;
+- corregir conteos;
+- validar MIME;
+- definir política SVG;
+- evitar `#`;
+- controlar huérfanos;
+- restringir importación.
+
+### 17.3 Agregar `WEB-PUB-015`
+
+Ubicación recomendada: después de `WEB-PUB-014`.
+
+```text
+[ ] WEB-PUB-015 — Implementar guardado atómico de contenido relacionado
+```
+
+Alcance:
+
+- transacción para entidad y secciones;
+- rollback completo;
+- control de concurrencia;
+- validación previa;
+- registro de auditoría;
+- error estructurado;
+- revalidación pública posterior al commit.
+
+### 17.4 Agregar `WEB-QA-023`
+
+Ubicación recomendada: después de `WEB-QA-022`.
+
+```text
+[ ] WEB-QA-023 — Validar calidad integral de VISO Web Studio
+```
+
+Alcance:
+
+- textos;
+- ortografía;
+- codificación UTF-8;
+- accesibilidad;
+- flujos por rol;
+- errores;
+- confirmaciones;
+- filtros;
+- conteos;
+- acciones rápidas;
+- estado pending;
+- pérdida de cambios;
+- preview;
+- publicación;
+- eliminación;
+- responsive.
+
+## 18. Prioridad de resolución
+
+### 18.1 Contención inmediata
+
+Antes de habilitar más usuarios en el CMS:
+
+1. permisos específicos;
+2. exclusión de dispositivo compartido;
+3. creación oculta por defecto;
+4. confirmación de borrado;
+5. bloqueo de `#`;
+6. corrección de bucket privado;
+7. restricción de claves técnicas;
+8. errores no crudos;
+9. corrección de acciones rápidas.
+
+### 18.2 Antes de publicar VISO Web Studio
+
+1. contratos por schema;
+2. borradores reales;
+3. preview real;
+4. publicación separada;
+5. historial;
+6. rollback;
+7. auditoría;
+8. transacciones;
+9. revalidación pública;
+10. permisos editoriales completos.
+
+## 19. Criterios de aprobación
+
+`WEB-AUD-005` podrá marcarse como completada cuando se apruebe:
+
+- [ ] el mapa de flujos existentes;
+- [ ] el inventario de campos;
+- [ ] el diagnóstico de autorización;
+- [ ] el riesgo del `service_role`;
+- [ ] la inconsistencia de permisos de medios;
+- [ ] el inventario de validaciones;
+- [ ] el inventario de errores;
+- [ ] el diagnóstico de experiencia de usuario;
+- [ ] el inventario de acciones peligrosas;
+- [ ] el registro `WEB-GAP-085` a `WEB-GAP-120`;
+- [ ] la incorporación de `WEB-SEC-018`;
+- [ ] la incorporación de `WEB-PUB-015`;
+- [ ] la incorporación de `WEB-QA-023`;
+- [ ] que `WEB-ARC-005` se mantiene pendiente y fuera de esta fase.
+
+## 20. Estado de cierre propuesto
+
+```text
+WEB-AUD-005 — PROPUESTA PARA APROBACIÓN
+```
+
+### 20.1 No ejecutar todavía
+
+- modificar permisos;
+- cambiar guardias;
+- cambiar `service_role`;
+- desactivar usuarios;
+- cambiar publicación por defecto;
+- eliminar datos;
+- cambiar bucket;
+- corregir formularios;
+- implementar borradores;
+- aplicar migraciones.
+
+### 20.2 Continuidad después de aprobación
+
+```text
+[x] WEB-AUD-001 — Inventariar todas las rutas públicas
+[x] WEB-AUD-002 — Inventariar todos los componentes públicos
+[x] WEB-AUD-003 — Inventariar contenido hardcodeado
+[ ] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-005 — Auditar VISO Website CMS
+[ ] WEB-AUD-006 — Auditar Supabase
+```
+
+La marca de `WEB-AUD-005` solo se aplicará después de aprobación explícita.
+
+## 21. Evidencia técnica consultada
+
+### 21.1 Dashboard
+
+- `src/app/website-cms/page.tsx`
+
+### 21.2 Bloques
+
+- `src/app/website-cms/blocks/new/page.tsx`
+- `src/app/website-cms/blocks/[id]/page.tsx`
+
+### 21.3 Items
+
+- `src/app/website-cms/items/new/page.tsx`
+- `src/app/website-cms/items/[id]/page.tsx`
+- `src/app/website-cms/items/category-meta.ts`
+
+### 21.4 Restaurantes
+
+- `src/app/website-cms/venues/page.tsx`
+- `src/app/website-cms/venues/[slug]/page.tsx`
+
+### 21.5 Medios
+
+- `src/components/viso/website-media-upload-field.tsx`
+- `src/app/api/viso/upload-website-media/route.ts`
+
+### 21.6 Seguridad y utilidades
+
+- `src/lib/auth/guard.ts`
+- `src/lib/supabase/admin.ts`
+- `src/lib/website-cms.ts`
+
+## 22. Registro de cambios
+
+| Versión        | Fecha      | Cambio                                             | Estado            |
+| -------------- | ---------- | -------------------------------------------------- | ----------------- |
+| `2026-07-23.1` | 2026-07-23 | Creación de auditoría integral de VISO Website CMS | Propuesta vigente |
+
 
 # [ ] **WEB-AUD-006 — Auditar Supabase**
   - Tablas.
