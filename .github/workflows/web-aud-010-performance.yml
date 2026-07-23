@@ -21,18 +21,19 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Chrome and Lighthouse
+      - name: Install Lighthouse
         run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser jq
           npm install --no-save lighthouse@12.8.2
+          which google-chrome || which chromium || which chromium-browser
 
       - name: Capture Lighthouse reports
         env:
           BASE_URL: https://www.ventogroup.co
         run: |
-          set -euo pipefail
+          set -u
           mkdir -p artifacts/web-aud-010/lighthouse
+          CHROME_PATH="$(which google-chrome || which chromium || which chromium-browser)"
+          failures=0
 
           routes=(
             "home:/"
@@ -58,19 +59,26 @@ jobs:
                 preset="--preset=desktop"
               fi
 
-              echo "Auditing $mode $url"
-              npx lighthouse "$url" \
+              echo "Auditing $mode $url with $CHROME_PATH"
+              if ! npx lighthouse "$url" \
                 $preset \
                 --output=json \
                 --output-path="artifacts/web-aud-010/lighthouse/${mode}-${name}.json" \
                 --only-categories=performance,accessibility,best-practices,seo \
-                --chrome-path=/usr/bin/chromium-browser \
+                --chrome-path="$CHROME_PATH" \
                 --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
-                --quiet
+                --quiet; then
+                echo "FAILED: $mode $url"
+                failures=$((failures + 1))
+              fi
             done
           done
 
-      - name: Capture headers and transfer inventory
+          echo "$failures" > artifacts/web-aud-010/lighthouse-failures.txt
+          test "$failures" -lt 20
+
+      - name: Capture headers
+        if: always()
         env:
           BASE_URL: https://www.ventogroup.co
         run: |
@@ -96,9 +104,11 @@ jobs:
           done
 
       - name: Summarize reports
+        if: always()
         run: node scripts/web-aud-010-summarize.mjs artifacts/web-aud-010
 
       - name: Upload performance baseline
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: web-aud-010-performance-baseline
