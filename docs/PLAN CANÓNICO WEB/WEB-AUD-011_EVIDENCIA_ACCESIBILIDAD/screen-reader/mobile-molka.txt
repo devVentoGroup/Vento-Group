@@ -1,0 +1,95 @@
+- banner:
+  - link "Vento Group":
+    - /url: /
+    - text: Vento Group Gastronomia y Hospitalidad
+  - navigation "Principal":
+    - link "Restaurantes":
+      - /url: /restaurantes
+    - link "Empleos":
+      - /url: /empleos
+    - link "Servicios":
+      - /url: /servicios
+    - button "Menu"
+    - link "Entrar a Vento OS":
+      - /url: /ecosistema
+- main:
+  - article:
+    - text: Vento Group Venue
+    - heading "Molka" [level=1]
+    - paragraph: "Av. 3 #12-72, San Luis, Cúcuta, Norte de Santander"
+    - paragraph: Panadería y Pastelería Colombiana🧡
+    - link "Ver restaurante":
+      - /url: /eventos
+    - link "Planear evento":
+      - /url: /eventos
+  - img "Molka"
+  - heading "Gallery" [level=2]
+  - paragraph: Colección visual del espacio, ambiente y experiencias del restaurante.
+  - article:
+    - heading "About This Venue" [level=2]
+    - paragraph: Panadería y Pastelería Colombiana🧡
+    - paragraph: Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.
+  - article:
+    - heading "Venue Facts" [level=2]
+    - list:
+      - listitem:
+        - text: Ubicación
+        - strong: "Av. 3 #12-72, San Luis, Cúcuta, Norte de Santander"
+      - listitem:
+        - text: Horario
+        - strong: Por definir
+      - listitem:
+        - text: Reservas
+        - strong: Ver restaurante
+    - heading "Notable Features" [level=3]
+    - list:
+      - listitem: Bloque editable para features de experiencia.
+      - listitem: Ideal para seating, standing y private dining.
+      - listitem: Integra esta lista desde campo body en VISO con bullets.
+  - heading "More Venues" [level=2]
+  - paragraph: Otros espacios del portafolio para explorar y reservar.
+  - link "Ver portafolio completo →":
+    - /url: /restaurantes
+  - button "Anterior": Prev
+  - button "Siguiente": Next
+  - article:
+    - img "Restaurante Vento Café"
+    - heading "Vento Café" [level=3]
+    - paragraph: "Colsag Frente al parque de la Clínica Santa Ana, Av. 10 Este #8 - 08 Local 1, Cúcuta, Norte de Santander"
+    - paragraph: Para cualquier momento🩵
+    - link "Ver restaurante →":
+      - /url: /restaurantes/vento-cafe
+  - article:
+    - text: Restaurante Saudo
+    - heading "Saudo" [level=3]
+    - paragraph: "Calle 3 #4e - 152 Local 4, Cúcuta, Norte de Santander"
+    - paragraph: Pizzas Napolitanas de masa madre🍕
+    - link "Ver restaurante →":
+      - /url: /restaurantes/saudo
+- contentinfo:
+  - text: Restaurantes Servicios Empleos Ecosistema
+  - navigation "Footer navigation":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Empleos":
+      - /url: /empleos
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+  - text: Correo
+  - textbox "Correo"
+  - button "Suscribirse"
+  - navigation "Social links":
+    - link "Instagram":
+      - /url: https://www.instagram.com/
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/
+    - link "YouTube":
+      - /url: https://www.youtube.com/
+  - link "Restaurantes":
+    - /url: /restaurantes
+  - link "Servicios":
+    - /url: /servicios
+  - link "Empleos":
+    - /url: /empleos
+  - text: © 2026 Vento Group. Todos los derechos reservados.
+- alert

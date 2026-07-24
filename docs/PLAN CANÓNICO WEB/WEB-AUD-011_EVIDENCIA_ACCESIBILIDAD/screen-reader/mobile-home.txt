@@ -1,0 +1,107 @@
+- banner:
+  - navigation "Principal izquierda":
+    - link "Restaurantes":
+      - /url: /restaurantes
+    - link "Servicios":
+      - /url: /servicios
+    - link "Empleos":
+      - /url: /empleos
+  - link "Vento Group":
+    - /url: /
+    - img "Vento Group"
+  - navigation "Principal derecha":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+    - button "Menu"
+- main:
+  - region "Vento Group hero"
+  - text: La experiencia Vento
+  - heading "Hospitalidad inolvidable construida desde restaurantes, talento y operacion." [level=2]
+  - paragraph: Vento Group integra restaurantes, talento y servicios bajo una misma vision de hospitalidad premium, con ejecucion consistente en cada punto de contacto.
+  - link "Nuestros restaurantes":
+    - /url: /restaurantes
+  - text: Restaurantes
+  - heading "Nuestros restaurantes" [level=2]
+  - tablist "Seleccion de restaurantes":
+    - tab "Vento Café" [selected]
+    - tab "Saudo"
+    - tab "Molka"
+  - img "Venue Vento Café"
+  - article:
+    - button "Restaurante anterior": ←
+    - text: 1 / 3 Restaurantes
+    - heading "Vento Café" [level=3]
+    - paragraph: Para cualquier momento🩵
+    - text: Aspectos destacados
+    - list:
+      - listitem: Comedor privado
+      - listitem: Eventos corporativos
+      - listitem: Celebraciones
+      - listitem: Experiencias de Marca
+    - text: Ubicación
+    - strong: "Colsag Frente al parque de la Clínica Santa Ana, Av. 10 Este #8 - 08 Local 1, Cúcuta, Norte de Santander"
+    - text: Disponibilidad
+    - strong: A solicitud
+    - link "Ver restaurante":
+      - /url: /restaurantes/vento-cafe
+    - button "Restaurante siguiente": →
+  - text: Con escala
+  - heading "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa." [level=2]
+  - paragraph: Establecidos para escalar hospitalidad con diseno, consistencia operativa y experiencias memorables en cada restaurante y plataforma del grupo.
+  - link "Ver restaurantes":
+    - /url: /restaurantes
+  - text: Ecosistema
+  - 'heading "Explora el ecosistema completo de Vento: restaurantes, talento y herramientas operativas." [level=2]'
+  - paragraph: Vento Group conecta restaurantes, empleos, servicios y flujos operativos desde una misma capa estrategica.
+  - link "Vento Pass":
+    - /url: "#"
+  - link "Anima":
+    - /url: "#"
+  - link "Vento OS":
+    - /url: "#"
+  - link "Acceder a Vento OS →":
+    - /url: /ecosistema
+  - article:
+    - heading "Empleos" [level=3]
+    - paragraph: Vacantes activas y rutas de crecimiento para equipos Vento.
+    - link "Ver vacantes":
+      - /url: /empleos
+  - article:
+    - heading "Servicios" [level=3]
+    - paragraph: Consultoria, tecnologia y soporte operativo para el sector hospitalidad.
+    - link "Conocer mas":
+      - /url: /servicios
+  - article:
+    - heading "Contacto" [level=3]
+    - paragraph: Alianzas, reservas y oportunidades estrategicas con el grupo.
+    - link "Escribir":
+      - /url: mailto:hola@ventogroup.co
+- contentinfo:
+  - text: Vento Café Saudo Molka
+  - navigation "Footer navigation":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Empleos":
+      - /url: /empleos
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+  - text: Correo
+  - textbox "Correo"
+  - button "Suscribirse"
+  - navigation "Social links":
+    - link "Instagram":
+      - /url: https://www.instagram.com/
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/
+    - link "YouTube":
+      - /url: https://www.youtube.com/
+  - link "Restaurantes":
+    - /url: /restaurantes
+  - link "Servicios":
+    - /url: /servicios
+  - link "Empleos":
+    - /url: /empleos
+  - text: © 2026 Vento Group. Todos los derechos reservados.
+- alert

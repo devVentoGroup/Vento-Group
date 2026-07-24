@@ -1,0 +1,2353 @@
+{
+  "generatedAt": "2026-07-23T23:59:21.576Z",
+  "reports": [
+    {
+      "file": "desktop-ecosystem.json",
+      "url": "https://www.ventogroup.co/ecosistema",
+      "requestedUrl": "https://www.ventogroup.co/ecosistema",
+      "fetchTime": "2026-07-23T23:57:41.933Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "desktop-events.json",
+      "url": "https://www.ventogroup.co/restaurantes",
+      "requestedUrl": "https://www.ventogroup.co/eventos",
+      "fetchTime": "2026-07-23T23:58:29.152Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": 1,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 249.2405,
+        "lcpMs": 679.2404999999999,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 389.82797083331224,
+        "inpProxyMs": null,
+        "ttiMs": 685.1405,
+        "serverResponseMs": 6.165
+      },
+      "transfer": {
+        "totalBytes": 343554,
+        "requestCount": 40,
+        "bytesByType": {
+          "Other": 3405,
+          "Document": 6874,
+          "Font": 62834,
+          "Image": 71317,
+          "Stylesheet": 12907,
+          "Script": 161321,
+          "Fetch": 24896
+        },
+        "javascriptBytes": 161321,
+        "imageBytes": 71317,
+        "videoBytes": 0,
+        "javascriptRequests": 11,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": 50,
+        "unminifiedJavascriptBytes": 0,
+        "offscreenImagesBytes": 0,
+        "modernImageFormatsBytes": 0,
+        "efficientAnimatedContentBytes": 0,
+        "usesLongCacheTtlBytes": 53387.2,
+        "totalByteWeight": 343554,
+        "mainThreadWorkMs": 299.9950000000008,
+        "bootupTimeMs": 80.90800000000004
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46697
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20037
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71334,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46697,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38022,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24812,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20037,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9060,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8171,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7925,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes",
+          "resourceType": "Document",
+          "transferSize": 6874,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6465,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5737,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5566,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+          "resourceType": "Image",
+          "transferSize": 4583,
+          "statusCode": 200,
+          "mimeType": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "file": "desktop-home.json",
+      "url": "https://www.ventogroup.co/",
+      "requestedUrl": "https://www.ventogroup.co/",
+      "fetchTime": "2026-07-23T23:52:53.126Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "desktop-jobs.json",
+      "url": "https://www.ventogroup.co/empleos",
+      "requestedUrl": "https://www.ventogroup.co/empleos",
+      "fetchTime": "2026-07-23T23:55:45.400Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.93,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 288.111,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 406.41776975001164,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 7.105
+      },
+      "transfer": {
+        "totalBytes": 275075,
+        "requestCount": 37,
+        "bytesByType": {
+          "Document": 5492,
+          "Font": 62831,
+          "Image": 4559,
+          "Stylesheet": 12907,
+          "Script": 161305,
+          "Fetch": 24960,
+          "Other": 3021
+        },
+        "javascriptBytes": 161305,
+        "imageBytes": 4559,
+        "videoBytes": 0,
+        "javascriptRequests": 11,
+        "imageRequests": 1,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 0,
+        "totalByteWeight": 275075,
+        "mainThreadWorkMs": 262.9130000000001,
+        "bootupTimeMs": 70.7370000000002
+      },
+      "cachePolicy": [],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71361,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38000,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24831,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9059,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8146,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7919,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6472,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5636,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5593,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/empleos",
+          "resourceType": "Document",
+          "transferSize": 5492,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/turbopack-27c04d6007418611.js",
+          "resourceType": "Script",
+          "transferSize": 4639,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+          "resourceType": "Image",
+          "transferSize": 4559,
+          "statusCode": 200,
+          "mimeType": "image/svg+xml"
+        },
+        {
+          "url": "https://www.ventogroup.co/?_rsc=1y2ls",
+          "resourceType": "Fetch",
+          "transferSize": 3216,
+          "statusCode": 200,
+          "mimeType": "text/x-component"
+        }
+      ]
+    },
+    {
+      "file": "desktop-molka.json",
+      "url": "https://www.ventogroup.co/restaurantes/molka",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "fetchTime": "2026-07-23T23:54:57.629Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 248.0565,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 594.2950925000096,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 5.838000000000001
+      },
+      "transfer": {
+        "totalBytes": 353123,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7230,
+          "Font": 62925,
+          "Stylesheet": 12907,
+          "Image": 71350,
+          "Script": 167894,
+          "Other": 2973,
+          "Fetch": 27844
+        },
+        "javascriptBytes": 167894,
+        "imageBytes": 71350,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53382.40000000001,
+        "totalByteWeight": 353123,
+        "mainThreadWorkMs": 423.6959999999976,
+        "bootupTimeMs": 163.66300000000007
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46664
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20064
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46664,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38072,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24853,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20064,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9131,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8173,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7919,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/molka",
+          "resourceType": "Document",
+          "transferSize": 7230,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6605,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6414,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5689,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5615,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "desktop-not-found.json",
+      "url": "https://www.ventogroup.co/ruta-inexistente-web-aud-010",
+      "requestedUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-010",
+      "fetchTime": "2026-07-23T23:59:16.176Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "desktop-restaurants.json",
+      "url": "https://www.ventogroup.co/restaurantes",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes",
+      "fetchTime": "2026-07-23T23:53:40.531Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": 1,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 249.533,
+        "lcpMs": 597.533,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 381.942540833354,
+        "inpProxyMs": null,
+        "ttiMs": 611.5330000000001,
+        "serverResponseMs": 6.050000000000001
+      },
+      "transfer": {
+        "totalBytes": 343435,
+        "requestCount": 39,
+        "bytesByType": {
+          "Document": 7129,
+          "Font": 62782,
+          "Image": 71313,
+          "Stylesheet": 12958,
+          "Script": 161322,
+          "Other": 2969,
+          "Fetch": 24962
+        },
+        "javascriptBytes": 161322,
+        "imageBytes": 71313,
+        "videoBytes": 0,
+        "javascriptRequests": 11,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": 40,
+        "unminifiedJavascriptBytes": 0,
+        "offscreenImagesBytes": 0,
+        "modernImageFormatsBytes": 0,
+        "efficientAnimatedContentBytes": 0,
+        "usesLongCacheTtlBytes": 53382.4,
+        "totalByteWeight": 343435,
+        "mainThreadWorkMs": 283.8440000000009,
+        "bootupTimeMs": 68.55800000000012
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46663
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20065
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46663,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 37988,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24794,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20065,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12958,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9059,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8172,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7961,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes",
+          "resourceType": "Document",
+          "transferSize": 7129,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6442,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5688,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5593,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+          "resourceType": "Image",
+          "transferSize": 4585,
+          "statusCode": 200,
+          "mimeType": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "file": "desktop-saudo.json",
+      "url": "https://www.ventogroup.co/restaurantes/saudo",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "fetchTime": "2026-07-23T23:54:32.162Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 246.511,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 690.3052376666458,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 6.059999999999999
+      },
+      "transfer": {
+        "totalBytes": 353030,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7101,
+          "Font": 62782,
+          "Stylesheet": 12907,
+          "Image": 71315,
+          "Script": 168058,
+          "Other": 2995,
+          "Fetch": 27872
+        },
+        "javascriptBytes": 168058,
+        "imageBytes": 71315,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53386.4,
+        "totalByteWeight": 353030,
+        "mainThreadWorkMs": 320.89500000000027,
+        "bootupTimeMs": 91.88500000000022
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46668
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20065
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71392,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46668,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39877,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 37989,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24793,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20065,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9131,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8146,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7946,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/saudo",
+          "resourceType": "Document",
+          "transferSize": 7101,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6605,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6412,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5683,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5593,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "desktop-services.json",
+      "url": "https://www.ventogroup.co/servicios",
+      "requestedUrl": "https://www.ventogroup.co/servicios",
+      "fetchTime": "2026-07-23T23:56:32.280Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "desktop-vento-cafe.json",
+      "url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "fetchTime": "2026-07-23T23:54:05.604Z",
+      "formFactor": "desktop",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 249.155,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 929.9496445833513,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 6.881
+      },
+      "transfer": {
+        "totalBytes": 353159,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7227,
+          "Font": 62845,
+          "Stylesheet": 12907,
+          "Image": 71351,
+          "Script": 168029,
+          "Fetch": 27831,
+          "Other": 2969
+        },
+        "javascriptBytes": 168029,
+        "imageBytes": 71351,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53388.8,
+        "totalByteWeight": 353159,
+        "mainThreadWorkMs": 314.93600000000083,
+        "bootupTimeMs": 83.23200000000031
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46701
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20035
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46701,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38035,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24810,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20035,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9154,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8146,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7962,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+          "resourceType": "Document",
+          "transferSize": 7227,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6611,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6414,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5725,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5616,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "mobile-ecosystem.json",
+      "url": "https://www.ventogroup.co/ecosistema",
+      "requestedUrl": "https://www.ventogroup.co/ecosistema",
+      "fetchTime": "2026-07-23T23:57:07.046Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "mobile-events.json",
+      "url": "https://www.ventogroup.co/restaurantes",
+      "requestedUrl": "https://www.ventogroup.co/eventos",
+      "fetchTime": "2026-07-23T23:58:16.637Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": 0.95,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 906.8245,
+        "lcpMs": 3006.8244999999997,
+        "cls": 0,
+        "tbtMs": 41,
+        "speedIndexMs": 994.0045699999876,
+        "inpProxyMs": null,
+        "ttiMs": 3021.8245,
+        "serverResponseMs": 6.643
+      },
+      "transfer": {
+        "totalBytes": 343543,
+        "requestCount": 40,
+        "bytesByType": {
+          "Other": 3383,
+          "Document": 6874,
+          "Font": 62831,
+          "Image": 71278,
+          "Stylesheet": 12907,
+          "Script": 161328,
+          "Fetch": 24942
+        },
+        "javascriptBytes": 161328,
+        "imageBytes": 71278,
+        "videoBytes": 0,
+        "javascriptRequests": 11,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": 150,
+        "unminifiedJavascriptBytes": 0,
+        "offscreenImagesBytes": 0,
+        "modernImageFormatsBytes": 0,
+        "efficientAnimatedContentBytes": 0,
+        "usesLongCacheTtlBytes": 53377.6,
+        "totalByteWeight": 343543,
+        "mainThreadWorkMs": 986.7480000000029,
+        "bootupTimeMs": 416.4040000000007
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46695
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20027
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71321,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46695,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39833,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 37989,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24842,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20027,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9060,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8173,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7919,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes",
+          "resourceType": "Document",
+          "transferSize": 6874,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6441,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5683,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5593,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/turbopack-27c04d6007418611.js",
+          "resourceType": "Script",
+          "transferSize": 4567,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "mobile-home.json",
+      "url": "https://www.ventogroup.co/",
+      "requestedUrl": "https://www.ventogroup.co/",
+      "fetchTime": "2026-07-23T23:52:17.811Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "mobile-jobs.json",
+      "url": "https://www.ventogroup.co/empleos",
+      "requestedUrl": "https://www.ventogroup.co/empleos",
+      "fetchTime": "2026-07-23T23:55:10.632Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "mobile-molka.json",
+      "url": "https://www.ventogroup.co/restaurantes/molka",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "fetchTime": "2026-07-23T23:54:45.019Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 909.503,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 1424.039091999984,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 8.84
+      },
+      "transfer": {
+        "totalBytes": 353104,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7228,
+          "Font": 62842,
+          "Stylesheet": 12934,
+          "Image": 71307,
+          "Script": 167909,
+          "Other": 2992,
+          "Fetch": 27892
+        },
+        "javascriptBytes": 167909,
+        "imageBytes": 71307,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53380,
+        "totalByteWeight": 353104,
+        "mainThreadWorkMs": 1102.4360000000038,
+        "bootupTimeMs": 466.38800000000015
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46696
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20029
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46696,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39851,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38062,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24780,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20029,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12934,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9060,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8173,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7925,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/molka",
+          "resourceType": "Document",
+          "transferSize": 7228,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6632,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6503,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5625,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5566,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "mobile-not-found.json",
+      "url": "https://www.ventogroup.co/ruta-inexistente-web-aud-010",
+      "requestedUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-010",
+      "fetchTime": "2026-07-23T23:58:41.524Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "mobile-restaurants.json",
+      "url": "https://www.ventogroup.co/restaurantes",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes",
+      "fetchTime": "2026-07-23T23:53:27.893Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": 0.96,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 914.412,
+        "lcpMs": 2735.4120000000003,
+        "cls": 0,
+        "tbtMs": 50.5,
+        "speedIndexMs": 937.2807100000042,
+        "inpProxyMs": null,
+        "ttiMs": 2893.8120000000004,
+        "serverResponseMs": 6.349
+      },
+      "transfer": {
+        "totalBytes": 343422,
+        "requestCount": 39,
+        "bytesByType": {
+          "Document": 7129,
+          "Font": 62798,
+          "Image": 71287,
+          "Stylesheet": 12907,
+          "Script": 161355,
+          "Other": 2994,
+          "Fetch": 24952
+        },
+        "javascriptBytes": 161355,
+        "imageBytes": 71287,
+        "videoBytes": 0,
+        "javascriptRequests": 11,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": 170,
+        "unminifiedJavascriptBytes": 0,
+        "offscreenImagesBytes": 0,
+        "modernImageFormatsBytes": 0,
+        "efficientAnimatedContentBytes": 0,
+        "usesLongCacheTtlBytes": 53385.600000000006,
+        "totalByteWeight": 343422,
+        "mainThreadWorkMs": 1065.0000000000034,
+        "bootupTimeMs": 444.1440000000006
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46666
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20066
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71332,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46666,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39781,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38004,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24794,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20066,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9059,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8224,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7919,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes",
+          "resourceType": "Document",
+          "transferSize": 7129,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6489,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5682,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5566,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/turbopack-27c04d6007418611.js",
+          "resourceType": "Script",
+          "transferSize": 4603,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "mobile-saudo.json",
+      "url": "https://www.ventogroup.co/restaurantes/saudo",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "fetchTime": "2026-07-23T23:54:18.895Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 911.6095,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 2306.629901999925,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 6.861999999999998
+      },
+      "transfer": {
+        "totalBytes": 352922,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7100,
+          "Font": 62778,
+          "Stylesheet": 12965,
+          "Image": 71315,
+          "Script": 167954,
+          "Other": 2995,
+          "Fetch": 27815
+        },
+        "javascriptBytes": 167954,
+        "imageBytes": 71315,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53386.4,
+        "totalByteWeight": 352922,
+        "mainThreadWorkMs": 1126.2120000000032,
+        "bootupTimeMs": 469.9599999999998
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46668
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20065
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46668,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39821,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 37998,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24780,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20065,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12965,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9059,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8152,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7987,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/saudo",
+          "resourceType": "Document",
+          "transferSize": 7100,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6605,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6501,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5621,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5565,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    },
+    {
+      "file": "mobile-services.json",
+      "url": "https://www.ventogroup.co/servicios",
+      "requestedUrl": "https://www.ventogroup.co/servicios",
+      "fetchTime": "2026-07-23T23:55:57.477Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": null,
+        "bestPractices": null,
+        "seo": null
+      },
+      "metrics": {
+        "fcpMs": null,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "speedIndexMs": null,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": null
+      },
+      "transfer": {
+        "totalBytes": 0,
+        "requestCount": 0,
+        "bytesByType": {},
+        "javascriptBytes": 0,
+        "imageBytes": 0,
+        "videoBytes": 0,
+        "javascriptRequests": 0,
+        "imageRequests": 0,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": null,
+        "totalByteWeight": null,
+        "mainThreadWorkMs": null,
+        "bootupTimeMs": null
+      },
+      "cachePolicy": [],
+      "largestResources": []
+    },
+    {
+      "file": "mobile-vento-cafe.json",
+      "url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "fetchTime": "2026-07-23T23:53:52.829Z",
+      "formFactor": "mobile",
+      "scores": {
+        "performance": null,
+        "accessibility": 0.96,
+        "bestPractices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "fcpMs": 906.499,
+        "lcpMs": null,
+        "cls": 0,
+        "tbtMs": null,
+        "speedIndexMs": 1600.81862400004,
+        "inpProxyMs": null,
+        "ttiMs": null,
+        "serverResponseMs": 6.075000000000003
+      },
+      "transfer": {
+        "totalBytes": 353163,
+        "requestCount": 44,
+        "bytesByType": {
+          "Document": 7226,
+          "Font": 62808,
+          "Stylesheet": 12907,
+          "Image": 71336,
+          "Script": 168020,
+          "Other": 2995,
+          "Fetch": 27871
+        },
+        "javascriptBytes": 168020,
+        "imageBytes": 71336,
+        "videoBytes": 0,
+        "javascriptRequests": 12,
+        "imageRequests": 3,
+        "videoRequests": 0
+      },
+      "opportunities": {
+        "unusedJavascriptBytes": null,
+        "unminifiedJavascriptBytes": null,
+        "offscreenImagesBytes": null,
+        "modernImageFormatsBytes": null,
+        "efficientAnimatedContentBytes": null,
+        "usesLongCacheTtlBytes": 53376.8,
+        "totalByteWeight": 353163,
+        "mainThreadWorkMs": 1098.828000000004,
+        "bootupTimeMs": 477.62000000000074
+      },
+      "cachePolicy": [
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 46696
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "cacheLifetimeMs": 3600000,
+          "cacheHitProbability": 0.2,
+          "transferSize": 20025
+        }
+      ],
+      "largestResources": [
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/249261e921aeebba.js",
+          "resourceType": "Script",
+          "transferSize": 71306,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+          "resourceType": "Image",
+          "transferSize": 46696,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/29aa1501f3a1d5e4.js",
+          "resourceType": "Script",
+          "transferSize": 39794,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+          "resourceType": "Font",
+          "transferSize": 38028,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+          "resourceType": "Font",
+          "transferSize": 24780,
+          "statusCode": 200,
+          "mimeType": "font/woff2"
+        },
+        {
+          "url": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+          "resourceType": "Image",
+          "transferSize": 20025,
+          "statusCode": 200,
+          "mimeType": "image/png"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/dfcc56e92a1edaf0.css",
+          "resourceType": "Stylesheet",
+          "transferSize": 12907,
+          "statusCode": 200,
+          "mimeType": "text/css"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/4217fc4b963fb698.js",
+          "resourceType": "Script",
+          "transferSize": 9075,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/0d488565b5e01c4b.js",
+          "resourceType": "Script",
+          "transferSize": 8174,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/7340adf74ff47ec0.js",
+          "resourceType": "Script",
+          "transferSize": 7919,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+          "resourceType": "Document",
+          "transferSize": 7226,
+          "statusCode": 200,
+          "mimeType": "text/html"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/21161aa63a98a3fb.js",
+          "resourceType": "Script",
+          "transferSize": 6635,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/d8b4615ed4c3a5a8.js",
+          "resourceType": "Script",
+          "transferSize": 6489,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/435bfe28ac57db6c.js",
+          "resourceType": "Script",
+          "transferSize": 5682,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        },
+        {
+          "url": "https://www.ventogroup.co/_next/static/chunks/225b31ee49e36c66.js",
+          "resourceType": "Script",
+          "transferSize": 5616,
+          "statusCode": 200,
+          "mimeType": "application/javascript"
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "mobile": {
+      "reportCount": 10,
+      "performanceScoreAvg": 0.955,
+      "lcpMsAvg": 2871.11825,
+      "clsAvg": 0,
+      "tbtMsAvg": 45.75,
+      "totalBytesAvg": 174615.4,
+      "javascriptBytesAvg": 82656.6,
+      "imageBytesAvg": 35652.3,
+      "videoBytesAvg": 0
+    },
+    "desktop": {
+      "reportCount": 10,
+      "performanceScoreAvg": 1,
+      "lcpMsAvg": 638.3867499999999,
+      "clsAvg": 0,
+      "tbtMsAvg": 0,
+      "totalBytesAvg": 202137.6,
+      "javascriptBytesAvg": 98792.9,
+      "imageBytesAvg": 36120.5,
+      "videoBytesAvg": 0
+    }
+  }
+}

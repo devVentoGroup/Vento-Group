@@ -1,0 +1,85 @@
+- banner:
+  - link "Vento Group":
+    - /url: /
+    - text: Vento Group Gastronomia y Hospitalidad
+  - navigation "Principal":
+    - link "Restaurantes":
+      - /url: /restaurantes
+    - link "Empleos":
+      - /url: /empleos
+    - link "Servicios":
+      - /url: /servicios
+    - button "Menu"
+    - link "Entrar a Vento OS":
+      - /url: /ecosistema
+- main:
+  - text: Vento Group
+  - heading "Restaurantes" [level=1]
+  - paragraph: Conceptos gastronómicos únicos, cada uno con identidad propia y el sello de excelencia del grupo.
+  - link "Ver portafolio":
+    - /url: "#portafolio"
+  - link "Reservar un espacio":
+    - /url: mailto:reservas@ventogroup.co
+  - region "La experiencia Vento":
+    - text: Nuestra gastronomia
+    - heading "Cada restaurante, una historia diferente" [level=2]
+    - paragraph: Del concepto al plato, cada uno de nuestros restaurantes nace de una obsesión por los detalles. Espacios diseñados para que cada visita sea una experiencia que vale la pena repetir.
+    - link "Explorar el portafolio":
+      - /url: "#portafolio"
+  - region "Sabor, ambiente y momentos inolvidables":
+    - text: Image banner Vento Group
+    - heading "Sabor, ambiente y momentos inolvidables" [level=2]
+  - heading "Nuestros restaurantes" [level=2]
+  - paragraph: Un portafolio de conceptos gastronomicos, cada uno con identidad propia.
+  - article:
+    - img "Restaurante Vento Café"
+    - heading "Vento Café" [level=3]
+    - paragraph: "Colsag Frente al parque de la Clínica Santa Ana, Av. 10 Este #8 - 08 Local 1, Cúcuta, Norte de Santander"
+    - paragraph: Para cualquier momento🩵
+    - link "Ver restaurante →":
+      - /url: /restaurantes/vento-cafe
+  - article:
+    - text: Restaurante Saudo
+    - heading "Saudo" [level=3]
+    - paragraph: "Calle 3 #4e - 152 Local 4, Cúcuta, Norte de Santander"
+    - paragraph: Pizzas Napolitanas de masa madre🍕
+    - link "Ver restaurante →":
+      - /url: /restaurantes/saudo
+  - article:
+    - img "Restaurante Molka"
+    - heading "Molka" [level=3]
+    - paragraph: "Av. 3 #12-72, San Luis, Cúcuta, Norte de Santander"
+    - paragraph: Panadería y Pastelería Colombiana🧡
+    - link "Ver restaurante →":
+      - /url: /restaurantes/molka
+  - heading "¿Tienes un evento especial?" [level=2]
+  - paragraph: Nuestros espacios están diseñados para celebraciones privadas, cenas corporativas y activaciones de marca. Cuéntanos tu visión.
+  - link "Planear mi evento":
+    - /url: mailto:eventos@ventogroup.co
+- contentinfo:
+  - text: Restaurantes Servicios Empleos Ecosistema
+  - navigation "Footer navigation":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Empleos":
+      - /url: /empleos
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+  - text: Correo
+  - textbox "Correo"
+  - button "Suscribirse"
+  - navigation "Social links":
+    - link "Instagram":
+      - /url: https://www.instagram.com/
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/
+    - link "YouTube":
+      - /url: https://www.youtube.com/
+  - link "Restaurantes":
+    - /url: /restaurantes
+  - link "Servicios":
+    - /url: /servicios
+  - link "Empleos":
+    - /url: /empleos
+  - text: © 2026 Vento Group. Todos los derechos reservados.
+- alert

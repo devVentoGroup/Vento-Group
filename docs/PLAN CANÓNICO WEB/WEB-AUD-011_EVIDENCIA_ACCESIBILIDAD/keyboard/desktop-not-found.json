@@ -1,0 +1,31 @@
+{
+  "sequence": [
+    {
+      "tag": "body",
+      "id": null,
+      "className": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable",
+      "text": "404 This page could not be found.",
+      "href": null,
+      "role": null,
+      "ariaLabel": null,
+      "ariaExpanded": null,
+      "tabindex": "-1",
+      "focusVisible": false,
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineColor": "rgb(0, 0, 0)",
+      "boxShadow": "none",
+      "visible": true,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      }
+    }
+  ],
+  "uniqueFocusTargets": 1,
+  "repeatedConsecutive": 0,
+  "invisibleFocused": 0,
+  "missingVisibleIndicator": 1
+}

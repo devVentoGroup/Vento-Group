@@ -1,0 +1,78 @@
+- banner:
+  - link "Vento Group":
+    - /url: /
+    - text: Vento Group Gastronomia y Hospitalidad
+  - navigation "Principal":
+    - link "Restaurantes":
+      - /url: /restaurantes
+    - link "Empleos":
+      - /url: /empleos
+    - link "Servicios":
+      - /url: /servicios
+    - button "Menu"
+    - link "Entrar a Vento OS":
+      - /url: /ecosistema
+- main:
+  - text: Vento Group
+  - heading "Servicios" [level=1]
+  - paragraph: Soluciones de operación, tecnología y soporte para restaurantes y equipos de alto rendimiento.
+  - link "Ver servicios":
+    - /url: "#servicios"
+  - text: Lo que ofrecemos
+  - heading "Un ecosistema de soporte para cada operación" [level=2]
+  - paragraph: Desde tecnología operativa hasta asesoría de calidad, Vento Group pone a disposición de sus marcas y aliados un conjunto de herramientas y servicios diseñados para escalar con excelencia.
+  - list "Pilares de servicio":
+    - listitem:
+      - strong: Operación
+      - text: Protocolos y herramientas para la gestión diaria.
+    - listitem:
+      - strong: Tecnología
+      - text: Software y dashboards para decisiones en tiempo real.
+    - listitem:
+      - strong: Formación
+      - text: Programas de entrenamiento para equipos de sala y cocina.
+    - listitem:
+      - strong: Consultoría
+      - text: Acompañamiento estratégico para nuevas aperturas.
+  - region "Calidad y excelencia en cada proceso":
+    - text: Image banner Vento Group
+    - heading "Calidad y excelencia en cada proceso" [level=2]
+  - heading "Nuestros servicios" [level=2]
+  - paragraph: Elige el servicio que mejor se adapte a tu operación.
+  - article:
+    - text: Servicio Servicio destacado
+    - heading "Servicio destacado" [level=3]
+    - paragraph: Muestra servicios del ecosistema.
+    - link "Conocer servicio →":
+      - /url: /servicios
+  - heading "¿Tienes un proyecto en mente?" [level=2]
+  - paragraph: Conecta con nuestro equipo y exploremos cómo Vento Group puede impulsar tu operación.
+  - link "Escribirnos":
+    - /url: mailto:hola@ventogroup.co
+- contentinfo:
+  - text: Restaurantes Servicios Empleos Ecosistema
+  - navigation "Footer navigation":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Empleos":
+      - /url: /empleos
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+  - text: Correo
+  - textbox "Correo"
+  - button "Suscribirse"
+  - navigation "Social links":
+    - link "Instagram":
+      - /url: https://www.instagram.com/
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/
+    - link "YouTube":
+      - /url: https://www.youtube.com/
+  - link "Restaurantes":
+    - /url: /restaurantes
+  - link "Servicios":
+    - /url: /servicios
+  - link "Empleos":
+    - /url: /empleos
+  - text: © 2026 Vento Group. Todos los derechos reservados.
+- alert

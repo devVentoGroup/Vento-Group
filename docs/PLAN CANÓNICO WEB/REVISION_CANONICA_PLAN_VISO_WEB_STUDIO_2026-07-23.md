@@ -4,15 +4,15 @@
 
 ## 0. Estado de la revisión
 
-| Campo | Valor |
-|---|---|
-| Fecha | `2026-07-23` |
-| Archivo revisado | `docs/PLAN_CANONICO_VISO_WEB_STUDIO.md` |
-| Commit base | `d0e2fc3216486f2ae6775cbabb529514f79ffed0` |
-| Estado | **REQUIERE CORRECCIÓN DOCUMENTAL ANTES DE CONTINUAR** |
-| Cambios de código | Ninguno |
-| Cambios de Supabase | Ninguno |
-| Cambios de producción | Ninguno |
+| Campo                 | Valor                                                 |
+| --------------------- | ----------------------------------------------------- |
+| Fecha                 | `2026-07-23`                                          |
+| Archivo revisado      | `docs/PLAN_CANONICO_VISO_WEB_STUDIO.md`               |
+| Commit base           | `d0e2fc3216486f2ae6775cbabb529514f79ffed0`            |
+| Estado                | **REQUIERE CORRECCIÓN DOCUMENTAL ANTES DE CONTINUAR** |
+| Cambios de código     | Ninguno                                               |
+| Cambios de Supabase   | Ninguno                                               |
+| Cambios de producción | Ninguno                                               |
 
 ## 1. Hallazgos críticos
 
@@ -154,16 +154,16 @@ Se continuará en paralelo con:
 
 ### 2.2 Autoridades documentales
 
-| Tema | Autoridad |
-|---|---|
-| Página pública y experiencia web | Plan VISO Web Studio |
-| Secciones y renderer público | Plan VISO Web Studio |
-| Experiencia específica del editor web | Plan VISO Web Studio |
-| Identidad y autorización laboral | Plan canónico Vento OS |
-| Permisos VISO y guards | Plan canónico Vento OS |
-| Clientes Supabase compartidos | Plan canónico Vento OS |
-| Arquitectura integral de Supabase | Bloque E3 de Vento OS |
-| Migraciones físicas | `vento-shell` y Bloque R |
+| Tema                                         | Autoridad                                 |
+| -------------------------------------------- | ----------------------------------------- |
+| Página pública y experiencia web             | Plan VISO Web Studio                      |
+| Secciones y renderer público                 | Plan VISO Web Studio                      |
+| Experiencia específica del editor web        | Plan VISO Web Studio                      |
+| Identidad y autorización laboral             | Plan canónico Vento OS                    |
+| Permisos VISO y guards                       | Plan canónico Vento OS                    |
+| Clientes Supabase compartidos                | Plan canónico Vento OS                    |
+| Arquitectura integral de Supabase            | Bloque E3 de Vento OS                     |
+| Migraciones físicas                          | `vento-shell` y Bloque R                  |
 | Implementación específica de VISO Web Studio | Plan web, respetando contratos anteriores |
 
 ### 2.3 Puertas de integración
@@ -307,10 +307,10 @@ El documento utiliza `[x]` para tareas documentales aprobadas y para implementac
 
 Se adopta esta interpretación:
 
-| Contexto | Significado de `[x]` |
-|---|---|
+| Contexto                 | Significado de `[x]`            |
+| ------------------------ | ------------------------------- |
 | Fases documentales 1 a 3 | Definición o auditoría aprobada |
-| Fases de implementación | Implementada y validada |
+| Fases de implementación  | Implementada y validada         |
 
 Cada tarea extensa deberá declarar además:
 

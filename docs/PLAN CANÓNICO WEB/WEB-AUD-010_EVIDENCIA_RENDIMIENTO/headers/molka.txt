@@ -1,0 +1,14 @@
+HTTP/2 200 
+age: 0
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+date: Thu, 23 Jul 2026 23:59:21 GMT
+link: </_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/chunks/dfcc56e92a1edaf0.css>; rel=preload; as="style"
+server: Vercel
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-matched-path: /restaurantes/[slug]
+x-powered-by: Next.js
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::6xncj-1784851160876-ccc91b0245ac
+

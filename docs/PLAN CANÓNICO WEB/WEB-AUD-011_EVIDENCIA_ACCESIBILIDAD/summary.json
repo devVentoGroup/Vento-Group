@@ -1,0 +1,3920 @@
+{
+  "generatedAt": "2026-07-24T00:13:16.828Z",
+  "baseUrl": "https://www.ventogroup.co",
+  "routeCount": 10,
+  "viewportCount": 2,
+  "audits": 20,
+  "results": [
+    {
+      "route": "/",
+      "routeName": "home",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/",
+      "finalUrl": "https://www.ventogroup.co/",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [],
+        "passes": 44,
+        "incomplete": 2,
+        "inapplicable": 45
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Group | Gastronomia y Hospitalidad",
+        "headings": [
+          {
+            "level": 2,
+            "text": "Hospitalidad inolvidable construida desde restaurantes, talento y operacion.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Explora el ecosistema completo de Vento: restaurantes, talento y herramientas operativas.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Empleos",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Contacto",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 0,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "Vento Group",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": false,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": false,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Venue Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 2,
+          "nav": 4,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 36,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes",
+      "routeName": "restaurants",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes",
+      "finalUrl": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Restaurantes | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Cada restaurante, una historia diferente",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Sabor, ambiente y momentos inolvidables",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un evento especial?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurantes lead media",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/vento-cafe",
+      "routeName": "vento-cafe",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 43,
+        "incomplete": 2,
+        "inapplicable": 47
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Café | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/saudo",
+      "routeName": "saudo",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 43,
+        "incomplete": 2,
+        "inapplicable": 47
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Saudo | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/molka",
+      "routeName": "molka",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 43,
+        "incomplete": 2,
+        "inapplicable": 47
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Molka | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/empleos",
+      "routeName": "jobs",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/empleos",
+      "finalUrl": "https://www.ventogroup.co/empleos",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          },
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "h3"
+                ],
+                "html": "<h3 class=\"card-title\">Vacante destacada</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          }
+        ],
+        "passes": 39,
+        "incomplete": 2,
+        "inapplicable": 51
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Empleos | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Empleos",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vacante destacada",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 2,
+        "h1Count": 1,
+        "headingJumps": [
+          {
+            "previous": {
+              "level": 1,
+              "text": "Empleos",
+              "visible": true,
+              "ariaHidden": null
+            },
+            "current": {
+              "level": 3,
+              "text": "Vacante destacada",
+              "visible": true,
+              "ariaHidden": null
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 24,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/servicios",
+      "routeName": "services",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/servicios",
+      "finalUrl": "https://www.ventogroup.co/servicios",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Servicios | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Un ecosistema de soporte para cada operación",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Calidad y excelencia en cada proceso",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Servicio destacado",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un proyecto en mente?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 6,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 25,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/ecosistema",
+      "routeName": "ecosystem",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/ecosistema",
+      "finalUrl": "https://www.ventogroup.co/ecosistema",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          },
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .card-content > h3"
+                ],
+                "html": "<h3 class=\"card-title\">Vento Pass</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          }
+        ],
+        "passes": 39,
+        "incomplete": 2,
+        "inapplicable": 51
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Ecosistema | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Ecosistema",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Pass",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Anima",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento OS",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 4,
+        "h1Count": 1,
+        "headingJumps": [
+          {
+            "previous": {
+              "level": 1,
+              "text": "Ecosistema",
+              "visible": true,
+              "ariaHidden": null
+            },
+            "current": {
+              "level": 3,
+              "text": "Vento Pass",
+              "visible": true,
+              "ariaHidden": null
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 25,
+        "repeatedConsecutive": 1,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/eventos",
+      "routeName": "events",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/eventos",
+      "finalUrl": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "redirected": true,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Restaurantes | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Cada restaurante, una historia diferente",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Sabor, ambiente y momentos inolvidables",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un evento especial?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurantes lead media",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/ruta-inexistente-web-aud-011",
+      "routeName": "not-found",
+      "viewport": "desktop",
+      "requestedUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-011",
+      "finalUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-011",
+      "status": 404,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "description": "Ensure the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "html"
+                ],
+                "html": "<html lang=\"es\" class=\"lenis\">",
+                "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/region?application=playwright",
+            "nodeCount": 2,
+            "nodes": [
+              {
+                "target": [
+                  "h1"
+                ],
+                "html": "<h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              },
+              {
+                "target": [
+                  ".page-transition > div > div > div"
+                ],
+                "html": "<div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ],
+        "passes": 21,
+        "incomplete": 0,
+        "inapplicable": 68
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "404",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "This page could not be found.",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 2,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [],
+        "missingAltCount": 0,
+        "emptyAltCount": 0,
+        "landmarks": {
+          "header": 0,
+          "nav": 0,
+          "main": 0,
+          "footer": 0,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 1,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 1
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "/",
+      "routeName": "home",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/",
+      "finalUrl": "https://www.ventogroup.co/",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [],
+        "passes": 45,
+        "incomplete": 2,
+        "inapplicable": 45
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Group | Gastronomia y Hospitalidad",
+        "headings": [
+          {
+            "level": 2,
+            "text": "Hospitalidad inolvidable construida desde restaurantes, talento y operacion.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Explora el ecosistema completo de Vento: restaurantes, talento y herramientas operativas.",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Empleos",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Contacto",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 0,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "Vento Group",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": false,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": false,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Venue Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 2,
+          "nav": 4,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 36,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes",
+      "routeName": "restaurants",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes",
+      "finalUrl": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Restaurantes | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Cada restaurante, una historia diferente",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Sabor, ambiente y momentos inolvidables",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un evento especial?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurantes lead media",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/vento-cafe",
+      "routeName": "vento-cafe",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 44,
+        "incomplete": 2,
+        "inapplicable": 46
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Café | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/saudo",
+      "routeName": "saudo",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/saudo",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 44,
+        "incomplete": 2,
+        "inapplicable": 46
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Saudo | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/restaurantes/molka",
+      "routeName": "molka",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "finalUrl": "https://www.ventogroup.co/restaurantes/molka",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 44,
+        "incomplete": 2,
+        "inapplicable": 46
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Molka | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Gallery",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "About This Venue",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Venue Facts",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Notable Features",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "More Venues",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/empleos",
+      "routeName": "jobs",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/empleos",
+      "finalUrl": "https://www.ventogroup.co/empleos",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          },
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "h3"
+                ],
+                "html": "<h3 class=\"card-title\">Vacante destacada</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          }
+        ],
+        "passes": 39,
+        "incomplete": 2,
+        "inapplicable": 51
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Empleos | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Empleos",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vacante destacada",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 2,
+        "h1Count": 1,
+        "headingJumps": [
+          {
+            "previous": {
+              "level": 1,
+              "text": "Empleos",
+              "visible": true,
+              "ariaHidden": null
+            },
+            "current": {
+              "level": 3,
+              "text": "Vacante destacada",
+              "visible": true,
+              "ariaHidden": null
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 24,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/servicios",
+      "routeName": "services",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/servicios",
+      "finalUrl": "https://www.ventogroup.co/servicios",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Servicios | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Un ecosistema de soporte para cada operación",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Calidad y excelencia en cada proceso",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros servicios",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Servicio destacado",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un proyecto en mente?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 6,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 25,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/ecosistema",
+      "routeName": "ecosystem",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/ecosistema",
+      "finalUrl": "https://www.ventogroup.co/ecosistema",
+      "status": 200,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          },
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .card-content > h3"
+                ],
+                "html": "<h3 class=\"card-title\">Vento Pass</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          }
+        ],
+        "passes": 39,
+        "incomplete": 2,
+        "inapplicable": 51
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Ecosistema | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Ecosistema",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Pass",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Anima",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento OS",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 4,
+        "h1Count": 1,
+        "headingJumps": [
+          {
+            "previous": {
+              "level": 1,
+              "text": "Ecosistema",
+              "visible": true,
+              "ariaHidden": null
+            },
+            "current": {
+              "level": 3,
+              "text": "Vento Pass",
+              "visible": true,
+              "ariaHidden": null
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 25,
+        "repeatedConsecutive": 1,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/eventos",
+      "routeName": "events",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/eventos",
+      "finalUrl": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "redirected": true,
+      "axe": {
+        "violations": [
+          {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "#site-overlay-menu"
+                ],
+                "html": "<div id=\"site-overlay-menu\" class=\"site-menu-overlay \" aria-hidden=\"true\">",
+                "failureSummary": "Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM\n  Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+              }
+            ]
+          }
+        ],
+        "passes": 41,
+        "incomplete": 2,
+        "inapplicable": 49
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Restaurantes | Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Cada restaurante, una historia diferente",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Sabor, ambiente y momentos inolvidables",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "Nuestros restaurantes",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Vento Café",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Saudo",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 3,
+            "text": "Molka",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "¿Tienes un evento especial?",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 8,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurantes lead media",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/vento_cafe/card-logo-1776355869422.png",
+            "altPresent": true,
+            "alt": "Restaurante Vento Café",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 506,
+            "naturalHeight": 262
+          },
+          {
+            "src": "https://clzdpinthhtknkmefsxx.supabase.co/storage/v1/object/public/pass-satellite-logos/molka/card-logo-1772388336727.png",
+            "altPresent": true,
+            "alt": "Restaurante Molka",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 528,
+            "naturalHeight": 510
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          },
+          {
+            "src": "https://www.ventogroup.co/branding/vento-wordmark-white.svg",
+            "altPresent": true,
+            "alt": "",
+            "role": null,
+            "ariaHidden": null,
+            "visible": true,
+            "naturalWidth": 237,
+            "naturalHeight": 150
+          }
+        ],
+        "missingAltCount": 0,
+        "emptyAltCount": 2,
+        "landmarks": {
+          "header": 1,
+          "nav": 3,
+          "main": 1,
+          "footer": 1,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 29,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 2
+      },
+      "consoleErrors": []
+    },
+    {
+      "route": "/ruta-inexistente-web-aud-011",
+      "routeName": "not-found",
+      "viewport": "mobile",
+      "requestedUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-011",
+      "finalUrl": "https://www.ventogroup.co/ruta-inexistente-web-aud-011",
+      "status": 404,
+      "redirected": false,
+      "axe": {
+        "violations": [
+          {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "description": "Ensure the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=playwright",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  "html"
+                ],
+                "html": "<html lang=\"es\" class=\"lenis\">",
+                "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/region?application=playwright",
+            "nodeCount": 2,
+            "nodes": [
+              {
+                "target": [
+                  "h1"
+                ],
+                "html": "<h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              },
+              {
+                "target": [
+                  ".page-transition > div > div > div"
+                ],
+                "html": "<div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ],
+        "passes": 21,
+        "incomplete": 0,
+        "inapplicable": 68
+      },
+      "structure": {
+        "lang": "es",
+        "title": "Vento Group",
+        "headings": [
+          {
+            "level": 1,
+            "text": "404",
+            "visible": true,
+            "ariaHidden": null
+          },
+          {
+            "level": 2,
+            "text": "This page could not be found.",
+            "visible": true,
+            "ariaHidden": null
+          }
+        ],
+        "visibleHeadingCount": 2,
+        "h1Count": 1,
+        "headingJumps": [],
+        "images": [],
+        "missingAltCount": 0,
+        "emptyAltCount": 0,
+        "landmarks": {
+          "header": 0,
+          "nav": 0,
+          "main": 0,
+          "footer": 0,
+          "aside": 0,
+          "form": 0
+        },
+        "unlabeledControls": [],
+        "skipLinks": []
+      },
+      "keyboard": {
+        "uniqueFocusTargets": 1,
+        "repeatedConsecutive": 0,
+        "invisibleFocused": 0,
+        "missingVisibleIndicator": 1
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    }
+  ],
+  "menu": {
+    "desktop": {
+      "available": true,
+      "before": {
+        "tag": "button",
+        "id": null,
+        "className": "nav-menu-btn nav-menu-btn-light ",
+        "text": "MENU",
+        "href": null,
+        "role": null,
+        "ariaLabel": null,
+        "ariaExpanded": "false",
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(16, 16, 16)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 1259.390625,
+          "y": 40.3125,
+          "width": 80.609375,
+          "height": 34
+        }
+      },
+      "openState": "true",
+      "overlayHidden": "false",
+      "openFocused": {
+        "tag": "button",
+        "id": null,
+        "className": "nav-menu-btn nav-menu-btn-light nav-menu-btn-open",
+        "text": "MENU",
+        "href": null,
+        "role": null,
+        "ariaLabel": null,
+        "ariaExpanded": "true",
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(16, 16, 16)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 1259.390625,
+          "y": 40.3125,
+          "width": 80.609375,
+          "height": 34
+        }
+      },
+      "tabSequence": [
+        {
+          "tag": "button",
+          "id": null,
+          "className": "nav-menu-btn nav-menu-btn-open",
+          "text": "CERRAR",
+          "href": null,
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 1187.046875,
+            "y": 39,
+            "width": 97.953125,
+            "height": 35
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Restaurantes Espacios, conceptos y reservas",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 155,
+            "y": 111,
+            "width": 606.53125,
+            "height": 828.375
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Empleos Vacantes y oportunidades",
+          "href": "/empleos",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 155,
+            "y": 949.375,
+            "width": 606.53125,
+            "height": 828.375
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Servicios Capacidades y soluciones",
+          "href": "/servicios",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 155,
+            "y": 1787.75,
+            "width": 606.53125,
+            "height": 828.375
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Ecosistema Pass, Anima y Vento OS",
+          "href": "/ecosistema",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 155,
+            "y": 2626.125,
+            "width": 606.53125,
+            "height": 828.390625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Reserva tu mesa Encuentra tu restaurante ideal",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 779.53125,
+            "y": 111,
+            "width": 505.46875,
+            "height": 1107.828125
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Empleos Haz parte de Vento Group",
+          "href": "/empleos",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 779.53125,
+            "y": 1228.828125,
+            "width": 505.46875,
+            "height": 1107.84375
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Contacto Alianzas y oportunidades",
+          "href": "mailto:hola@ventogroup.co",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 779.53125,
+            "y": 2346.671875,
+            "width": 505.46875,
+            "height": 1107.84375
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "button button-outline",
+          "text": "NUESTROS RESTAURANTES",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 818.5028686523438,
+            "y": 1281.665283203125,
+            "width": 457.99420166015625,
+            "height": 40.385009765625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item venues-showcase-item-active",
+          "text": "VENTO CAFÉ",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 172.3399658203125,
+            "y": 1509.6273193359375,
+            "width": 103.42498779296875,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item ",
+          "text": "SAUDO",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 287.5849609375,
+            "y": 1509.6273193359375,
+            "width": 57.62249755859375,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item ",
+          "text": "MOLKA",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 360.96746826171875,
+            "y": 1509.6273193359375,
+            "width": 57.62249755859375,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-arrow",
+          "text": "←",
+          "href": null,
+          "role": null,
+          "ariaLabel": "Restaurante anterior",
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 853.6983032226562,
+            "y": 1572.7904052734375,
+            "width": 13.389892578125,
+            "height": 11.8199462890625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": null,
+          "text": "VER RESTAURANTE",
+          "href": "/restaurantes/vento-cafe",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 1110.844970703125,
+            "y": 1702.8719482421875,
+            "width": 115.19873046875,
+            "height": 33.489990234375
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-arrow",
+          "text": "→",
+          "href": null,
+          "role": null,
+          "ariaLabel": "Restaurante siguiente",
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 1241.8037109375,
+            "y": 1713.70703125,
+            "width": 13.389892578125,
+            "height": 11.8199462890625
+          }
+        }
+      ],
+      "closedState": "false",
+      "focusAfterEscape": {
+        "tag": "button",
+        "id": null,
+        "className": "venues-showcase-arrow",
+        "text": "→",
+        "href": null,
+        "role": null,
+        "ariaLabel": "Restaurante siguiente",
+        "ariaExpanded": null,
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(16, 16, 16)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 1241.8037109375,
+          "y": 742.7069702148438,
+          "width": 13.389892578125,
+          "height": 11.82000732421875
+        }
+      },
+      "focusReturnedToTrigger": false
+    },
+    "mobile": {
+      "available": true,
+      "before": {
+        "tag": "button",
+        "id": null,
+        "className": "nav-menu-btn nav-menu-btn-light ",
+        "text": "MENU",
+        "href": null,
+        "role": null,
+        "ariaLabel": null,
+        "ariaExpanded": "false",
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(229, 151, 0)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 295.390625,
+          "y": 133.109375,
+          "width": 80.609375,
+          "height": 34
+        }
+      },
+      "openState": "true",
+      "overlayHidden": "false",
+      "openFocused": {
+        "tag": "button",
+        "id": null,
+        "className": "nav-menu-btn nav-menu-btn-light nav-menu-btn-open",
+        "text": "MENU",
+        "href": null,
+        "role": null,
+        "ariaLabel": null,
+        "ariaExpanded": "true",
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(229, 151, 0)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 295.390625,
+          "y": 133.109375,
+          "width": 80.609375,
+          "height": 34
+        }
+      },
+      "tabSequence": [
+        {
+          "tag": "button",
+          "id": null,
+          "className": "nav-menu-btn nav-menu-btn-open",
+          "text": "CERRAR",
+          "href": null,
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 265.046875,
+            "y": 29,
+            "width": 97.953125,
+            "height": 35
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Restaurantes Espacios, conceptos y reservas",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 118,
+            "width": 336,
+            "height": 522.875
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Empleos Vacantes y oportunidades",
+          "href": "/empleos",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 320.875,
+            "width": 336,
+            "height": 522.875
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Servicios Capacidades y soluciones",
+          "href": "/servicios",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 160.75,
+            "width": 336,
+            "height": 522.875
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-link",
+          "text": "Ecosistema Pass, Anima y Vento OS",
+          "href": "/ecosistema",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 320.625,
+            "width": 336,
+            "height": 522.875
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Reserva tu mesa Encuentra tu restaurante ideal",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 63.5,
+            "width": 336,
+            "height": 716.890625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Empleos Haz parte de Vento Group",
+          "href": "/empleos",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 127.390625,
+            "width": 336,
+            "height": 716.890625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "site-menu-highlight-card",
+          "text": "Contacto Alianzas y oportunidades",
+          "href": "mailto:hola@ventogroup.co",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 27,
+            "y": 98.28125,
+            "width": 336,
+            "height": 716.90625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": "button button-outline",
+          "text": "NUESTROS RESTAURANTES",
+          "href": "/restaurantes",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 18.68499755859375,
+            "y": 402.0345458984375,
+            "width": 352.6300048828125,
+            "height": 40.385009765625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item venues-showcase-item-active",
+          "text": "VENTO CAFÉ",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 22.624998092651367,
+            "y": 627.1356201171875,
+            "width": 103.42499542236328,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item ",
+          "text": "SAUDO",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 137.8699951171875,
+            "y": 627.1356201171875,
+            "width": 57.62249755859375,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-item ",
+          "text": "MOLKA",
+          "href": null,
+          "role": "tab",
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 211.25250244140625,
+            "y": 627.1356201171875,
+            "width": 57.62249755859375,
+            "height": 17.8531494140625
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-arrow",
+          "text": "←",
+          "href": null,
+          "role": null,
+          "ariaLabel": "Restaurante anterior",
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 37.39999771118164,
+            "y": 416.1087646484375,
+            "width": 13.389842987060547,
+            "height": 11.8199462890625
+          }
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "className": null,
+          "text": "VER RESTAURANTE",
+          "href": "/restaurantes/vento-cafe",
+          "role": null,
+          "ariaLabel": null,
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 37.39999771118164,
+            "y": 827.6737060546875,
+            "width": 149.673828125,
+            "height": 16.7449951171875
+          }
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "className": "venues-showcase-arrow",
+          "text": "→",
+          "href": null,
+          "role": null,
+          "ariaLabel": "Restaurante siguiente",
+          "ariaExpanded": null,
+          "tabindex": null,
+          "focusVisible": true,
+          "outlineStyle": "auto",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(229, 151, 0)",
+          "boxShadow": "none",
+          "visible": true,
+          "rect": {
+            "x": 339.21014404296875,
+            "y": 830.13623046875,
+            "width": 13.389862060546875,
+            "height": 11.820068359375
+          }
+        }
+      ],
+      "closedState": "false",
+      "focusAfterEscape": {
+        "tag": "button",
+        "id": null,
+        "className": "venues-showcase-arrow",
+        "text": "→",
+        "href": null,
+        "role": null,
+        "ariaLabel": "Restaurante siguiente",
+        "ariaExpanded": null,
+        "tabindex": null,
+        "focusVisible": true,
+        "outlineStyle": "auto",
+        "outlineWidth": "1px",
+        "outlineColor": "rgb(229, 151, 0)",
+        "boxShadow": "none",
+        "visible": true,
+        "rect": {
+          "x": 341.23370361328125,
+          "y": 810.3728637695312,
+          "width": 13.57769775390625,
+          "height": 11.98590087890625
+        }
+      },
+      "focusReturnedToTrigger": false
+    }
+  },
+  "reducedMotion": {
+    "home": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 2,
+        "totalAnimations": 2,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 2,
+        "animations": [
+          {
+            "playState": "finished",
+            "duration": 950,
+            "iterations": 1,
+            "target": "div.darling-splash-logo-half.darling-splash-logo-top"
+          },
+          {
+            "playState": "finished",
+            "duration": 950,
+            "iterations": 1,
+            "target": "div.darling-splash-logo-half.darling-splash-logo-bottom"
+          }
+        ],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable home-intro-active home-intro-complete"
+      }
+    },
+    "restaurants": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "vento-cafe": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "saudo": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "molka": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "jobs": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "services": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "ecosystem": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "events": {
+      "status": 200,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    },
+    "not-found": {
+      "status": 404,
+      "early": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "smoothScroll": "smooth"
+      },
+      "late": {
+        "mediaMatches": true,
+        "activeAnimations": 0,
+        "totalAnimations": 0,
+        "animations": [],
+        "bodyClasses": "cormorant_garamond_fc706c2b-module__fNlgUG__variable manrope_49fe7fb2-module__fB9vJW__variable"
+      }
+    }
+  },
+  "violationSummary": [
+    {
+      "id": "aria-hidden-focus",
+      "impact": "serious",
+      "help": "ARIA hidden element must not be focusable or contain focusable elements",
+      "auditCount": 16,
+      "nodeCount": 16,
+      "audits": [
+        "desktop:restaurants",
+        "desktop:vento-cafe",
+        "desktop:saudo",
+        "desktop:molka",
+        "desktop:jobs",
+        "desktop:services",
+        "desktop:ecosystem",
+        "desktop:events",
+        "mobile:restaurants",
+        "mobile:vento-cafe",
+        "mobile:saudo",
+        "mobile:molka",
+        "mobile:jobs",
+        "mobile:services",
+        "mobile:ecosystem",
+        "mobile:events"
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "help": "Heading levels should only increase by one",
+      "auditCount": 4,
+      "nodeCount": 4,
+      "audits": [
+        "desktop:jobs",
+        "desktop:ecosystem",
+        "mobile:jobs",
+        "mobile:ecosystem"
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "auditCount": 2,
+      "nodeCount": 2,
+      "audits": [
+        "desktop:not-found",
+        "mobile:not-found"
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "auditCount": 2,
+      "nodeCount": 4,
+      "audits": [
+        "desktop:not-found",
+        "mobile:not-found"
+      ]
+    }
+  ]
+}

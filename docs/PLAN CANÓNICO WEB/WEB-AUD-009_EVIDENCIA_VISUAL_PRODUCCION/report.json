@@ -1,0 +1,879 @@
+{
+  "generated_at": "2026-07-23T23:34:01.998Z",
+  "base_url": "https://www.ventogroup.co",
+  "routes": [
+    {
+      "viewport": "desktop",
+      "route": "/",
+      "requested_url": "https://www.ventogroup.co/",
+      "final_url": "https://www.ventogroup.co/",
+      "status": 200,
+      "title": "Vento Group | Gastronomia y Hospitalidad",
+      "screenshot": "desktop__home.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [
+        "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa."
+      ],
+      "body_text_length": 1968
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes",
+      "requested_url": "https://www.ventogroup.co/restaurantes",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "desktop__restaurantes.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/vento-cafe",
+      "requested_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "final_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "status": 200,
+      "title": "Vento Café | Vento Group",
+      "screenshot": "desktop__restaurante-vento-cafe.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1726
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/saudo",
+      "requested_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "final_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "status": 200,
+      "title": "Saudo | Vento Group",
+      "screenshot": "desktop__restaurante-saudo.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1673
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/molka",
+      "requested_url": "https://www.ventogroup.co/restaurantes/molka",
+      "final_url": "https://www.ventogroup.co/restaurantes/molka",
+      "status": 200,
+      "title": "Molka | Vento Group",
+      "screenshot": "desktop__restaurante-molka.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1683
+    },
+    {
+      "viewport": "desktop",
+      "route": "/empleos",
+      "requested_url": "https://www.ventogroup.co/empleos",
+      "final_url": "https://www.ventogroup.co/empleos",
+      "status": 200,
+      "title": "Empleos | Vento Group",
+      "screenshot": "desktop__empleos.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 2,
+      "placeholders": [
+        "Empleos lead media",
+        "Empleos Vacante destacada"
+      ],
+      "internal_copy": [],
+      "body_text_length": 820
+    },
+    {
+      "viewport": "desktop",
+      "route": "/servicios",
+      "requested_url": "https://www.ventogroup.co/servicios",
+      "final_url": "https://www.ventogroup.co/servicios",
+      "status": 200,
+      "title": "Servicios | Vento Group",
+      "screenshot": "desktop__servicios.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "Servicios lead media",
+        "Image banner",
+        "Servicio Servicio destacado"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1637
+    },
+    {
+      "viewport": "desktop",
+      "route": "/ecosistema",
+      "requested_url": "https://www.ventogroup.co/ecosistema",
+      "final_url": "https://www.ventogroup.co/ecosistema",
+      "status": 200,
+      "title": "Ecosistema | Vento Group",
+      "screenshot": "desktop__ecosistema.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 4,
+      "placeholders": [
+        "Ecosistema lead media",
+        "Ecosistema Vento Pass",
+        "Ecosistema Anima",
+        "Ecosistema Vento OS"
+      ],
+      "internal_copy": [],
+      "body_text_length": 989
+    },
+    {
+      "viewport": "desktop",
+      "route": "/eventos",
+      "requested_url": "https://www.ventogroup.co/eventos",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "desktop__eventos.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "desktop",
+      "route": "/ruta-inexistente-web-aud-009",
+      "requested_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "final_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "status": 404,
+      "title": "Vento Group",
+      "screenshot": "desktop__not-found.png",
+      "viewport_size": {
+        "key": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [],
+      "body_text_length": 33
+    },
+    {
+      "viewport": "tablet",
+      "route": "/",
+      "requested_url": "https://www.ventogroup.co/",
+      "final_url": "https://www.ventogroup.co/",
+      "status": 200,
+      "title": "Vento Group | Gastronomia y Hospitalidad",
+      "screenshot": "tablet__home.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [
+        "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa."
+      ],
+      "body_text_length": 1968
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes",
+      "requested_url": "https://www.ventogroup.co/restaurantes",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "tablet__restaurantes.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/vento-cafe",
+      "requested_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "final_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "status": 200,
+      "title": "Vento Café | Vento Group",
+      "screenshot": "tablet__restaurante-vento-cafe.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1726
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/saudo",
+      "requested_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "final_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "status": 200,
+      "title": "Saudo | Vento Group",
+      "screenshot": "tablet__restaurante-saudo.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1673
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/molka",
+      "requested_url": "https://www.ventogroup.co/restaurantes/molka",
+      "final_url": "https://www.ventogroup.co/restaurantes/molka",
+      "status": 200,
+      "title": "Molka | Vento Group",
+      "screenshot": "tablet__restaurante-molka.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1683
+    },
+    {
+      "viewport": "tablet",
+      "route": "/empleos",
+      "requested_url": "https://www.ventogroup.co/empleos",
+      "final_url": "https://www.ventogroup.co/empleos",
+      "status": 200,
+      "title": "Empleos | Vento Group",
+      "screenshot": "tablet__empleos.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 2,
+      "placeholders": [
+        "Empleos lead media",
+        "Empleos Vacante destacada"
+      ],
+      "internal_copy": [],
+      "body_text_length": 820
+    },
+    {
+      "viewport": "tablet",
+      "route": "/servicios",
+      "requested_url": "https://www.ventogroup.co/servicios",
+      "final_url": "https://www.ventogroup.co/servicios",
+      "status": 200,
+      "title": "Servicios | Vento Group",
+      "screenshot": "tablet__servicios.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "Servicios lead media",
+        "Image banner",
+        "Servicio Servicio destacado"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1637
+    },
+    {
+      "viewport": "tablet",
+      "route": "/ecosistema",
+      "requested_url": "https://www.ventogroup.co/ecosistema",
+      "final_url": "https://www.ventogroup.co/ecosistema",
+      "status": 200,
+      "title": "Ecosistema | Vento Group",
+      "screenshot": "tablet__ecosistema.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 4,
+      "placeholders": [
+        "Ecosistema lead media",
+        "Ecosistema Vento Pass",
+        "Ecosistema Anima",
+        "Ecosistema Vento OS"
+      ],
+      "internal_copy": [],
+      "body_text_length": 989
+    },
+    {
+      "viewport": "tablet",
+      "route": "/eventos",
+      "requested_url": "https://www.ventogroup.co/eventos",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "tablet__eventos.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "tablet",
+      "route": "/ruta-inexistente-web-aud-009",
+      "requested_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "final_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "status": 404,
+      "title": "Vento Group",
+      "screenshot": "tablet__not-found.png",
+      "viewport_size": {
+        "key": "tablet",
+        "width": 834,
+        "height": 1112
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [],
+      "body_text_length": 33
+    },
+    {
+      "viewport": "mobile",
+      "route": "/",
+      "requested_url": "https://www.ventogroup.co/",
+      "final_url": "https://www.ventogroup.co/",
+      "status": 200,
+      "title": "Vento Group | Gastronomia y Hospitalidad",
+      "screenshot": "mobile__home.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [
+        "Con oficio, dedicacion y gran talento, la hospitalidad se vuelve una experiencia completa."
+      ],
+      "body_text_length": 1968
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes",
+      "requested_url": "https://www.ventogroup.co/restaurantes",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "mobile__restaurantes.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/vento-cafe",
+      "requested_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "final_url": "https://www.ventogroup.co/restaurantes/vento-cafe",
+      "status": 200,
+      "title": "Vento Café | Vento Group",
+      "screenshot": "mobile__restaurante-vento-cafe.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1726
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/saudo",
+      "requested_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "final_url": "https://www.ventogroup.co/restaurantes/saudo",
+      "status": 200,
+      "title": "Saudo | Vento Group",
+      "screenshot": "mobile__restaurante-saudo.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1673
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/molka",
+      "requested_url": "https://www.ventogroup.co/restaurantes/molka",
+      "final_url": "https://www.ventogroup.co/restaurantes/molka",
+      "status": 200,
+      "title": "Molka | Vento Group",
+      "screenshot": "mobile__restaurante-molka.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 1,
+      "placeholders": [
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [
+        "Diseña esta sección desde VISO para incluir storytelling de marca, enfoque de cocina, público objetivo y razón de visita.",
+        "Por definir",
+        "Bloque editable para features de experiencia.",
+        "Integra esta lista desde campo body en VISO con bullets."
+      ],
+      "body_text_length": 1683
+    },
+    {
+      "viewport": "mobile",
+      "route": "/empleos",
+      "requested_url": "https://www.ventogroup.co/empleos",
+      "final_url": "https://www.ventogroup.co/empleos",
+      "status": 200,
+      "title": "Empleos | Vento Group",
+      "screenshot": "mobile__empleos.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 2,
+      "placeholders": [
+        "Empleos lead media",
+        "Empleos Vacante destacada"
+      ],
+      "internal_copy": [],
+      "body_text_length": 820
+    },
+    {
+      "viewport": "mobile",
+      "route": "/servicios",
+      "requested_url": "https://www.ventogroup.co/servicios",
+      "final_url": "https://www.ventogroup.co/servicios",
+      "status": 200,
+      "title": "Servicios | Vento Group",
+      "screenshot": "mobile__servicios.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "Servicios lead media",
+        "Image banner",
+        "Servicio Servicio destacado"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1637
+    },
+    {
+      "viewport": "mobile",
+      "route": "/ecosistema",
+      "requested_url": "https://www.ventogroup.co/ecosistema",
+      "final_url": "https://www.ventogroup.co/ecosistema",
+      "status": 200,
+      "title": "Ecosistema | Vento Group",
+      "screenshot": "mobile__ecosistema.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 4,
+      "placeholders": [
+        "Ecosistema lead media",
+        "Ecosistema Vento Pass",
+        "Ecosistema Anima",
+        "Ecosistema Vento OS"
+      ],
+      "internal_copy": [],
+      "body_text_length": 989
+    },
+    {
+      "viewport": "mobile",
+      "route": "/eventos",
+      "requested_url": "https://www.ventogroup.co/eventos",
+      "final_url": "https://www.ventogroup.co/restaurantes",
+      "status": 200,
+      "title": "Restaurantes | Vento Group",
+      "screenshot": "mobile__eventos.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 3,
+      "placeholders": [
+        "La experiencia Vento",
+        "Image banner",
+        "Restaurante Saudo"
+      ],
+      "internal_copy": [],
+      "body_text_length": 1789
+    },
+    {
+      "viewport": "mobile",
+      "route": "/ruta-inexistente-web-aud-009",
+      "requested_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "final_url": "https://www.ventogroup.co/ruta-inexistente-web-aud-009",
+      "status": 404,
+      "title": "Vento Group",
+      "screenshot": "mobile__not-found.png",
+      "viewport_size": {
+        "key": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "navigation_error": null,
+      "placeholder_count": 0,
+      "placeholders": [],
+      "internal_copy": [],
+      "body_text_length": 33
+    }
+  ],
+  "menus": [
+    {
+      "viewport": "desktop",
+      "screenshot": "desktop__menu-open.png"
+    },
+    {
+      "viewport": "tablet",
+      "screenshot": "tablet__menu-open.png"
+    },
+    {
+      "viewport": "mobile",
+      "screenshot": "mobile__menu-open.png"
+    }
+  ],
+  "footers": [
+    {
+      "viewport": "desktop",
+      "route": "/",
+      "screenshot": "desktop__home__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes",
+      "screenshot": "desktop__restaurantes__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/vento-cafe",
+      "screenshot": "desktop__restaurante-vento-cafe__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/saudo",
+      "screenshot": "desktop__restaurante-saudo__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/restaurantes/molka",
+      "screenshot": "desktop__restaurante-molka__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/empleos",
+      "screenshot": "desktop__empleos__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/servicios",
+      "screenshot": "desktop__servicios__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/ecosistema",
+      "screenshot": "desktop__ecosistema__footer.png"
+    },
+    {
+      "viewport": "desktop",
+      "route": "/eventos",
+      "screenshot": "desktop__eventos__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/",
+      "screenshot": "tablet__home__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes",
+      "screenshot": "tablet__restaurantes__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/vento-cafe",
+      "screenshot": "tablet__restaurante-vento-cafe__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/saudo",
+      "screenshot": "tablet__restaurante-saudo__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/restaurantes/molka",
+      "screenshot": "tablet__restaurante-molka__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/empleos",
+      "screenshot": "tablet__empleos__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/servicios",
+      "screenshot": "tablet__servicios__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/ecosistema",
+      "screenshot": "tablet__ecosistema__footer.png"
+    },
+    {
+      "viewport": "tablet",
+      "route": "/eventos",
+      "screenshot": "tablet__eventos__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/",
+      "screenshot": "mobile__home__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes",
+      "screenshot": "mobile__restaurantes__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/vento-cafe",
+      "screenshot": "mobile__restaurante-vento-cafe__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/saudo",
+      "screenshot": "mobile__restaurante-saudo__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/restaurantes/molka",
+      "screenshot": "mobile__restaurante-molka__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/empleos",
+      "screenshot": "mobile__empleos__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/servicios",
+      "screenshot": "mobile__servicios__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/ecosistema",
+      "screenshot": "mobile__ecosistema__footer.png"
+    },
+    {
+      "viewport": "mobile",
+      "route": "/eventos",
+      "screenshot": "mobile__eventos__footer.png"
+    }
+  ],
+  "console_errors": [
+    {
+      "viewport": "desktop",
+      "route": "/ruta-inexistente-web-aud-009",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "route": "/ruta-inexistente-web-aud-009",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "route": "/ruta-inexistente-web-aud-009",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    }
+  ]
+}

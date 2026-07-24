@@ -1,0 +1,65 @@
+- banner:
+  - link "Vento Group":
+    - /url: /
+    - text: Vento Group Gastronomia y Hospitalidad
+  - navigation "Principal":
+    - link "Restaurantes":
+      - /url: /restaurantes
+    - link "Empleos":
+      - /url: /empleos
+    - link "Servicios":
+      - /url: /servicios
+    - button "Menu"
+    - link "Entrar a Vento OS":
+      - /url: /ecosistema
+- main:
+  - text: Vento Group
+  - heading "Ecosistema" [level=1]
+  - paragraph: Descarga Vento Pass, Anima y conecta con Vento OS desde la pagina central.
+  - link "Volver al inicio":
+    - /url: /
+  - article:
+    - text: Ecosistema Vento Pass
+    - heading "Vento Pass" [level=3]
+    - paragraph: Membresias, beneficios y experiencia cliente.
+    - link "Descargar →":
+      - /url: /ecosistema
+  - article:
+    - text: Ecosistema Anima
+    - heading "Anima" [level=3]
+    - paragraph: Cultura, bienestar y experiencia del trabajador.
+    - link "Descargar →":
+      - /url: /ecosistema
+  - article:
+    - text: Ecosistema Vento OS
+    - heading "Vento OS" [level=3]
+    - paragraph: Centro operativo del ecosistema Vento.
+    - link "Entrar →":
+      - /url: /ecosistema
+- contentinfo:
+  - text: Restaurantes Servicios Empleos Ecosistema
+  - navigation "Footer navigation":
+    - link "Nosotros":
+      - /url: /ecosistema
+    - link "Empleos":
+      - /url: /empleos
+    - link "Contacto":
+      - /url: mailto:hola@ventogroup.co
+  - text: Correo
+  - textbox "Correo"
+  - button "Suscribirse"
+  - navigation "Social links":
+    - link "Instagram":
+      - /url: https://www.instagram.com/
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/
+    - link "YouTube":
+      - /url: https://www.youtube.com/
+  - link "Restaurantes":
+    - /url: /restaurantes
+  - link "Servicios":
+    - /url: /servicios
+  - link "Empleos":
+    - /url: /empleos
+  - text: © 2026 Vento Group. Todos los derechos reservados.
+- alert
