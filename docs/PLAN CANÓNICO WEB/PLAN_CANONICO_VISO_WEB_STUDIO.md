@@ -80,7 +80,9 @@ El sistema deberá permitir que una persona autorizada pueda:
 
 ---
 
-## 3. ESTADO INICIAL VERIFICADO
+## 3. ESTADO PREVIO A LA AUDITORÍA
+
+> Este diagnóstico corresponde a la percepción inicial del proyecto. El estado verificado vigente está definido por `WEB-AUD-001` a `WEB-AUD-012`.
 
 ### 3.1 Capacidades existentes
 
@@ -132,7 +134,7 @@ El sistema deberá permitir que una persona autorizada pueda:
 
 ---
 
-## 4. ESTADO GENERAL INICIAL
+## 4. PERCEPCIÓN INICIAL PREVIA A LA AUDITORÍA
 
 ```text
 HOME PÚBLICA             ████████░░  Avanzada
@@ -151,7 +153,7 @@ SEO ADMINISTRABLE        ██░░░░░░░░  Parcial
 
 ## 5. PRINCIPIOS CANÓNICOS OBLIGATORIOS
 
-## 5.1 Fuente única de verdad
+### 5.1 Fuente única de verdad
 
 Este documento será la fuente canónica del proyecto.
 
@@ -165,7 +167,7 @@ Toda brecha deberá:
 
 ---
 
-## 5.2 Migraciones
+### 5.2 Migraciones
 
 Toda migración de Supabase deberá:
 
@@ -180,7 +182,7 @@ Toda migración de Supabase deberá:
 
 ---
 
-## 5.3 Separación de responsabilidades
+### 5.3 Separación de responsabilidades
 
 ```text
 VENTO-GROUP WEB
@@ -198,7 +200,7 @@ VENTO-SHELL
 
 ---
 
-## 5.4 Publicación segura
+### 5.4 Publicación segura
 
 Guardar y publicar serán acciones diferentes.
 
@@ -220,7 +222,7 @@ Nunca se deberá modificar directamente una versión ya publicada.
 
 ---
 
-## 5.5 Personalización controlada
+### 5.5 Personalización controlada
 
 El editor será altamente personalizable, pero no permitirá introducir:
 
@@ -244,7 +246,7 @@ La personalización se realizará mediante:
 
 ---
 
-## 5.6 Código y contenido
+### 5.6 Código y contenido
 
 Deberá permanecer en código:
 
@@ -277,7 +279,7 @@ Deberá poder editarse desde VISO:
 
 ---
 
-## 5.7 Compatibilidad progresiva
+### 5.7 Compatibilidad progresiva
 
 La web pública no se reconstruirá de una sola vez.
 
@@ -295,7 +297,7 @@ La migración deberá hacerse página por página.
 
 ---
 
-## 5.8 Referencia Darling Group
+### 5.8 Referencia Darling Group
 
 Se podrá reproducir:
 
@@ -324,7 +326,7 @@ No se podrá copiar:
 
 ## 6. ALCANCE DEL PROGRAMA
 
-## 6.1 Incluido
+### 6.1 Incluido
 
 - Constructor visual en VISO.
 - Editor de páginas.
@@ -353,7 +355,7 @@ No se podrá copiar:
 
 ---
 
-## 6.2 No incluido en el MVP
+### 6.2 No incluido en el MVP
 
 Estas funciones no se implementarán durante el núcleo inicial:
 
@@ -422,7 +424,7 @@ De requerirse posteriormente, deberán generarse nuevas tareas explícitas.
 
 ## 8. MODELO DE DATOS OBJETIVO
 
-## 8.1 Estrategia seleccionada
+### 8.1 Estrategia seleccionada
 
 Se utilizará un modelo híbrido:
 
@@ -443,7 +445,7 @@ Esto evita:
 
 ---
 
-## 8.2 Tablas objetivo
+### 8.2 Tablas objetivo
 
 ### Núcleo del sitio
 
@@ -484,7 +486,7 @@ Esto evita:
 
 ---
 
-## 8.3 Estructura de una revisión
+### 8.3 Estructura de una revisión
 
 Ejemplo conceptual:
 
@@ -532,7 +534,7 @@ Ejemplo conceptual:
 
 ## 9. CATÁLOGO INICIAL DE SECCIONES
 
-## 9.1 Heroes
+### 9.1 Heroes
 
 - `hero.media`
 - `hero.carousel`
@@ -540,7 +542,7 @@ Ejemplo conceptual:
 - `hero.split`
 - `hero.minimal`
 
-## 9.2 Editorial
+### 9.2 Editorial
 
 - `editorial.split`
 - `editorial.reverse`
@@ -548,7 +550,7 @@ Ejemplo conceptual:
 - `editorial.quote`
 - `editorial.rich_text`
 
-## 9.3 Multimedia
+### 9.3 Multimedia
 
 - `media.image_banner`
 - `media.video_banner`
@@ -556,7 +558,7 @@ Ejemplo conceptual:
 - `media.gallery_slider`
 - `media.parallax`
 
-## 9.4 Restaurantes y espacios
+### 9.4 Restaurantes y espacios
 
 - `venues.showcase`
 - `venues.grid`
@@ -565,7 +567,7 @@ Ejemplo conceptual:
 - `venues.related`
 - `events.spaces_selector`
 
-## 9.5 Cultura y corporativo
+### 9.5 Cultura y corporativo
 
 - `values.slider`
 - `steps.numbered`
@@ -574,7 +576,7 @@ Ejemplo conceptual:
 - `stats.grid`
 - `apps.ecosystem`
 
-## 9.6 Colecciones dinámicas
+### 9.6 Colecciones dinámicas
 
 - `collection.grid`
 - `collection.list`
@@ -583,7 +585,7 @@ Ejemplo conceptual:
 - `events.list`
 - `services.grid`
 
-## 9.7 Conversión
+### 9.7 Conversión
 
 - `cta.banner`
 - `cta.split`
@@ -592,7 +594,7 @@ Ejemplo conceptual:
 - `form.job_application`
 - `newsletter.signup`
 
-## 9.8 Estructura
+### 9.8 Estructura
 
 - `layout.spacer`
 - `layout.divider`
@@ -663,7 +665,7 @@ LANZAMIENTO
 
 ## FASE 1 — AUDITORÍA Y LÍNEA BASE
 
-## Objetivo
+### Objetivo
 
 Conocer exactamente el estado real antes de modificar arquitectura, base de datos o interfaces.
 
@@ -1351,7 +1353,7 @@ Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los 
 
 #### 13. Criterios de aprobación
 
-`WEB-AUD-001` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-001` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] la matriz maestra de rutas;
 - [x] la clasificación de `/eventos` como redirección inconsistente;
@@ -1361,13 +1363,13 @@ Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los 
 - [x] la incorporación de `WEB-PRD-016`;
 - [x] que las decisiones definitivas de URLs se resolverán en Fase 2.
 
-#### 14. Estado de cierre propuesto
+#### 14. Estado de cierre vigente
 
 ```text
 WEB-AUD-001 — APROBADA
 ```
 
-##### 14.1 Después de aprobación
+##### 14.1 Estado vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -1387,11 +1389,11 @@ WEB-AUD-001 — APROBADA
 
 #### 15. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                    | Estado            |
-| -------------- | ---------- | ----------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Primera versión                           | Reemplazada       |
-| `2026-07-23.2` | 2026-07-23 | Reorganización de contenido               | Reemplazada       |
-| `2026-07-23.3` | 2026-07-23 | Corrección completa de jerarquía Markdown | Aprobada |
+| Versión        | Fecha      | Cambio                                    | Estado      |
+| -------------- | ---------- | ----------------------------------------- | ----------- |
+| `2026-07-23.1` | 2026-07-23 | Primera versión                           | Reemplazada |
+| `2026-07-23.2` | 2026-07-23 | Reorganización de contenido               | Reemplazada |
+| `2026-07-23.3` | 2026-07-23 | Corrección completa de jerarquía Markdown | Aprobada    |
 
 
 ### WEB-AUD-002 — Inventario canónico de componentes públicos
@@ -2703,7 +2705,7 @@ Ubicación recomendada: después de `WEB-MIG-019`.
 
 #### 13. Criterios de aprobación
 
-`WEB-AUD-002` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-002` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] el inventario de 16 componentes compartidos;
 - [x] el inventario de 2 envoltorios globales;
@@ -2718,7 +2720,7 @@ Ubicación recomendada: después de `WEB-MIG-019`.
 - [x] la incorporación de `WEB-SEC-016`;
 - [x] la incorporación de `WEB-MIG-020`.
 
-#### 14. Estado de cierre propuesto
+#### 14. Estado de cierre vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -2743,7 +2745,7 @@ WEB-AUD-002 — APROBADA
 - implementación de newsletter;
 - reemplazo de la capa multimedia.
 
-##### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -2797,8 +2799,8 @@ WEB-AUD-002 — APROBADA
 
 #### 16. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                                            | Estado            |
-| -------------- | ---------- | ----------------------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                                            | Estado   |
+| -------------- | ---------- | ----------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-002` con jerarquía Markdown validada | Aprobada |
 
 
@@ -4535,7 +4537,7 @@ Validaciones:
 
 #### 13. Criterios de aprobación
 
-`WEB-AUD-003` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-003` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] la clasificación de contenido hardcodeado;
 - [x] el inventario global, por página y por componente;
@@ -4551,7 +4553,7 @@ Validaciones:
 - [x] la incorporación de `WEB-MIG-021`;
 - [x] la incorporación de `WEB-QA-021`.
 
-#### 14. Estado de cierre propuesto
+#### 14. Estado de cierre vigente
 
 Estado del bloque:
 
@@ -4580,7 +4582,7 @@ WEB-AUD-003 — APROBADA
 - modificar Supabase;
 - cambiar producción.
 
-##### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -4635,8 +4637,8 @@ WEB-AUD-003 — APROBADA
 
 #### 16. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                                            | Estado            |
-| -------------- | ---------- | ----------------------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                                            | Estado   |
+| -------------- | ---------- | ----------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-003` con jerarquía Markdown validada | Aprobada |
 
 
@@ -5955,7 +5957,7 @@ Alcance:
 
 #### 19. Criterios de aprobación
 
-`WEB-AUD-004` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-004` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] el inventario de `website_blocks`;
 - [x] el inventario de `website_items`;
@@ -5976,7 +5978,7 @@ Alcance:
 - [x] la incorporación de `WEB-SEC-017`;
 - [x] la incorporación de `WEB-MIG-022`.
 
-#### 20. Estado de cierre propuesto
+#### 20. Estado de cierre vigente
 
 Estado del bloque:
 
@@ -6005,7 +6007,7 @@ WEB-AUD-004 — APROBADA
 - sincronizar Negocios;
 - modificar producción.
 
-##### 20.2 Continuidad después de aprobación
+##### 20.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -6056,8 +6058,8 @@ WEB-AUD-004 — APROBADA
 
 #### 22. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                                                                          | Estado            |
-| -------------- | ---------- | ----------------------------------------------------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                                                                          | Estado   |
+| -------------- | ---------- | ----------------------------------------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-004` con verificación de base activa y jerarquía Markdown validada | Aprobada |
 
 
@@ -6105,7 +6107,7 @@ La secuencia vigente es:
 [x] WEB-AUD-006 — Auditar Supabase
 ```
 
-`WEB-AUD-004` fue desarrollada, pero no se marca aprobada dentro de este documento porque no existe una aprobación explícita registrada.
+`WEB-AUD-004` está aprobada documentalmente y forma parte de la continuidad vigente de la Fase 1.
 
 #### 2. Objetivo
 
@@ -7491,7 +7493,7 @@ Antes de habilitar más usuarios en el CMS:
 
 #### 19. Criterios de aprobación
 
-`WEB-AUD-005` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-005` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] el mapa de flujos existentes;
 - [x] el inventario de campos;
@@ -7508,7 +7510,7 @@ Antes de habilitar más usuarios en el CMS:
 - [x] la incorporación de `WEB-QA-023`;
 - [x] que `WEB-ARC-005` se mantiene pendiente y fuera de esta fase.
 
-#### 20. Estado de cierre propuesto
+#### 20. Estado de cierre vigente
 
 ```text
 WEB-AUD-005 — APROBADA
@@ -7527,13 +7529,13 @@ WEB-AUD-005 — APROBADA
 - implementar borradores;
 - aplicar migraciones.
 
-##### 20.2 Continuidad después de aprobación
+##### 20.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[x] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Inventariar contenido administrable
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
 ```
@@ -7574,8 +7576,8 @@ WEB-AUD-005 — APROBADA
 
 #### 22. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                             | Estado            |
-| -------------- | ---------- | -------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                             | Estado   |
+| -------------- | ---------- | -------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación de auditoría integral de VISO Website CMS | Aprobada |
 
 
@@ -8903,7 +8905,7 @@ Marcar:
 Mantener:
 
 ```text
-[x] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Inventariar contenido administrable
 [ ] WEB-ARC-005 — Pendiente; borrador fuera de secuencia
 ```
 
@@ -8921,7 +8923,7 @@ Las siguientes tareas fueron creadas por auditorías previas y deben existir en 
 
 #### 21.3 Agregar `WEB-DB-020`
 
-Ubicación recomendada: después de la última tarea tareas específicas `WEB-DB-001` a `WEB-DB-020` según `WEB-AUD-012`.
+Ubicación recomendada: después de `WEB-DB-019`.
 
 ```text
 [ ] WEB-DB-020 — Crear proyección pública de publicación vigente
@@ -9037,7 +9039,7 @@ No se deberá conceder `SELECT` a `anon` hasta que:
 
 #### 23. Criterios de aprobación
 
-`WEB-AUD-006` podrá marcarse como completada cuando se apruebe:
+`WEB-AUD-006` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] el inventario de tablas;
 - [x] el inventario de 9 índices;
@@ -9058,7 +9060,7 @@ No se deberá conceder `SELECT` a `anon` hasta que:
 - [x] la incorporación de `WEB-QA-024`;
 - [x] que las tablas legacy permanezcan cerradas a `anon` hasta existir proyección pública segura.
 
-#### 24. Estado de cierre propuesto
+#### 24. Estado de cierre vigente
 
 ```text
 WEB-AUD-006 — APROBADA
@@ -9080,13 +9082,13 @@ WEB-AUD-006 — APROBADA
 - no retirar `service_role`;
 - no modificar producción.
 
-##### 24.2 Continuidad después de aprobación
+##### 24.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[x] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Inventariar contenido administrable
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
 [x] WEB-AUD-007 — Auditar contenido en producción
@@ -9147,8 +9149,8 @@ WEB-AUD-006 — APROBADA
 
 #### 26. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                                                    | Estado            |
-| -------------- | ---------- | ------------------------------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                                                    | Estado   |
+| -------------- | ---------- | ------------------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Auditoría integral de la superficie Supabase utilizada por la web pública | Aprobada |
 
 
@@ -10065,33 +10067,33 @@ La prioridad anterior no constituye autorizacion de cambio.
 
 Toda correccion debe ejecutarse en su tarea propietaria.
 
-#### 16. Criterios de aprobacion
+#### 16. Criterios de aprobación cumplidos
 
-`WEB-AUD-007` podra marcarse como completada cuando se apruebe:
+`WEB-AUD-007` fue aprobada con los siguientes criterios cumplidos:
 
-- [ ] que produccion usa datos reales de Supabase;
-- [ ] la distincion entre filas reales y contenido real aprobado;
-- [ ] la inferencia de uso de `SUPABASE_SERVICE_ROLE_KEY`;
-- [ ] el inventario de variables referenciadas;
-- [ ] las limitaciones de confirmacion del panel de despliegue;
-- [ ] el inventario de placeholders visibles;
-- [ ] la matriz de paginas activas, incompletas, vacias y ausentes;
-- [ ] el diagnostico de Inicio;
-- [ ] el diagnostico de Restaurantes;
-- [ ] el diagnostico de detalles de restaurante;
-- [ ] el diagnostico de Empleos;
-- [ ] el diagnostico de Servicios;
-- [ ] el diagnostico de Ecosistema;
-- [ ] el diagnostico de Eventos;
-- [ ] el registro `WEB-GAP-146` a `WEB-GAP-167`;
-- [ ] la incorporacion de `WEB-QA-022`;
-- [ ] la ampliacion de `WEB-SEC-012`;
-- [ ] la ampliacion de `WEB-OPS-002`.
+- [x] que produccion usa datos reales de Supabase;
+- [x] la distincion entre filas reales y contenido real aprobado;
+- [x] la inferencia de uso de `SUPABASE_SERVICE_ROLE_KEY`;
+- [x] el inventario de variables referenciadas;
+- [x] las limitaciones de confirmacion del panel de despliegue;
+- [x] el inventario de placeholders visibles;
+- [x] la matriz de paginas activas, incompletas, vacias y ausentes;
+- [x] el diagnostico de Inicio;
+- [x] el diagnostico de Restaurantes;
+- [x] el diagnostico de detalles de restaurante;
+- [x] el diagnostico de Empleos;
+- [x] el diagnostico de Servicios;
+- [x] el diagnostico de Ecosistema;
+- [x] el diagnostico de Eventos;
+- [x] el registro `WEB-GAP-146` a `WEB-GAP-167`;
+- [x] la incorporacion de `WEB-QA-022`;
+- [x] la ampliacion de `WEB-SEC-012`;
+- [x] la ampliacion de `WEB-OPS-002`.
 
-#### 17. Estado de cierre propuesto
+#### 17. Estado de cierre vigente
 
 ```text
-WEB-AUD-007 — PROPUESTA PARA APROBACION
+WEB-AUD-007 — APROBADA
 ```
 
 ##### 17.1 No ejecutar todavia
@@ -10108,7 +10110,7 @@ WEB-AUD-007 — PROPUESTA PARA APROBACION
 - no subir medios;
 - no cambiar produccion.
 
-##### 17.2 Continuidad despues de aprobacion
+##### 17.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas publicas
@@ -10121,7 +10123,6 @@ WEB-AUD-007 — PROPUESTA PARA APROBACION
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
 ```
 
-La marca de `WEB-AUD-007` solo se aplicara despues de aprobacion explicita.
 
 #### 18. Evidencia tecnica
 
@@ -10158,8 +10159,8 @@ Se contrastaron todas las filas vigentes de:
 
 #### 19. Registro de cambios
 
-| Version        | Fecha      | Cambio                                                                            | Estado            |
-| -------------- | ---------- | --------------------------------------------------------------------------------- | ----------------- |
+| Version        | Fecha      | Cambio                                                                            | Estado   |
+| -------------- | ---------- | --------------------------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Auditoria de datos reales, placeholders, variables y paginas vacias en produccion | Aprobada |
 
 
@@ -10758,7 +10759,7 @@ No autoriza:
 
 #### 13. Criterios de aprobación
 
-`WEB-AUD-008` podrá aprobarse cuando se acepte:
+`WEB-AUD-008` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] la taxonomía de fuentes objetivo;
 - [x] la taxonomía de estados;
@@ -10776,7 +10777,7 @@ No autoriza:
 - [x] que `website_blocks` y `website_items` son legacy;
 - [x] que esta tarea no implementa cambios físicos.
 
-#### 14. Estado de cierre propuesto
+#### 14. Estado de cierre vigente
 
 ```text
 WEB-AUD-008 — APROBADA
@@ -10794,7 +10795,7 @@ WEB-AUD-008 — APROBADA
 - no crear schemas;
 - no aplicar migraciones.
 
-##### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-007 — Auditar contenido en producción
@@ -10841,8 +10842,8 @@ Se verificaron en modo de solo lectura:
 
 #### 16. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                     | Estado            |
-| -------------- | ---------- | ------------------------------------------ | ----------------- |
+| Versión        | Fecha      | Cambio                                     | Estado   |
+| -------------- | ---------- | ------------------------------------------ | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación de matriz editable vs hardcodeado | Aprobada |
 
 
@@ -10857,7 +10858,7 @@ Se verificaron en modo de solo lectura:
 | Identificador               | `WEB-AUD-009`                                    |
 | Nombre                      | Crear línea base visual                          |
 | Fase                        | FASE 1 — Auditoría y línea base                  |
-| Estado                      | **APROBADA**                    |
+| Estado                      | **APROBADA**                                     |
 | Fecha de captura            | `2026-07-23T23:34:01Z`                           |
 | Dominio capturado           | `https://www.ventogroup.co`                      |
 | Método                      | Playwright Chromium en GitHub Actions            |
@@ -11288,18 +11289,18 @@ Esos puntos corresponden a QA, accesibilidad y rendimiento posteriores.
 
 No se crean identificadores duplicados cuando el hallazgo ya tiene tarea responsable.
 
-| Brecha        | Descripción                                                   | Severidad | Responsable                                  |
-| ------------- | ------------------------------------------------------------- | --------- | -------------------------------------------- |
-| `WEB-GAP-168` | Home presenta una gran superficie vacía en los tres viewports | Crítica   | `WEB-PAG-001` a `WEB-PAG-006`, `WEB-MIG-021` |
-| `WEB-GAP-169` | No existe una línea visual coherente entre secciones públicas | Alta      | `WEB-DS-001` a `WEB-DS-012`, tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`     |
-| `WEB-GAP-170` | Los estados vacíos se expresan como placeholders técnicos     | Crítica   | `WEB-QA-021`, `WEB-QA-022`, `WEB-EDT-007`    |
-| `WEB-GAP-171` | El footer domina excesivamente la composición móvil           | Alta      | `WEB-GLB-005`, `WEB-GLB-006`, tareas responsive identificadas en `WEB-AUD-012`    |
-| `WEB-GAP-172` | El menú móvil carece de jerarquía específica                  | Alta      | `WEB-GLB-003`, `WEB-GLB-004`, tareas responsive identificadas en `WEB-AUD-012`    |
-| `WEB-GAP-173` | La 404 usa la pantalla genérica no localizada                 | Media     | `WEB-PAG-041`, `WEB-QA-022`                  |
-| `WEB-GAP-174` | Detalles de restaurantes tienen excesivo vacío vertical       | Alta      | `WEB-PAG-010` a `WEB-PAG-018`, tareas responsive identificadas en `WEB-AUD-012`   |
-| `WEB-GAP-175` | Logos operativos sustituyen fotografía editorial              | Alta      | `WEB-MED-*`, `WEB-ARC-007`                   |
-| `WEB-GAP-176` | No existe página visual propia para Eventos                   | Alta      | `WEB-PAG-040`, `WEB-PRD-016`                 |
-| `WEB-GAP-177` | Tablet hereda composiciones sin adaptación específica         | Media     | tareas responsive identificadas en `WEB-AUD-012`, `WEB-QA-*`                      |
+| Brecha        | Descripción                                                   | Severidad | Responsable                                                  |
+| ------------- | ------------------------------------------------------------- | --------- | ------------------------------------------------------------ |
+| `WEB-GAP-168` | Home presenta una gran superficie vacía en los tres viewports | Crítica   | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-169` | No existe una línea visual coherente entre secciones públicas | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-170` | Los estados vacíos se expresan como placeholders técnicos     | Crítica   | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-171` | El footer domina excesivamente la composición móvil           | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-172` | El menú móvil carece de jerarquía específica                  | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-173` | La 404 usa la pantalla genérica no localizada                 | Media     | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-174` | Detalles de restaurantes tienen excesivo vacío vertical       | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-175` | Logos operativos sustituyen fotografía editorial              | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-176` | No existe página visual propia para Eventos                   | Alta      | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
+| `WEB-GAP-177` | Tablet hereda composiciones sin adaptación específica         | Media     | Asignación vigente: ver matriz consolidada de `WEB-AUD-012`. |
 
 #### 13. Decisiones derivadas
 
@@ -11383,7 +11384,7 @@ Después de descargar y validar el artifact deberá:
 
 #### 15. Criterios de aprobación
 
-`WEB-AUD-009` podrá aprobarse cuando se acepte:
+`WEB-AUD-009` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] cobertura de 10 rutas por viewport;
 - [x] viewports desktop, tablet y móvil;
@@ -11398,7 +11399,7 @@ Después de descargar y validar el artifact deberá:
 - [x] conservación del ZIP como evidencia histórica;
 - [x] que esta tarea no define el diseño objetivo.
 
-#### 16. Estado de cierre propuesto
+#### 16. Estado de cierre vigente
 
 ```text
 WEB-AUD-009 — APROBADA
@@ -11415,7 +11416,7 @@ WEB-AUD-009 — APROBADA
 - no cambiar menú;
 - no implementar visual regression definitiva.
 
-##### 16.2 Continuidad después de aprobación
+##### 16.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
@@ -11444,8 +11445,8 @@ Incluye:
 
 #### 18. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                               | Estado            |
-| -------------- | ---------- | ---------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                               | Estado   |
+| -------------- | ---------- | ---------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Captura automatizada y análisis visual de producción | Aprobada |
 
 
@@ -11478,7 +11479,7 @@ Incluye:
 
 `WEB-AUD-009` queda aprobada documentalmente.
 
-`WEB-AUD-010` permanece en propuesta hasta aprobación explícita.
+`WEB-AUD-010` queda aprobada documentalmente.
 
 #### 1. Objetivo
 
@@ -11903,7 +11904,7 @@ Debe exigir:
 - [x] ninguna métrica de campo se declara aprobada sin evidencia;
 - [x] no se ejecutan optimizaciones todavía.
 
-#### 18. Estado de cierre propuesto
+#### 18. Estado de cierre vigente
 
 ```text
 WEB-AUD-010 — APROBADA
@@ -11920,7 +11921,7 @@ WEB-AUD-010 — APROBADA
 - no modificar Vercel;
 - no modificar Supabase.
 
-##### 18.2 Continuidad después de aprobación
+##### 18.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-010 — Crear línea base de rendimiento
@@ -11938,8 +11939,8 @@ WEB-AUD-010 — APROBADA
 
 #### 20. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                                           | Estado            |
-| -------------- | ---------- | ---------------------------------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                                           | Estado   |
+| -------------- | ---------- | ---------------------------------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Línea base Lighthouse, transferencia, medios, JavaScript y caché | Aprobada |
 
 
@@ -12640,7 +12641,7 @@ No se crea una tarea nueva porque todas las brechas tienen propietario explícit
 
 #### 15. Criterios de aprobación
 
-`WEB-AUD-011` podrá aprobarse cuando se acepte:
+`WEB-AUD-011` fue aprobada con los siguientes criterios cumplidos:
 
 - [x] la línea base de contraste;
 - [x] el hallazgo `aria-hidden-focus`;
@@ -12657,7 +12658,7 @@ No se crea una tarea nueva porque todas las brechas tienen propietario explícit
 - [x] las brechas `WEB-GAP-188` a `WEB-GAP-204`;
 - [x] que esta tarea no implementa correcciones.
 
-#### 16. Estado de cierre propuesto
+#### 16. Estado de cierre vigente
 
 ```text
 WEB-AUD-011 — APROBADA
@@ -12675,7 +12676,7 @@ WEB-AUD-011 — APROBADA
 - no integrar axe en CI;
 - no desplegar cambios.
 
-##### 16.2 Continuidad después de aprobación
+##### 16.2 Continuidad vigente
 
 ```text
 [x] WEB-AUD-010 — Crear línea base de rendimiento
@@ -12699,8 +12700,8 @@ El paquete de evidencia incluye:
 
 #### 18. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                  | Estado            |
-| -------------- | ---------- | --------------------------------------- | ----------------- |
+| Versión        | Fecha      | Cambio                                  | Estado   |
+| -------------- | ---------- | --------------------------------------- | -------- |
 | `2026-07-23.1` | 2026-07-23 | Creación de línea base de accesibilidad | Aprobada |
 
 
@@ -12710,27 +12711,28 @@ El paquete de evidencia incluye:
 
 #### 0. Control documental
 
-| Campo                             | Valor                                       |
-| --------------------------------- | ------------------------------------------- |
-| Identificador                     | `WEB-AUD-012`                               |
-| Nombre                            | Consolidar brechas                          |
-| Fase                              | FASE 1 — Auditoría y línea base             |
-| Estado                            | APROBADA                                    |
-| Fecha                             | `2026-07-23`                                |
-| Tipo de cierre                    | Documental                                  |
-| Brechas consolidadas              | **204**                                     |
-| Primera brecha                    | `WEB-GAP-001`                               |
-| Última brecha                     | `WEB-GAP-204`                               |
-| IDs faltantes                     | **0**                                       |
-| IDs duplicados                    | **0**                                       |
-| Brechas sin propietaria           | **0**                                       |
-| Referencias con comodín           | **0**                                       |
-| Referencias por rango ambiguo     | **0**                                       |
-| Tareas derivadas por materializar | **21**                                      |
-| Cambios en código                 | Ninguno                                     |
-| Cambios en Supabase               | Ninguno                                     |
-| Cambios en producción             | Ninguno                                     |
-| Siguiente tarea tras aprobación   | `WEB-PRD-001 — Definir perfiles de usuario` |
+| Campo                                       | Valor                                       |
+| ------------------------------------------- | ------------------------------------------- |
+| Identificador                               | `WEB-AUD-012`                               |
+| Nombre                                      | Consolidar brechas                          |
+| Fase                                        | FASE 1 — Auditoría y línea base             |
+| Estado                                      | APROBADA                                    |
+| Fecha                                       | `2026-07-23`                                |
+| Tipo de cierre                              | Documental                                  |
+| Brechas consolidadas                        | **204**                                     |
+| Primera brecha                              | `WEB-GAP-001`                               |
+| Última brecha                               | `WEB-GAP-204`                               |
+| IDs faltantes                               | **0**                                       |
+| IDs duplicados                              | **0**                                       |
+| Brechas sin propietaria                     | **0**                                       |
+| Referencias con comodín                     | **0**                                       |
+| Referencias por rango ambiguo               | **0**                                       |
+| Tareas derivadas registradas                | **21**                                      |
+| Tareas derivadas pendientes de materializar | **0**                                       |
+| Cambios en código                           | Ninguno                                     |
+| Cambios en Supabase                         | Ninguno                                     |
+| Cambios en producción                       | Ninguno                                     |
+| Siguiente tarea vigente                     | `WEB-PRD-001 — Definir perfiles de usuario` |
 
 ##### 0.1 Continuidad
 
@@ -12766,8 +12768,9 @@ HALLAZGO
 
 Queda prohibido registrar una brecha mediante:
 
-- tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`;
+- `WEB-PAG-*`;
 - `WEB-QA-*`;
+- cualquier otra familia genérica;
 - “se resolverá después”;
 - “pendiente para una fase futura”;
 - un rango sin enumerar sus tareas;
@@ -12812,11 +12815,11 @@ WEB-QA-025 — Validar integridad del Section Registry y sus contratos
 
 ##### 3.4 Eliminación de familias inexistentes
 
-Las referencias tareas de diseño identificadas en `WEB-AUD-012` y tareas responsive identificadas en `WEB-AUD-012` se sustituyen por tareas existentes y exactas de producto, renderer, páginas y QA. No se crean familias paralelas sin necesidad.
+Las referencias `WEB-DS-*` y `WEB-RSP-*` fueron sustituidas por tareas existentes y exactas de producto, renderer, páginas y QA. No se crean familias paralelas sin necesidad.
 
-#### 4. Tareas derivadas que quedan materializadas por esta consolidación
+#### 4. Tareas derivadas materializadas por esta consolidación
 
-Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. Su definición en esta sección elimina el estado de “mención narrativa”.
+Estas tareas quedaron insertadas físicamente una sola vez en su fase propietaria. Su definición en esta sección elimina el estado de “mención narrativa”.
 
 | Tarea          | Nombre                                                      | Fase                                           |
 | -------------- | ----------------------------------------------------------- | ---------------------------------------------- |
@@ -12842,7 +12845,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | `WEB-RND-018`  | Crear Data Resolver Registry                                | FASE 5 — Renderer                              |
 | `WEB-RND-019`  | Crear LinkRenderer canónico                                 | FASE 5 — Renderer                              |
 
-##### 4.1 Bloques listos para insertar
+##### 4.1 Verificación de inserción
 
 ###### FASE 2 — Definición funcional
 
@@ -13237,7 +13240,7 @@ WEB-ARC-005 aprobado por herencia: NO
 WEB-AUD-012 — APROBADA
 ```
 
-Después de aprobación explícita:
+Estado vigente:
 
 ```text
 [x] WEB-AUD-012 — Consolidar brechas
@@ -13249,13 +13252,13 @@ La Fase 1 queda cerrada en sentido documental, no significa que las 204 brechas 
 
 #### 11. Registro de cambios
 
-| Versión        | Fecha      | Cambio                                           | Estado            |
-| -------------- | ---------- | ------------------------------------------------ | ----------------- |
+| Versión        | Fecha      | Cambio                                           | Estado   |
+| -------------- | ---------- | ------------------------------------------------ | -------- |
 | `2026-07-23.1` | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`   | Aprobada |
 | `2026-07-23.2` | 2026-07-23 | Regularización de IDs 072–084 y conflicto QA-022 | Aprobada |
 
 
-##### Puerta de aprobación Fase 1 — CERRADA DOCUMENTALMENTE
+### Puerta de aprobación Fase 1 — CERRADA DOCUMENTALMENTE
 
 - [x] Estado real del repositorio auditado.
 - [x] VISO Website CMS auditado.
@@ -13274,18 +13277,1163 @@ La Fase 1 queda cerrada en sentido documental, no significa que las 204 brechas 
 
 ## FASE 2 — DEFINICIÓN FUNCIONAL DE VISO WEB STUDIO
 
-## Objetivo
+### Objetivo
 
 Definir exactamente qué podrá hacer un usuario y qué continuará controlado por desarrollo.
 
 ---
 
-### [ ] **WEB-PRD-001 — Definir perfiles de usuario**
-  - Administrador del sitio.
-  - Editor.
-  - Publicador.
-  - Revisor.
-  - Usuario de solo lectura.
+# WEB-PRD-001 — Definir perfiles de usuario
+
+> **Estado:** APROBADA
+> **Fase:** FASE 2 — Definición funcional de VISO Web Studio  
+> **Naturaleza:** Definición funcional y de producto  
+> **Implementación física:** No incluida
+
+## 0. Control documental
+
+| Campo                     | Valor                                            |
+| ------------------------- | ------------------------------------------------ |
+| Identificador             | `WEB-PRD-001`                                    |
+| Nombre                    | Definir perfiles de usuario                      |
+| Estado                    | APROBADA                                         |
+| Fecha                     | `2026-07-23`                                     |
+| Fase                      | FASE 2 — Definición funcional de VISO Web Studio |
+| Tarea anterior vigente    | `WEB-AUD-012 — Consolidar brechas` — APROBADA    |
+| Tarea siguiente reservada | `WEB-PRD-002 — Definir matriz de permisos`       |
+| Repositorio funcional     | `devVentoGroup/vento-viso`                       |
+| Sitio inicial             | Vento Group                                      |
+| Dominio público asociado  | `ventogroup.co`                                  |
+| Cambios en código         | Ninguno                                          |
+| Cambios en Supabase       | Ninguno                                          |
+| Cambios en producción     | Ninguno                                          |
+
+### 0.1 Brechas asumidas
+
+La matriz consolidada de `WEB-AUD-012` no asigna directamente ningún
+`WEB-GAP-*` a `WEB-PRD-001`.
+
+Esta tarea actúa como prerrequisito funcional de:
+
+- `WEB-PRD-002 — Definir matriz de permisos`;
+- `WEB-SEC-001 — Crear permisos nuevos`;
+- `WEB-SEC-018 — Proteger administración web con autorización granular`;
+- `WEB-DB-003`, `WEB-DB-004` y `WEB-DB-012`, encargadas de la trazabilidad
+  posterior de autores, revisiones, publicaciones y auditoría.
+
+Las brechas `WEB-GAP-066` y `WEB-GAP-067` permanecen asignadas a
+`WEB-PRD-002` y a sus tareas de implementación y seguridad. Esta tarea no
+las cierra ni sustituye su propietaria.
+
+## 1. Objetivo
+
+Definir los perfiles funcionales que utilizarán VISO Web Studio y establecer,
+para cada uno:
+
+1. su propósito;
+2. su responsabilidad principal;
+3. el tipo de decisiones que puede tomar;
+4. las acciones que debe tener disponibles;
+5. las acciones que deben permanecer fuera de su alcance;
+6. su relación con el proceso editorial;
+7. su relación con el modelo canónico de autorización de Vento OS;
+8. su alcance por sitio;
+9. sus reglas de asignación, combinación, revocación y auditoría;
+10. qué elementos continúan exclusivamente controlados por desarrollo.
+
+Esta tarea define **perfiles funcionales de producto**. No diseña todavía
+las claves exactas de permisos ni modifica el catálogo de autorización.
+
+## 2. Base normativa
+
+La definición conserva las siguientes decisiones ya aprobadas:
+
+- VISO Web Studio será el sistema encargado de crear, editar, previsualizar
+  y publicar contenido para la web pública;
+- guardar y publicar son acciones diferentes;
+- una versión publicada será inmutable;
+- la personalización será controlada mediante componentes, variantes,
+  propiedades y tokens registrados;
+- el sitio público solo leerá contenido publicado;
+- toda acción sensible deberá tener actor verificable y trazabilidad;
+- la autenticación, la identidad laboral, el rol base, el perfil editorial,
+  el permiso y la autorización efectiva son conceptos distintos;
+- el nombre de un cargo o de un perfil no concede autoridad por sí mismo;
+- la ausencia de un permiso aplicable produce denegación;
+- una denegación explícita prevalece sobre una concesión;
+- la interfaz no puede ampliar la autoridad real del usuario.
+
+## 3. Decisión canónica principal
+
+VISO Web Studio tendrá cinco perfiles funcionales:
+
+| Código funcional | Nombre humano           |
+| ---------------- | ----------------------- |
+| `site_admin`     | Administrador del sitio |
+| `editor`         | Editor                  |
+| `reviewer`       | Revisor                 |
+| `publisher`      | Publicador              |
+| `viewer`         | Usuario de solo lectura |
+
+Estos perfiles se utilizan para:
+
+- definir responsabilidades humanas;
+- adaptar la experiencia del editor;
+- proponer grupos coherentes de permisos;
+- organizar capacitación y procedimientos;
+- facilitar asignaciones administrativas;
+- presentar acciones relevantes para cada usuario.
+
+No se utilizarán como bypass de autorización.
+
+```text
+PERFIL FUNCIONAL
+≠
+ROL BASE LABORAL
+≠
+ROL OPERATIVO
+≠
+PERMISO
+≠
+DECISIÓN ALLOW
+```
+
+La autorización efectiva seguirá el modelo canónico:
+
+```text
+ACTOR EFECTIVO
++ IDENTIDAD LABORAL ACTIVA
++ PERMISO ATÓMICO EXPLÍCITO
++ ALCANCE DEL SITIO
++ RECURSO VÁLIDO
++ CONDICIONES DEL PERMISO
++ AUSENCIA DE DENEGACIÓN
+= ACCIÓN AUTORIZADA
+```
+
+## 4. Separación entre perfil editorial y rol laboral
+
+Los perfiles de Web Studio no reemplazan los roles base de Vento OS.
+
+Por tanto:
+
+```text
+propietario
+gerente_general
+gerente
+marketing
+auxiliar_administrativa
+contador
+supervisor
+```
+
+no se convierten automáticamente en:
+
+```text
+site_admin
+editor
+reviewer
+publisher
+viewer
+```
+
+Tampoco se permitirá:
+
+```text
+rol base = marketing
+→ editor automático
+
+rol base = propietario
+→ administrador automático
+
+rol base = gerente_general
+→ publicación automática
+
+acceso a VISO
+→ acceso a Web Studio
+
+perfil visible en frontend
+→ permiso concedido
+```
+
+La asignación de un perfil será explícita y deberá producir únicamente las
+concesiones atómicas aprobadas en `WEB-PRD-002` y en el catálogo de
+autorización correspondiente.
+
+## 5. Reglas comunes de todos los perfiles
+
+### 5.1 Identidad personal obligatoria
+
+Todas las acciones de Web Studio deberán ejecutarse mediante una sesión
+personal vinculada con un trabajador activo.
+
+No se permitirá editar, revisar, publicar, restaurar ni administrar el sitio
+desde:
+
+- una sesión anónima;
+- un dispositivo compartido sin actor humano identificado;
+- una cuenta genérica del equipo;
+- una credencial técnica;
+- `service_role`;
+- una simulación que intente producir efectos reales.
+
+### 5.2 No dependencia de turno o check-in
+
+Los perfiles de Web Studio representan capacidades administrativas y
+editoriales permanentes.
+
+Por defecto:
+
+- no requieren turno publicado;
+- no requieren check-in;
+- no dependen de un área operativa activa;
+- no se obtienen desde el rol operativo.
+
+Una futura capacidad que requiera contexto operativo deberá declararse
+expresamente mediante su permiso, sin convertir todo Web Studio en una
+función dependiente del turno.
+
+### 5.3 Alcance por sitio
+
+Toda asignación tendrá alcance de sitio.
+
+Para el MVP:
+
+```text
+site_id = Vento Group
+```
+
+El perfil no concede autoridad automática sobre futuros sitios o marcas.
+
+La preparación multisitio deberá permitir:
+
+```text
+MISMO USUARIO
++ PERFIL DIFERENTE POR SITIO
++ PERMISOS DIFERENTES POR SITIO
+```
+
+No se permite:
+
+```text
+site_admin en Vento Group
+→ site_admin automático en cualquier sitio futuro
+```
+
+### 5.4 Denegación por defecto
+
+Toda acción no definida expresamente en la matriz de `WEB-PRD-002`
+permanecerá denegada.
+
+No existirán permisos implícitos por:
+
+- jerarquía visual;
+- orden de perfiles;
+- nombre del cargo;
+- pertenencia al equipo de marketing;
+- acceso general a VISO;
+- ser propietario de la empresa;
+- haber creado el contenido;
+- haber publicado anteriormente.
+
+### 5.5 Validación en servidor
+
+Ocultar un botón no constituye seguridad.
+
+Cada acción deberá validarse en servidor con el permiso exacto y el recurso
+correspondiente.
+
+La interfaz podrá:
+
+- ocultar acciones no aplicables;
+- deshabilitar acciones bloqueadas;
+- explicar por qué una acción no está disponible;
+- presentar el perfil funcional del usuario.
+
+La interfaz no podrá autorizar por sí misma.
+
+### 5.6 Auditoría obligatoria
+
+Deberán registrarse, según la acción:
+
+- actor;
+- sitio;
+- perfil o perfiles funcionales vigentes;
+- permiso evaluado;
+- recurso afectado;
+- estado anterior;
+- estado posterior;
+- fecha;
+- revisión;
+- publicación o release;
+- resultado;
+- motivo cuando corresponda.
+
+La trazabilidad deberá distinguir al menos:
+
+```text
+AUTOR
+EDITOR
+REVISOR
+PUBLICADOR
+ADMINISTRADOR QUE CAMBIÓ CONFIGURACIÓN
+```
+
+Aunque una misma persona pueda desempeñar más de una función.
+
+### 5.7 Revocación inmediata
+
+Cuando una asignación sea revocada, suspendida o expire:
+
+- no deberá iniciar nuevas acciones;
+- una sesión activa deberá reevaluar autorización;
+- una operación no confirmada deberá bloquearse;
+- la revocación deberá quedar auditada;
+- no deberá conservarse autoridad por caché de frontend.
+
+## 6. Perfil `site_admin` — Administrador del sitio
+
+### 6.1 Propósito
+
+Administrar integralmente la configuración editorial y funcional de un sitio
+dentro de los límites aprobados para Web Studio.
+
+Es el responsable de mantener el sitio utilizable, gobernado y recuperable
+sin convertirse en administrador técnico de la plataforma.
+
+### 6.2 Responsabilidades principales
+
+- organizar páginas y estructura editorial;
+- administrar navegación global;
+- administrar configuración del sitio;
+- administrar temas y opciones visuales permitidas;
+- administrar medios y formularios;
+- supervisar borradores, revisiones, publicaciones e historial;
+- resolver bloqueos editoriales ordinarios;
+- ejecutar restauraciones funcionales autorizadas;
+- coordinar usuarios editoriales mediante el proceso de autorización
+  externo a la pantalla de contenido;
+- asegurar que el sitio conserve integridad editorial.
+
+### 6.3 Capacidades funcionales esperadas
+
+El perfil podrá ser candidato a permisos para:
+
+- consultar todo el sitio asignado;
+- crear, editar, duplicar, archivar y restaurar páginas;
+- administrar secciones;
+- administrar navegación y footer;
+- administrar medios;
+- administrar formularios;
+- administrar configuración y tema permitidos;
+- revisar validaciones;
+- aprobar revisiones;
+- publicar;
+- despublicar;
+- restaurar versiones;
+- administrar releases;
+- consultar auditoría editorial.
+
+La concesión exacta se define en `WEB-PRD-002`.
+
+### 6.4 Límites obligatorios
+
+`site_admin` no equivale a:
+
+- administrador global de Vento OS;
+- administrador de Supabase;
+- administrador de Vercel;
+- administrador de repositorios;
+- desarrollador;
+- administrador del catálogo de permisos;
+- administrador de secretos;
+- operador de migraciones;
+- propietario técnico del `Section Registry`.
+
+No podrá:
+
+- crear componentes React;
+- registrar tipos de sección;
+- cambiar schemas;
+- introducir JavaScript;
+- introducir CSS arbitrario;
+- alterar RLS;
+- ejecutar SQL;
+- modificar variables de entorno;
+- desplegar código;
+- cambiar credenciales;
+- saltarse validaciones;
+- modificar directamente una publicación inmutable;
+- asignarse autoridad adicional a sí mismo.
+
+### 6.5 Uso previsto
+
+Este perfil se reserva para pocas personas con responsabilidad integral sobre
+el sitio.
+
+Su asignación deberá considerarse sensible, explícita, revocable y auditada.
+
+## 7. Perfil `editor` — Editor
+
+### 7.1 Propósito
+
+Crear y modificar contenido en borrador sin afectar directamente la versión
+pública.
+
+### 7.2 Responsabilidades principales
+
+- redactar y actualizar contenido;
+- crear o duplicar páginas dentro del alcance permitido;
+- agregar, configurar, reordenar y ocultar secciones;
+- seleccionar medios existentes;
+- cargar medios cuando tenga el permiso correspondiente;
+- editar SEO de página;
+- validar campos;
+- previsualizar cambios;
+- corregir errores;
+- enviar una revisión al proceso de revisión.
+
+### 7.3 Capacidades funcionales esperadas
+
+El perfil podrá ser candidato a permisos para:
+
+- consultar páginas y borradores;
+- crear borradores;
+- editar contenido;
+- administrar estructura de una revisión;
+- guardar;
+- autoguardar;
+- previsualizar;
+- consultar validaciones;
+- comparar sus cambios;
+- enviar a revisión;
+- consultar historial sin restaurar;
+- usar medios autorizados.
+
+### 7.4 Límites obligatorios
+
+El editor no podrá, por defecto:
+
+- aprobar su revisión;
+- publicar;
+- despublicar;
+- restaurar una publicación;
+- cambiar configuración global sensible;
+- administrar permisos;
+- cambiar perfiles;
+- alterar el catálogo de secciones;
+- cambiar código;
+- eliminar definitivamente evidencia histórica;
+- modificar una versión publicada.
+
+### 7.5 Resultado esperado de su trabajo
+
+```text
+BORRADOR VÁLIDO
++ CAMPOS COMPLETOS
++ PREVIEW REVISADO
++ CAMBIOS GUARDADOS
+= REVISIÓN LISTA PARA REVISIÓN
+```
+
+## 8. Perfil `reviewer` — Revisor
+
+### 8.1 Propósito
+
+Evaluar la calidad, coherencia y completitud de una revisión sin modificar
+directamente su contenido editorial principal.
+
+### 8.2 Responsabilidades principales
+
+- revisar preview;
+- revisar diferencias;
+- verificar contenido, enlaces, medios y SEO;
+- revisar criterios mínimos de accesibilidad;
+- comprobar consistencia con marca y estructura aprobada;
+- devolver una revisión cuando requiera cambios;
+- marcar una revisión como aprobada cuando cumpla los criterios.
+
+### 8.3 Capacidades funcionales esperadas
+
+El perfil podrá ser candidato a permisos para:
+
+- consultar páginas, borradores y revisiones;
+- abrir preview privado;
+- consultar validaciones;
+- comparar cambios;
+- consultar historial;
+- registrar decisión de revisión;
+- aprobar;
+- devolver para corrección;
+- registrar un motivo estructurado.
+
+### 8.4 Límites obligatorios
+
+El revisor no podrá, por defecto:
+
+- editar el contenido principal;
+- cambiar secciones;
+- cargar o reemplazar medios;
+- publicar;
+- despublicar;
+- restaurar;
+- cambiar tema;
+- administrar navegación;
+- administrar perfiles;
+- alterar resultados de validación.
+
+Cuando detecte un error deberá devolver la revisión al editor.
+
+### 8.5 Alcance del MVP
+
+La revisión del MVP será simple.
+
+Incluye:
+
+```text
+PENDIENTE DE REVISIÓN
+→ APROBADA
+o
+→ REQUIERE CAMBIOS
+```
+
+No incluye todavía:
+
+- comentarios encadenados;
+- menciones;
+- revisión simultánea;
+- varias capas obligatorias de aprobación;
+- SLA de revisión;
+- votación;
+- aprobación por comité.
+
+Esas funciones permanecen asignadas a:
+
+- `WEB-ADV-003 — Comentarios editoriales`;
+- `WEB-ADV-004 — Flujo formal de aprobación`.
+
+## 9. Perfil `publisher` — Publicador
+
+### 9.1 Propósito
+
+Controlar el paso explícito entre contenido aprobado y contenido público.
+
+Es la última barrera humana antes de modificar producción editorial.
+
+### 9.2 Responsabilidades principales
+
+- confirmar que la revisión está aprobada;
+- revisar el diff final;
+- verificar validaciones previas;
+- confirmar el alcance de la publicación;
+- publicar una página o release;
+- despublicar cuando corresponda;
+- restaurar mediante una nueva publicación;
+- revisar el resultado posterior;
+- responder ante una publicación incorrecta.
+
+### 9.3 Capacidades funcionales esperadas
+
+El perfil podrá ser candidato a permisos para:
+
+- consultar revisiones aprobadas;
+- abrir preview;
+- consultar comparaciones;
+- consultar validaciones;
+- publicar;
+- despublicar;
+- publicar releases;
+- restaurar;
+- consultar auditoría;
+- confirmar revalidación.
+
+### 9.4 Límites obligatorios
+
+El publicador no podrá, por defecto:
+
+- modificar el contenido de la revisión que va a publicar;
+- cambiar estructura de páginas;
+- reemplazar medios;
+- editar SEO;
+- cambiar tema;
+- administrar perfiles;
+- saltarse el estado de aprobación;
+- publicar una revisión inválida;
+- editar una publicación inmutable.
+
+Si detecta un problema deberá devolver la revisión al flujo editorial.
+
+### 9.5 Regla de publicación
+
+```text
+REVISIÓN APROBADA
++ VALIDACIÓN VIGENTE
++ PERMISO DE PUBLICACIÓN
++ CONFIRMACIÓN EXPLÍCITA
++ AUDITORÍA
+= PUBLICACIÓN POSIBLE
+```
+
+No se permitirá:
+
+```text
+GUARDAR
+→ PUBLICAR AUTOMÁTICAMENTE
+```
+
+## 10. Perfil `viewer` — Usuario de solo lectura
+
+### 10.1 Propósito
+
+Permitir consulta controlada del estado del sitio sin capacidad de modificar
+contenido ni estados.
+
+### 10.2 Responsabilidades principales
+
+- consultar páginas;
+- consultar contenido publicado;
+- consultar borradores autorizados;
+- abrir preview;
+- consultar historial;
+- consultar estados;
+- consultar validaciones;
+- dar seguimiento sin intervenir.
+
+### 10.3 Capacidades funcionales esperadas
+
+El perfil podrá ser candidato a permisos para:
+
+- ver el sitio asignado;
+- ver páginas;
+- ver revisiones;
+- ver preview;
+- ver medios;
+- ver historial;
+- ver estado de publicación;
+- ver auditoría editorial permitida.
+
+### 10.4 Límites obligatorios
+
+El usuario de solo lectura no podrá:
+
+- crear;
+- editar;
+- guardar;
+- duplicar;
+- archivar;
+- eliminar;
+- aprobar;
+- devolver;
+- publicar;
+- despublicar;
+- restaurar;
+- cargar medios;
+- administrar formularios;
+- cambiar configuración;
+- cambiar perfiles.
+
+Todas las acciones mutadoras deberán estar ausentes o bloqueadas tanto en
+interfaz como en servidor.
+
+## 11. Matriz funcional de responsabilidades
+
+Esta matriz expresa responsabilidades de producto. No reemplaza la matriz de
+permisos atómicos de `WEB-PRD-002`.
+
+| Responsabilidad                      |     `site_admin` |      `editor` |    `reviewer` |   `publisher` |      `viewer` |
+| ------------------------------------ | ---------------: | ------------: | ------------: | ------------: | ------------: |
+| Consultar sitio asignado             |               Sí |            Sí |            Sí |            Sí |            Sí |
+| Consultar borradores                 |               Sí |            Sí |            Sí |            Sí | Según alcance |
+| Crear y editar borradores            |               Sí |            Sí |            No |            No |            No |
+| Organizar secciones                  |               Sí |            Sí |            No |            No |            No |
+| Usar medios                          |               Sí |            Sí | Solo consulta | Solo consulta | Solo consulta |
+| Administrar biblioteca de medios     |               Sí | Según permiso |            No |            No |            No |
+| Enviar a revisión                    |               Sí |            Sí |            No |            No |            No |
+| Aprobar o devolver revisión          |               Sí |            No |            Sí |            No |            No |
+| Publicar                             |               Sí |            No |            No |            Sí |            No |
+| Despublicar                          |               Sí |            No |            No |            Sí |            No |
+| Restaurar mediante nueva publicación |               Sí |            No |            No |            Sí |            No |
+| Administrar navegación               |               Sí |            No |            No |            No |            No |
+| Administrar tema permitido           |               Sí |            No |            No |            No |            No |
+| Administrar formularios              |               Sí | Según permiso | Solo consulta | Solo consulta | Solo consulta |
+| Consultar historial                  |               Sí |            Sí |            Sí |            Sí |            Sí |
+| Consultar auditoría                  |               Sí |      Limitada |            Sí |            Sí |      Limitada |
+| Administrar autorización             | No por el perfil |            No |            No |            No |            No |
+| Modificar código o infraestructura   |               No |            No |            No |            No |            No |
+
+## 12. Combinación de perfiles
+
+### 12.1 Regla general
+
+En el MVP, un usuario podrá recibir uno o varios perfiles funcionales dentro
+del mismo sitio cuando la operación lo requiera.
+
+La combinación no autoriza directamente.
+
+```text
+PERFILES ASIGNADOS
+→ PROPUESTA DE CONCESIONES
+→ EVALUACIÓN DE PERMISOS ATÓMICOS
+→ ALCANCE
+→ DENEGACIONES
+→ DECISIÓN FINAL
+```
+
+### 12.2 Combinaciones permitidas
+
+Podrán existir, mediante asignación explícita:
+
+- `editor + reviewer`;
+- `editor + publisher`;
+- `reviewer + publisher`;
+- `editor + reviewer + publisher`.
+
+El objetivo es permitir una operación realista para equipos pequeños sin
+eliminar la trazabilidad de cada etapa.
+
+### 12.3 Reglas especiales
+
+- `viewer` no se combinará normalmente con otro perfil porque los demás ya
+  incluyen consulta;
+- `site_admin` representa el conjunto administrativo integral del sitio y
+  no requiere perfiles secundarios para explicar su responsabilidad;
+- una denegación explícita seguirá prevaleciendo;
+- un usuario con varias funciones deberá ejecutar cada transición como una
+  acción separada;
+- el sistema registrará si el mismo actor editó, revisó y publicó;
+- no se fingirán actores diferentes.
+
+### 12.4 Separación de funciones
+
+El MVP no exigirá obligatoriamente personas distintas para editar, revisar y
+publicar.
+
+La separación humana estricta podrá configurarse posteriormente mediante:
+
+`WEB-ADV-004 — Flujo formal de aprobación`.
+
+Hasta entonces:
+
+- la diferenciación de perfiles permanece vigente;
+- cada acción requiere permiso propio;
+- cada transición es explícita;
+- toda acción queda auditada;
+- una organización podrá asignar perfiles separados desde el inicio.
+
+## 13. Asignación y ciclo de vida del perfil
+
+### 13.1 Asignación explícita
+
+Un perfil solo será efectivo cuando exista una asignación administrativa
+válida.
+
+La asignación deberá declarar, como mínimo:
+
+- trabajador;
+- sitio;
+- perfil;
+- estado;
+- actor que asignó;
+- fecha de asignación;
+- fecha de revocación cuando aplique;
+- motivo o referencia administrativa cuando corresponda.
+
+La estructura física se define en fases posteriores.
+
+### 13.2 Estados funcionales
+
+Una asignación podrá estar:
+
+```text
+ACTIVE
+SUSPENDED
+REVOKED
+EXPIRED
+```
+
+Solo `ACTIVE` podrá participar en la resolución de permisos.
+
+### 13.3 Fuente de administración
+
+La asignación de perfiles no se realizará desde el panel ordinario de
+edición de páginas.
+
+Deberá realizarse mediante la administración canónica de trabajadores,
+permisos y excepciones de VISO, utilizando permisos administrativos
+específicos.
+
+`site_admin` no podrá otorgarse a sí mismo el perfil ni conceder perfiles por
+el solo hecho de administrar contenido.
+
+### 13.4 Empleado inactivo
+
+```text
+EMPLEADO INACTIVO
+→ PERFIL SIN AUTORIDAD
+→ ACCIONES BLOQUEADAS
+→ TRAZABILIDAD CONSERVADA
+```
+
+## 14. Experiencia de interfaz por perfil
+
+### 14.1 Principio
+
+La interfaz se adaptará para reducir errores y complejidad, pero la
+autorización permanecerá en servidor.
+
+### 14.2 Administrador del sitio
+
+Verá:
+
+- panel completo del sitio;
+- páginas;
+- navegación;
+- medios;
+- formularios;
+- tema;
+- historial;
+- publicaciones;
+- alertas administrativas.
+
+### 14.3 Editor
+
+Verá prioritariamente:
+
+- páginas asignadas;
+- borradores;
+- secciones;
+- propiedades;
+- medios permitidos;
+- preview;
+- validaciones;
+- enviar a revisión.
+
+No verá acciones de publicación.
+
+### 14.4 Revisor
+
+Verá prioritariamente:
+
+- bandeja de revisiones;
+- preview;
+- comparación;
+- validaciones;
+- aprobar;
+- devolver.
+
+No verá controles de edición ordinaria.
+
+### 14.5 Publicador
+
+Verá prioritariamente:
+
+- revisiones aprobadas;
+- releases;
+- comparación final;
+- validaciones;
+- publicar;
+- despublicar;
+- restaurar;
+- resultado de publicación.
+
+No verá controles de edición ordinaria.
+
+### 14.6 Usuario de solo lectura
+
+Verá:
+
+- navegación de consulta;
+- páginas;
+- estados;
+- previews autorizados;
+- historial permitido.
+
+Todos los controles mutadores deberán omitirse.
+
+## 15. Elementos controlados exclusivamente por desarrollo
+
+Ningún perfil de Web Studio podrá administrar directamente:
+
+### 15.1 Código
+
+- componentes React;
+- lógica del renderer;
+- loaders;
+- acciones de servidor;
+- middleware;
+- integraciones;
+- pruebas;
+- scripts;
+- dependencias.
+
+### 15.2 Contratos
+
+- `Section Registry`;
+- claves de tipos de sección;
+- schemas;
+- migradores de schema;
+- validadores;
+- contratos de fuentes dinámicas;
+- contratos de eventos.
+
+### 15.3 Seguridad
+
+- catálogo canónico de permisos;
+- modalidades de autorización;
+- precedencia;
+- RLS;
+- grants;
+- claves privadas;
+- secretos;
+- tokens internos;
+- credenciales técnicas;
+- políticas de Storage.
+
+### 15.4 Infraestructura
+
+- Supabase;
+- Vercel;
+- DNS;
+- dominios;
+- variables de entorno;
+- caché técnica;
+- revalidación interna;
+- pipelines;
+- ambientes;
+- backups;
+- despliegues.
+
+### 15.5 Límites de diseño
+
+El usuario podrá seleccionar opciones registradas, pero no podrá:
+
+- crear CSS libre;
+- introducir JavaScript;
+- insertar HTML inseguro;
+- registrar fuentes externas arbitrarias;
+- crear nuevas variantes técnicas;
+- desactivar validaciones obligatorias;
+- alterar límites responsive;
+- crear componentes no aprobados.
+
+## 16. Escenarios de referencia
+
+### 16.1 Equipo pequeño
+
+Una persona puede recibir:
+
+```text
+editor + reviewer + publisher
+```
+
+El sistema deberá registrar por separado:
+
+1. quién editó;
+2. quién aprobó;
+3. quién publicó.
+
+Aunque sea la misma identidad.
+
+### 16.2 Equipo con separación editorial
+
+```text
+Editor
+→ prepara borrador
+
+Revisor
+→ valida y aprueba
+
+Publicador
+→ publica
+```
+
+Ninguno necesita ser administrador del sitio.
+
+### 16.3 Responsable integral del sitio
+
+```text
+site_admin
+→ administra estructura y configuración
+→ puede intervenir en todas las etapas
+→ no administra infraestructura ni autorización global
+```
+
+### 16.4 Dirección o auditoría
+
+```text
+viewer
+→ consulta estado, preview e historial
+→ no modifica contenido
+```
+
+### 16.5 Cargo laboral sin perfil asignado
+
+```text
+marketing
++ acceso a VISO
++ sin perfil Web Studio
+= sin autoridad editorial de Web Studio
+```
+
+### 16.6 Perfil visible sin permiso aplicable
+
+```text
+profile_code = publisher
++ permiso publish ausente o denegado
+= publicación bloqueada
+```
+
+## 17. Dependencias posteriores
+
+### 17.1 `WEB-PRD-002 — Definir matriz de permisos`
+
+Deberá traducir cada responsabilidad de esta tarea en permisos exactos para:
+
+- ver;
+- editar;
+- crear páginas;
+- eliminar;
+- previsualizar;
+- revisar;
+- aprobar;
+- publicar;
+- despublicar;
+- restaurar;
+- administrar medios;
+- administrar formularios;
+- administrar navegación;
+- administrar tema;
+- consultar auditoría;
+- administrar releases.
+
+### 17.2 `WEB-PRD-003` y `WEB-PRD-004`
+
+Deberán definir qué transiciones pueden ejecutar:
+
+- editor;
+- revisor;
+- publicador;
+- administrador.
+
+### 17.3 `WEB-PRD-012`
+
+Deberá convertir los perfiles en un flujo comprensible de:
+
+```text
+GUARDAR
+→ VALIDAR
+→ PREVISUALIZAR
+→ REVISAR
+→ APROBAR
+→ PUBLICAR
+```
+
+### 17.4 Seguridad
+
+`WEB-SEC-001` y `WEB-SEC-018` deberán:
+
+- crear o reutilizar claves atómicas;
+- proteger acciones en servidor;
+- impedir autorización por nombre de perfil;
+- aplicar alcance del sitio;
+- conservar default deny;
+- auditar acciones sensibles.
+
+### 17.5 Datos y auditoría
+
+Las tareas de base de datos deberán conservar:
+
+- autor de revisión;
+- último editor;
+- revisor;
+- publicador;
+- actor de restauración;
+- actor de cambio de configuración;
+- historial de asignaciones.
+
+## 18. Decisiones explícitamente no diferidas
+
+Esta tarea resuelve desde ahora que:
+
+1. existirán exactamente cinco perfiles funcionales iniciales;
+2. los perfiles no son roles laborales;
+3. ningún cargo recibe un perfil automáticamente;
+4. todo perfil tiene alcance por sitio;
+5. Web Studio requiere identidad personal;
+6. no depende de turno ni check-in por defecto;
+7. la seguridad se aplica mediante permisos atómicos;
+8. se permiten combinaciones explícitas de perfiles editoriales;
+9. el MVP no exige separación obligatoria de personas;
+10. la interfaz se adapta al perfil, pero el servidor decide;
+11. el administrador del sitio no es administrador técnico;
+12. los elementos técnicos continúan controlados por desarrollo;
+13. una versión publicada nunca se modifica directamente;
+14. guardar nunca equivale a publicar;
+15. las asignaciones son revocables y auditables.
+
+## 19. Nuevas brechas y tareas
+
+No se crean nuevas brechas ni tareas.
+
+Los aspectos detectados tienen destino documental existente:
+
+| Aspecto                              | Tarea propietaria            |
+| ------------------------------------ | ---------------------------- |
+| Permisos exactos por perfil          | `WEB-PRD-002`                |
+| Estados de página                    | `WEB-PRD-003`                |
+| Estados de revisión                  | `WEB-PRD-004`                |
+| Flujo de publicación                 | `WEB-PRD-012`                |
+| Catálogo y protección de permisos    | `WEB-SEC-001`, `WEB-SEC-018` |
+| Comentarios editoriales              | `WEB-ADV-003`                |
+| Flujo formal con varias aprobaciones | `WEB-ADV-004`                |
+| Publicación programada               | `WEB-ADV-001`                |
+| Colaboración en tiempo real          | `WEB-ADV-018`                |
+| Auditoría editorial                  | `WEB-PUB-014`                |
+
+## 20. Criterios de aprobación
+
+`WEB-PRD-001` podrá aprobarse cuando se acepte que:
+
+- [ ] existen cinco perfiles iniciales;
+- [ ] sus códigos funcionales quedan definidos;
+- [ ] el perfil no reemplaza rol base, rol operativo ni permiso;
+- [ ] no existe asignación automática por cargo;
+- [ ] cada perfil tiene propósito y límites explícitos;
+- [ ] `site_admin` no equivale a administrador técnico;
+- [ ] `editor` no publica;
+- [ ] `reviewer` no edita ni publica;
+- [ ] `publisher` no modifica la revisión que publica;
+- [ ] `viewer` no ejecuta acciones mutadoras;
+- [ ] pueden existir combinaciones explícitas de perfiles;
+- [ ] la autorización final utiliza permisos atómicos;
+- [ ] el alcance es por sitio;
+- [ ] las acciones requieren sesión personal;
+- [ ] no se requiere turno ni check-in por defecto;
+- [ ] las asignaciones son revocables y auditables;
+- [ ] la interfaz no sustituye validación en servidor;
+- [ ] el MVP no exige separación obligatoria de personas;
+- [ ] las funciones avanzadas quedan vinculadas a tareas existentes;
+- [ ] no se modifica código, Supabase ni producción.
+
+## 21. Estado de cierre propuesto
+
+```text
+WEB-PRD-001 — PROPUESTA PARA APROBACIÓN
+```
+
+No deberá marcarse `[x]` hasta recibir aprobación explícita.
+
+## 22. Continuidad
+
+```text
+[x] WEB-AUD-012 — Consolidar brechas
+[ ] WEB-PRD-001 — Definir perfiles de usuario — PROPUESTA PARA APROBACIÓN
+[ ] WEB-PRD-002 — Definir matriz de permisos — RESERVADA
+```
+
+No se inicia `WEB-PRD-002` hasta que `WEB-PRD-001` sea aprobada
+explícitamente.
+
 
 ### [ ] **WEB-PRD-002 — Definir matriz de permisos**
   - Ver.
@@ -13429,7 +14577,7 @@ No se inicia diseño de base de datos hasta aprobar comportamiento, roles y alca
 
 ## FASE 3 — ARQUITECTURA Y DECISIONES CANÓNICAS
 
-## Objetivo
+### Objetivo
 
 Aprobar formalmente las decisiones estructurales antes de escribir migraciones.
 
@@ -13549,7 +14697,7 @@ Todos los ADR deberán quedar en estado `ACCEPTED`.
 
 ## FASE 4 — MODELO DE BASE DE DATOS Y MIGRACIONES
 
-## Objetivo
+### Objetivo
 
 Crear la base estable para páginas, revisiones, publicaciones, medios y auditoría.
 
@@ -13727,7 +14875,7 @@ Las migraciones deberán estar revisadas antes de aplicarse en producción.
 
 ## FASE 5 — REGISTRO Y MOTOR DE RENDERIZADO
 
-## Objetivo
+### Objetivo
 
 Convertir `vento-group-web` en un renderizador dinámico de páginas.
 
@@ -13883,7 +15031,7 @@ Una página de prueba deberá renderizarse completamente desde una revisión alm
 
 ## FASE 6 — BORRADORES, PREVIEW, PUBLICACIÓN Y VERSIONES
 
-## Objetivo
+### Objetivo
 
 Implementar un flujo editorial seguro.
 
@@ -13994,7 +15142,7 @@ Se debe poder editar una página, previsualizarla, publicarla y restaurar la ver
 
 ## FASE 7 — FUNDAMENTO DE VISO WEB STUDIO
 
-## Objetivo
+### Objetivo
 
 Construir el contenedor principal del editor.
 
@@ -14092,7 +15240,7 @@ El editor deberá cargar una página, mostrar sus secciones y presentar preview 
 
 ## FASE 8 — EDICIÓN VISUAL Y OPERACIONES SOBRE SECCIONES
 
-## Objetivo
+### Objetivo
 
 Convertir el editor en un constructor funcional.
 
@@ -14223,7 +15371,7 @@ Una persona no técnica deberá poder crear una página completa sin modificar c
 
 ## FASE 9 — BIBLIOTECA MULTIMEDIA
 
-## Objetivo
+### Objetivo
 
 Administrar imágenes y videos de forma visual, segura y eficiente.
 
@@ -14330,7 +15478,7 @@ Todo medio publicado deberá tener trazabilidad, optimización y uso identificab
 
 ## FASE 10 — CONFIGURACIÓN GLOBAL DEL SITIO
 
-## Objetivo
+### Objetivo
 
 Permitir administrar desde VISO los elementos que afectan todas las páginas.
 
@@ -14438,7 +15586,7 @@ Header, footer, tema, SEO y navegación deberán poder cambiarse sin despliegue 
 
 ## FASE 11 — FORMULARIOS Y CONVERSIONES
 
-## Objetivo
+### Objetivo
 
 Gestionar contacto, reservas, eventos y aplicaciones desde la web.
 
@@ -14524,13 +15672,13 @@ Los formularios deberán funcionar sin exponer credenciales ni permitir spam bá
 
 ## FASE 12 — RECONSTRUCCIÓN DE PÁGINAS ESTILO DARLING
 
-## Objetivo
+### Objetivo
 
 Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.1 Inicio
+### 12.1 Inicio
 
 ### [ ] **WEB-PAG-001 — Definir blueprint de Inicio**
   - Splash.
@@ -14557,7 +15705,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.2 Restaurantes
+### 12.2 Restaurantes
 
 ### [ ] **WEB-PAG-010 — Definir blueprint de Restaurantes**
   - Hero.
@@ -14605,7 +15753,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.3 Empleos
+### 12.3 Empleos
 
 ### [ ] **WEB-PAG-020 — Definir blueprint de Empleos**
   - Hero.
@@ -14638,7 +15786,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.4 Ecosistema
+### 12.4 Ecosistema
 
 ### [ ] **WEB-PAG-030 — Definir blueprint de Ecosistema**
   - Hero.
@@ -14667,7 +15815,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.5 Eventos
+### 12.5 Eventos
 
 ### [ ] **WEB-PAG-040 — Definir blueprint de Eventos**
   - Hero.
@@ -14694,7 +15842,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.6 Servicios
+### 12.6 Servicios
 
 ### [ ] **WEB-PAG-050 — Definir blueprint de Servicios**
   - Hero.
@@ -14715,7 +15863,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.7 Contacto
+### 12.7 Contacto
 
 ### [ ] **WEB-PAG-060 — Crear página Contacto**
   - Hero.
@@ -14730,7 +15878,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ---
 
-## 12.8 Páginas auxiliares
+### 12.8 Páginas auxiliares
 
 ### [ ] **WEB-PAG-070 — Crear página 404**
 ### [ ] **WEB-PAG-071 — Crear página de error**
@@ -14747,7 +15895,7 @@ Todas las páginas públicas prioritarias deberán estar administradas desde VIS
 
 ## FASE 13 — MIGRACIÓN DE CONTENIDO Y CORTE PROGRESIVO
 
-## Objetivo
+### Objetivo
 
 Mover el contenido actual al sistema nuevo sin interrupciones.
 
@@ -14840,7 +15988,7 @@ Cada página migrada deberá tener equivalencia funcional y visual antes de desa
 
 ## FASE 14 — SEGURIDAD
 
-## Objetivo
+### Objetivo
 
 Evitar acceso indebido, publicación accidental y contenido inseguro.
 
@@ -14874,7 +16022,7 @@ La web pública nunca deberá poder consultar borradores ni versiones privadas.
 
 ## FASE 15 — CALIDAD, ACCESIBILIDAD Y RENDIMIENTO
 
-## Objetivo
+### Objetivo
 
 Garantizar que el nuevo editor no degrade el sitio.
 
@@ -14906,7 +16054,7 @@ Garantizar que el nuevo editor no degrade el sitio.
 ### [ ] **WEB-QA-024 — Probar RLS, GRANTs y Storage del dominio web**
 ---
 
-## 15.1 Objetivos de rendimiento
+### 15.1 Objetivos de rendimiento
 
 ### [ ] **WEB-PERF-001 — LCP objetivo**
   - Menor de 2,5 segundos en condiciones representativas.
@@ -14961,7 +16109,7 @@ No se aprobará el lanzamiento si el nuevo sistema empeora de forma crítica la 
 
 ## FASE 16 — DESPLIEGUE Y OPERACIÓN
 
-## Objetivo
+### Objetivo
 
 Lanzar el sistema con procesos reproducibles y seguros.
 
@@ -15134,7 +16282,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ## 20. RIESGOS PRINCIPALES
 
-## RIESGO 1 — Personalización excesiva
+### RIESGO 1 — Personalización excesiva
 
 **Problema:** permitir demasiadas opciones puede romper la identidad visual.
 
@@ -15156,7 +16304,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ---
 
-## RIESGO 2 — Doble fuente de verdad
+### RIESGO 2 — Doble fuente de verdad
 
 **Problema:** contenido editado simultáneamente en CMS legacy y Studio.
 
@@ -15176,7 +16324,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ---
 
-## RIESGO 3 — Publicación accidental
+### RIESGO 3 — Publicación accidental
 
 **Problema:** guardar un cambio podría afectar producción.
 
@@ -15198,7 +16346,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ---
 
-## RIESGO 4 — Medios demasiado pesados
+### RIESGO 4 — Medios demasiado pesados
 
 **Problema:** videos e imágenes pueden degradar rendimiento móvil.
 
@@ -15220,7 +16368,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ---
 
-## RIESGO 5 — Copia excesiva de Darling
+### RIESGO 5 — Copia excesiva de Darling
 
 **Problema:** replicar activos o identidad propietaria.
 
@@ -15233,12 +16381,16 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 **Tareas vinculadas:**
 
-- tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`
-- revisión de contenido previa al lanzamiento.
+- `WEB-PRD-011`
+- `WEB-BLD-001`
+- `WEB-BLD-002`
+- `WEB-BLD-003`
+- `WEB-BLD-004`
+- `WEB-QA-023`
 
 ---
 
-## RIESGO 6 — Base de datos sobredimensionada
+### RIESGO 6 — Base de datos sobredimensionada
 
 **Problema:** crear demasiadas tablas o relaciones difíciles de mantener.
 
@@ -15253,7 +16405,12 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 - `ADR-WEB-001`
 - `WEB-ARC-001`
-- tareas específicas `WEB-DB-001` a `WEB-DB-020` según `WEB-AUD-012`
+- `WEB-DB-001`
+- `WEB-DB-002`
+- `WEB-DB-003`
+- `WEB-DB-004`
+- `WEB-DB-018`
+- `WEB-DB-019`
 
 ---
 
@@ -15261,28 +16418,28 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 El MVP se considerará completo únicamente cuando:
 
-### [ ] VISO permita editar páginas visualmente.
-### [ ] Se puedan agregar y ordenar secciones.
-### [ ] Exista preview responsive.
-### [ ] Existan borradores.
-### [ ] Publicar sea una acción independiente.
-### [ ] Exista historial.
-### [ ] Exista restauración.
-### [ ] Inicio esté migrado.
-### [ ] Restaurantes esté migrado.
-### [ ] Empleos esté migrado.
-### [ ] Ecosistema esté migrado.
-### [ ] Eventos esté migrado.
-### [ ] Servicios esté migrado.
-### [ ] Contacto exista.
-### [ ] Header y footer sean administrables.
-### [ ] SEO sea administrable.
-### [ ] Los medios sean administrables.
-### [ ] No existan placeholders visibles.
-### [ ] Las páginas críticas funcionen en móvil.
-### [ ] Las políticas RLS estén verificadas.
-### [ ] Las migraciones estén en `vento-shell`.
-### [ ] Exista documentación de operación.
+- [ ] VISO permita editar páginas visualmente.
+- [ ] Se puedan agregar y ordenar secciones.
+- [ ] Exista preview responsive.
+- [ ] Existan borradores.
+- [ ] Publicar sea una acción independiente.
+- [ ] Exista historial.
+- [ ] Exista restauración.
+- [ ] Inicio esté migrado.
+- [ ] Restaurantes esté migrado.
+- [ ] Empleos esté migrado.
+- [ ] Ecosistema esté migrado.
+- [ ] Eventos esté migrado.
+- [ ] Servicios esté migrado.
+- [ ] Contacto exista.
+- [ ] Header y footer sean administrables.
+- [ ] SEO sea administrable.
+- [ ] Los medios sean administrables.
+- [ ] No existan placeholders visibles.
+- [ ] Las páginas críticas funcionen en móvil.
+- [ ] Las políticas RLS estén verificadas.
+- [ ] Las migraciones estén en `vento-shell`.
+- [ ] Exista documentación de operación.
 
 ---
 
@@ -15313,18 +16470,31 @@ y sin comprometer la identidad visual del sitio.
 
 ## 23. REGLAS DE ACTUALIZACIÓN DEL PLAN
 
-## 23.1 Identificadores
+### 23.1 Identificadores
 
 - Los identificadores nunca se reutilizan.
 - Una tarea eliminada se marca `[-]`.
 - Una tarea reemplazada debe indicar qué tarea la sustituye.
 - No se renumeran tareas aprobadas.
 
-## 23.2 Marcación
+### 23.2 Marcación
 
-Solo se marcará `[x]` cuando esté implementado y validado.
+El significado de `[x]` depende de la naturaleza de la tarea:
 
-No se considerará completado por:
+| Tipo de tarea                                        | Significado de `[x]`                                        |
+| ---------------------------------------------------- | ----------------------------------------------------------- |
+| Auditoría, análisis o definición documental          | Resultado desarrollado, validado y aprobado documentalmente |
+| Implementación, migración, seguridad, QA u operación | Resultado implementado y validado funcionalmente            |
+
+Una tarea documental puede marcarse `[x]` aunque las brechas detectadas permanezcan abiertas, siempre que cada brecha tenga:
+
+1. identificador;
+2. tarea propietaria;
+3. momento de cierre;
+4. evidencia de origen;
+5. estado vigente.
+
+Una tarea de implementación no se considerará completada por:
 
 - existir una tabla vacía;
 - existir una pantalla sin funcionalidad;
@@ -15333,7 +16503,7 @@ No se considerará completado por:
 - tener solo infraestructura;
 - funcionar únicamente en local.
 
-## 23.3 Evidencia
+### 23.3 Evidencia
 
 Cada tarea completada deberá poder relacionarse con:
 
@@ -15345,7 +16515,7 @@ Cada tarea completada deberá poder relacionarse con:
 - resultado funcional;
 - decisión aprobada.
 
-## 23.4 Actualización por lotes
+### 23.4 Actualización por lotes
 
 Para evitar microactualizaciones ineficientes:
 
@@ -15358,37 +16528,37 @@ Para evitar microactualizaciones ineficientes:
 
 ## 24. REGISTRO DE CAMBIOS
 
-| Versión      | Fecha      | Cambio                                                       | Estado      |
-| ------------ | ---------- | ------------------------------------------------------------ | ----------- |
-| 2026-07-23.1 | 2026-07-23 | Creación inicial del plan canónico                            | Reemplazada |
-| 2026-07-23.2 | 2026-07-23 | Incorporación de `WEB-AUD-001` a `WEB-AUD-006`                | Aprobada    |
-| 2026-07-23.3 | 2026-07-23 | Incorporación de `WEB-AUD-007` a `WEB-AUD-011`                | Aprobada    |
-| 2026-07-23.4 | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`                | Aprobada    |
-| 2026-07-23.5 | 2026-07-23 | Cierre documental de Fase 1 y apertura de Fase 2              | Vigente     |
+| Versión      | Fecha      | Cambio                                           | Estado      |
+| ------------ | ---------- | ------------------------------------------------ | ----------- |
+| 2026-07-23.1 | 2026-07-23 | Creación inicial del plan canónico               | Reemplazada |
+| 2026-07-23.2 | 2026-07-23 | Incorporación de `WEB-AUD-001` a `WEB-AUD-006`   | Aprobada    |
+| 2026-07-23.3 | 2026-07-23 | Incorporación de `WEB-AUD-007` a `WEB-AUD-011`   | Aprobada    |
+| 2026-07-23.4 | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`   | Aprobada    |
+| 2026-07-23.5 | 2026-07-23 | Cierre documental de Fase 1 y apertura de Fase 2 | Vigente     |
 
 ---
 
 ## 25. PUNTO DE CONTINUIDAD
 
-## FASE ACTUAL
+### FASE ACTUAL
 
 **FASE 2 — DEFINICIÓN FUNCIONAL DE VISO WEB STUDIO**
 
-## ÚLTIMA TAREA APROBADA
+### ÚLTIMA TAREA APROBADA
 
 `WEB-AUD-012 — Consolidar brechas`
 
-## SIGUIENTE TAREA
+### SIGUIENTE TAREA
 
 `WEB-PRD-001 — Definir perfiles de usuario`
 
-## ESTADO DE LA FASE ANTERIOR
+### ESTADO DE LA FASE ANTERIOR
 
 **FASE 1 — CERRADA DOCUMENTALMENTE**
 
 Las 204 brechas permanecen `ASIGNADA — ABIERTA` hasta su momento de implementación y validación.
 
-## RESTRICCIONES VIGENTES
+### RESTRICCIONES VIGENTES
 
 - No crear migraciones.
 - No modificar Supabase.
