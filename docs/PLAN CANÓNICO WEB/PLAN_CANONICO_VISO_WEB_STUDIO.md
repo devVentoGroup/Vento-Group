@@ -1,5 +1,4 @@
-# PLAN CANÓNICO DE IMPLEMENTACIÓN  
-# VISO WEB STUDIO + VENTO GROUP WEB
+# PLAN CANÓNICO DE IMPLEMENTACIÓN — VISO WEB STUDIO + VENTO GROUP WEB
 
 > Constructor visual administrable desde VISO para `ventogroup.co`, inspirado en la estructura, ritmo y experiencia de Darling Group, pero con identidad, contenido, activos y lógica propios de Vento Group.
 
@@ -16,8 +15,11 @@
 | Repositorio canónico de migraciones | `devVentoGroup/vento-shell`                                              |
 | Dominio público                     | `ventogroup.co`                                                          |
 | Versión inicial                     | `2026-07-23`                                                             |
-| Estado                              | **PROPUESTA PARA APROBACIÓN**                                            |
-| Fase actual                         | Preparación y auditoría                                                  |
+| Estado                              | **EN EJECUCIÓN — FASE 2**                                                |
+| Fase actual                         | **FASE 2 — Definición funcional de VISO Web Studio**                     |
+| Última tarea aprobada               | `WEB-AUD-012 — Consolidar brechas`                                       |
+| Siguiente tarea                     | `WEB-PRD-001 — Definir perfiles de usuario`                              |
+| Estado de la Fase 1                 | **CERRADA DOCUMENTALMENTE**                                              |
 | Responsable funcional               | Vento Group                                                              |
 | Referencia visual                   | Darling Group                                                            |
 | Alcance de referencia               | Distribución, navegación, ritmo, animaciones y experiencia               |
@@ -147,7 +149,7 @@ SEO ADMINISTRABLE        ██░░░░░░░░  Parcial
 
 ---
 
-# 5. PRINCIPIOS CANÓNICOS OBLIGATORIOS
+## 5. PRINCIPIOS CANÓNICOS OBLIGATORIOS
 
 ## 5.1 Fuente única de verdad
 
@@ -320,7 +322,7 @@ No se podrá copiar:
 
 ---
 
-# 6. ALCANCE DEL PROGRAMA
+## 6. ALCANCE DEL PROGRAMA
 
 ## 6.1 Incluido
 
@@ -370,7 +372,7 @@ De requerirse posteriormente, deberán generarse nuevas tareas explícitas.
 
 ---
 
-# 7. ARQUITECTURA OBJETIVO
+## 7. ARQUITECTURA OBJETIVO
 
 ```text
 ┌─────────────────────────────┐
@@ -418,7 +420,7 @@ De requerirse posteriormente, deberán generarse nuevas tareas explícitas.
 
 ---
 
-# 8. MODELO DE DATOS OBJETIVO
+## 8. MODELO DE DATOS OBJETIVO
 
 ## 8.1 Estrategia seleccionada
 
@@ -528,7 +530,7 @@ Ejemplo conceptual:
 
 ---
 
-# 9. CATÁLOGO INICIAL DE SECCIONES
+## 9. CATÁLOGO INICIAL DE SECCIONES
 
 ## 9.1 Heroes
 
@@ -599,7 +601,7 @@ Ejemplo conceptual:
 
 ---
 
-# 10. ESTADOS DE LAS TAREAS
+## 10. ESTADOS DE LAS TAREAS
 
 ```text
 [ ] No iniciada
@@ -613,13 +615,23 @@ Una tarea solo podrá marcarse `[x]` cuando:
 
 1. su resultado exista;
 2. haya sido validado;
-3. no tenga brechas críticas abiertas;
+3. no tenga brechas críticas abiertas cuya solución corresponda al alcance directo de esa misma tarea;
 4. la evidencia haya sido registrada;
 5. las nuevas brechas hayan sido asignadas a tareas.
 
+En tareas de auditoría, análisis o definición documental, una brecha descubierta no impide cerrar la tarea cuando:
+
+1. quedó identificada;
+2. tiene identificador;
+3. tiene tarea propietaria;
+4. tiene momento de cierre;
+5. tiene evidencia de origen.
+
+La aprobación documental no implica el cierre de la brecha.
+
 ---
 
-# 11. FLUJO GENERAL DE IMPLEMENTACIÓN
+## 11. FLUJO GENERAL DE IMPLEMENTACIÓN
 
 ```text
 AUDITORÍA
@@ -649,7 +661,7 @@ LANZAMIENTO
 
 ---
 
-# FASE 1 — AUDITORÍA Y LÍNEA BASE
+## FASE 1 — AUDITORÍA Y LÍNEA BASE
 
 ## Objetivo
 
@@ -657,11 +669,11 @@ Conocer exactamente el estado real antes de modificar arquitectura, base de dato
 
 ---
 
-# WEB-AUD-001 — Inventario canónico de rutas públicas
+### WEB-AUD-001 — Inventario canónico de rutas públicas
 
 > Auditoría de la estructura pública actual de `ventogroup.co` y del repositorio `devVentoGroup/Vento-Group`.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo              | Valor                                                      |
 | ------------------ | ---------------------------------------------------------- |
@@ -676,7 +688,7 @@ Conocer exactamente el estado real antes de modificar arquitectura, base de dato
 | Cambios realizados | Ninguno                                                    |
 | Próxima tarea      | `WEB-AUD-002 — Inventariar todos los componentes públicos` |
 
-## 1. Objetivo de la tarea
+#### 1. Objetivo de la tarea
 
 Crear una fuente única de verdad sobre las rutas públicas actuales de Vento Group Web.
 
@@ -691,9 +703,9 @@ La auditoría debe dejar explícito:
 7. qué inconsistencias existen;
 8. qué tarea futura será responsable de resolver cada brecha.
 
-## 2. Alcance de la auditoría
+#### 2. Alcance de la auditoría
 
-### 2.1 Elementos revisados
+##### 2.1 Elementos revisados
 
 - estructura de `src/app`;
 - páginas `page.tsx`;
@@ -709,7 +721,7 @@ La auditoría debe dejar explícito:
 - rutas visibles en producción;
 - rutas previstas en el plan canónico.
 
-### 2.2 Acciones no realizadas
+##### 2.2 Acciones no realizadas
 
 - no se modificó el repositorio;
 - no se modificó Vercel;
@@ -720,9 +732,9 @@ La auditoría debe dejar explícito:
 - no se modificó la navegación;
 - no se cambió producción.
 
-## 3. Resultado ejecutivo
+#### 3. Resultado ejecutivo
 
-### 3.1 Estado general
+##### 3.1 Estado general
 
 | Área                    | Estado          | Observación                                            |
 | ----------------------- | --------------- | ------------------------------------------------------ |
@@ -736,7 +748,7 @@ La auditoría debe dejar explícito:
 | Sitemap                 | 🟡 Parcial       | Incluye rutas inconsistentes y usa fallbacks           |
 | Navegación              | 🟡 Parcial       | Está hardcodeada y no representa todo el mapa público  |
 
-### 3.2 Conteo
+##### 3.2 Conteo
 
 | Tipo                               | Cantidad |
 | ---------------------------------- | -------: |
@@ -748,7 +760,7 @@ La auditoría debe dejar explícito:
 | Rutas obligatorias faltantes       |        7 |
 | Rutas sujetas a decisión funcional |        4 |
 
-## 4. Matriz maestra de rutas actuales
+#### 4. Matriz maestra de rutas actuales
 
 | ID          | Ruta                   | Tipo          | Implementación                         | Datos                               | Navegación     | Sitemap   | Estado             |
 | ----------- | ---------------------- | ------------- | -------------------------------------- | ----------------------------------- | -------------- | --------- | ------------------ |
@@ -764,11 +776,11 @@ La auditoría debe dejar explícito:
 | `WEB-R-010` | Ruta inexistente       | Error 404     | Comportamiento predeterminado          | No aplica                           | No             | No        | 🟡 Sin personalizar |
 | `WEB-R-011` | Error de ejecución     | Error general | Comportamiento predeterminado          | No aplica                           | No             | No        | 🟡 Sin personalizar |
 
-## 5. Detalle de rutas actuales
+#### 5. Detalle de rutas actuales
 
-### 5.1 `WEB-R-001` — Inicio
+##### 5.1 `WEB-R-001` — Inicio
 
-#### 5.1.1 Definición
+###### 5.1.1 Definición
 
 | Campo                     | Valor              |
 | ------------------------- | ------------------ |
@@ -778,7 +790,7 @@ La auditoría debe dejar explícito:
 | Estado                    | Activa             |
 | Administración desde VISO | Parcial            |
 
-#### 5.1.2 Composición actual
+###### 5.1.2 Composición actual
 
 1. Hero.
 2. Introducción editorial.
@@ -788,7 +800,7 @@ La auditoría debe dejar explícito:
 6. Cierre de ecosistema y tarjetas rápidas.
 7. Header y footer globales.
 
-#### 5.1.3 Fuentes de contenido
+###### 5.1.3 Fuentes de contenido
 
 - `website_blocks` para `home`;
 - `website_items.restaurant`;
@@ -797,11 +809,11 @@ La auditoría debe dejar explícito:
 - `website_items.app`;
 - textos y enlaces escritos directamente en React.
 
-#### 5.1.4 Limitación principal
+###### 5.1.4 Limitación principal
 
 VISO puede modificar parte del contenido, pero no puede controlar la estructura completa, el orden ni la existencia de todas las secciones.
 
-#### 5.1.5 Tareas responsables
+###### 5.1.5 Tareas responsables
 
 - `WEB-PAG-001`
 - `WEB-PAG-002`
@@ -809,9 +821,9 @@ VISO puede modificar parte del contenido, pero no puede controlar la estructura 
 - `WEB-RND-008`
 - `WEB-MIG-004`
 
-### 5.2 `WEB-R-002` — Restaurantes
+##### 5.2 `WEB-R-002` — Restaurantes
 
-#### 5.2.1 Definición
+###### 5.2.1 Definición
 
 | Campo                     | Valor                           |
 | ------------------------- | ------------------------------- |
@@ -821,7 +833,7 @@ VISO puede modificar parte del contenido, pero no puede controlar la estructura 
 | Estado                    | Activa                          |
 | Administración desde VISO | Parcial                         |
 
-#### 5.2.2 Composición actual
+###### 5.2.2 Composición actual
 
 1. Hero.
 2. Bloque editorial.
@@ -829,11 +841,11 @@ VISO puede modificar parte del contenido, pero no puede controlar la estructura 
 4. Grilla de restaurantes.
 5. CTA relacionado con eventos.
 
-#### 5.2.3 Limitación principal
+###### 5.2.3 Limitación principal
 
 La estructura continúa definida en React. VISO solo modifica algunos bloques y registros.
 
-#### 5.2.4 Tareas responsables
+###### 5.2.4 Tareas responsables
 
 - `WEB-PAG-010`
 - `WEB-PAG-011`
@@ -841,9 +853,9 @@ La estructura continúa definida en React. VISO solo modifica algunos bloques y 
 - `WEB-BLD-011`
 - `WEB-BLD-012`
 
-### 5.3 `WEB-R-003` — Detalle de restaurante
+##### 5.3 `WEB-R-003` — Detalle de restaurante
 
-#### 5.3.1 Definición
+###### 5.3.1 Definición
 
 | Campo                     | Valor                                  |
 | ------------------------- | -------------------------------------- |
@@ -855,7 +867,7 @@ La estructura continúa definida en React. VISO solo modifica algunos bloques y 
 | Indexable                 | Sí                                     |
 | Administración desde VISO | Parcial                                |
 
-#### 5.3.2 Slugs verificados
+###### 5.3.2 Slugs verificados
 
 ```text
 /restaurantes/vento-cafe
@@ -863,7 +875,7 @@ La estructura continúa definida en React. VISO solo modifica algunos bloques y 
 /restaurantes/molka
 ```
 
-#### 5.3.3 Convenciones legacy detectadas
+###### 5.3.3 Convenciones legacy detectadas
 
 ```text
 restaurant:<slug>
@@ -871,7 +883,7 @@ restaurant_<slug>
 restaurante:<slug>
 ```
 
-#### 5.3.4 Problemas específicos
+###### 5.3.4 Problemas específicos
 
 - estructura hardcodeada;
 - textos provisionales en inglés;
@@ -880,7 +892,7 @@ restaurante:<slug>
 - `/eventos` redirige a `/restaurantes`;
 - un fallback puede generar `/restaurantes/restaurante-destacado`.
 
-#### 5.3.5 Tareas responsables
+###### 5.3.5 Tareas responsables
 
 - `WEB-PAG-012`
 - `WEB-PAG-013`
@@ -892,9 +904,9 @@ restaurante:<slug>
 - `WEB-MIG-006`
 - `WEB-MIG-015`
 
-### 5.4 `WEB-R-004` — Empleos
+##### 5.4 `WEB-R-004` — Empleos
 
-#### 5.4.1 Definición
+###### 5.4.1 Definición
 
 | Campo                     | Valor                      |
 | ------------------------- | -------------------------- |
@@ -905,11 +917,11 @@ restaurante:<slug>
 | Indexable                 | Sí                         |
 | Administración desde VISO | Muy parcial                |
 
-#### 5.4.2 Estado actual
+###### 5.4.2 Estado actual
 
 La página funciona como listado genérico y puede mostrar un fallback de `Vacante destacada`.
 
-#### 5.4.3 Brechas
+###### 5.4.3 Brechas
 
 - no existe narrativa de cultura;
 - no existe listado profesional;
@@ -918,7 +930,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - el fallback puede usar CTA `#`;
 - la estructura no es administrable.
 
-#### 5.4.4 Tareas responsables
+###### 5.4.4 Tareas responsables
 
 - `WEB-PAG-020`
 - `WEB-PAG-021`
@@ -928,9 +940,9 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - `WEB-MIG-007`
 - `WEB-MIG-015`
 
-### 5.5 `WEB-R-005` — Servicios
+##### 5.5 `WEB-R-005` — Servicios
 
-#### 5.5.1 Definición
+###### 5.5.1 Definición
 
 | Campo                     | Valor                               |
 | ------------------------- | ----------------------------------- |
@@ -940,7 +952,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 | Indexable                 | Sí                                  |
 | Administración desde VISO | Parcial                             |
 
-#### 5.5.2 Composición actual
+###### 5.5.2 Composición actual
 
 1. Hero.
 2. Introducción.
@@ -949,7 +961,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 5. Grilla de servicios.
 6. CTA.
 
-#### 5.5.3 Elementos hardcodeados
+###### 5.5.3 Elementos hardcodeados
 
 - Operación.
 - Tecnología.
@@ -958,7 +970,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - CTA final.
 - Parte del contenido editorial.
 
-#### 5.5.4 Tareas responsables
+###### 5.5.4 Tareas responsables
 
 - `WEB-PAG-050`
 - `WEB-PAG-051`
@@ -966,9 +978,9 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - `WEB-MIG-010`
 - `WEB-MIG-015`
 
-### 5.6 `WEB-R-006` — Ecosistema
+##### 5.6 `WEB-R-006` — Ecosistema
 
-#### 5.6.1 Definición
+###### 5.6.1 Definición
 
 | Campo                     | Valor                         |
 | ------------------------- | ----------------------------- |
@@ -979,13 +991,13 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 | Indexable                 | Sí                            |
 | Administración desde VISO | Muy parcial                   |
 
-#### 5.6.2 Contenido actual
+###### 5.6.2 Contenido actual
 
 - Vento Pass.
 - Anima.
 - Vento OS.
 
-#### 5.6.3 Brechas
+###### 5.6.3 Brechas
 
 - se usa `Ecosistema` y `Nosotros` para referirse a la misma ruta;
 - el botón `Entrar a Vento OS` lleva a `/ecosistema`;
@@ -993,7 +1005,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - no existen páginas o secciones profundas para cada aplicación;
 - falta narrativa institucional.
 
-#### 5.6.4 Tareas responsables
+###### 5.6.4 Tareas responsables
 
 - `WEB-PAG-030`
 - `WEB-PAG-031`
@@ -1003,9 +1015,9 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 - `WEB-MIG-008`
 - `WEB-MIG-015`
 
-### 5.7 `WEB-R-007` — Eventos
+##### 5.7 `WEB-R-007` — Eventos
 
-#### 5.7.1 Definición
+###### 5.7.1 Definición
 
 | Campo               | Valor                      |
 | ------------------- | -------------------------- |
@@ -1017,7 +1029,7 @@ La página funciona como listado genérico y puede mostrar un fallback de `Vacan
 | Incluida en sitemap | Sí                         |
 | Utilizada por CTA   | Sí                         |
 
-#### 5.7.2 Flujo actual
+###### 5.7.2 Flujo actual
 
 ```text
 /restaurantes/[slug]
@@ -1029,13 +1041,13 @@ Planear evento
 /restaurantes
 ```
 
-#### 5.7.3 Conclusión
+###### 5.7.3 Conclusión
 
 La ruta está técnicamente disponible, pero funcionalmente no existe.
 
 No debe tratarse como página pública real mientras continúe redirigiendo.
 
-#### 5.7.4 Tareas responsables
+###### 5.7.4 Tareas responsables
 
 - `WEB-PAG-040`
 - `WEB-PAG-041`
@@ -1045,9 +1057,9 @@ No debe tratarse como página pública real mientras continúe redirigiendo.
 - `WEB-QA-018`
 - `WEB-QA-019`
 
-### 5.8 `WEB-R-008` — Sitemap
+##### 5.8 `WEB-R-008` — Sitemap
 
-#### 5.8.1 Rutas declaradas
+###### 5.8.1 Rutas declaradas
 
 ```text
 /
@@ -1059,7 +1071,7 @@ No debe tratarse como página pública real mientras continúe redirigiendo.
 /restaurantes/[slug]
 ```
 
-#### 5.8.2 Brechas
+###### 5.8.2 Brechas
 
 1. `/eventos` está incluido aunque redirige.
 2. Los restaurantes fallback pueden convertirse en URLs indexables.
@@ -1068,16 +1080,16 @@ No debe tratarse como página pública real mientras continúe redirigiendo.
 5. No depende de un catálogo versionado de páginas.
 6. No diferencia claramente contenido real y fallback.
 
-#### 5.8.3 Tareas responsables
+###### 5.8.3 Tareas responsables
 
 - `WEB-GLB-009`
 - `WEB-RND-015`
 - `WEB-MIG-013`
 - `WEB-QA-019`
 
-### 5.9 `WEB-R-009` — Robots
+##### 5.9 `WEB-R-009` — Robots
 
-#### 5.9.1 Configuración actual
+###### 5.9.1 Configuración actual
 
 ```text
 User-agent: *
@@ -1085,44 +1097,44 @@ Allow: /
 Sitemap: /sitemap.xml
 ```
 
-#### 5.9.2 Evaluación
+###### 5.9.2 Evaluación
 
 La configuración es correcta para el sitio público actual.
 
 Las futuras rutas de preview y borradores deberán protegerse con autorización real y `noindex`.
 
-#### 5.9.3 Tareas responsables
+###### 5.9.3 Tareas responsables
 
 - `ADR-WEB-005`
 - `WEB-PUB-006`
 - `WEB-PUB-007`
 - `WEB-SEC-005`
 
-### 5.10 `WEB-R-010` — Página 404
+##### 5.10 `WEB-R-010` — Página 404
 
-#### 5.10.1 Estado
+###### 5.10.1 Estado
 
 No existe `src/app/not-found.tsx`.
 
 Se utiliza la respuesta predeterminada de Next.js.
 
-#### 5.10.2 Tarea responsable
+###### 5.10.2 Tarea responsable
 
 - `WEB-PAG-070`
 
-### 5.11 `WEB-R-011` — Error general
+##### 5.11 `WEB-R-011` — Error general
 
-#### 5.11.1 Estado
+###### 5.11.1 Estado
 
 No existe `src/app/error.tsx`.
 
 No hay una experiencia Vento para errores de ejecución ni recuperación.
 
-#### 5.11.2 Tarea responsable
+###### 5.11.2 Tarea responsable
 
 - `WEB-PAG-071`
 
-## 6. Rutas faltantes obligatorias
+#### 6. Rutas faltantes obligatorias
 
 | ID           | Ruta propuesta          | Necesidad                          | Estado        | Tareas responsables                         |
 | ------------ | ----------------------- | ---------------------------------- | ------------- | ------------------------------------------- |
@@ -1134,13 +1146,13 @@ No hay una experiencia Vento para errores de ejecución ni recuperación.
 | `WEB-MR-006` | `/empleos/[slug]`       | Detalle de vacantes                | 🔴 No existe   | `WEB-PAG-021`, `WEB-PAG-022`, `WEB-PAG-023` |
 | `WEB-MR-007` | `/servicios/[slug]`     | Detalle de servicio cuando aplique | 🟡 Por decidir | `WEB-PAG-051`, `WEB-PAG-052`                |
 
-## 7. Decisiones diferidas con responsable
+#### 7. Decisiones diferidas con responsable
 
 > Estas decisiones no se resuelven en `WEB-AUD-001`. Quedan asignadas explícitamente a tareas posteriores.
 
-### 7.1 `WEB-DR-001` — Nosotros y Ecosistema
+##### 7.1 `WEB-DR-001` — Nosotros y Ecosistema
 
-#### Opciones
+###### Opciones
 
 ```text
 A. /nosotros
@@ -1148,32 +1160,32 @@ B. /ecosistema
 C. /nosotros + /ecosistema
 ```
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-PRD-009`
 - `WEB-PRD-015`
 - `WEB-PAG-030`
 - `WEB-GLB-004`
 
-### 7.2 `WEB-DR-002` — Detalle de eventos
+##### 7.2 `WEB-DR-002` — Detalle de eventos
 
-#### Opciones
+###### Opciones
 
 ```text
 A. Solo /eventos
 B. /eventos + /eventos/[slug]
 ```
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-PRD-010`
 - `WEB-PRD-015`
 - `WEB-PAG-040`
 - `WEB-PAG-041`
 
-### 7.3 `WEB-DR-003` — Páginas de aplicaciones
+##### 7.3 `WEB-DR-003` — Páginas de aplicaciones
 
-#### Opciones
+###### Opciones
 
 ```text
 A. Secciones dentro de /ecosistema
@@ -1183,7 +1195,7 @@ C. /ecosistema/vento-pass
    /ecosistema/vento-os
 ```
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-PRD-010`
 - `WEB-PRD-015`
@@ -1191,25 +1203,25 @@ C. /ecosistema/vento-pass
 - `WEB-PAG-032`
 - `WEB-PAG-033`
 
-### 7.4 `WEB-DR-004` — Búsqueda pública
+##### 7.4 `WEB-DR-004` — Búsqueda pública
 
 La home declara un `SearchAction`, pero no existe buscador funcional.
 
-#### Decisión requerida
+###### Decisión requerida
 
 ```text
 A. Implementar búsqueda real
 B. Retirar SearchAction
 ```
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-GLB-008`
 - `WEB-QA-020`
 
-## 8. Navegación pública actual
+#### 8. Navegación pública actual
 
-### 8.1 Header
+##### 8.1 Header
 
 ```text
 /restaurantes
@@ -1219,7 +1231,7 @@ B. Retirar SearchAction
 mailto:hola@ventogroup.co
 ```
 
-### 8.2 Footer
+##### 8.2 Footer
 
 ```text
 /ecosistema
@@ -1229,7 +1241,7 @@ mailto:hola@ventogroup.co
 mailto:hola@ventogroup.co
 ```
 
-### 8.3 Elementos ausentes
+##### 8.3 Elementos ausentes
 
 - Eventos.
 - Contacto como página.
@@ -1238,11 +1250,11 @@ mailto:hola@ventogroup.co
 - Términos.
 - Cookies.
 
-### 8.4 Conclusión
+##### 8.4 Conclusión
 
 La navegación funciona, pero está hardcodeada, es incompleta y no está alineada con un catálogo canónico de páginas.
 
-### 8.5 Tareas responsables
+##### 8.5 Tareas responsables
 
 - `WEB-PRD-009`
 - `WEB-GLB-003`
@@ -1251,7 +1263,7 @@ La navegación funciona, pero está hardcodeada, es incompleta y no está alinea
 - `WEB-MIG-011`
 - `WEB-MIG-012`
 
-## 9. Mapa actual
+#### 9. Mapa actual
 
 ```text
 /
@@ -1270,7 +1282,9 @@ La navegación funciona, pero está hardcodeada, es incompleta y no está alinea
 └── robots.txt
 ```
 
-## 10. Registro canónico de brechas
+#### 10. Registro de hallazgos de origen — histórico
+
+> Esta tabla conserva la evidencia original de la auditoría. La única fuente canónica vigente para propiedad, tareas vinculadas, momento de cierre y estado es la matriz consolidada de `WEB-AUD-012`.
 
 | Brecha        | Descripción                                  | Severidad | Tarea responsable                           |
 | ------------- | -------------------------------------------- | --------- | ------------------------------------------- |
@@ -1287,13 +1301,13 @@ La navegación funciona, pero está hardcodeada, es incompleta y no está alinea
 | `WEB-GAP-011` | `SearchAction` sin búsqueda real             | Media     | `WEB-GLB-008`, `WEB-QA-020`                 |
 | `WEB-GAP-012` | Tres convenciones de bloques de restaurante  | Media     | `WEB-ARC-001`, `WEB-MIG-003`                |
 
-## 11. Cambios obligatorios al plan maestro
+#### 11. Cambios obligatorios al plan maestro
 
 Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los ADR.
 
-### 11.1 `WEB-PRD-015 — Definir taxonomía canónica de rutas públicas`
+##### 11.1 `WEB-PRD-015 — Definir taxonomía canónica de rutas públicas`
 
-#### Alcance
+###### Alcance
 
 - URL canónica de Nosotros;
 - URL canónica de Ecosistema;
@@ -1305,9 +1319,9 @@ Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los 
 - convención de idioma;
 - reglas para rutas dinámicas.
 
-### 11.2 `WEB-PRD-016 — Definir política canónica de redirecciones`
+##### 11.2 `WEB-PRD-016 — Definir política canónica de redirecciones`
 
-#### Alcance
+###### Alcance
 
 - redirecciones permanentes;
 - redirecciones temporales;
@@ -1317,7 +1331,7 @@ Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los 
 - prevención de ciclos;
 - trazabilidad de redirecciones.
 
-## 12. Evidencia técnica
+#### 12. Evidencia técnica
 
 | Archivo                                | Evidencia aportada               |
 | -------------------------------------- | -------------------------------- |
@@ -1335,32 +1349,32 @@ Se deben agregar las siguientes tareas después de `WEB-PRD-014` y antes de los 
 | `src/components/category-page.tsx`     | Renderer genérico actual         |
 | `src/lib/content.ts`                   | Consultas y fallbacks            |
 
-## 13. Criterios de aprobación
+#### 13. Criterios de aprobación
 
 `WEB-AUD-001` podrá marcarse como completada cuando se apruebe:
 
-- [ ] la matriz maestra de rutas;
-- [ ] la clasificación de `/eventos` como redirección inconsistente;
-- [ ] la lista de rutas obligatorias faltantes;
-- [ ] el registro de brechas;
-- [ ] la incorporación de `WEB-PRD-015`;
-- [ ] la incorporación de `WEB-PRD-016`;
-- [ ] que las decisiones definitivas de URLs se resolverán en Fase 2.
+- [x] la matriz maestra de rutas;
+- [x] la clasificación de `/eventos` como redirección inconsistente;
+- [x] la lista de rutas obligatorias faltantes;
+- [x] el registro de brechas;
+- [x] la incorporación de `WEB-PRD-015`;
+- [x] la incorporación de `WEB-PRD-016`;
+- [x] que las decisiones definitivas de URLs se resolverán en Fase 2.
 
-## 14. Estado de cierre propuesto
+#### 14. Estado de cierre propuesto
 
 ```text
 WEB-AUD-001 — APROBADA
 ```
 
-### 14.1 Después de aprobación
+##### 14.1 Después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
-[ ] WEB-AUD-002 — Inventariar todos los componentes públicos
+[x] WEB-AUD-002 — Inventariar todos los componentes públicos
 ```
 
-### 14.2 No ejecutar todavía
+##### 14.2 No ejecutar todavía
 
 - migraciones;
 - cambios en Supabase;
@@ -1371,20 +1385,20 @@ WEB-AUD-001 — APROBADA
 - implementación del renderer;
 - implementación del editor visual.
 
-## 15. Registro de cambios
+#### 15. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                    | Estado            |
 | -------------- | ---------- | ----------------------------------------- | ----------------- |
 | `2026-07-23.1` | 2026-07-23 | Primera versión                           | Reemplazada       |
 | `2026-07-23.2` | 2026-07-23 | Reorganización de contenido               | Reemplazada       |
-| `2026-07-23.3` | 2026-07-23 | Corrección completa de jerarquía Markdown | Propuesta vigente |
+| `2026-07-23.3` | 2026-07-23 | Corrección completa de jerarquía Markdown | Aprobada |
 
 
-# WEB-AUD-002 — Inventario canónico de componentes públicos
+### WEB-AUD-002 — Inventario canónico de componentes públicos
 
 > Auditoría de los componentes React, envoltorios globales y composiciones de página que forman actualmente la interfaz pública de `ventogroup.co`.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                 | Valor                                             |
 | --------------------- | ------------------------------------------------- |
@@ -1401,7 +1415,7 @@ WEB-AUD-001 — APROBADA
 | Cambios en producción | Ninguno                                           |
 | Próxima tarea         | `WEB-AUD-003 — Inventariar contenido hardcodeado` |
 
-## 1. Objetivo de la tarea
+#### 1. Objetivo de la tarea
 
 Crear una fuente única de verdad sobre todos los componentes que participan en la web pública actual.
 
@@ -1418,9 +1432,9 @@ La auditoría debe determinar:
 9. qué brechas presenta cada capa;
 10. qué tarea futura será responsable de cada brecha.
 
-## 2. Alcance y método
+#### 2. Alcance y método
 
-### 2.1 Elementos incluidos
+##### 2.1 Elementos incluidos
 
 La auditoría incluye:
 
@@ -1435,7 +1449,7 @@ La auditoría incluye:
 - reutilización real en las páginas actuales;
 - candidatos al futuro registro de secciones.
 
-### 2.2 Elementos excluidos
+##### 2.2 Elementos excluidos
 
 Esta tarea no modifica ni redefine todavía:
 
@@ -1448,7 +1462,7 @@ Esta tarea no modifica ni redefine todavía:
 - componentes del editor de VISO;
 - código de producción.
 
-### 2.3 Criterios de clasificación
+##### 2.3 Criterios de clasificación
 
 Cada componente se clasifica según:
 
@@ -1460,9 +1474,9 @@ Cada componente se clasifica según:
 | Dependencia de contenido | Ninguna, props, `WebsiteItem`, bloques o configuración fija |
 | Estado recomendado       | Conservar, refactorizar, convertir, reemplazar o retirar    |
 
-## 3. Resultado ejecutivo
+#### 3. Resultado ejecutivo
 
-### 3.1 Conteo total
+##### 3.1 Conteo total
 
 | Grupo                                       | Cantidad |
 | ------------------------------------------- | -------: |
@@ -1471,14 +1485,14 @@ Cada componente se clasifica según:
 | Composiciones React de rutas públicas       |        7 |
 | Total de unidades públicas inventariadas    |   **25** |
 
-### 3.2 Componentes compartidos por ejecución
+##### 3.2 Componentes compartidos por ejecución
 
 | Ejecución            | Cantidad | Componentes                                                                                                                                     |
 | -------------------- | -------: | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Cliente              |        9 | `SiteHeader`, `SmoothScroll`, `Reveal`, `RevealGrid`, `ImageBanner`, `ItemCarousel`, `HeroMediaCarousel`, `HomeHeroIntro`, `HomeVenuesShowcase` |
 | Servidor o agnóstico |        7 | `SiteFooter`, `MediaSlot`, `ItemCard`, `CtaBanner`, `CategoryPage`, `HomeEditorialBand`, `StructuredData`                                       |
 
-### 3.3 Decisión preliminar por estado
+##### 3.3 Decisión preliminar por estado
 
 | Estado recomendado                              | Cantidad | Alcance                                     |
 | ----------------------------------------------- | -------: | ------------------------------------------- |
@@ -1486,7 +1500,7 @@ Cada componente se clasifica según:
 | Refactorizar o convertir en componente canónico |       10 | Shell, medios, colecciones y secciones      |
 | Reemplazar o retirar después de la migración    |        2 | `CategoryPage` y `HomeEditorialBand` actual |
 
-### 3.4 Hallazgos principales
+##### 3.4 Hallazgos principales
 
 1. No existe un registro canónico de componentes o secciones.
 2. Las páginas importan y ensamblan componentes manualmente.
@@ -1505,9 +1519,9 @@ Cada componente se clasifica según:
 15. La serialización de JSON-LD no incluye endurecimiento explícito frente a contenido no confiable.
 16. Los componentes complejos de interacción dependen de JavaScript cliente sin una estrategia común de pruebas.
 
-## 4. Arquitectura pública actual
+#### 4. Arquitectura pública actual
 
-### 4.1 Flujo general
+##### 4.1 Flujo general
 
 ```text
 RootLayout
@@ -1524,7 +1538,7 @@ RootLayout
         └── SiteFooter
 ```
 
-### 4.2 Dependencia de contenido
+##### 4.2 Dependencia de contenido
 
 ```text
 Supabase
@@ -1538,7 +1552,7 @@ composiciones de página
 componentes públicos
 ```
 
-### 4.3 Dependencia visual
+##### 4.3 Dependencia visual
 
 ```text
 src/app/globals.css
@@ -1556,7 +1570,7 @@ No existen actualmente:
 - un sistema tipado de variantes;
 - un registro de estilos por sección.
 
-## 5. Matriz maestra de componentes compartidos
+#### 5. Matriz maestra de componentes compartidos
 
 | ID            | Componente           | Archivo                                   | Capa actual              | Ejecución | Reutilización        | Estado recomendado               |
 | ------------- | -------------------- | ----------------------------------------- | ------------------------ | --------- | -------------------- | -------------------------------- |
@@ -1577,17 +1591,17 @@ No existen actualmente:
 | `WEB-CMP-015` | `HomeEditorialBand`  | `src/components/editorial-band.tsx`       | Sección editorial legacy | Servidor  | Sin uso confirmado   | Retirar o reconstruir            |
 | `WEB-CMP-016` | `StructuredData`     | `src/components/structured-data.tsx`      | SEO técnico              | Servidor  | Múltiple             | Conservar y endurecer            |
 
-## 6. Inventario detallado por capa
+#### 6. Inventario detallado por capa
 
-### 6.1 Shell y runtime global
+##### 6.1 Shell y runtime global
 
-#### 6.1.1 `WEB-CMP-001 — SiteHeader`
+###### 6.1.1 `WEB-CMP-001 — SiteHeader`
 
 **Archivo:** `src/components/site-header.tsx`  
 **Ejecución:** cliente  
 **Uso:** todas las páginas visuales actuales.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - navegación desktop;
 - navegación especial para la home;
@@ -1598,7 +1612,7 @@ No existen actualmente:
 - enlaces destacados;
 - CTA hacia Vento OS.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - utiliza `aria-expanded`;
 - relaciona el botón con `aria-controls`;
@@ -1606,7 +1620,7 @@ No existen actualmente:
 - permite cerrar con `Escape`;
 - separa el comportamiento visual de la home.
 
-##### Brechas
+###### Brechas
 
 - navegación escrita en constantes locales;
 - duplicación entre `NAV`, `HOME_LEFT_NAV` y `HOME_RIGHT_NAV`;
@@ -1619,7 +1633,7 @@ No existen actualmente:
 - no se administra desde VISO;
 - mezcla shell, navegación, scroll y overlay en un único componente.
 
-##### Destino canónico
+###### Destino canónico
 
 Componente global controlado por:
 
@@ -1630,7 +1644,7 @@ Componente global controlado por:
 - estado de página;
 - reglas de accesibilidad.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-GLB-003`
 - `WEB-GLB-004`
@@ -1638,13 +1652,13 @@ Componente global controlado por:
 - `WEB-QA-011`
 - `WEB-QA-012`
 
-#### 6.1.2 `WEB-CMP-002 — SiteFooter`
+###### 6.1.2 `WEB-CMP-002 — SiteFooter`
 
 **Archivo:** `src/components/site-footer.tsx`  
 **Ejecución:** servidor  
 **Uso:** todas las páginas visuales actuales.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - marca;
 - lista decorativa de restaurantes o categorías;
@@ -1654,7 +1668,7 @@ Componente global controlado por:
 - redes sociales;
 - copyright.
 
-##### Brechas
+###### Brechas
 
 - navegación hardcodeada;
 - `Contacto` utiliza `mailto:`;
@@ -1666,7 +1680,7 @@ Componente global controlado por:
 - los contenidos globales no provienen de VISO;
 - `venues` recibe únicamente nombres, no enlaces ni entidades estructuradas.
 
-##### Destino canónico
+###### Destino canónico
 
 Componente global alimentado por:
 
@@ -1677,7 +1691,7 @@ Componente global alimentado por:
 - formulario real de newsletter;
 - marcas o restaurantes seleccionados.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-GLB-005`
 - `WEB-GLB-006`
@@ -1685,38 +1699,38 @@ Componente global alimentado por:
 - `WEB-MIG-012`
 - `WEB-FRM-011`
 
-#### 6.1.3 `WEB-CMP-003 — SmoothScroll`
+###### 6.1.3 `WEB-CMP-003 — SmoothScroll`
 
 **Archivo:** `src/components/smooth-scroll.tsx`  
 **Ejecución:** cliente  
 **Uso:** global desde `RootLayout`.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - cargar Lenis dinámicamente;
 - ejecutar scroll suave;
 - respetar `prefers-reduced-motion`;
 - volver al scroll nativo si falla la dependencia.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - importación dinámica;
 - degradación segura;
 - limpieza del frame y de Lenis;
 - respeto por movimiento reducido.
 
-##### Brechas
+###### Brechas
 
 - duración y easing hardcodeados;
 - el comentario indica un comportamiento táctil que no está implementado explícitamente;
 - no existe configuración por tema o dispositivo;
 - no existen pruebas de interacción.
 
-##### Destino canónico
+###### Destino canónico
 
 Conservar como utilidad global, con configuración controlada por código y tokens del sitio. No debe exponerse como bloque editable libre.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-GLB-001`
 - `WEB-QA-008`
@@ -1724,29 +1738,29 @@ Conservar como utilidad global, con configuración controlada por código y toke
 - `WEB-QA-014`
 - `WEB-PERF-005`
 
-### 6.2 Primitivas de animación
+##### 6.2 Primitivas de animación
 
-#### 6.2.1 `WEB-CMP-004 — Reveal`
+###### 6.2.1 `WEB-CMP-004 — Reveal`
 
 **Archivo:** `src/components/reveal.tsx`  
 **Ejecución:** cliente  
 **Uso:** home, restaurantes, servicios y detalle de restaurante.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - detectar entrada en viewport;
 - revelar una vez o alternar visibilidad;
 - aplicar delay;
 - respetar movimiento reducido.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - configuración de threshold y root margin;
 - desconexión del observer;
 - soporte de `prefers-reduced-motion`;
 - modo `once` y `toggle`.
 
-##### Brechas
+###### Brechas
 
 - siempre introduce un `<div>` adicional;
 - no permite elegir el elemento semántico;
@@ -1754,30 +1768,30 @@ Conservar como utilidad global, con configuración controlada por código y toke
 - no existe catálogo canónico de animaciones;
 - no tiene pruebas.
 
-##### Destino canónico
+###### Destino canónico
 
 Conservar como primitiva interna del renderer. Debe aceptar un elemento semántico o patrón `asChild` y usar variantes de animación registradas.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-005`
 - `WEB-RND-011`
 - `WEB-QA-001`
 - `WEB-QA-014`
 
-#### 6.2.2 `WEB-CMP-005 — RevealGrid`
+###### 6.2.2 `WEB-CMP-005 — RevealGrid`
 
 **Archivo:** `src/components/reveal-grid.tsx`  
 **Ejecución:** cliente  
 **Uso:** `CategoryPage`, Restaurantes y Servicios.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - revelar hijos en cascada;
 - apoyarse en selectores `nth-child` de `globals.css`;
 - respetar movimiento reducido.
 
-##### Brechas
+###### Brechas
 
 - comportamiento estrechamente acoplado a CSS global;
 - delays definidos fuera del contrato del componente;
@@ -1785,33 +1799,33 @@ Conservar como primitiva interna del renderer. Debe aceptar un elemento semánti
 - no existen pruebas;
 - siempre renderiza un `<div>`.
 
-##### Destino canónico
+###### Destino canónico
 
 Conservar como primitiva interna o integrarla dentro de una API canónica de animación para colecciones.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-005`
 - `WEB-RND-011`
 - `WEB-QA-001`
 - `WEB-QA-014`
 
-### 6.3 Primitivas y secciones multimedia
+##### 6.3 Primitivas y secciones multimedia
 
-#### 6.3.1 `WEB-CMP-006 — MediaSlot`
+###### 6.3.1 `WEB-CMP-006 — MediaSlot`
 
 **Archivo:** `src/components/media-slot.tsx`  
 **Ejecución:** servidor o agnóstico  
 **Uso:** componente multimedia central de la web actual.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - mostrar placeholder si no existe medio;
 - inferir imagen o video por URL;
 - renderizar `<img>` o `<video>`;
 - reproducir videos automáticamente, silenciados y en loop.
 
-##### Brechas críticas
+###### Brechas críticas
 
 - utiliza `<img>` directo;
 - no declara ancho ni alto;
@@ -1826,7 +1840,7 @@ Conservar como primitiva interna o integrarla dentro de una API canónica de ani
 - los placeholders pueden quedar visibles en producción;
 - la inferencia por extensión está duplicada en `HeroMediaCarousel`.
 
-##### Destino canónico
+###### Destino canónico
 
 Reemplazar por un `MediaRenderer` único que resuelva:
 
@@ -1843,7 +1857,7 @@ Reemplazar por un `MediaRenderer` único que resuelva:
 - variantes responsive;
 - errores y fallbacks seguros.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-RND-010`
 - `WEB-RND-017`
@@ -1855,20 +1869,20 @@ Reemplazar por un `MediaRenderer` único que resuelva:
 - `WEB-PERF-003`
 - `WEB-PERF-004`
 
-#### 6.3.2 `WEB-CMP-007 — ImageBanner`
+###### 6.3.2 `WEB-CMP-007 — ImageBanner`
 
 **Archivo:** `src/components/image-banner.tsx`  
 **Ejecución:** cliente  
 **Uso:** Inicio, Restaurantes y Servicios.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - banda multimedia full-bleed;
 - parallax por scroll;
 - eyebrow y título opcionales;
 - desactivar movimiento con preferencia reducida.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - observación de visibilidad;
 - uso de `requestAnimationFrame`;
@@ -1876,7 +1890,7 @@ Reemplazar por un `MediaRenderer` único que resuelva:
 - soporte de imagen o video;
 - parallax configurable por prop.
 
-##### Brechas
+###### Brechas
 
 - depende del `MediaSlot` actual;
 - el comportamiento visual no está modelado mediante variantes;
@@ -1885,7 +1899,7 @@ Reemplazar por un `MediaRenderer` único que resuelva:
 - no existe control editorial desde VISO;
 - cada instancia agrega listeners de scroll y resize.
 
-##### Destino canónico
+###### Destino canónico
 
 Convertir en sección registrada:
 
@@ -1895,7 +1909,7 @@ media.image_banner
 
 con variantes, focal point, responsive, overlay y animación controlada.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `ADR-WEB-002`
 - `WEB-ARC-002`
@@ -1904,13 +1918,13 @@ con variantes, focal point, responsive, overlay y animación controlada.
 - `WEB-BLD-008`
 - `WEB-BLD-010`
 
-#### 6.3.3 `WEB-CMP-008 — HeroMediaCarousel`
+###### 6.3.3 `WEB-CMP-008 — HeroMediaCarousel`
 
 **Archivo:** `src/components/hero-media-carousel.tsx`  
 **Ejecución:** cliente  
 **Uso:** indirecto desde `HomeHeroIntro`.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - ordenar slides;
 - autoplay;
@@ -1923,7 +1937,7 @@ con variantes, focal point, responsive, overlay y animación controlada.
 - imagen o video;
 - variante `default` o `immersive`.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - pausa cuando la pestaña no está visible;
 - respeta movimiento reducido;
@@ -1932,7 +1946,7 @@ con variantes, focal point, responsive, overlay y animación controlada.
 - limpia listeners y timers;
 - dispone de controles con etiquetas ARIA.
 
-##### Brechas
+###### Brechas
 
 - 270 líneas y múltiples responsabilidades;
 - utiliza medios crudos;
@@ -1945,7 +1959,7 @@ con variantes, focal point, responsive, overlay y animación controlada.
 - no hay pruebas de drag, autoplay, pausa ni teclado;
 - no expone estado accesible del slide activo.
 
-##### Destino canónico
+###### Destino canónico
 
 Separar en:
 
@@ -1954,7 +1968,7 @@ Separar en:
 3. sección registrada `hero.media_carousel`;
 4. configuración validada de autoplay, overlay, CTA y responsive.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-RND-002`
@@ -1966,15 +1980,15 @@ Separar en:
 - `WEB-QA-014`
 - `WEB-PERF-005`
 
-### 6.4 Componentes de contenido y colecciones
+##### 6.4 Componentes de contenido y colecciones
 
-#### 6.4.1 `WEB-CMP-009 — HomeHeroIntro`
+###### 6.4.1 `WEB-CMP-009 — HomeHeroIntro`
 
 **Archivo:** `src/components/home-hero-intro.tsx`  
 **Ejecución:** cliente  
 **Uso:** solo Inicio.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - encapsular el hero de la home;
 - ejecutar una secuencia splash;
@@ -1983,7 +1997,7 @@ Separar en:
 - montar `HeroMediaCarousel`;
 - controlar fases mediante timers.
 
-##### Brechas
+###### Brechas
 
 - timings de `1800 ms` y `3200 ms` hardcodeados;
 - branding y ruta del logo hardcodeados;
@@ -1994,11 +2008,11 @@ Separar en:
 - no tiene mecanismo explícito para evitar repetir el splash por sesión;
 - no existen pruebas de temporización.
 
-##### Destino canónico
+###### Destino canónico
 
 Convertir en una variante controlada de hero o en una composición de hero + splash con configuración restringida.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-PAG-001`
 - `WEB-PAG-002`
@@ -2007,13 +2021,13 @@ Convertir en una variante controlada de hero o en una composición de hero + spl
 - `WEB-RND-003`
 - `WEB-BLD-008`
 
-#### 6.4.2 `WEB-CMP-010 — HomeVenuesShowcase`
+###### 6.4.2 `WEB-CMP-010 — HomeVenuesShowcase`
 
 **Archivo:** `src/components/home-venues-showcase.tsx`  
 **Ejecución:** cliente  
 **Uso:** solo Inicio.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - selector de restaurantes;
 - carrusel circular;
@@ -2024,14 +2038,14 @@ Convertir en una variante controlada de hero o en una composición de hero + spl
 - disponibilidad;
 - CTA.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - tabs con `aria-selected`;
 - navegación anterior y siguiente;
 - estado vacío controlado;
 - uso de datos de restaurantes.
 
-##### Brechas críticas
+###### Brechas críticas
 
 - deriva características dividiendo `body` o `excerpt` por saltos de línea y puntos;
 - si no obtiene suficientes elementos, inventa cuatro características fallback;
@@ -2042,7 +2056,7 @@ Convertir en una variante controlada de hero o en una composición de hero + spl
 - no hay navegación completa por teclado para el tablist;
 - no hay esquema de configuración de sección.
 
-##### Destino canónico
+###### Destino canónico
 
 Convertir en:
 
@@ -2052,7 +2066,7 @@ venues.showcase
 
 con propiedades estructuradas y fuente dinámica configurable.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-ARC-003`
@@ -2062,13 +2076,13 @@ con propiedades estructuradas y fuente dinámica configurable.
 - `WEB-PAG-010`
 - `WEB-QA-011`
 
-#### 6.4.3 `WEB-CMP-011 — ItemCard`
+###### 6.4.3 `WEB-CMP-011 — ItemCard`
 
 **Archivo:** `src/components/item-card.tsx`  
 **Ejecución:** servidor o agnóstico  
 **Uso:** colecciones y carruseles.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - mostrar medio;
 - título;
@@ -2076,7 +2090,7 @@ con propiedades estructuradas y fuente dinámica configurable.
 - descripción;
 - acción.
 
-##### Brechas
+###### Brechas
 
 - depende directamente del tipo legacy `WebsiteItem`;
 - aplica la misma presentación a restaurantes, empleos, servicios y aplicaciones;
@@ -2087,7 +2101,7 @@ con propiedades estructuradas y fuente dinámica configurable.
 - no modela estados vacío, deshabilitado o borrador;
 - no existe esquema de campos por categoría.
 
-##### Destino canónico
+###### Destino canónico
 
 Refactorizar como primitiva de colección con variantes tipadas:
 
@@ -2097,7 +2111,7 @@ Refactorizar como primitiva de colección con variantes tipadas:
 - app;
 - editorial.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-ARC-003`
@@ -2106,20 +2120,20 @@ Refactorizar como primitiva de colección con variantes tipadas:
 - `WEB-BLD-011`
 - `WEB-MIG-015`
 
-#### 6.4.4 `WEB-CMP-012 — ItemCarousel`
+###### 6.4.4 `WEB-CMP-012 — ItemCarousel`
 
 **Archivo:** `src/components/item-carousel.tsx`  
 **Ejecución:** cliente  
 **Uso:** restaurantes relacionados en detalle.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - rail horizontal;
 - botones anterior y siguiente;
 - desplazamiento suave;
 - render de `ItemCard`.
 
-##### Brechas
+###### Brechas
 
 - controles visibles `Prev` y `Next` en inglés;
 - no calcula estado inicial o final;
@@ -2130,7 +2144,7 @@ Refactorizar como primitiva de colección con variantes tipadas:
 - depende directamente de `WebsiteItem`;
 - no tiene pruebas.
 
-##### Destino canónico
+###### Destino canónico
 
 Convertir en variante de colección:
 
@@ -2140,7 +2154,7 @@ collection.carousel
 
 basada en una primitiva de carrusel compartida.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-RND-003`
@@ -2148,26 +2162,26 @@ basada en una primitiva de carrusel compartida.
 - `WEB-QA-001`
 - `WEB-QA-011`
 
-#### 6.4.5 `WEB-CMP-013 — CtaBanner`
+###### 6.4.5 `WEB-CMP-013 — CtaBanner`
 
 **Archivo:** `src/components/cta-banner.tsx`  
 **Ejecución:** servidor o agnóstico  
 **Uso:** Restaurantes y Servicios.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - título;
 - texto opcional;
 - CTA interno o externo.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - interfaz pequeña;
 - reutilizable;
 - distingue enlaces externos básicos;
 - puede renderizarse sin CTA.
 
-##### Brechas
+###### Brechas
 
 - no dispone de variantes;
 - no soporta medio, fondo o alineación;
@@ -2176,7 +2190,7 @@ basada en una primitiva de carrusel compartida.
 - no existe esquema para builder;
 - el estilo depende enteramente de CSS global.
 
-##### Destino canónico
+###### Destino canónico
 
 Convertir en:
 
@@ -2186,7 +2200,7 @@ cta.banner
 
 con variantes controladas y contrato de enlaces.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-RND-002`
@@ -2194,13 +2208,13 @@ con variantes controladas y contrato de enlaces.
 - `WEB-BLD-007`
 - `WEB-BLD-008`
 
-#### 6.4.6 `WEB-CMP-014 — CategoryPage`
+###### 6.4.6 `WEB-CMP-014 — CategoryPage`
 
 **Archivo:** `src/components/category-page.tsx`  
 **Ejecución:** servidor  
 **Uso:** Empleos y Ecosistema.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - crear hero desde el primer item;
 - generar JSON-LD de colección;
@@ -2208,7 +2222,7 @@ con variantes controladas y contrato de enlaces.
 - montar header y footer;
 - incluir un botón de regreso al inicio.
 
-##### Brechas críticas
+###### Brechas críticas
 
 - fuerza el mismo diseño para dominios funcionales distintos;
 - el primer item se utiliza como medio principal;
@@ -2220,11 +2234,11 @@ con variantes controladas y contrato de enlaces.
 - importa shell global dentro de una composición genérica;
 - no puede evolucionar directamente hacia un page builder.
 
-##### Destino canónico
+###### Destino canónico
 
 Reemplazar por `PageRenderer` y secciones registradas. No debe sobrevivir como plantilla universal.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-RND-004`
 - `WEB-RND-005`
@@ -2232,13 +2246,13 @@ Reemplazar por `PageRenderer` y secciones registradas. No debe sobrevivir como p
 - `WEB-PAG-030`
 - `WEB-MIG-020`
 
-#### 6.4.7 `WEB-CMP-015 — HomeEditorialBand`
+###### 6.4.7 `WEB-CMP-015 — HomeEditorialBand`
 
 **Archivo:** `src/components/editorial-band.tsx`  
 **Ejecución:** servidor o agnóstico  
 **Uso confirmado:** ninguno en la composición vigente.
 
-##### Responsabilidades previstas
+###### Responsabilidades previstas
 
 - imagen;
 - eyebrow;
@@ -2247,7 +2261,7 @@ Reemplazar por `PageRenderer` y secciones registradas. No debe sobrevivir como p
 - CTA;
 - orientación normal o inversa.
 
-##### Brechas
+###### Brechas
 
 - componente legacy sin uso confirmado;
 - depende del tipo `EditorialBand`;
@@ -2256,7 +2270,7 @@ Reemplazar por `PageRenderer` y secciones registradas. No debe sobrevivir como p
 - no forma parte de un registro de secciones;
 - se solapa con la estructura editorial escrita directamente en la home.
 
-##### Destino canónico
+###### Destino canónico
 
 No conservar el componente actual como fuente de verdad.
 
@@ -2269,32 +2283,32 @@ editorial.reverse
 
 Después de la migración deberá retirarse.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-ARC-002`
 - `WEB-RND-003`
 - `WEB-MIG-020`
 
-### 6.5 SEO técnico
+##### 6.5 SEO técnico
 
-#### 6.5.1 `WEB-CMP-016 — StructuredData`
+###### 6.5.1 `WEB-CMP-016 — StructuredData`
 
 **Archivo:** `src/components/structured-data.tsx`  
 **Ejecución:** servidor o agnóstico  
 **Uso:** Inicio, páginas de colección y detalle de restaurante.
 
-##### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - serializar un objeto o arreglo;
 - insertarlo como `application/ld+json`.
 
-##### Aspectos correctos
+###### Aspectos correctos
 
 - interfaz pequeña;
 - reutilizable;
 - compatible con varios schemas.
 
-##### Brechas
+###### Brechas
 
 - acepta cualquier `Record<string, unknown>`;
 - no valida schemas;
@@ -2304,7 +2318,7 @@ Después de la migración deberá retirarse.
 - no existe prueba frente a contenido proveniente del CMS;
 - la home declara un `SearchAction` sin búsqueda funcional.
 
-##### Destino canónico
+###### Destino canónico
 
 Conservar como utilidad técnica, pero reemplazar la entrada libre por builders y schemas validados para:
 
@@ -2316,20 +2330,20 @@ Conservar como utilidad técnica, pero reemplazar la entrada libre por builders 
 - BreadcrumbList;
 - ItemList.
 
-##### Tareas responsables
+###### Tareas responsables
 
 - `WEB-RND-014`
 - `WEB-SEC-016`
 - `WEB-QA-020`
 
-## 7. Envoltorios globales de aplicación
+#### 7. Envoltorios globales de aplicación
 
-### 7.1 `WEB-APP-001 — RootLayout`
+##### 7.1 `WEB-APP-001 — RootLayout`
 
 **Archivo:** `src/app/layout.tsx`  
 **Ejecución:** servidor.
 
-#### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - idioma `es`;
 - carga de Cormorant Garamond;
@@ -2339,7 +2353,7 @@ Conservar como utilidad técnica, pero reemplazar la entrada libre por builders 
 - montaje de `SmoothScroll`;
 - script para impedir cambios por rueda en inputs numéricos.
 
-#### Brechas
+###### Brechas
 
 - tipografías y pesos hardcodeados;
 - metadata global hardcodeada;
@@ -2349,45 +2363,45 @@ Conservar como utilidad técnica, pero reemplazar la entrada libre por builders 
 - no monta header ni footer;
 - no define providers para preview, theme o publicaciones futuras.
 
-#### Destino canónico
+###### Destino canónico
 
 Mantener como shell técnico y mover la configuración editable a resolutores seguros del sitio.
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-GLB-001`
 - `WEB-GLB-007`
 - `WEB-RND-013`
 - `WEB-ARC-005`
 
-### 7.2 `WEB-APP-002 — Template`
+##### 7.2 `WEB-APP-002 — Template`
 
 **Archivo:** `src/app/template.tsx`  
 **Ejecución:** servidor.
 
-#### Responsabilidades actuales
+###### Responsabilidades actuales
 
 - remontar el contenido en cada navegación;
 - aplicar transición de entrada mediante `page-transition`.
 
-#### Brechas
+###### Brechas
 
 - comportamiento completamente dependiente de CSS global;
 - no tiene variantes;
 - no diferencia navegación normal, preview o movimiento reducido desde el componente;
 - no tiene pruebas de regresión visual.
 
-#### Destino canónico
+###### Destino canónico
 
 Conservar como infraestructura de transición, sin exponer CSS libre al editor.
 
-#### Tareas responsables
+###### Tareas responsables
 
 - `WEB-RND-011`
 - `WEB-QA-006`
 - `WEB-QA-014`
 
-## 8. Composiciones de rutas públicas
+#### 8. Composiciones de rutas públicas
 
 | ID                 | Composición            | Archivo                                | Componentes principales                              | Estado futuro                            |
 | ------------------ | ---------------------- | -------------------------------------- | ---------------------------------------------------- | ---------------------------------------- |
@@ -2399,7 +2413,7 @@ Conservar como infraestructura de transición, sin exponer CSS libre al editor.
 | `WEB-PAGE-CMP-006` | `EcosistemaPage`       | `src/app/ecosistema/page.tsx`          | `CategoryPage`                                       | Reemplazar completamente                 |
 | `WEB-PAGE-CMP-007` | `EventosPage`          | `src/app/eventos/page.tsx`             | Redirección, sin UI                                  | Sustituir cuando se implemente Eventos   |
 
-### 8.1 Conclusión sobre las composiciones
+##### 8.1 Conclusión sobre las composiciones
 
 Las páginas actuales no se construyen mediante un sistema de secciones.
 
@@ -2414,9 +2428,9 @@ Cada archivo de ruta:
 
 Por lo tanto, ninguna composición actual debe convertirse en la arquitectura definitiva del builder.
 
-## 9. Matriz de uso por página
+#### 9. Matriz de uso por página
 
-### 9.1 Inicio
+##### 9.1 Inicio
 
 ```text
 HomePage
@@ -2433,7 +2447,7 @@ HomePage
 └── SiteFooter
 ```
 
-### 9.2 Restaurantes
+##### 9.2 Restaurantes
 
 ```text
 RestaurantesPage
@@ -2448,7 +2462,7 @@ RestaurantesPage
 └── SiteFooter
 ```
 
-### 9.3 Detalle de restaurante
+##### 9.3 Detalle de restaurante
 
 ```text
 RestaurantDetailPage
@@ -2461,7 +2475,7 @@ RestaurantDetailPage
 └── SiteFooter
 ```
 
-### 9.4 Empleos y Ecosistema
+##### 9.4 Empleos y Ecosistema
 
 ```text
 EmpleosPage / EcosistemaPage
@@ -2474,7 +2488,7 @@ EmpleosPage / EcosistemaPage
     └── SiteFooter
 ```
 
-### 9.5 Servicios
+##### 9.5 Servicios
 
 ```text
 ServiciosPage
@@ -2489,9 +2503,9 @@ ServiciosPage
 └── SiteFooter
 ```
 
-## 10. Arquitectura canónica objetivo
+#### 10. Arquitectura canónica objetivo
 
-### 10.1 Capas propuestas
+##### 10.1 Capas propuestas
 
 ```text
 PUBLIC SITE SHELL
@@ -2534,7 +2548,7 @@ DATA RESOLVERS
 └── aplicaciones
 ```
 
-### 10.2 Mapeo actual hacia destino
+##### 10.2 Mapeo actual hacia destino
 
 | Componente actual    | Destino canónico                                                 |
 | -------------------- | ---------------------------------------------------------------- |
@@ -2555,7 +2569,9 @@ DATA RESOLVERS
 | `StructuredData`     | Builders JSON-LD validados                                       |
 | `SmoothScroll`       | Runtime global controlado                                        |
 
-## 11. Registro canónico de brechas
+#### 11. Registro de hallazgos de origen — histórico
+
+> Esta tabla conserva la evidencia original de la auditoría. La única fuente canónica vigente para propiedad, tareas vinculadas, momento de cierre y estado es la matriz consolidada de `WEB-AUD-012`.
 
 | Brecha        | Descripción                                                                         | Severidad | Tareas responsables                          |
 | ------------- | ----------------------------------------------------------------------------------- | --------- | -------------------------------------------- |
@@ -2578,9 +2594,9 @@ DATA RESOLVERS
 | `WEB-GAP-029` | Header y footer se montan manualmente en cada composición                           | Media     | `WEB-ARC-005`, `WEB-RND-005`                 |
 | `WEB-GAP-030` | No existe manejo canónico de vacío, error y contenido inválido por componente       | Alta      | `WEB-RND-006`, `WEB-QA-002`                  |
 
-## 12. Cambios obligatorios al plan maestro
+#### 12. Cambios obligatorios al plan maestro
 
-### 12.1 Marcar tarea previa
+##### 12.1 Marcar tarea previa
 
 Actualizar:
 
@@ -2588,7 +2604,7 @@ Actualizar:
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 ```
 
-### 12.2 Agregar `WEB-ARC-005`
+##### 12.2 Agregar `WEB-ARC-005`
 
 Ubicación recomendada: después de `WEB-ARC-004`.
 
@@ -2596,7 +2612,7 @@ Ubicación recomendada: después de `WEB-ARC-004`.
 [ ] WEB-ARC-005 — Definir arquitectura canónica de componentes públicos
 ```
 
-#### Alcance
+###### Alcance
 
 - capas globales;
 - primitivas;
@@ -2609,7 +2625,7 @@ Ubicación recomendada: después de `WEB-ARC-004`.
 - reglas de deprecación;
 - dependencias permitidas.
 
-### 12.3 Agregar `WEB-RND-017`
+##### 12.3 Agregar `WEB-RND-017`
 
 Ubicación recomendada: dentro de la Fase 5, relacionado con `WEB-RND-010`.
 
@@ -2617,7 +2633,7 @@ Ubicación recomendada: dentro de la Fase 5, relacionado con `WEB-RND-010`.
 [ ] WEB-RND-017 — Crear MediaRenderer canónico
 ```
 
-#### Alcance
+###### Alcance
 
 - resolución por asset;
 - imagen y video;
@@ -2632,7 +2648,7 @@ Ubicación recomendada: dentro de la Fase 5, relacionado con `WEB-RND-010`.
 - responsive;
 - fallback seguro.
 
-### 12.4 Agregar `WEB-FRM-011`
+##### 12.4 Agregar `WEB-FRM-011`
 
 Ubicación recomendada: después de `WEB-FRM-010`.
 
@@ -2640,7 +2656,7 @@ Ubicación recomendada: después de `WEB-FRM-010`.
 [ ] WEB-FRM-011 — Implementar suscripción de newsletter o retirar la interfaz
 ```
 
-#### Alcance
+###### Alcance
 
 - decidir si Vento Group usará newsletter;
 - formulario funcional;
@@ -2651,7 +2667,7 @@ Ubicación recomendada: después de `WEB-FRM-010`.
 - errores;
 - eliminación del campo actual si no se implementa.
 
-### 12.5 Agregar `WEB-SEC-016`
+##### 12.5 Agregar `WEB-SEC-016`
 
 Ubicación recomendada: después de `WEB-SEC-015`.
 
@@ -2659,7 +2675,7 @@ Ubicación recomendada: después de `WEB-SEC-015`.
 [ ] WEB-SEC-016 — Endurecer serialización y validación de JSON-LD
 ```
 
-#### Alcance
+###### Alcance
 
 - schemas tipados;
 - escape de caracteres peligrosos;
@@ -2668,7 +2684,7 @@ Ubicación recomendada: después de `WEB-SEC-015`.
 - pruebas con contenido del CMS;
 - prevención de cierre prematuro de scripts.
 
-### 12.6 Agregar `WEB-MIG-020`
+##### 12.6 Agregar `WEB-MIG-020`
 
 Ubicación recomendada: después de `WEB-MIG-019`.
 
@@ -2676,7 +2692,7 @@ Ubicación recomendada: después de `WEB-MIG-019`.
 [ ] WEB-MIG-020 — Retirar componentes y composiciones públicas legacy
 ```
 
-#### Alcance
+###### Alcance
 
 - retirar `CategoryPage`;
 - retirar `HomeEditorialBand` actual;
@@ -2685,28 +2701,28 @@ Ubicación recomendada: después de `WEB-MIG-019`.
 - eliminar imports muertos;
 - confirmar que ninguna página depende del código retirado.
 
-## 13. Criterios de aprobación
+#### 13. Criterios de aprobación
 
 `WEB-AUD-002` podrá marcarse como completada cuando se apruebe:
 
-- [ ] el inventario de 16 componentes compartidos;
-- [ ] el inventario de 2 envoltorios globales;
-- [ ] el inventario de 7 composiciones de ruta;
-- [ ] la clasificación conservar/refactorizar/reemplazar;
-- [ ] el mapa de dependencias actual;
-- [ ] el mapeo hacia la arquitectura objetivo;
-- [ ] el registro `WEB-GAP-013` a `WEB-GAP-030`;
-- [ ] la incorporación de `WEB-ARC-005`;
-- [ ] la incorporación de `WEB-RND-017`;
-- [ ] la incorporación de `WEB-FRM-011`;
-- [ ] la incorporación de `WEB-SEC-016`;
-- [ ] la incorporación de `WEB-MIG-020`.
+- [x] el inventario de 16 componentes compartidos;
+- [x] el inventario de 2 envoltorios globales;
+- [x] el inventario de 7 composiciones de ruta;
+- [x] la clasificación conservar/refactorizar/reemplazar;
+- [x] el mapa de dependencias actual;
+- [x] el mapeo hacia la arquitectura objetivo;
+- [x] el registro `WEB-GAP-013` a `WEB-GAP-030`;
+- [x] la incorporación de `WEB-ARC-005`;
+- [x] la incorporación de `WEB-RND-017`;
+- [x] la incorporación de `WEB-FRM-011`;
+- [x] la incorporación de `WEB-SEC-016`;
+- [x] la incorporación de `WEB-MIG-020`.
 
-## 14. Estado de cierre propuesto
+#### 14. Estado de cierre propuesto
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
-[ ] WEB-AUD-002 — Inventariar todos los componentes públicos
+[x] WEB-AUD-002 — Inventariar todos los componentes públicos
 ```
 
 Estado de esta tarea:
@@ -2715,7 +2731,7 @@ Estado de esta tarea:
 WEB-AUD-002 — APROBADA
 ```
 
-### 14.1 No ejecutar todavía
+##### 14.1 No ejecutar todavía
 
 - refactor de componentes;
 - eliminación de componentes legacy;
@@ -2727,17 +2743,17 @@ WEB-AUD-002 — APROBADA
 - implementación de newsletter;
 - reemplazo de la capa multimedia.
 
-### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
-[ ] WEB-AUD-003 — Inventariar contenido hardcodeado
+[x] WEB-AUD-003 — Inventariar contenido hardcodeado
 ```
 
-## 15. Evidencia técnica consultada
+#### 15. Evidencia técnica consultada
 
-### 15.1 Componentes compartidos
+##### 15.1 Componentes compartidos
 
 - `src/components/category-page.tsx`
 - `src/components/cta-banner.tsx`
@@ -2756,7 +2772,7 @@ WEB-AUD-002 — APROBADA
 - `src/components/smooth-scroll.tsx`
 - `src/components/structured-data.tsx`
 
-### 15.2 Infraestructura y composiciones
+##### 15.2 Infraestructura y composiciones
 
 - `src/app/layout.tsx`
 - `src/app/template.tsx`
@@ -2771,7 +2787,7 @@ WEB-AUD-002 — APROBADA
 - `src/lib/content.ts`
 - `package.json`
 
-### 15.3 Verificaciones complementarias
+##### 15.3 Verificaciones complementarias
 
 - búsqueda de usos por nombre de componente;
 - búsqueda de archivos `.test.tsx`;
@@ -2779,18 +2795,18 @@ WEB-AUD-002 — APROBADA
 - revisión de dependencias declaradas;
 - revisión de fronteras `"use client"`.
 
-## 16. Registro de cambios
+#### 16. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                                            | Estado            |
 | -------------- | ---------- | ----------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-002` con jerarquía Markdown validada | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-002` con jerarquía Markdown validada | Aprobada |
 
 
-# WEB-AUD-003 — Inventario canónico de contenido hardcodeado
+### WEB-AUD-003 — Inventario canónico de contenido hardcodeado
 
 > Auditoría del contenido fijo incorporado directamente en el código de `ventogroup.co`, incluyendo textos, CTA, correos, enlaces, activos, SEO, metadatos, placeholders y fallbacks.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                  | Valor                                               |
 | ---------------------- | --------------------------------------------------- |
@@ -2807,7 +2823,7 @@ WEB-AUD-002 — APROBADA
 | Cambios en producción  | Ninguno                                             |
 | Próxima tarea          | `WEB-AUD-004 — Inventariar contenido administrable` |
 
-## 1. Objetivo de la tarea
+#### 1. Objetivo de la tarea
 
 Identificar y clasificar todo contenido público o funcional incorporado directamente en el código fuente.
 
@@ -2822,7 +2838,7 @@ La auditoría debe determinar:
 7. si debe migrarse a una entidad estructurada;
 8. qué tarea será responsable de resolver cada brecha.
 
-## 2. Definición de contenido hardcodeado
+#### 2. Definición de contenido hardcodeado
 
 Para esta auditoría se considera contenido hardcodeado cualquier valor incorporado directamente en archivos TypeScript o TSX que represente:
 
@@ -2851,7 +2867,7 @@ Para esta auditoría se considera contenido hardcodeado cualquier valor incorpor
 - información de restaurantes;
 - información de aplicaciones.
 
-## 3. Contenido no considerado editorial
+#### 3. Contenido no considerado editorial
 
 No todo literal de código debe trasladarse a VISO.
 
@@ -2872,7 +2888,7 @@ Los siguientes elementos deben permanecer controlados por desarrollo:
 
 La microcopia de interfaz podrá permanecer en código o trasladarse a un catálogo de traducciones, pero no debe convertirse automáticamente en contenido libre del editor visual.
 
-## 4. Clasificación canónica de contenido
+#### 4. Clasificación canónica de contenido
 
 | Clase                         | Ejemplos                                | Fuente canónica objetivo              |
 | ----------------------------- | --------------------------------------- | ------------------------------------- |
@@ -2887,9 +2903,9 @@ La microcopia de interfaz podrá permanecer en código o trasladarse a un catál
 | Fallback técnico              | Estado vacío o error                    | Componente técnico no indexable       |
 | Placeholder editorial         | “Completa desde VISO”                   | Prohibido en publicación pública      |
 
-## 5. Resultado ejecutivo
+#### 5. Resultado ejecutivo
 
-### 5.1 Hallazgos cuantificables
+##### 5.1 Hallazgos cuantificables
 
 | Hallazgo                                      |         Cantidad |
 | --------------------------------------------- | ---------------: |
@@ -2907,7 +2923,7 @@ La microcopia de interfaz podrá permanecer en código o trasladarse a un catál
 | Idiomas mezclados detectados                  | Español e inglés |
 | Política canónica de fallback público         |        No existe |
 
-### 5.2 Riesgos principales
+##### 5.2 Riesgos principales
 
 1. Contenido instructivo puede aparecer en producción.
 2. Los 13 registros fallback tienen `is_published: true`.
@@ -2924,7 +2940,7 @@ La microcopia de interfaz podrá permanecer en código o trasladarse a un catál
 13. El contenido de servicios y restaurantes mezcla datos estructurados con copy libre.
 14. No existe validación previa a publicación que bloquee placeholders.
 
-### 5.3 Conclusión
+##### 5.3 Conclusión
 
 El sistema actual tiene tres fuentes simultáneas de contenido:
 
@@ -2944,11 +2960,11 @@ Esto impide conocer con certeza cuál contenido es canónico y puede producir di
 - fallas de consulta;
 - resultados indexados.
 
-## 6. Inventario maestro por fuente
+#### 6. Inventario maestro por fuente
 
-### 6.1 Configuración global y metadata raíz
+##### 6.1 Configuración global y metadata raíz
 
-#### 6.1.1 `WEB-HC-GLOBAL-001 — Metadata global`
+###### 6.1.1 `WEB-HC-GLOBAL-001 — Metadata global`
 
 **Archivo:** `src/app/layout.tsx`
 
@@ -2981,7 +2997,7 @@ Tareas responsables:
 - `WEB-RND-013`
 - `WEB-MIG-021`
 
-#### 6.1.2 `WEB-HC-GLOBAL-002 — Tipografías globales`
+###### 6.1.2 `WEB-HC-GLOBAL-002 — Tipografías globales`
 
 **Archivo:** `src/app/layout.tsx`
 
@@ -3007,7 +3023,7 @@ Tareas responsables:
 - `WEB-GLB-001`
 - `WEB-ARC-005`
 
-#### 6.1.3 `WEB-HC-GLOBAL-003 — Dominio fallback`
+###### 6.1.3 `WEB-HC-GLOBAL-003 — Dominio fallback`
 
 **Archivo:** `src/lib/seo.ts`
 
@@ -3033,9 +3049,9 @@ Tareas responsables:
 - `WEB-OPS-002`
 - `WEB-GLB-007`
 
-### 6.2 Header
+##### 6.2 Header
 
-#### 6.2.1 `WEB-HC-HEADER-001 — Navegación principal`
+###### 6.2.1 `WEB-HC-HEADER-001 — Navegación principal`
 
 **Archivo:** `src/components/site-header.tsx`
 
@@ -3060,7 +3076,7 @@ Tareas responsables:
 - `WEB-MIG-011`
 - `WEB-MIG-021`
 
-#### 6.2.2 `WEB-HC-HEADER-002 — Destacados del menú`
+###### 6.2.2 `WEB-HC-HEADER-002 — Destacados del menú`
 
 Contenido fijo:
 
@@ -3083,7 +3099,7 @@ Tareas responsables:
 - `WEB-PAG-060`
 - `WEB-MIG-021`
 
-#### 6.2.3 `WEB-HC-HEADER-003 — Navegación exclusiva de Inicio`
+###### 6.2.3 `WEB-HC-HEADER-003 — Navegación exclusiva de Inicio`
 
 Contenido fijo:
 
@@ -3116,7 +3132,7 @@ Tareas responsables:
 - `WEB-GLB-004`
 - `WEB-MIG-021`
 
-#### 6.2.4 `WEB-HC-HEADER-004 — Marca y microcopia`
+###### 6.2.4 `WEB-HC-HEADER-004 — Marca y microcopia`
 
 Contenido fijo:
 
@@ -3148,7 +3164,7 @@ Tareas responsables:
 - `WEB-GLB-006`
 - `WEB-MIG-021`
 
-#### 6.2.5 `WEB-HC-HEADER-005 — Wordmark`
+###### 6.2.5 `WEB-HC-HEADER-005 — Wordmark`
 
 Ruta fija:
 
@@ -3168,9 +3184,9 @@ Tareas responsables:
 - `WEB-MIG-014`
 - `WEB-MIG-021`
 
-### 6.3 Footer
+##### 6.3 Footer
 
-#### 6.3.1 `WEB-HC-FOOTER-001 — Navegación`
+###### 6.3.1 `WEB-HC-FOOTER-001 — Navegación`
 
 Contenido fijo:
 
@@ -3205,7 +3221,7 @@ Tareas responsables:
 - `WEB-MIG-012`
 - `WEB-MIG-021`
 
-#### 6.3.2 `WEB-HC-FOOTER-002 — Suscripción`
+###### 6.3.2 `WEB-HC-FOOTER-002 — Suscripción`
 
 Contenido fijo:
 
@@ -3227,7 +3243,7 @@ Tareas responsables:
 - `WEB-FRM-011`
 - `WEB-GLB-005`
 
-#### 6.3.3 `WEB-HC-FOOTER-003 — Redes sociales`
+###### 6.3.3 `WEB-HC-FOOTER-003 — Redes sociales`
 
 URLs fijas:
 
@@ -3252,7 +3268,7 @@ Tareas responsables:
 - `WEB-MIG-015`
 - `WEB-MIG-021`
 
-#### 6.3.4 `WEB-HC-FOOTER-004 — Copyright`
+###### 6.3.4 `WEB-HC-FOOTER-004 — Copyright`
 
 Contenido fijo:
 
@@ -3275,7 +3291,7 @@ Tareas responsables:
 - `WEB-GLB-006`
 - `WEB-MIG-021`
 
-#### 6.3.5 `WEB-HC-FOOTER-005 — Wordmark`
+###### 6.3.5 `WEB-HC-FOOTER-005 — Wordmark`
 
 Ruta fija repetida dos veces:
 
@@ -3293,9 +3309,9 @@ Tareas responsables:
 - `WEB-MIG-014`
 - `WEB-MIG-021`
 
-### 6.4 Página de Inicio
+##### 6.4 Página de Inicio
 
-#### 6.4.1 `WEB-HC-HOME-001 — SEO`
+###### 6.4.1 `WEB-HC-HOME-001 — SEO`
 
 **Archivo:** `src/app/page.tsx`
 
@@ -3318,7 +3334,7 @@ Tareas responsables:
 - `WEB-MIG-013`
 - `WEB-MIG-021`
 
-#### 6.4.2 `WEB-HC-HOME-002 — Tarjetas rápidas`
+###### 6.4.2 `WEB-HC-HOME-002 — Tarjetas rápidas`
 
 Contenido fijo:
 
@@ -3339,7 +3355,7 @@ Tareas responsables:
 - `WEB-MIG-004`
 - `WEB-MIG-021`
 
-#### 6.4.3 `WEB-HC-HOME-003 — Datos estructurados`
+###### 6.4.3 `WEB-HC-HOME-003 — Datos estructurados`
 
 Contenido fijo:
 
@@ -3366,7 +3382,7 @@ Tareas responsables:
 - `WEB-QA-020`
 - `WEB-SEC-016`
 
-#### 6.4.4 `WEB-HC-HOME-004 — Introducción editorial`
+###### 6.4.4 `WEB-HC-HOME-004 — Introducción editorial`
 
 Contenido fijo o fallback:
 
@@ -3389,7 +3405,7 @@ Tareas responsables:
 - `WEB-MIG-004`
 - `WEB-MIG-021`
 
-#### 6.4.5 `WEB-HC-HOME-005 — Statement editorial`
+###### 6.4.5 `WEB-HC-HOME-005 — Statement editorial`
 
 Contenido fijo o fallback:
 
@@ -3410,7 +3426,7 @@ Tareas responsables:
 - `WEB-MIG-004`
 - `WEB-MIG-021`
 
-#### 6.4.6 `WEB-HC-HOME-006 — Cierre de Ecosistema`
+###### 6.4.6 `WEB-HC-HOME-006 — Cierre de Ecosistema`
 
 Contenido fijo:
 
@@ -3436,9 +3452,9 @@ Tareas responsables:
 - `WEB-PAG-033`
 - `WEB-MIG-021`
 
-### 6.5 Página de Restaurantes
+##### 6.5 Página de Restaurantes
 
-#### 6.5.1 `WEB-HC-REST-001 — SEO`
+###### 6.5.1 `WEB-HC-REST-001 — SEO`
 
 **Archivo:** `src/app/restaurantes/page.tsx`
 
@@ -3461,7 +3477,7 @@ Tareas responsables:
 - `WEB-RND-014`
 - `WEB-MIG-021`
 
-#### 6.5.2 `WEB-HC-REST-002 — Hero`
+###### 6.5.2 `WEB-HC-REST-002 — Hero`
 
 Contenido fijo:
 
@@ -3488,7 +3504,7 @@ Tareas responsables:
 - `WEB-MIG-005`
 - `WEB-MIG-021`
 
-#### 6.5.3 `WEB-HC-REST-003 — Experiencia editorial`
+###### 6.5.3 `WEB-HC-REST-003 — Experiencia editorial`
 
 Contenido fijo o fallback:
 
@@ -3510,7 +3526,7 @@ Tareas responsables:
 - `WEB-MIG-005`
 - `WEB-MIG-021`
 
-#### 6.5.4 `WEB-HC-REST-004 — Banner y portafolio`
+###### 6.5.4 `WEB-HC-REST-004 — Banner y portafolio`
 
 Contenido fijo o fallback:
 
@@ -3532,7 +3548,7 @@ Tareas responsables:
 - `WEB-RND-003`
 - `WEB-MIG-021`
 
-#### 6.5.5 `WEB-HC-REST-005 — CTA de eventos`
+###### 6.5.5 `WEB-HC-REST-005 — CTA de eventos`
 
 Contenido fijo:
 
@@ -3554,9 +3570,9 @@ Tareas responsables:
 - `WEB-GLB-006`
 - `WEB-MIG-021`
 
-### 6.6 Detalle de restaurante
+##### 6.6 Detalle de restaurante
 
-#### 6.6.1 `WEB-HC-RDET-001 — SEO y fallback`
+###### 6.6.1 `WEB-HC-RDET-001 — SEO y fallback`
 
 **Archivo:** `src/app/restaurantes/[slug]/page.tsx`
 
@@ -3580,7 +3596,7 @@ Tareas responsables:
 - `WEB-RND-014`
 - `WEB-MIG-021`
 
-#### 6.6.2 `WEB-HC-RDET-002 — Hero y acciones`
+###### 6.6.2 `WEB-HC-RDET-002 — Hero y acciones`
 
 Contenido fijo o fallback:
 
@@ -3606,7 +3622,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.6.3 `WEB-HC-RDET-003 — Galería`
+###### 6.6.3 `WEB-HC-RDET-003 — Galería`
 
 Contenido fijo:
 
@@ -3625,7 +3641,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.6.4 `WEB-HC-RDET-004 — Storytelling instructivo`
+###### 6.6.4 `WEB-HC-RDET-004 — Storytelling instructivo`
 
 Contenido fijo:
 
@@ -3648,7 +3664,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.6.5 `WEB-HC-RDET-005 — Datos y características`
+###### 6.6.5 `WEB-HC-RDET-005 — Datos y características`
 
 Contenido fijo:
 
@@ -3683,7 +3699,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.6.6 `WEB-HC-RDET-006 — Restaurantes relacionados`
+###### 6.6.6 `WEB-HC-RDET-006 — Restaurantes relacionados`
 
 Contenido fijo:
 
@@ -3703,9 +3719,9 @@ Tareas responsables:
 - `WEB-RND-009`
 - `WEB-MIG-021`
 
-### 6.7 Página de Empleos
+##### 6.7 Página de Empleos
 
-#### 6.7.1 `WEB-HC-JOBS-001 — SEO y hero`
+###### 6.7.1 `WEB-HC-JOBS-001 — SEO y hero`
 
 **Archivo:** `src/app/empleos/page.tsx`
 
@@ -3729,9 +3745,9 @@ Tareas responsables:
 - `WEB-MIG-007`
 - `WEB-MIG-021`
 
-### 6.8 Página de Servicios
+##### 6.8 Página de Servicios
 
-#### 6.8.1 `WEB-HC-SERV-001 — SEO`
+###### 6.8.1 `WEB-HC-SERV-001 — SEO`
 
 **Archivo:** `src/app/servicios/page.tsx`
 
@@ -3754,7 +3770,7 @@ Tareas responsables:
 - `WEB-RND-014`
 - `WEB-MIG-021`
 
-#### 6.8.2 `WEB-HC-SERV-002 — Catálogo de pilares`
+###### 6.8.2 `WEB-HC-SERV-002 — Catálogo de pilares`
 
 Arreglo fijo:
 
@@ -3777,7 +3793,7 @@ Tareas responsables:
 - `WEB-MIG-010`
 - `WEB-MIG-021`
 
-#### 6.8.3 `WEB-HC-SERV-003 — Hero e introducción`
+###### 6.8.3 `WEB-HC-SERV-003 — Hero e introducción`
 
 Contenido fijo o fallback:
 
@@ -3802,7 +3818,7 @@ Tareas responsables:
 - `WEB-MIG-010`
 - `WEB-MIG-021`
 
-#### 6.8.4 `WEB-HC-SERV-004 — Banner, colección y CTA`
+###### 6.8.4 `WEB-HC-SERV-004 — Banner, colección y CTA`
 
 Contenido fijo o fallback:
 
@@ -3827,9 +3843,9 @@ Tareas responsables:
 - `WEB-GLB-006`
 - `WEB-MIG-021`
 
-### 6.9 Página de Ecosistema
+##### 6.9 Página de Ecosistema
 
-#### 6.9.1 `WEB-HC-ECO-001 — SEO y hero`
+###### 6.9.1 `WEB-HC-ECO-001 — SEO y hero`
 
 **Archivo:** `src/app/ecosistema/page.tsx`
 
@@ -3853,9 +3869,9 @@ Tareas responsables:
 - `WEB-MIG-008`
 - `WEB-MIG-021`
 
-### 6.10 Componentes reutilizables
+##### 6.10 Componentes reutilizables
 
-#### 6.10.1 `WEB-HC-CMP-001 — CategoryPage`
+###### 6.10.1 `WEB-HC-CMP-001 — CategoryPage`
 
 **Archivo:** `src/components/category-page.tsx`
 
@@ -3880,7 +3896,7 @@ Tareas responsables:
 - `WEB-MIG-020`
 - `WEB-MIG-021`
 
-#### 6.10.2 `WEB-HC-CMP-002 — ItemCard`
+###### 6.10.2 `WEB-HC-CMP-002 — ItemCard`
 
 **Archivo:** `src/components/item-card.tsx`
 
@@ -3908,7 +3924,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.10.3 `WEB-HC-CMP-003 — MediaSlot`
+###### 6.10.3 `WEB-HC-CMP-003 — MediaSlot`
 
 Contenido fijo o derivado:
 
@@ -3933,7 +3949,7 @@ Tareas responsables:
 - `WEB-MED-005`
 - `WEB-MIG-021`
 
-#### 6.10.4 `WEB-HC-CMP-004 — HomeHeroIntro`
+###### 6.10.4 `WEB-HC-CMP-004 — HomeHeroIntro`
 
 Contenido fijo:
 
@@ -3953,7 +3969,7 @@ Tareas responsables:
 - `WEB-PAG-001`
 - `WEB-MIG-021`
 
-#### 6.10.5 `WEB-HC-CMP-005 — HomeVenuesShowcase`
+###### 6.10.5 `WEB-HC-CMP-005 — HomeVenuesShowcase`
 
 Contenido fijo:
 
@@ -3992,7 +4008,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.10.6 `WEB-HC-CMP-006 — HeroMediaCarousel`
+###### 6.10.6 `WEB-HC-CMP-006 — HeroMediaCarousel`
 
 Contenido fijo:
 
@@ -4022,7 +4038,7 @@ Tareas responsables:
 - `WEB-QA-011`
 - `WEB-QA-021`
 
-#### 6.10.7 `WEB-HC-CMP-007 — ItemCarousel`
+###### 6.10.7 `WEB-HC-CMP-007 — ItemCarousel`
 
 Contenido fijo:
 
@@ -4042,7 +4058,7 @@ Tareas responsables:
 - `WEB-QA-011`
 - `WEB-MIG-021`
 
-#### 6.10.8 `WEB-HC-CMP-008 — HomeEditorialBand`
+###### 6.10.8 `WEB-HC-CMP-008 — HomeEditorialBand`
 
 Contenido fijo:
 
@@ -4063,9 +4079,9 @@ Tareas responsables:
 - `WEB-MIG-020`
 - `WEB-MIG-021`
 
-### 6.11 Fallbacks de `src/lib/content.ts`
+##### 6.11 Fallbacks de `src/lib/content.ts`
 
-#### 6.11.1 `WEB-HC-FB-001 — Bloques fallback`
+###### 6.11.1 `WEB-HC-FB-001 — Bloques fallback`
 
 Se identificaron seis bloques fallback:
 
@@ -4108,7 +4124,7 @@ Tareas responsables:
 - `WEB-MIG-021`
 - `WEB-QA-021`
 
-#### 6.11.2 `WEB-HC-FB-002 — Aplicaciones fallback`
+###### 6.11.2 `WEB-HC-FB-002 — Aplicaciones fallback`
 
 Se identifican:
 
@@ -4134,7 +4150,7 @@ Tareas responsables:
 - `WEB-MIG-015`
 - `WEB-QA-021`
 
-#### 6.11.3 `WEB-HC-FB-003 — Restaurante fallback`
+###### 6.11.3 `WEB-HC-FB-003 — Restaurante fallback`
 
 Contenido fijo:
 
@@ -4158,7 +4174,7 @@ Tareas responsables:
 - `WEB-QA-019`
 - `WEB-QA-021`
 
-#### 6.11.4 `WEB-HC-FB-004 — Vacante fallback`
+###### 6.11.4 `WEB-HC-FB-004 — Vacante fallback`
 
 Contenido fijo:
 
@@ -4181,7 +4197,7 @@ Tareas responsables:
 - `WEB-MIG-015`
 - `WEB-QA-021`
 
-#### 6.11.5 `WEB-HC-FB-005 — Servicio fallback`
+###### 6.11.5 `WEB-HC-FB-005 — Servicio fallback`
 
 Contenido fijo:
 
@@ -4202,7 +4218,7 @@ Tareas responsables:
 - `WEB-MIG-015`
 - `WEB-QA-021`
 
-#### 6.11.6 `WEB-HC-FB-006 — Evento fallback`
+###### 6.11.6 `WEB-HC-FB-006 — Evento fallback`
 
 Contenido fijo:
 
@@ -4226,9 +4242,9 @@ Tareas responsables:
 - `WEB-MIG-015`
 - `WEB-QA-021`
 
-### 6.12 Resolución de enlaces por categoría
+##### 6.12 Resolución de enlaces por categoría
 
-#### 6.12.1 `WEB-HC-LINK-001 — getItemHref`
+###### 6.12.1 `WEB-HC-LINK-001 — getItemHref`
 
 **Archivo:** `src/lib/content.ts`
 
@@ -4264,9 +4280,9 @@ Tareas responsables:
 - `WEB-RND-009`
 - `WEB-MIG-021`
 
-## 7. Inventario de contactos, enlaces y activos
+#### 7. Inventario de contactos, enlaces y activos
 
-### 7.1 Correos hardcodeados
+##### 7.1 Correos hardcodeados
 
 | Correo                   | Uso actual                                           | Fuente objetivo                       |
 | ------------------------ | ---------------------------------------------------- | ------------------------------------- |
@@ -4274,7 +4290,7 @@ Tareas responsables:
 | `reservas@ventogroup.co` | CTA de Restaurantes                                  | Configuración de reservas o sede      |
 | `eventos@ventogroup.co`  | CTA de eventos                                       | Formulario y configuración de eventos |
 
-### 7.2 Redes hardcodeadas
+##### 7.2 Redes hardcodeadas
 
 | Plataforma | URL actual                   | Estado   |
 | ---------- | ---------------------------- | -------- |
@@ -4282,13 +4298,13 @@ Tareas responsables:
 | LinkedIn   | `https://www.linkedin.com/`  | Genérica |
 | YouTube    | `https://www.youtube.com/`   | Genérica |
 
-### 7.3 Activos hardcodeados
+##### 7.3 Activos hardcodeados
 
 | Activo          | Ruta                                 | Referencias |
 | --------------- | ------------------------------------ | ----------: |
 | Wordmark blanco | `/branding/vento-wordmark-white.svg` |           5 |
 
-### 7.4 Enlaces muertos o engañosos
+##### 7.4 Enlaces muertos o engañosos
 
 | Valor                                          | Problema                       |
 | ---------------------------------------------- | ------------------------------ |
@@ -4299,7 +4315,7 @@ Tareas responsables:
 | Suscribirse                                    | No ejecuta ninguna acción      |
 | `SearchAction`                                 | Declara búsqueda inexistente   |
 
-## 8. Contenido que debe permanecer controlado por código
+#### 8. Contenido que debe permanecer controlado por código
 
 No se recomienda convertir en campos libres de VISO:
 
@@ -4324,7 +4340,7 @@ Estos textos deben:
 4. no mezclarse con copy editorial;
 5. no depender de filas de contenido público.
 
-## 9. Contenido que debe salir del código
+#### 9. Contenido que debe salir del código
 
 Debe migrarse obligatoriamente:
 
@@ -4352,13 +4368,13 @@ Debe migrarse obligatoriamente:
 - destinos de aplicaciones;
 - cualquier dato de negocio mostrado como fallback.
 
-## 10. Política objetivo de fallback
+#### 10. Política objetivo de fallback
 
-### 10.1 Principio
+##### 10.1 Principio
 
 El sitio público no debe inventar contenido empresarial cuando no existe una fuente publicada válida.
 
-### 10.2 Comportamiento objetivo
+##### 10.2 Comportamiento objetivo
 
 ```text
 Contenido publicado válido
@@ -4380,7 +4396,7 @@ Nunca
 └── Publicar placeholders, instrucciones, entidades ficticias o CTA "#".
 ```
 
-### 10.3 Fallbacks permitidos
+##### 10.3 Fallbacks permitidos
 
 Solo se permiten fallbacks técnicos y no editoriales:
 
@@ -4391,7 +4407,9 @@ Solo se permiten fallbacks técnicos y no editoriales:
 - contenido mínimo legalmente requerido;
 - última versión publicada válida.
 
-## 11. Registro canónico de brechas
+#### 11. Registro de hallazgos de origen — histórico
+
+> Esta tabla conserva la evidencia original de la auditoría. La única fuente canónica vigente para propiedad, tareas vinculadas, momento de cierre y estado es la matriz consolidada de `WEB-AUD-012`.
 
 | Brecha        | Descripción                                                    | Severidad | Tareas responsables                         |
 | ------------- | -------------------------------------------------------------- | --------- | ------------------------------------------- |
@@ -4414,9 +4432,9 @@ Solo se permiten fallbacks técnicos y no editoriales:
 | `WEB-GAP-047` | No existe control automático de placeholders previo a publicar | Crítica   | `WEB-QA-021`, `WEB-PUB-005`                 |
 | `WEB-GAP-048` | Contenido global, editorial y microcopia están mezclados       | Alta      | `WEB-ARC-006`, `WEB-MIG-021`                |
 
-## 12. Cambios obligatorios al plan maestro
+#### 12. Cambios obligatorios al plan maestro
 
-### 12.1 Marcar tareas previas
+##### 12.1 Marcar tareas previas
 
 Actualizar:
 
@@ -4425,7 +4443,7 @@ Actualizar:
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 ```
 
-### 12.2 Agregar `ADR-WEB-011`
+##### 12.2 Agregar `ADR-WEB-011`
 
 Ubicación recomendada: después de `ADR-WEB-010`.
 
@@ -4445,7 +4463,7 @@ Alcance:
 - prohibición de enlaces `#`;
 - separación entre fallback técnico y contenido editorial.
 
-### 12.3 Agregar `WEB-ARC-006`
+##### 12.3 Agregar `WEB-ARC-006`
 
 Ubicación recomendada: después de `WEB-ARC-005`.
 
@@ -4467,7 +4485,7 @@ Alcance:
 - activos;
 - responsables de edición.
 
-### 12.4 Agregar `WEB-MIG-021`
+##### 12.4 Agregar `WEB-MIG-021`
 
 Ubicación recomendada: después de `WEB-MIG-020`.
 
@@ -4490,7 +4508,7 @@ Alcance:
 - eliminación de duplicados;
 - preservación de microcopia técnica en código.
 
-### 12.5 Agregar `WEB-QA-021`
+##### 12.5 Agregar `WEB-QA-021`
 
 Ubicación recomendada: después de `WEB-QA-020`.
 
@@ -4515,32 +4533,32 @@ Validaciones:
 - entidades fallback;
 - enlaces hacia rutas redirigidas incorrectamente.
 
-## 13. Criterios de aprobación
+#### 13. Criterios de aprobación
 
 `WEB-AUD-003` podrá marcarse como completada cuando se apruebe:
 
-- [ ] la clasificación de contenido hardcodeado;
-- [ ] el inventario global, por página y por componente;
-- [ ] el inventario de 6 bloques fallback;
-- [ ] el inventario de 7 items fallback;
-- [ ] la clasificación de los 13 fallbacks publicados como brecha crítica;
-- [ ] el inventario de correos, redes y activos;
-- [ ] la separación entre contenido editable y microcopia técnica;
-- [ ] la política objetivo de fallback;
-- [ ] el registro `WEB-GAP-031` a `WEB-GAP-048`;
-- [ ] la incorporación de `ADR-WEB-011`;
-- [ ] la incorporación de `WEB-ARC-006`;
-- [ ] la incorporación de `WEB-MIG-021`;
-- [ ] la incorporación de `WEB-QA-021`.
+- [x] la clasificación de contenido hardcodeado;
+- [x] el inventario global, por página y por componente;
+- [x] el inventario de 6 bloques fallback;
+- [x] el inventario de 7 items fallback;
+- [x] la clasificación de los 13 fallbacks publicados como brecha crítica;
+- [x] el inventario de correos, redes y activos;
+- [x] la separación entre contenido editable y microcopia técnica;
+- [x] la política objetivo de fallback;
+- [x] el registro `WEB-GAP-031` a `WEB-GAP-048`;
+- [x] la incorporación de `ADR-WEB-011`;
+- [x] la incorporación de `WEB-ARC-006`;
+- [x] la incorporación de `WEB-MIG-021`;
+- [x] la incorporación de `WEB-QA-021`.
 
-## 14. Estado de cierre propuesto
+#### 14. Estado de cierre propuesto
 
 Estado del bloque:
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
-[ ] WEB-AUD-003 — Inventariar contenido hardcodeado
+[x] WEB-AUD-003 — Inventariar contenido hardcodeado
 ```
 
 Estado de esta tarea:
@@ -4549,7 +4567,7 @@ Estado de esta tarea:
 WEB-AUD-003 — APROBADA
 ```
 
-### 14.1 No ejecutar todavía
+##### 14.1 No ejecutar todavía
 
 - mover contenido;
 - eliminar fallbacks;
@@ -4562,24 +4580,24 @@ WEB-AUD-003 — APROBADA
 - modificar Supabase;
 - cambiar producción.
 
-### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Inventariar contenido administrable
+[x] WEB-AUD-004 — Inventariar contenido administrable
 ```
 
-## 15. Evidencia técnica consultada
+#### 15. Evidencia técnica consultada
 
-### 15.1 Configuración y contenido
+##### 15.1 Configuración y contenido
 
 - `src/app/layout.tsx`
 - `src/lib/seo.ts`
 - `src/lib/content.ts`
 
-### 15.2 Páginas públicas
+##### 15.2 Páginas públicas
 
 - `src/app/page.tsx`
 - `src/app/restaurantes/page.tsx`
@@ -4589,7 +4607,7 @@ WEB-AUD-003 — APROBADA
 - `src/app/ecosistema/page.tsx`
 - `src/app/eventos/page.tsx`
 
-### 15.3 Componentes
+##### 15.3 Componentes
 
 - `src/components/site-header.tsx`
 - `src/components/site-footer.tsx`
@@ -4604,7 +4622,7 @@ WEB-AUD-003 — APROBADA
 - `src/components/cta-banner.tsx`
 - `src/components/image-banner.tsx`
 
-### 15.4 Búsquedas complementarias
+##### 15.4 Búsquedas complementarias
 
 - `mailto:`;
 - `placeholder`;
@@ -4615,18 +4633,18 @@ WEB-AUD-003 — APROBADA
 - textos fallback;
 - rutas y CTA.
 
-## 16. Registro de cambios
+#### 16. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                                            | Estado            |
 | -------------- | ---------- | ----------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-003` con jerarquía Markdown validada | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-003` con jerarquía Markdown validada | Aprobada |
 
 
-# WEB-AUD-004 — Inventario canónico de contenido administrable
+### WEB-AUD-004 — Inventario canónico de contenido administrable
 
 > Auditoría de las capacidades reales de administración de contenido de `ventogroup.co` mediante `website_blocks`, `website_items`, galerías, medios y los editores actuales de VISO.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                  | Valor                                       |
 | ---------------------- | ------------------------------------------- |
@@ -4643,7 +4661,7 @@ WEB-AUD-003 — APROBADA
 | Cambios en producción  | Ninguno                                     |
 | Próxima tarea          | `WEB-AUD-005 — Auditar VISO Website CMS`    |
 
-## 1. Objetivo de la tarea
+#### 1. Objetivo de la tarea
 
 Identificar exactamente qué contenido puede administrarse hoy desde VISO, cómo se almacena, cómo lo consume la web pública y qué limitaciones impiden considerarlo un CMS completo.
 
@@ -4662,9 +4680,9 @@ El alcance obligatorio incluye:
 - relación con fuentes operativas;
 - estado real de los datos existentes.
 
-## 2. Fuentes auditadas
+#### 2. Fuentes auditadas
 
-### 2.1 Base de datos activa
+##### 2.1 Base de datos activa
 
 Se consultaron directamente:
 
@@ -4675,7 +4693,7 @@ Se consultaron directamente:
 - políticas RLS de las tablas CMS;
 - políticas de `storage.objects`.
 
-### 2.2 Repositorio canónico de migraciones
+##### 2.2 Repositorio canónico de migraciones
 
 Se revisaron:
 
@@ -4683,7 +4701,7 @@ Se revisaron:
 - `supabase/migrations/20260327120000_website_media_storage.sql`;
 - `supabase/migrations/20260519193000_harden_website_media_storage.sql`.
 
-### 2.3 Aplicación administradora
+##### 2.3 Aplicación administradora
 
 Se revisaron:
 
@@ -4695,7 +4713,7 @@ Se revisaron:
 - subida de medios;
 - importación desde Negocios.
 
-### 2.4 Web pública
+##### 2.4 Web pública
 
 Se revisaron:
 
@@ -4707,9 +4725,9 @@ Se revisaron:
 - resolución de contenido publicado;
 - comportamiento de fallback.
 
-## 3. Definiciones canónicas de esta auditoría
+#### 3. Definiciones canónicas de esta auditoría
 
-### 3.1 Administrable
+##### 3.1 Administrable
 
 Un contenido se considera administrable cuando:
 
@@ -4718,7 +4736,7 @@ Un contenido se considera administrable cuando:
 3. la web pública consulta ese dato;
 4. el cambio puede afectar el contenido visible sin modificar código.
 
-### 3.2 Parcialmente administrable
+##### 3.2 Parcialmente administrable
 
 Un contenido es parcialmente administrable cuando:
 
@@ -4730,7 +4748,7 @@ Un contenido es parcialmente administrable cuando:
 - no existe validación suficiente;
 - el contenido depende de una composición escrita en React.
 
-### 3.3 No administrable
+##### 3.3 No administrable
 
 Un contenido no es administrable cuando:
 
@@ -4740,9 +4758,9 @@ Un contenido no es administrable cuando:
 - se guarda, pero la web pública no lo consume;
 - solo puede cambiarse mediante código o migración.
 
-## 4. Resultado ejecutivo
+#### 4. Resultado ejecutivo
 
-### 4.1 Estado actual de datos
+##### 4.1 Estado actual de datos
 
 | Fuente           |  Total | Publicados | Ocultos |
 | ---------------- | -----: | ---------: | ------: |
@@ -4750,7 +4768,7 @@ Un contenido no es administrable cuando:
 | `website_items`  |      9 |          9 |       0 |
 | **Total CMS**    | **16** |     **16** |   **0** |
 
-### 4.2 Estado por dominio
+##### 4.2 Estado por dominio
 
 | Dominio           | Capacidad actual                         | Datos reales                     | Estado                      |
 | ----------------- | ---------------------------------------- | -------------------------------- | --------------------------- |
@@ -4767,7 +4785,7 @@ Un contenido no es administrable cuando:
 | Versiones         | No existe                                | No aplica                        | 🔴 Inexistente               |
 | Preview privado   | No existe                                | No aplica                        | 🔴 Inexistente               |
 
-### 4.3 Conclusión principal
+##### 4.3 Conclusión principal
 
 El sistema actual es un **editor CRUD de dos tablas**, no un constructor de páginas.
 
@@ -4795,9 +4813,9 @@ La capacidad actual permite actualizar información puntual, pero no administrar
 - publicación controlada;
 - biblioteca multimedia.
 
-## 5. Arquitectura administrativa actual
+#### 5. Arquitectura administrativa actual
 
-### 5.1 Flujo de bloques
+##### 5.1 Flujo de bloques
 
 ```text
 VISO /website-cms/blocks
@@ -4811,7 +4829,7 @@ página React específica
 sección fija del sitio
 ```
 
-### 5.2 Flujo de items
+##### 5.2 Flujo de items
 
 ```text
 VISO /website-cms/items
@@ -4823,7 +4841,7 @@ src/lib/content.ts
 ItemCard / CategoryPage / páginas específicas
 ```
 
-### 5.3 Flujo de restaurantes
+##### 5.3 Flujo de restaurantes
 
 ```text
 pass.pass_satellites + public.sites
@@ -4837,7 +4855,7 @@ public.website_blocks para hero y galería
 /restaurantes y /restaurantes/[slug]
 ```
 
-### 5.4 Flujo de medios
+##### 5.4 Flujo de medios
 
 ```text
 Selector de archivo en VISO
@@ -4851,9 +4869,9 @@ URL guardada en website_blocks o website_items
 web pública intenta cargar la URL
 ```
 
-## 6. `website_blocks`
+#### 6. `website_blocks`
 
-### 6.1 Esquema actual
+##### 6.1 Esquema actual
 
 | Campo          | Función                          |
 | -------------- | -------------------------------- |
@@ -4873,7 +4891,7 @@ web pública intenta cargar la URL
 | `created_at`   | Fecha de creación                |
 | `updated_at`   | Fecha de actualización           |
 
-### 6.2 Restricciones actuales
+##### 6.2 Restricciones actuales
 
 - `page_slug` es obligatorio;
 - `block_key` es obligatorio;
@@ -4888,7 +4906,7 @@ web pública intenta cargar la URL
 - no existe publicador;
 - no existe schema por tipo de bloque.
 
-### 6.3 Capacidades actuales en VISO
+##### 6.3 Capacidades actuales en VISO
 
 VISO permite:
 
@@ -4905,7 +4923,7 @@ VISO permite:
 - modificar orden;
 - publicar u ocultar.
 
-### 6.4 Limitaciones de la interfaz
+##### 6.4 Limitaciones de la interfaz
 
 La creación de bloques exige escribir manualmente:
 
@@ -4939,7 +4957,7 @@ Por tanto:
 - crear una fila no garantiza que la web la renderice;
 - el orden solo funciona donde la página React lo utiliza.
 
-### 6.5 Consumo público
+##### 6.5 Consumo público
 
 La web pública:
 
@@ -4950,9 +4968,9 @@ La web pública:
 - ignora bloques desconocidos;
 - utiliza fallbacks para Home si no hay filas o la consulta falla.
 
-### 6.6 Estado real de `website_blocks`
+##### 6.6 Estado real de `website_blocks`
 
-#### 6.6.1 Conteo
+###### 6.6.1 Conteo
 
 | `page_slug`                        | Tipo            | Total | Publicados | Con medio |
 | ---------------------------------- | --------------- | ----: | ---------: | --------: |
@@ -4961,7 +4979,7 @@ La web pública:
 | `restaurant:restaurante-destacado` | `detail_hero`   |     1 |          1 |         0 |
 | `restaurant:restaurante-destacado` | `gallery_media` |     3 |          3 |         0 |
 
-#### 6.6.2 Bloques de Home
+###### 6.6.2 Bloques de Home
 
 | `block_key`    | Título        | Estado    | Medio |
 | -------------- | ------------- | --------- | ----- |
@@ -4976,7 +4994,7 @@ Observación:
 - no existen bloques reales para las secciones editoriales actuales de Home;
 - la mayor parte de la Home continúa dependiendo de hardcodeo y fallbacks.
 
-#### 6.6.3 Bloques de detalle placeholder
+###### 6.6.3 Bloques de detalle placeholder
 
 | `block_key`   | Tipo            | Estado    | Medio |
 | ------------- | --------------- | --------- | ----- |
@@ -4993,7 +5011,7 @@ restaurant:restaurante-destacado
 
 No corresponden a Vento Café, Saudo o Molka.
 
-### 6.7 Diagnóstico
+##### 6.7 Diagnóstico
 
 `website_blocks` es útil como almacenamiento legacy, pero no puede representar el futuro constructor porque:
 
@@ -5008,7 +5026,7 @@ No corresponden a Vento Café, Saudo o Molka.
 - no conoce páginas reales;
 - no garantiza renderizado.
 
-### 6.8 Tareas responsables
+##### 6.8 Tareas responsables
 
 - `ADR-WEB-001`
 - `ADR-WEB-002`
@@ -5021,9 +5039,9 @@ No corresponden a Vento Café, Saudo o Molka.
 - `WEB-MIG-002`
 - `WEB-MIG-022`
 
-## 7. `website_items`
+#### 7. `website_items`
 
-### 7.1 Esquema actual
+##### 7.1 Esquema actual
 
 | Campo           | Función                                         |
 | --------------- | ----------------------------------------------- |
@@ -5046,7 +5064,7 @@ No corresponden a Vento Café, Saudo o Molka.
 | `created_at`    | Fecha de creación                               |
 | `updated_at`    | Fecha de actualización                          |
 
-### 7.2 Capacidades actuales en VISO
+##### 7.2 Capacidades actuales en VISO
 
 VISO permite:
 
@@ -5067,7 +5085,7 @@ VISO permite:
 - publicar u ocultar;
 - borrar el registro.
 
-### 7.3 Publicación actual
+##### 7.3 Publicación actual
 
 Al crear un item:
 
@@ -5080,7 +5098,7 @@ Al crear un item:
 
 `is_published = false` funciona únicamente como ocultamiento de la fila. No constituye un sistema real de borradores.
 
-### 7.4 Modelo genérico
+##### 7.4 Modelo genérico
 
 Las cinco categorías comparten exactamente los mismos campos.
 
@@ -5102,7 +5120,7 @@ El modelo permite avanzar rápido, pero no garantiza:
 - validación de negocio;
 - detalles especializados.
 
-### 7.5 Estado real de `website_items`
+##### 7.5 Estado real de `website_items`
 
 | Categoría   | Total | Publicados | Con imagen | Con body | Con ubicación | Con horario | Acción válida | Acción `#` |
 | ----------- | ----: | ---------: | ---------: | -------: | ------------: | ----------: | ------------: | ---------: |
@@ -5112,7 +5130,7 @@ El modelo permite avanzar rápido, pero no garantiza:
 | Restaurante |     3 |          3 |          2 |        0 |             3 |           0 |             0 |          0 |
 | Servicio    |     1 |          1 |          0 |        0 |             0 |           0 |             0 |          1 |
 
-### 7.6 Diagnóstico
+##### 7.6 Diagnóstico
 
 De los 9 items actuales:
 
@@ -5127,7 +5145,7 @@ De los 9 items actuales:
 - ningún item tiene una acción externa válida;
 - 6 items utilizan `action_url = '#'`.
 
-### 7.7 Tareas responsables
+##### 7.7 Tareas responsables
 
 - `ADR-WEB-001`
 - `WEB-ARC-003`
@@ -5137,9 +5155,9 @@ De los 9 items actuales:
 - `WEB-MIG-015`
 - `WEB-MIG-022`
 
-## 8. Galerías
+#### 8. Galerías
 
-### 8.1 Modelo actual
+##### 8.1 Modelo actual
 
 No existe una tabla de galerías.
 
@@ -5157,7 +5175,7 @@ con:
 block_type = gallery_media
 ```
 
-### 8.2 Capacidad actual
+##### 8.2 Capacidad actual
 
 VISO permite por restaurante:
 
@@ -5167,7 +5185,7 @@ VISO permite por restaurante:
 - mostrar u ocultar cada slot;
 - marcar el primer slot como destacado por posición.
 
-### 8.3 Límites estructurales
+##### 8.3 Límites estructurales
 
 - máximo fijo de 3 slots;
 - no existe agregar o eliminar dinámicamente;
@@ -5183,7 +5201,7 @@ VISO permite por restaurante:
 - un slot vacío puede quedar publicado;
 - cada restaurante puede usar tres convenciones legacy de `page_slug`.
 
-### 8.4 Estado real
+##### 8.4 Estado real
 
 Solo existen tres bloques de galería y pertenecen a:
 
@@ -5205,11 +5223,11 @@ No existen galerías administradas para:
 - Saudo;
 - Molka.
 
-### 8.5 Diagnóstico
+##### 8.5 Diagnóstico
 
 La galería actual es una implementación rígida de formulario, no una colección administrable.
 
-### 8.6 Tareas responsables
+##### 8.6 Tareas responsables
 
 - `ADR-WEB-008`
 - `WEB-ARC-002`
@@ -5223,9 +5241,9 @@ La galería actual es una implementación rígida de formulario, no una colecci�
 - `WEB-MIG-014`
 - `WEB-MIG-022`
 
-## 9. Medios
+#### 9. Medios
 
-### 9.1 Capacidad de carga actual
+##### 9.1 Capacidad de carga actual
 
 El componente `WebsiteMediaUploadField` permite:
 
@@ -5235,7 +5253,7 @@ El componente `WebsiteMediaUploadField` permite:
 - guardar la URL resultante en un input;
 - aceptar imágenes o videos según la pantalla.
 
-### 9.2 Endpoint actual
+##### 9.2 Endpoint actual
 
 El endpoint:
 
@@ -5249,7 +5267,7 @@ El endpoint:
 - usa `upsert: true`;
 - devuelve `getPublicUrl()`.
 
-### 9.3 Tipos permitidos
+##### 9.3 Tipos permitidos
 
 Imágenes:
 
@@ -5265,9 +5283,9 @@ Videos:
 - WebM;
 - QuickTime/MOV.
 
-### 9.4 Estado real del storage
+##### 9.4 Estado real del storage
 
-#### Bucket `website-media`
+###### Bucket `website-media`
 
 | Campo         | Valor                      |
 | ------------- | -------------------------- |
@@ -5280,7 +5298,7 @@ Videos:
 | Actualización | Owner o global manager     |
 | Eliminación   | Owner o global manager     |
 
-#### Bucket `pass-satellite-logos`
+###### Bucket `pass-satellite-logos`
 
 | Campo          | Valor                            |
 | -------------- | -------------------------------- |
@@ -5290,7 +5308,7 @@ Videos:
 | Objetos        | 11                               |
 | Uso web actual | Logos importados de restaurantes |
 
-### 9.5 Contradicción crítica de entrega
+##### 9.5 Contradicción crítica de entrega
 
 El cargador devuelve:
 
@@ -5320,7 +5338,7 @@ Actualmente la contradicción no se manifiesta con archivos reales porque:
 website-media contiene 0 objetos
 ```
 
-### 9.6 Origen de la contradicción
+##### 9.6 Origen de la contradicción
 
 La migración inicial creó el bucket como público.
 
@@ -5328,7 +5346,7 @@ Una migración posterior lo hizo privado con la justificación de que no existí
 
 Esa justificación ya no representa la arquitectura actual, porque `ventogroup.co` consume datos de esta base.
 
-### 9.7 Otras limitaciones
+##### 9.7 Otras limitaciones
 
 No existe:
 
@@ -5352,7 +5370,7 @@ No existe:
 - URLs firmadas;
 - CDN strategy explícita.
 
-### 9.8 Tareas responsables
+##### 9.8 Tareas responsables
 
 - `ADR-WEB-008`
 - `WEB-RND-010`
@@ -5363,9 +5381,9 @@ No existe:
 - `WEB-PERF-003`
 - `WEB-PERF-004`
 
-## 10. Restaurantes
+#### 10. Restaurantes
 
-### 10.1 Capacidades actuales
+##### 10.1 Capacidades actuales
 
 VISO permite:
 
@@ -5385,7 +5403,7 @@ VISO permite:
 - editar historia;
 - editar tres slots de galería.
 
-### 10.2 Importación desde Negocios
+##### 10.2 Importación desde Negocios
 
 La importación:
 
@@ -5398,7 +5416,7 @@ La importación:
 7. asigna `Ver restaurante`;
 8. no crea sincronización posterior.
 
-### 10.3 Limitación de sincronización
+##### 10.3 Limitación de sincronización
 
 La importación es unidireccional y puntual.
 
@@ -5412,7 +5430,7 @@ Después de importar:
 - no existe trazabilidad hacia `pass_satellites`;
 - el matching se hace por slug.
 
-### 10.4 Estado real
+##### 10.4 Estado real
 
 | Restaurante | Imagen | Descripción | Ubicación | Horario | Body | Acción externa | Bloques de detalle |
 | ----------- | ------ | ----------- | --------- | ------- | ---- | -------------- | ------------------ |
@@ -5430,11 +5448,11 @@ Observaciones:
 - ninguno tiene hero administrado;
 - los tres están publicados.
 
-### 10.5 Diagnóstico
+##### 10.5 Diagnóstico
 
 Restaurantes es el dominio más avanzado del CMS, pero todavía administra una proyección parcial y duplicada de Negocios.
 
-### 10.6 Tareas responsables
+##### 10.6 Tareas responsables
 
 - `WEB-ARC-003`
 - `WEB-ARC-007`
@@ -5444,9 +5462,9 @@ Restaurantes es el dominio más avanzado del CMS, pero todavía administra una p
 - `WEB-MIG-014`
 - `WEB-MIG-022`
 
-## 11. Vacantes
+#### 11. Vacantes
 
-### 11.1 Capacidades actuales
+##### 11.1 Capacidades actuales
 
 VISO permite:
 
@@ -5460,7 +5478,7 @@ VISO permite:
 - ordenar;
 - publicar u ocultar.
 
-### 11.2 Limitaciones
+##### 11.2 Limitaciones
 
 No existe:
 
@@ -5480,7 +5498,7 @@ No existe:
 - detalle público;
 - expiración automática.
 
-### 11.3 Estado real
+##### 11.3 Estado real
 
 Solo existe:
 
@@ -5499,11 +5517,11 @@ Estado:
 - `action_url = '#'`;
 - contenido instructivo de placeholder.
 
-### 11.4 Diagnóstico
+##### 11.4 Diagnóstico
 
 La capacidad CRUD existe, pero no hay una vacante real ni una integración funcional.
 
-### 11.5 Tareas responsables
+##### 11.5 Tareas responsables
 
 - `WEB-PAG-020`
 - `WEB-PAG-021`
@@ -5515,9 +5533,9 @@ La capacidad CRUD existe, pero no hay una vacante real ni una integración funci
 - `WEB-MIG-015`
 - `WEB-MIG-022`
 
-## 12. Eventos
+#### 12. Eventos
 
-### 12.1 Capacidades actuales
+##### 12.1 Capacidades actuales
 
 VISO permite:
 
@@ -5533,7 +5551,7 @@ VISO permite:
 - ordenar;
 - publicar u ocultar.
 
-### 12.2 Limitaciones
+##### 12.2 Limitaciones
 
 No existe:
 
@@ -5551,7 +5569,7 @@ No existe:
 - expiración automática;
 - archivo histórico.
 
-### 12.3 Estado real
+##### 12.3 Estado real
 
 Solo existe:
 
@@ -5577,11 +5595,11 @@ ventogroup.co/eventos
 
 pero la ruta pública redirige a `/restaurantes`.
 
-### 12.4 Diagnóstico
+##### 12.4 Diagnóstico
 
 VISO administra filas de evento que no tienen una superficie pública funcional.
 
-### 12.5 Tareas responsables
+##### 12.5 Tareas responsables
 
 - `WEB-PRD-015`
 - `WEB-PAG-040`
@@ -5592,9 +5610,9 @@ VISO administra filas de evento que no tienen una superficie pública funcional.
 - `WEB-MIG-015`
 - `WEB-MIG-022`
 
-## 13. Servicios
+#### 13. Servicios
 
-### 13.1 Capacidades actuales
+##### 13.1 Capacidades actuales
 
 VISO permite:
 
@@ -5607,7 +5625,7 @@ VISO permite:
 - ordenar;
 - publicar u ocultar.
 
-### 13.2 Limitaciones
+##### 13.2 Limitaciones
 
 No existe:
 
@@ -5621,7 +5639,7 @@ No existe:
 - relación con los cuatro pilares hardcodeados;
 - campos específicos por tipo.
 
-### 13.3 Estado real
+##### 13.3 Estado real
 
 Solo existe:
 
@@ -5638,7 +5656,7 @@ Estado:
 - `action_url = '#'`;
 - contenido genérico de placeholder.
 
-### 13.4 Diagnóstico
+##### 13.4 Diagnóstico
 
 La página pública combina:
 
@@ -5648,7 +5666,7 @@ La página pública combina:
 
 No existe una fuente canónica única.
 
-### 13.5 Tareas responsables
+##### 13.5 Tareas responsables
 
 - `WEB-PAG-050`
 - `WEB-PAG-051`
@@ -5659,9 +5677,9 @@ No existe una fuente canónica única.
 - `WEB-MIG-021`
 - `WEB-MIG-022`
 
-## 14. Aplicaciones del ecosistema
+#### 14. Aplicaciones del ecosistema
 
-### 14.1 Capacidades actuales
+##### 14.1 Capacidades actuales
 
 VISO permite administrar apps mediante `website_items`.
 
@@ -5676,7 +5694,7 @@ Campos disponibles:
 - orden;
 - publicación.
 
-### 14.2 Estado real
+##### 14.2 Estado real
 
 | App        | Imagen | Body | Acción    | URL |
 | ---------- | ------ | ---- | --------- | --- |
@@ -5684,7 +5702,7 @@ Campos disponibles:
 | Anima      | No     | No   | Descargar | `#` |
 | Vento OS   | No     | No   | Entrar    | `#` |
 
-### 14.3 Limitaciones
+##### 14.3 Limitaciones
 
 No existe:
 
@@ -5698,7 +5716,7 @@ No existe:
 - detalle público;
 - configuración de CTA por plataforma.
 
-### 14.4 Tareas responsables
+##### 14.4 Tareas responsables
 
 - `WEB-PAG-030`
 - `WEB-PAG-031`
@@ -5709,9 +5727,9 @@ No existe:
 - `WEB-MIG-015`
 - `WEB-MIG-022`
 
-## 15. Modelo de permisos y publicación
+#### 15. Modelo de permisos y publicación
 
-### 15.1 Edición en VISO
+##### 15.1 Edición en VISO
 
 Las pantallas de CMS:
 
@@ -5728,7 +5746,7 @@ No existe permiso específico para:
 - administrar medios;
 - administrar restaurantes.
 
-### 15.2 Carga de medios
+##### 15.2 Carga de medios
 
 El endpoint de carga aplica una regla distinta:
 
@@ -5742,13 +5760,13 @@ Esto produce una posible inconsistencia:
 - un usuario puede tener acceso al editor;
 - pero no necesariamente puede subir archivos.
 
-### 15.3 Lectura pública de tablas
+##### 15.3 Lectura pública de tablas
 
 El estado actual de la base permite lectura de `website_blocks` y `website_items` a usuarios autenticados cuando `is_published = true`.
 
 No se encontró política anónima vigente.
 
-### 15.4 Dependencia del `service_role`
+##### 15.4 Dependencia del `service_role`
 
 La web pública crea un cliente de servidor usando:
 
@@ -5764,7 +5782,7 @@ Con las políticas actuales:
 - si falta `service_role` y se usa anon, la lectura puede fallar;
 - cuando falla, la web utiliza fallbacks.
 
-### 15.5 Diagnóstico
+##### 15.5 Diagnóstico
 
 La web pública no debe depender de una credencial privilegiada para leer contenido público.
 
@@ -5780,7 +5798,7 @@ solo publicación vigente
 
 Los borradores y previews deben resolverse mediante un canal privado específico, no mediante acceso global con `service_role`.
 
-### 15.6 Tareas responsables
+##### 15.6 Tareas responsables
 
 - `WEB-PRD-001`
 - `WEB-PRD-002`
@@ -5792,7 +5810,7 @@ Los borradores y previews deben resolverse mediante un canal privado específico
 - `WEB-PUB-006`
 - `WEB-PUB-007`
 
-## 16. Matriz de capacidad administrativa
+#### 16. Matriz de capacidad administrativa
 
 | Contenido           |             Crear |      Editar |  Ordenar | Ocultar |        Borrar |         Preview | Versionar | Estado                 |
 | ------------------- | ----------------: | ----------: | -------: | ------: | ------------: | --------------: | --------: | ---------------------- |
@@ -5811,7 +5829,7 @@ Los borradores y previews deben resolverse mediante un canal privado específico
 | SEO                 |                No |          No |       No |      No |            No |              No |        No | Inexistente            |
 | Tema                |                No |          No |       No |      No |            No |              No |        No | Inexistente            |
 
-## 17. Registro canónico de brechas
+#### 17. Registro canónico de brechas
 
 | Brecha        | Descripción                                                                 | Severidad | Tareas responsables                                       |
 | ------------- | --------------------------------------------------------------------------- | --------- | --------------------------------------------------------- |
@@ -5839,9 +5857,9 @@ Los borradores y previews deben resolverse mediante un canal privado específico
 | `WEB-GAP-070` | No existe trazabilidad de autor, editor o publicador                        | Alta      | `WEB-DB-003`, `WEB-DB-004`, `WEB-DB-012`                  |
 | `WEB-GAP-071` | VISO afirma que los cambios se reflejan inmediatamente                      | Alta      | `ADR-WEB-004`, `WEB-PUB-002`, `WEB-PUB-008`               |
 
-## 18. Cambios obligatorios al plan maestro
+#### 18. Cambios obligatorios al plan maestro
 
-### 18.1 Marcar tareas previas
+##### 18.1 Marcar tareas previas
 
 Actualizar:
 
@@ -5851,7 +5869,7 @@ Actualizar:
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
 ```
 
-### 18.2 Agregar `WEB-ARC-007`
+##### 18.2 Agregar `WEB-ARC-007`
 
 Ubicación recomendada: después de `WEB-ARC-006`.
 
@@ -5875,7 +5893,7 @@ Alcance:
 - conflictos;
 - trazabilidad.
 
-### 18.3 Agregar `WEB-MED-014`
+##### 18.3 Agregar `WEB-MED-014`
 
 Ubicación recomendada: después de `WEB-MED-013`.
 
@@ -5895,7 +5913,7 @@ Alcance:
 - migración de URLs existentes;
 - validación anónima.
 
-### 18.4 Agregar `WEB-SEC-017`
+##### 18.4 Agregar `WEB-SEC-017`
 
 Ubicación recomendada: después de `WEB-SEC-016`.
 
@@ -5914,7 +5932,7 @@ Alcance:
 - rotación si la credencial se hubiera expuesto;
 - impedir consultas privilegiadas desde la web pública.
 
-### 18.5 Agregar `WEB-MIG-022`
+##### 18.5 Agregar `WEB-MIG-022`
 
 Ubicación recomendada: después de `WEB-MIG-021`.
 
@@ -5935,30 +5953,30 @@ Alcance:
 - validar sitemap;
 - evitar pérdida de datos.
 
-## 19. Criterios de aprobación
+#### 19. Criterios de aprobación
 
 `WEB-AUD-004` podrá marcarse como completada cuando se apruebe:
 
-- [ ] el inventario de `website_blocks`;
-- [ ] el inventario de `website_items`;
-- [ ] el estado real de 7 bloques y 9 items;
-- [ ] que los 16 registros actuales están publicados;
-- [ ] el diagnóstico de galerías;
-- [ ] el diagnóstico del bucket `website-media`;
-- [ ] la contradicción entre bucket privado y `getPublicUrl`;
-- [ ] el estado real de restaurantes;
-- [ ] el estado real de vacantes;
-- [ ] el estado real de eventos;
-- [ ] el estado real de servicios;
-- [ ] el estado real de aplicaciones;
-- [ ] el diagnóstico de permisos y `service_role`;
-- [ ] el registro `WEB-GAP-049` a `WEB-GAP-071`;
-- [ ] la incorporación de `WEB-ARC-007`;
-- [ ] la incorporación de `WEB-MED-014`;
-- [ ] la incorporación de `WEB-SEC-017`;
-- [ ] la incorporación de `WEB-MIG-022`.
+- [x] el inventario de `website_blocks`;
+- [x] el inventario de `website_items`;
+- [x] el estado real de 7 bloques y 9 items;
+- [x] que los 16 registros actuales están publicados;
+- [x] el diagnóstico de galerías;
+- [x] el diagnóstico del bucket `website-media`;
+- [x] la contradicción entre bucket privado y `getPublicUrl`;
+- [x] el estado real de restaurantes;
+- [x] el estado real de vacantes;
+- [x] el estado real de eventos;
+- [x] el estado real de servicios;
+- [x] el estado real de aplicaciones;
+- [x] el diagnóstico de permisos y `service_role`;
+- [x] el registro `WEB-GAP-049` a `WEB-GAP-071`;
+- [x] la incorporación de `WEB-ARC-007`;
+- [x] la incorporación de `WEB-MED-014`;
+- [x] la incorporación de `WEB-SEC-017`;
+- [x] la incorporación de `WEB-MIG-022`.
 
-## 20. Estado de cierre propuesto
+#### 20. Estado de cierre propuesto
 
 Estado del bloque:
 
@@ -5966,16 +5984,16 @@ Estado del bloque:
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Inventariar contenido administrable
+[x] WEB-AUD-004 — Inventariar contenido administrable
 ```
 
 Estado de esta tarea:
 
 ```text
-WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-004 — APROBADA
 ```
 
-### 20.1 No ejecutar todavía
+##### 20.1 No ejecutar todavía
 
 - ocultar o eliminar placeholders;
 - modificar políticas RLS;
@@ -5987,25 +6005,25 @@ WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
 - sincronizar Negocios;
 - modificar producción.
 
-### 20.2 Continuidad después de aprobación
+##### 20.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
 [x] WEB-AUD-004 — Inventariar contenido administrable
-[ ] WEB-AUD-005 — Auditar VISO Website CMS
+[x] WEB-AUD-005 — Auditar VISO Website CMS
 ```
 
-## 21. Evidencia técnica consultada
+#### 21. Evidencia técnica consultada
 
-### 21.1 Migraciones
+##### 21.1 Migraciones
 
 - `20260327110000_website_cms.sql`
 - `20260327120000_website_media_storage.sql`
 - `20260519193000_harden_website_media_storage.sql`
 
-### 21.2 VISO
+##### 21.2 VISO
 
 - `src/app/website-cms/page.tsx`
 - `src/app/website-cms/blocks/new/page.tsx`
@@ -6018,13 +6036,13 @@ WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
 - `src/app/api/viso/upload-website-media/route.ts`
 - `src/lib/website-cms.ts`
 
-### 21.3 Web pública
+##### 21.3 Web pública
 
 - `src/lib/content.ts`
 - `src/lib/supabase.ts`
 - páginas públicas auditadas en `WEB-AUD-001`.
 
-### 21.4 Consultas realizadas
+##### 21.4 Consultas realizadas
 
 - conteo de bloques e items;
 - agrupación por página, tipo y categoría;
@@ -6036,18 +6054,18 @@ WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
 - políticas RLS;
 - políticas de Storage.
 
-## 22. Registro de cambios
+#### 22. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                                                                          | Estado            |
 | -------------- | ---------- | ----------------------------------------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-004` con verificación de base activa y jerarquía Markdown validada | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación inicial de `WEB-AUD-004` con verificación de base activa y jerarquía Markdown validada | Aprobada |
 
 
-# WEB-AUD-005 — Auditoría canónica de VISO Website CMS
+### WEB-AUD-005 — Auditoría canónica de VISO Website CMS
 
 > Auditoría funcional, técnica, de seguridad y experiencia de usuario del CMS actual utilizado para administrar `ventogroup.co` desde VISO.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                  | Valor                                                                     |
 | ---------------------- | ------------------------------------------------------------------------- |
@@ -6065,7 +6083,7 @@ WEB-AUD-004 — PROPUESTA PARA APROBACIÓN
 | Cambios en producción  | Ninguno                                                                   |
 | Próxima tarea canónica | `WEB-AUD-006 — Auditar Supabase`                                          |
 
-## 1. Corrección de continuidad
+#### 1. Corrección de continuidad
 
 La entrega previa de `WEB-ARC-005` fue realizada fuera de secuencia.
 
@@ -6082,14 +6100,14 @@ La secuencia vigente es:
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Inventariar contenido administrable
-[ ] WEB-AUD-005 — Auditar VISO Website CMS
-[ ] WEB-AUD-006 — Auditar Supabase
+[x] WEB-AUD-004 — Inventariar contenido administrable
+[x] WEB-AUD-005 — Auditar VISO Website CMS
+[x] WEB-AUD-006 — Auditar Supabase
 ```
 
 `WEB-AUD-004` fue desarrollada, pero no se marca aprobada dentro de este documento porque no existe una aprobación explícita registrada.
 
-## 2. Objetivo
+#### 2. Objetivo
 
 Evaluar el CMS actual de VISO como producto operativo y como superficie administrativa crítica.
 
@@ -6106,9 +6124,9 @@ La auditoría debe determinar:
 9. qué brechas deben resolverse antes de reemplazar el CMS por VISO Web Studio;
 10. qué controles temporales necesita el CMS mientras siga operativo.
 
-## 3. Alcance técnico
+#### 3. Alcance técnico
 
-### 3.1 Rutas auditadas
+##### 3.1 Rutas auditadas
 
 | Ruta                             | Función                                 |
 | -------------------------------- | --------------------------------------- |
@@ -6121,7 +6139,7 @@ La auditoría debe determinar:
 | `/website-cms/venues/[slug]`     | Editar detalle y galería de restaurante |
 | `/api/viso/upload-website-media` | Subir archivos                          |
 
-### 3.2 Utilidades auditadas
+##### 3.2 Utilidades auditadas
 
 - `src/lib/website-cms.ts`;
 - `src/lib/auth/guard.ts`;
@@ -6129,7 +6147,7 @@ La auditoría debe determinar:
 - `src/components/viso/website-media-upload-field.tsx`;
 - `src/app/website-cms/items/category-meta.ts`.
 
-### 3.3 Elementos excluidos
+##### 3.3 Elementos excluidos
 
 Esta tarea no implementa:
 
@@ -6141,9 +6159,9 @@ Esta tarea no implementa:
 - correcciones del CMS;
 - cambios de producción.
 
-## 4. Resultado ejecutivo
+#### 4. Resultado ejecutivo
 
-### 4.1 Evaluación general
+##### 4.1 Evaluación general
 
 | Área                   | Estado                   | Diagnóstico                                                            |
 | ---------------------- | ------------------------ | ---------------------------------------------------------------------- |
@@ -6160,7 +6178,7 @@ Esta tarea no implementa:
 | Auditoría              | 🔴 Inexistente            | No hay autor, historial, diff ni rollback                              |
 | Escalabilidad          | 🟡 Limitada               | Sin paginación, búsqueda, schemas ni separación por dominio            |
 
-### 4.2 Nivel de madurez
+##### 4.2 Nivel de madurez
 
 ```text
 CRUD BÁSICO                  ███████░░░  Funcional
@@ -6174,7 +6192,7 @@ VERSIONES Y ROLLBACK        ░░░░░░░░░░  Inexistente
 SEGURIDAD OPERATIVA         ██░░░░░░░░  Crítica
 ```
 
-### 4.3 Conclusión principal
+##### 4.3 Conclusión principal
 
 El CMS actual es útil como herramienta administrativa provisional, pero no es seguro ni suficiente para convertirse en el editor definitivo.
 
@@ -6192,9 +6210,9 @@ validación mínima
 sin historial ni rollback
 ```
 
-## 5. Mapa de flujos existentes
+#### 5. Mapa de flujos existentes
 
-### 5.1 Flujo del dashboard
+##### 5.1 Flujo del dashboard
 
 ```text
 /website-cms
@@ -6206,7 +6224,7 @@ sin historial ni rollback
 └── tabla de bloques
 ```
 
-### 5.2 Flujo de creación de bloque
+##### 5.2 Flujo de creación de bloque
 
 ```text
 Agregar sección
@@ -6224,7 +6242,7 @@ Publicado marcado por defecto
 insert directo en website_blocks
 ```
 
-### 5.3 Flujo de edición de bloque
+##### 5.3 Flujo de edición de bloque
 
 ```text
 Editar bloque
@@ -6238,7 +6256,7 @@ guardar
 update directo de la fila
 ```
 
-### 5.4 Flujo de creación de item
+##### 5.4 Flujo de creación de item
 
 ```text
 Agregar contenido
@@ -6258,7 +6276,7 @@ insert directo en website_items
 redirigir al editor completo
 ```
 
-### 5.5 Flujo de edición de item
+##### 5.5 Flujo de edición de item
 
 ```text
 Editar item
@@ -6273,7 +6291,7 @@ Editar item
 └── eliminación permanente
 ```
 
-### 5.6 Flujo de restaurantes
+##### 5.6 Flujo de restaurantes
 
 ```text
 Restaurantes
@@ -6286,7 +6304,7 @@ Restaurantes
     └── tres slots de galería
 ```
 
-### 5.7 Flujo de medios
+##### 5.7 Flujo de medios
 
 ```text
 input de URL
@@ -6302,9 +6320,9 @@ URL devuelta al input
 guardar formulario por separado
 ```
 
-## 6. Auditoría del dashboard
+#### 6. Auditoría del dashboard
 
-### 6.1 Aspectos positivos
+##### 6.1 Aspectos positivos
 
 El dashboard:
 
@@ -6317,7 +6335,7 @@ El dashboard:
 - proporciona estados vacíos;
 - vincula restaurantes con su editor especializado.
 
-### 6.2 Error de conteos al filtrar
+##### 6.2 Error de conteos al filtrar
 
 La consulta de items se filtra antes de calcular los conteos.
 
@@ -6326,7 +6344,7 @@ Consecuencia:
 - al filtrar por una categoría, las tarjetas rápidas de las demás categorías pueden mostrar cero;
 - el usuario puede interpretar que no existen contenidos cuando en realidad quedaron fuera de la consulta.
 
-### 6.3 Acciones rápidas mal dirigidas
+##### 6.3 Acciones rápidas mal dirigidas
 
 Los botones:
 
@@ -6360,7 +6378,7 @@ Destino correcto esperado:
 /website-cms/items/new?tipo=service
 ```
 
-### 6.4 Información pública incorrecta
+##### 6.4 Información pública incorrecta
 
 La tarjeta de Eventos afirma:
 
@@ -6372,7 +6390,7 @@ Pero `/eventos` redirige a `/restaurantes`.
 
 El CMS presenta como funcional una superficie pública inexistente.
 
-### 6.5 Mapeo incompleto de bloques
+##### 6.5 Mapeo incompleto de bloques
 
 `PAGE_NAMES` y `PAGE_FILTERS` contemplan páginas generales, pero no las claves de detalle como:
 
@@ -6389,7 +6407,7 @@ Consecuencias:
 - los bloques de galería no tienen nombres amigables completos;
 - el usuario ve claves como `gallery_1`.
 
-### 6.6 Codificación visual dañada
+##### 6.6 Codificación visual dañada
 
 En el código visible existen secuencias mojibake para emojis, por ejemplo:
 
@@ -6402,7 +6420,7 @@ En el código visible existen secuencias mojibake para emojis, por ejemplo:
 
 Esto puede producir iconos corruptos en la interfaz.
 
-### 6.7 Mensaje peligroso de producto
+##### 6.7 Mensaje peligroso de producto
 
 El subtítulo principal afirma:
 
@@ -6426,9 +6444,9 @@ Vista previa
 Publicado
 ```
 
-## 7. Auditoría de campos
+#### 7. Auditoría de campos
 
-### 7.1 Campos de bloque
+##### 7.1 Campos de bloque
 
 | Campo          |             Crear |      Editar | Riesgo                                    |
 | -------------- | ----------------: | ----------: | ----------------------------------------- |
@@ -6445,7 +6463,7 @@ Publicado
 | `sort_order`   |                Sí |          Sí | Cualquier número                          |
 | `is_published` |                Sí |          Sí | Marcado por defecto                       |
 
-### 7.2 Inconsistencia de tipos de bloque
+##### 7.2 Inconsistencia de tipos de bloque
 
 La creación ofrece:
 
@@ -6469,7 +6487,7 @@ En edición, `block_type` es un input libre.
 
 No existe un catálogo único.
 
-### 7.3 Campos de item
+##### 7.3 Campos de item
 
 | Campo           | Uso actual                              |
 | --------------- | --------------------------------------- |
@@ -6489,7 +6507,7 @@ No existe un catálogo único.
 | `sort_order`    | Orden                                   |
 | `is_published`  | Visibilidad                             |
 
-### 7.4 Ambigüedad semántica
+##### 7.4 Ambigüedad semántica
 
 Los mismos campos se reutilizan para cinco dominios.
 
@@ -6501,7 +6519,7 @@ Ejemplos:
 
 La guía cambia el label, pero la base y las validaciones continúan siendo genéricas.
 
-### 7.5 Campos peligrosos en opciones avanzadas
+##### 7.5 Campos peligrosos en opciones avanzadas
 
 El editor permite cambiar:
 
@@ -6521,7 +6539,7 @@ Cambiar categoría o slug puede:
 
 No existe una operación de migración ni redirección asociada.
 
-### 7.6 Galería rígida
+##### 7.6 Galería rígida
 
 El editor de restaurante dispone de exactamente:
 
@@ -6541,9 +6559,9 @@ No permite:
 - seleccionar desde biblioteca;
 - definir focal point.
 
-## 8. Auditoría de permisos
+#### 8. Auditoría de permisos
 
-### 8.1 Guardia aplicada
+##### 8.1 Guardia aplicada
 
 Todas las rutas CMS ejecutan:
 
@@ -6561,7 +6579,7 @@ No pasan:
 - permiso de medios;
 - permiso de importación.
 
-### 8.2 Consecuencia
+##### 8.2 Consecuencia
 
 Cualquier usuario que supere el acceso general a VISO puede, según las rutas actuales:
 
@@ -6576,7 +6594,7 @@ Cualquier usuario que supere el acceso general a VISO puede, según las rutas ac
 - modificar detalles;
 - modificar galerías.
 
-### 8.3 Uso de cliente administrativo
+##### 8.3 Uso de cliente administrativo
 
 Después de la guardia general, las acciones usan:
 
@@ -6596,7 +6614,7 @@ La seguridad de cada acción depende completamente de que la guardia previa sea 
 
 Actualmente no lo es, porque solo valida acceso general a la aplicación.
 
-### 8.4 Dispositivos compartidos
+##### 8.4 Dispositivos compartidos
 
 `requireAppAccess` contempla sesiones de dispositivo compartido.
 
@@ -6604,13 +6622,13 @@ Si un dispositivo compartido tiene permitido acceder a VISO, las rutas CMS no ex
 
 Debe prohibirse explícitamente la edición web desde dispositivos compartidos salvo una decisión canónica excepcional.
 
-### 8.5 Simulación de rol
+##### 8.5 Simulación de rol
 
 La guardia soporta role override, pero las rutas no solicitan permisos específicos.
 
 La simulación afecta principalmente el acceso general, no una matriz editorial granular.
 
-### 8.6 Permisos de subida inconsistentes
+##### 8.6 Permisos de subida inconsistentes
 
 El endpoint de medios no usa `requireAppAccess` ni el catálogo canónico de permisos.
 
@@ -6635,7 +6653,7 @@ Consecuencias:
 - no utiliza contexto operativo;
 - no usa una capacidad `website.media.upload`.
 
-### 8.7 Matriz actual efectiva
+##### 8.7 Matriz actual efectiva
 
 | Acción             | Requisito actual                           |
 | ------------------ | ------------------------------------------ |
@@ -6649,7 +6667,7 @@ Consecuencias:
 | Importar negocios  | Acceso general a VISO                      |
 | Subir medio        | Rol base `propietario` o `gerente_general` |
 
-### 8.8 Diagnóstico
+##### 8.8 Diagnóstico
 
 La autorización actual es:
 
@@ -6658,11 +6676,11 @@ La autorización actual es:
 - incompatible con el modelo canónico de permisos;
 - de alto riesgo debido al uso de `service_role`.
 
-## 9. Auditoría de validaciones
+#### 9. Auditoría de validaciones
 
-### 9.1 Validaciones existentes
+##### 9.1 Validaciones existentes
 
-#### Bloques
+###### Bloques
 
 - `page_slug` obligatorio;
 - `block_key` obligatorio;
@@ -6670,7 +6688,7 @@ La autorización actual es:
 - parseo básico de número;
 - checkbox a booleano.
 
-#### Items
+###### Items
 
 - categoría obligatoria;
 - título obligatorio;
@@ -6680,12 +6698,12 @@ La autorización actual es:
 - orden automático;
 - parseo de fechas.
 
-#### Restaurantes
+###### Restaurantes
 
 - nombre obligatorio;
 - normalización básica del tipo de medio.
 
-#### Medios
+###### Medios
 
 - usuario autenticado;
 - dos roles permitidos;
@@ -6694,7 +6712,7 @@ La autorización actual es:
 - MIME de imagen o video;
 - sanitización del scope.
 
-### 9.2 Validaciones inexistentes
+##### 9.2 Validaciones inexistentes
 
 No se valida:
 
@@ -6725,7 +6743,7 @@ No se valida:
 - HTML o estructura enriquecida;
 - compatibilidad de categoría y campos.
 
-### 9.3 Completitud no bloqueante
+##### 9.3 Completitud no bloqueante
 
 El editor de items calcula completitud para restaurantes y vacantes.
 
@@ -6739,7 +6757,7 @@ Sin embargo:
 - no valida SEO;
 - no valida medios públicos.
 
-### 9.4 Completitud inconsistente
+##### 9.4 Completitud inconsistente
 
 La lista de restaurantes considera “Completo” si existen:
 
@@ -6755,7 +6773,7 @@ El editor detallado considera además:
 
 Un restaurante puede aparecer como “Completo” en la lista y “Incompleto” al abrirlo.
 
-### 9.5 Guía que recomienda un valor inválido
+##### 9.5 Guía que recomienda un valor inválido
 
 La guía de restaurantes indica:
 
@@ -6767,13 +6785,13 @@ El mismo sistema de completitud considera `#` como enlace incompleto.
 
 La interfaz enseña una práctica que luego marca como incorrecta y que puede llegar al sitio público.
 
-### 9.6 Fechas silenciosamente descartadas
+##### 9.6 Fechas silenciosamente descartadas
 
 `asNullableDate` convierte una fecha inválida en `null`.
 
 No informa al usuario que el valor fue inválido.
 
-### 9.7 Allowlist MIME inconsistente
+##### 9.7 Allowlist MIME inconsistente
 
 El uploader define una lista exacta, pero también permite cualquier MIME que comience por:
 
@@ -6786,7 +6804,7 @@ La lista exacta no funciona como allowlist estricta.
 
 El bucket puede rechazar el archivo después, generando una experiencia inconsistente.
 
-### 9.8 SVG
+##### 9.8 SVG
 
 Se permite SVG sin un proceso explícito de:
 
@@ -6797,9 +6815,9 @@ Se permite SVG sin un proceso explícito de:
 
 Debe definirse si SVG se limita a logos internos o se procesa antes de publicarse.
 
-## 10. Auditoría de errores
+#### 10. Auditoría de errores
 
-### 10.1 Patrón actual
+##### 10.1 Patrón actual
 
 La mayoría de errores se manejan mediante:
 
@@ -6807,7 +6825,7 @@ La mayoría de errores se manejan mediante:
 redirect("?error=" + encodeURIComponent(error.message))
 ```
 
-### 10.2 Problemas del patrón
+##### 10.2 Problemas del patrón
 
 - expone mensajes crudos de Supabase;
 - puede revelar nombres de tablas, constraints o políticas;
@@ -6818,7 +6836,7 @@ redirect("?error=" + encodeURIComponent(error.message))
 - no asigna un identificador de incidente;
 - no registra contexto operativo.
 
-### 10.3 Mensajes manipulables por URL
+##### 10.3 Mensajes manipulables por URL
 
 El dashboard muestra `ok` y `error` provenientes de query params.
 
@@ -6826,7 +6844,7 @@ React escapa el contenido, pero un usuario puede construir una URL que muestre u
 
 Los mensajes de operación deberían provenir de estado controlado o códigos conocidos.
 
-### 10.4 Ausencia de transacción
+##### 10.4 Ausencia de transacción
 
 Guardar el detalle de restaurante ejecuta:
 
@@ -6840,7 +6858,7 @@ Si el primer paso funciona y el segundo falla:
 - el usuario recibe error;
 - no hay rollback.
 
-### 10.5 Importación parcial
+##### 10.5 Importación parcial
 
 La importación de restaurantes:
 
@@ -6858,13 +6876,13 @@ Problemas:
 - no existe reporte por restaurante;
 - no existe rollback.
 
-### 10.6 Actualización sin verificar filas afectadas
+##### 10.6 Actualización sin verificar filas afectadas
 
 Updates y deletes filtran por ID, pero no comprueban que se haya modificado o eliminado exactamente una fila.
 
 Una operación puede reportar éxito aun cuando no afectó el registro esperado.
 
-### 10.7 Revalidación incompleta
+##### 10.7 Revalidación incompleta
 
 Las acciones revalidan rutas internas de VISO.
 
@@ -6876,7 +6894,7 @@ No existe en estas acciones un mecanismo explícito para:
 - revalidar navegación;
 - revalidar colecciones relacionadas.
 
-### 10.8 Error de subida
+##### 10.8 Error de subida
 
 El componente asume que toda respuesta puede convertirse a JSON.
 
@@ -6890,9 +6908,9 @@ No existe:
 - reanudación;
 - log de archivo.
 
-## 11. Auditoría de experiencia de usuario
+#### 11. Auditoría de experiencia de usuario
 
-### 11.1 Aspectos positivos
+##### 11.1 Aspectos positivos
 
 - lenguaje más amigable en items;
 - labels por categoría;
@@ -6906,7 +6924,7 @@ No existe:
 - enlace al sitio público;
 - estados visibles de publicación.
 
-### 11.2 Fragmentación de experiencia
+##### 11.2 Fragmentación de experiencia
 
 Existen tres niveles distintos de UX:
 
@@ -6924,7 +6942,7 @@ El usuario debe aprender conceptos como:
 
 Esto contradice el objetivo de un editor no técnico.
 
-### 11.3 Preview insuficiente
+##### 11.3 Preview insuficiente
 
 Solo el restaurante tiene una maqueta parcial de tarjeta.
 
@@ -6942,7 +6960,7 @@ No existe:
 - preview de estado oculto;
 - preview de cambios antes de guardar.
 
-### 11.4 Vista de tarjeta no idéntica a producción
+##### 11.4 Vista de tarjeta no idéntica a producción
 
 La tarjeta de restaurante se reimplementa dentro de VISO.
 
@@ -6957,7 +6975,7 @@ Puede divergir en:
 - CTA;
 - media.
 
-### 11.5 Sin advertencia de cambios no guardados
+##### 11.5 Sin advertencia de cambios no guardados
 
 El usuario puede:
 
@@ -6968,7 +6986,7 @@ El usuario puede:
 
 sin advertencia de pérdida.
 
-### 11.6 Sin estado de envío
+##### 11.6 Sin estado de envío
 
 Los formularios no muestran:
 
@@ -6978,7 +6996,7 @@ Los formularios no muestran:
 - botón deshabilitado;
 - prevención de doble clic.
 
-### 11.7 Orden manual poco comprensible
+##### 11.7 Orden manual poco comprensible
 
 El orden se administra mediante números.
 
@@ -6990,7 +7008,7 @@ No existe:
 - normalización;
 - vista previa del orden.
 
-### 11.8 Medios sin preview
+##### 11.8 Medios sin preview
 
 El campo de medios muestra:
 
@@ -7009,7 +7027,7 @@ No muestra:
 - uso actual;
 - error visual.
 
-### 11.9 Formulario largo
+##### 11.9 Formulario largo
 
 El detalle de restaurante guarda en una sola acción:
 
@@ -7023,7 +7041,7 @@ El detalle de restaurante guarda en una sola acción:
 
 Un error en cualquier parte obliga a revisar todo el formulario.
 
-### 11.10 Ortografía y consistencia
+##### 11.10 Ortografía y consistencia
 
 Existen labels y textos sin tildes:
 
@@ -7037,7 +7055,7 @@ Existen labels y textos sin tildes:
 
 También existen ejemplos centrados en Bogotá y Zona G, aunque la operación real es Cúcuta.
 
-### 11.11 Accesibilidad
+##### 11.11 Accesibilidad
 
 Aspectos positivos:
 
@@ -7055,9 +7073,9 @@ Brechas:
 - no hay confirmación accesible para borrado;
 - no hay focus management entre redirects.
 
-## 12. Auditoría de acciones peligrosas
+#### 12. Auditoría de acciones peligrosas
 
-### 12.1 Publicar por defecto
+##### 12.1 Publicar por defecto
 
 Crear bloque e item marca publicación por defecto.
 
@@ -7067,7 +7085,7 @@ Riesgo:
 - errores de usuario afectan producción;
 - la guía indica completar después, pero el registro ya puede estar publicado.
 
-### 12.2 Edición directa de producción
+##### 12.2 Edición directa de producción
 
 Guardar un registro publicado modifica el mismo registro que consulta el sitio.
 
@@ -7079,7 +7097,7 @@ No existe:
 - diff;
 - ventana de publicación.
 
-### 12.3 Eliminación permanente sin confirmación
+##### 12.3 Eliminación permanente sin confirmación
 
 El editor de item incluye un botón de eliminación permanente.
 
@@ -7093,7 +7111,7 @@ La advertencia es texto estático, pero no existe:
 - papelera;
 - restauración.
 
-### 12.4 Eliminación huérfana
+##### 12.4 Eliminación huérfana
 
 Eliminar un restaurante de `website_items` no elimina ni archiva:
 
@@ -7105,7 +7123,7 @@ Eliminar un restaurante de `website_items` no elimina ni archiva:
 
 Puede dejar contenido huérfano.
 
-### 12.5 Cambio de slug
+##### 12.5 Cambio de slug
 
 Cambiar el slug de un restaurante no migra:
 
@@ -7116,7 +7134,7 @@ Cambiar el slug de un restaurante no migra:
 - enlaces externos;
 - redirecciones.
 
-### 12.6 Cambio de categoría
+##### 12.6 Cambio de categoría
 
 Un item puede cambiar de categoría sin migración.
 
@@ -7128,7 +7146,7 @@ restaurant → job
 
 Los campos y referencias anteriores permanecen, pero cambian significado y destino.
 
-### 12.7 Modificación de claves de bloque
+##### 12.7 Modificación de claves de bloque
 
 Editar `page_slug`, `block_key` o `block_type` puede:
 
@@ -7138,7 +7156,7 @@ Editar `page_slug`, `block_key` o `block_type` puede:
 - crear un tipo no renderizable;
 - colisionar con otra clave.
 
-### 12.8 `page_slug` oculto manipulable
+##### 12.8 `page_slug` oculto manipulable
 
 El detalle de restaurante envía `page_slug` como input oculto.
 
@@ -7146,7 +7164,7 @@ La acción acepta ese valor y no verifica que corresponda al slug del restaurant
 
 Un request modificado podría escribir bloques en otra agrupación.
 
-### 12.9 Upsert de slots vacíos
+##### 12.9 Upsert de slots vacíos
 
 Guardar un detalle crea o actualiza siempre:
 
@@ -7159,7 +7177,7 @@ Los checkboxes se inicializan como visibles.
 
 Es posible crear bloques publicados sin medio.
 
-### 12.10 Importación masiva sin selección
+##### 12.10 Importación masiva sin selección
 
 `Importar negocios existentes`:
 
@@ -7170,7 +7188,7 @@ Es posible crear bloques publicados sin medio.
 - no pide confirmación;
 - no conserva relación de origen.
 
-### 12.11 Archivos huérfanos
+##### 12.11 Archivos huérfanos
 
 La subida ocurre antes de guardar el formulario.
 
@@ -7183,7 +7201,7 @@ Si el usuario:
 
 el archivo queda almacenado sin referencia.
 
-### 12.12 Sobrescritura de archivos
+##### 12.12 Sobrescritura de archivos
 
 El endpoint usa:
 
@@ -7195,13 +7213,13 @@ y nombres basados en timestamp.
 
 Aunque la colisión es poco probable, no se utiliza UUID ni hash de contenido.
 
-### 12.13 Entrega pública incorrecta
+##### 12.13 Entrega pública incorrecta
 
 El endpoint devuelve `getPublicUrl()` para un bucket actualmente privado.
 
 El formulario puede guardar una URL que el visitante público no puede cargar.
 
-### 12.14 Falta de auditoría
+##### 12.14 Falta de auditoría
 
 No se registra:
 
@@ -7215,7 +7233,7 @@ No se registra:
 - fecha de publicación;
 - rollback.
 
-## 13. Matriz de riesgos por acción
+#### 13. Matriz de riesgos por acción
 
 | Acción                                      | Impacto | Probabilidad | Nivel   |
 | ------------------------------------------- | ------- | ------------ | ------- |
@@ -7232,18 +7250,18 @@ No se registra:
 | Dejar archivos huérfanos                    | Medio   | Alta         | Alto    |
 | Duplicar orden                              | Bajo    | Alta         | Medio   |
 
-## 14. Controles temporales requeridos
+#### 14. Controles temporales requeridos
 
 Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de contención antes de ampliar su uso.
 
-### 14.1 Autorización
+##### 14.1 Autorización
 
 - permisos específicos;
 - prohibición en dispositivo compartido;
 - eliminar autorización directa por rol para medios;
 - separar ver, editar, publicar, eliminar e importar.
 
-### 14.2 Publicación
+##### 14.2 Publicación
 
 - crear oculto por defecto;
 - bloquear publicación incompleta;
@@ -7251,7 +7269,7 @@ Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de cont
 - confirmar publicación;
 - registrar actor y fecha.
 
-### 14.3 Eliminación
+##### 14.3 Eliminación
 
 - soft delete;
 - confirmación;
@@ -7259,7 +7277,7 @@ Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de cont
 - restauración;
 - impedir borrar entidades publicadas sin despublicar.
 
-### 14.4 Integridad
+##### 14.4 Integridad
 
 - bloquear edición libre de claves técnicas;
 - migración controlada de slug;
@@ -7267,7 +7285,7 @@ Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de cont
 - validar una fila afectada;
 - limpiar o reasignar dependencias.
 
-### 14.5 Medios
+##### 14.5 Medios
 
 - resolver bucket privado;
 - miniatura;
@@ -7277,7 +7295,7 @@ Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de cont
 - alt text;
 - prohibir SVG hasta definir política.
 
-### 14.6 Errores
+##### 14.6 Errores
 
 - códigos de error controlados;
 - no mostrar error crudo de base;
@@ -7285,7 +7303,7 @@ Mientras el CMS legacy continúe activo, debe aplicarse una capa mínima de cont
 - registrar incidente;
 - estados de envío.
 
-## 15. Modelo de permisos requerido
+#### 15. Modelo de permisos requerido
 
 La definición definitiva corresponde a `WEB-PRD-002`, pero la auditoría establece las capacidades mínimas:
 
@@ -7304,7 +7322,7 @@ website.venues.import
 website.settings.manage
 ```
 
-### 15.1 Reglas mínimas
+##### 15.1 Reglas mínimas
 
 - `view` no implica editar;
 - `edit` no implica publicar;
@@ -7314,7 +7332,7 @@ website.settings.manage
 - `delete` requiere confirmación y auditoría;
 - dispositivos compartidos no editan por defecto.
 
-## 16. Registro canónico de brechas
+#### 16. Registro canónico de brechas
 
 | Brecha        | Descripción                                                       | Severidad | Tareas responsables                         |
 | ------------- | ----------------------------------------------------------------- | --------- | ------------------------------------------- |
@@ -7355,9 +7373,9 @@ website.settings.manage
 | `WEB-GAP-119` | No existe historial de acciones administrativas                   | Crítica   | `WEB-DB-012`, `WEB-PUB-014`                 |
 | `WEB-GAP-120` | Interfaz presenta mojibake y microcopia inconsistente             | Media     | `WEB-QA-023`                                |
 
-## 17. Cambios obligatorios al plan maestro
+#### 17. Cambios obligatorios al plan maestro
 
-### 17.1 No integrar todavía `WEB-ARC-005`
+##### 17.1 No integrar todavía `WEB-ARC-005`
 
 No marcar:
 
@@ -7367,7 +7385,7 @@ No marcar:
 
 Debe retomarse en su secuencia correcta después de completar y aprobar la Fase 1.
 
-### 17.2 Agregar `WEB-SEC-018`
+##### 17.2 Agregar `WEB-SEC-018`
 
 Ubicación recomendada: después de `WEB-SEC-017`.
 
@@ -7397,7 +7415,7 @@ Alcance:
 - controlar huérfanos;
 - restringir importación.
 
-### 17.3 Agregar `WEB-PUB-015`
+##### 17.3 Agregar `WEB-PUB-015`
 
 Ubicación recomendada: después de `WEB-PUB-014`.
 
@@ -7415,7 +7433,7 @@ Alcance:
 - error estructurado;
 - revalidación pública posterior al commit.
 
-### 17.4 Agregar `WEB-QA-023`
+##### 17.4 Agregar `WEB-QA-023`
 
 Ubicación recomendada: después de `WEB-QA-022`.
 
@@ -7442,9 +7460,9 @@ Alcance:
 - eliminación;
 - responsive.
 
-## 18. Prioridad de resolución
+#### 18. Prioridad de resolución
 
-### 18.1 Contención inmediata
+##### 18.1 Contención inmediata
 
 Antes de habilitar más usuarios en el CMS:
 
@@ -7458,7 +7476,7 @@ Antes de habilitar más usuarios en el CMS:
 8. errores no crudos;
 9. corrección de acciones rápidas.
 
-### 18.2 Antes de publicar VISO Web Studio
+##### 18.2 Antes de publicar VISO Web Studio
 
 1. contratos por schema;
 2. borradores reales;
@@ -7471,32 +7489,32 @@ Antes de habilitar más usuarios en el CMS:
 9. revalidación pública;
 10. permisos editoriales completos.
 
-## 19. Criterios de aprobación
+#### 19. Criterios de aprobación
 
 `WEB-AUD-005` podrá marcarse como completada cuando se apruebe:
 
-- [ ] el mapa de flujos existentes;
-- [ ] el inventario de campos;
-- [ ] el diagnóstico de autorización;
-- [ ] el riesgo del `service_role`;
-- [ ] la inconsistencia de permisos de medios;
-- [ ] el inventario de validaciones;
-- [ ] el inventario de errores;
-- [ ] el diagnóstico de experiencia de usuario;
-- [ ] el inventario de acciones peligrosas;
-- [ ] el registro `WEB-GAP-085` a `WEB-GAP-120`;
-- [ ] la incorporación de `WEB-SEC-018`;
-- [ ] la incorporación de `WEB-PUB-015`;
-- [ ] la incorporación de `WEB-QA-023`;
-- [ ] que `WEB-ARC-005` se mantiene pendiente y fuera de esta fase.
+- [x] el mapa de flujos existentes;
+- [x] el inventario de campos;
+- [x] el diagnóstico de autorización;
+- [x] el riesgo del `service_role`;
+- [x] la inconsistencia de permisos de medios;
+- [x] el inventario de validaciones;
+- [x] el inventario de errores;
+- [x] el diagnóstico de experiencia de usuario;
+- [x] el inventario de acciones peligrosas;
+- [x] el registro `WEB-GAP-085` a `WEB-GAP-120`;
+- [x] la incorporación de `WEB-SEC-018`;
+- [x] la incorporación de `WEB-PUB-015`;
+- [x] la incorporación de `WEB-QA-023`;
+- [x] que `WEB-ARC-005` se mantiene pendiente y fuera de esta fase.
 
-## 20. Estado de cierre propuesto
+#### 20. Estado de cierre propuesto
 
 ```text
-WEB-AUD-005 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-005 — APROBADA
 ```
 
-### 20.1 No ejecutar todavía
+##### 20.1 No ejecutar todavía
 
 - modificar permisos;
 - cambiar guardias;
@@ -7509,64 +7527,63 @@ WEB-AUD-005 — PROPUESTA PARA APROBACIÓN
 - implementar borradores;
 - aplicar migraciones.
 
-### 20.2 Continuidad después de aprobación
+##### 20.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Pendiente de aprobación explícita
 [x] WEB-AUD-005 — Auditar VISO Website CMS
-[ ] WEB-AUD-006 — Auditar Supabase
+[x] WEB-AUD-006 — Auditar Supabase
 ```
 
-La marca de `WEB-AUD-005` solo se aplicará después de aprobación explícita.
 
-## 21. Evidencia técnica consultada
+#### 21. Evidencia técnica consultada
 
-### 21.1 Dashboard
+##### 21.1 Dashboard
 
 - `src/app/website-cms/page.tsx`
 
-### 21.2 Bloques
+##### 21.2 Bloques
 
 - `src/app/website-cms/blocks/new/page.tsx`
 - `src/app/website-cms/blocks/[id]/page.tsx`
 
-### 21.3 Items
+##### 21.3 Items
 
 - `src/app/website-cms/items/new/page.tsx`
 - `src/app/website-cms/items/[id]/page.tsx`
 - `src/app/website-cms/items/category-meta.ts`
 
-### 21.4 Restaurantes
+##### 21.4 Restaurantes
 
 - `src/app/website-cms/venues/page.tsx`
 - `src/app/website-cms/venues/[slug]/page.tsx`
 
-### 21.5 Medios
+##### 21.5 Medios
 
 - `src/components/viso/website-media-upload-field.tsx`
 - `src/app/api/viso/upload-website-media/route.ts`
 
-### 21.6 Seguridad y utilidades
+##### 21.6 Seguridad y utilidades
 
 - `src/lib/auth/guard.ts`
 - `src/lib/supabase/admin.ts`
 - `src/lib/website-cms.ts`
 
-## 22. Registro de cambios
+#### 22. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                             | Estado            |
 | -------------- | ---------- | -------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación de auditoría integral de VISO Website CMS | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación de auditoría integral de VISO Website CMS | Aprobada |
 
 
-# WEB-AUD-006 — Auditoría canónica de Supabase para la web pública
+### WEB-AUD-006 — Auditoría canónica de Supabase para la web pública
 
 > Auditoría técnica de las tablas, índices, restricciones, triggers, RLS, Storage, políticas de escritura y relaciones utilizadas actualmente por `ventogroup.co` y VISO Website CMS.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                               | Valor                                           |
 | ----------------------------------- | ----------------------------------------------- |
@@ -7588,18 +7605,18 @@ La marca de `WEB-AUD-005` solo se aplicará después de aprobación explícita.
 | Cambios en producción               | Ninguno                                         |
 | Próxima tarea canónica              | `WEB-AUD-007 — Auditar contenido en producción` |
 
-### 0.1 Estado previo de continuidad
+##### 0.1 Estado previo de continuidad
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Desarrollada; pendiente de aprobación explícita
+[x] WEB-AUD-004 — Desarrollada; pendiente de aprobación explícita
 [x] WEB-AUD-005 — Auditar VISO Website CMS
-[ ] WEB-AUD-006 — Auditar Supabase
+[x] WEB-AUD-006 — Auditar Supabase
 ```
 
-### 0.2 Aclaración sobre arquitectura
+##### 0.2 Aclaración sobre arquitectura
 
 `WEB-ARC-005` permanece:
 
@@ -7609,7 +7626,7 @@ La marca de `WEB-AUD-005` solo se aplicará después de aprobación explícita.
 
 No se considera aprobada ni ejecutada.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Auditar la superficie Supabase que soporta actualmente la web pública y el CMS legacy de VISO.
 
@@ -7628,30 +7645,30 @@ La auditoría debe establecer:
 11. qué riesgos afectan a la web pública;
 12. qué tareas deberán resolver cada brecha.
 
-## 2. Alcance
+#### 2. Alcance
 
-### 2.1 Objetos incluidos
+##### 2.1 Objetos incluidos
 
-#### Tablas
+###### Tablas
 
 - `public.website_blocks`;
 - `public.website_items`.
 
-#### Storage
+###### Storage
 
 - `storage.buckets`;
 - `storage.objects`;
 - bucket `website-media`;
 - bucket `pass-satellite-logos` como fuente actual de logos de restaurantes.
 
-#### Funciones utilizadas por políticas
+###### Funciones utilizadas por políticas
 
 - `public.touch_updated_at()`;
 - `public.current_employee_role()`;
 - `public.is_owner()`;
 - `public.is_global_manager()`.
 
-#### Migraciones revisadas
+###### Migraciones revisadas
 
 - `20260327110000_website_cms.sql`;
 - `20260327120000_website_media_storage.sql`;
@@ -7659,7 +7676,7 @@ La auditoría debe establecer:
 - `20260519181000_harden_authenticated_write_policies.sql`;
 - `20260519193000_harden_website_media_storage.sql`.
 
-### 2.2 Objetos excluidos
+##### 2.2 Objetos excluidos
 
 No se realizó una auditoría integral de todas las tablas de Vento OS.
 
@@ -7672,7 +7689,7 @@ Solo se revisaron objetos transversales cuando:
 
 La auditoría completa de Supabase para Vento OS continúa perteneciendo al plan general de `vento-shell`.
 
-## 3. Metodología
+#### 3. Metodología
 
 Se realizaron consultas de solo lectura sobre:
 
@@ -7703,9 +7720,9 @@ También se ejecutaron:
 - contraste contra el consumo actual de `Vento-Group` y `vento-viso`;
 - revisión de documentación oficial vigente de Supabase.
 
-## 4. Resultado ejecutivo
+#### 4. Resultado ejecutivo
 
-### 4.1 Conteo de objetos auditados
+##### 4.1 Conteo de objetos auditados
 
 | Elemento                                         | Cantidad |
 | ------------------------------------------------ | -------: |
@@ -7725,7 +7742,7 @@ También se ejecutaron:
 | Filas CMS actuales                               |       16 |
 | Filas CMS marcadas como publicadas               |       16 |
 
-### 4.2 Estado por área
+##### 4.2 Estado por área
 
 | Área           | Estado                                | Diagnóstico                                                                 |
 | -------------- | ------------------------------------- | --------------------------------------------------------------------------- |
@@ -7742,7 +7759,7 @@ También se ejecutaron:
 | Datos actuales | 🔴 No publicables como fuente canónica | Todos publicados; placeholders y CTA `#`                                    |
 | Migraciones    | 🟡 Históricamente coherentes           | El endurecimiento posterior dejó supuestos ya obsoletos para la web pública |
 
-### 4.3 Conclusión principal
+##### 4.3 Conclusión principal
 
 El modelo vigente no debe exponerse directamente como la API pública definitiva.
 
@@ -7772,9 +7789,9 @@ LECTURA CON PRIVILEGIO MÍNIMO
 VENTO-GROUP WEB
 ```
 
-## 5. Arquitectura de confianza actual
+#### 5. Arquitectura de confianza actual
 
-### 5.1 Escritura desde VISO
+##### 5.1 Escritura desde VISO
 
 ```text
 Usuario autenticado
@@ -7790,7 +7807,7 @@ SUPABASE_SERVICE_ROLE_KEY
 INSERT / UPDATE / DELETE sin RLS
 ```
 
-### 5.2 Lectura desde la web pública
+##### 5.2 Lectura desde la web pública
 
 ```text
 Vento-Group Server
@@ -7816,7 +7833,7 @@ consulta falla o retorna vacío
 se activan fallbacks de código
 ```
 
-### 5.3 Riesgo estructural
+##### 5.3 Riesgo estructural
 
 La publicación efectiva depende de dos condiciones de aplicación:
 
@@ -7825,11 +7842,11 @@ La publicación efectiva depende de dos condiciones de aplicación:
 
 La base no impide que una consulta privilegiada lea borradores o contenido oculto.
 
-## 6. Tablas
+#### 6. Tablas
 
-## 6.1 `public.website_blocks`
+#### 6.1 `public.website_blocks`
 
-### 6.1.1 Propósito actual
+##### 6.1.1 Propósito actual
 
 Almacenar bloques editoriales genéricos agrupados mediante:
 
@@ -7837,7 +7854,7 @@ Almacenar bloques editoriales genéricos agrupados mediante:
 page_slug + block_key
 ```
 
-### 6.1.2 Columnas
+##### 6.1.2 Columnas
 
 | Columna        | Tipo          | Nula | Default             | Función                   |
 | -------------- | ------------- | ---: | ------------------- | ------------------------- |
@@ -7857,7 +7874,7 @@ page_slug + block_key
 | `created_at`   | `timestamptz` |   No | `now()`             | Creación                  |
 | `updated_at`   | `timestamptz` |   No | `now()`             | Modificación              |
 
-### 6.1.3 Estado físico
+##### 6.1.3 Estado físico
 
 | Campo                       | Valor        |
 | --------------------------- | ------------ |
@@ -7870,7 +7887,7 @@ page_slug + block_key
 | Sequential scans observados | 65           |
 | Index scans observados      | 4            |
 
-### 6.1.4 Evaluación
+##### 6.1.4 Evaluación
 
 La tabla funciona para el CMS provisional, pero no modela:
 
@@ -7887,9 +7904,9 @@ La tabla funciona para el CMS provisional, pero no modela:
 - fuente dinámica;
 - relación con medios.
 
-## 6.2 `public.website_items`
+#### 6.2 `public.website_items`
 
-### 6.2.1 Propósito actual
+##### 6.2.1 Propósito actual
 
 Almacenar entidades heterogéneas bajo una sola tabla:
 
@@ -7901,7 +7918,7 @@ event
 app
 ```
 
-### 6.2.2 Columnas
+##### 6.2.2 Columnas
 
 | Columna         | Tipo          | Nula | Default             | Función                   |
 | --------------- | ------------- | ---: | ------------------- | ------------------------- |
@@ -7924,7 +7941,7 @@ app
 | `created_at`    | `timestamptz` |   No | `now()`             | Creación                  |
 | `updated_at`    | `timestamptz` |   No | `now()`             | Modificación              |
 
-### 6.2.3 Estado físico
+##### 6.2.3 Estado físico
 
 | Campo                       | Valor         |
 | --------------------------- | ------------- |
@@ -7937,7 +7954,7 @@ app
 | Sequential scans observados | 82            |
 | Index scans observados      | 8             |
 
-### 6.2.4 Evaluación
+##### 6.2.4 Evaluación
 
 La tabla no puede garantizar integridad semántica por categoría.
 
@@ -7950,9 +7967,9 @@ Por ejemplo:
 - una app puede no tener destino;
 - una vacante puede publicarse sin sede ni contrato.
 
-## 7. Índices
+#### 7. Índices
 
-## 7.1 Índices de `website_blocks`
+#### 7.1 Índices de `website_blocks`
 
 | Índice                                   | Columnas                    | Tipo       | Uso observado |
 | ---------------------------------------- | --------------------------- | ---------- | ------------: |
@@ -7961,7 +7978,7 @@ Por ejemplo:
 | `website_blocks_page_slug_idx`           | `page_slug`, `sort_order`   | B-tree     |             0 |
 | `website_blocks_published_idx`           | `is_published`, `page_slug` | B-tree     |             0 |
 
-## 7.2 Índices de `website_items`
+#### 7.2 Índices de `website_items`
 
 | Índice                            | Columnas                   | Tipo       | Uso observado |
 | --------------------------------- | -------------------------- | ---------- | ------------: |
@@ -7971,7 +7988,7 @@ Por ejemplo:
 | `website_items_published_idx`     | `is_published`, `category` | B-tree     |             0 |
 | `website_items_start_at_idx`      | `category`, `start_at`     | B-tree     |             0 |
 
-## 7.3 Diagnóstico
+#### 7.3 Diagnóstico
 
 El Performance Advisor clasifica los cinco índices secundarios como no utilizados.
 
@@ -7990,7 +8007,7 @@ No eliminar índices durante la auditoría.
 Revisarlos después de definir la proyección pública y medir carga real.
 ```
 
-## 7.4 Observación de diseño
+#### 7.4 Observación de diseño
 
 El orden de columnas del índice publicado:
 
@@ -8000,9 +8017,9 @@ El orden de columnas del índice publicado:
 
 puede ser útil para consulta pública por estado y página, pero el futuro modelo debería consultar una publicación vigente o proyección, no filtrar un booleano en una tabla editorial mutable.
 
-## 8. Restricciones
+#### 8. Restricciones
 
-## 8.1 Restricciones existentes en `website_blocks`
+#### 8.1 Restricciones existentes en `website_blocks`
 
 | Restricción                              | Tipo        | Regla                     |
 | ---------------------------------------- | ----------- | ------------------------- |
@@ -8010,7 +8027,7 @@ puede ser útil para consulta pública por estado y página, pero el futuro mode
 | `website_blocks_page_slug_block_key_key` | Unique      | `page_slug`, `block_key`  |
 | `website_blocks_media_type_check`        | Check       | `image`, `video` o `null` |
 
-## 8.2 Restricciones existentes en `website_items`
+#### 8.2 Restricciones existentes en `website_items`
 
 | Restricción                       | Tipo        | Regla                                          |
 | --------------------------------- | ----------- | ---------------------------------------------- |
@@ -8018,7 +8035,7 @@ puede ser útil para consulta pública por estado y página, pero el futuro mode
 | `website_items_category_slug_key` | Unique      | `category`, `slug`                             |
 | `website_items_category_check`    | Check       | `restaurant`, `job`, `service`, `event`, `app` |
 
-## 8.3 Restricciones faltantes en `website_blocks`
+#### 8.3 Restricciones faltantes en `website_blocks`
 
 No existe protección para:
 
@@ -8037,7 +8054,7 @@ No existe protección para:
 - página inexistente;
 - publicación asociada a revisión.
 
-## 8.4 Restricciones faltantes en `website_items`
+#### 8.4 Restricciones faltantes en `website_items`
 
 No existe protección para:
 
@@ -8059,13 +8076,13 @@ No existe protección para:
 - medio inexistente;
 - publicación incompleta.
 
-## 8.5 Consecuencia
+#### 8.5 Consecuencia
 
 La base acepta múltiples estados que la interfaz considera incompletos, pero que pueden seguir marcados como publicados.
 
-## 9. Triggers
+#### 9. Triggers
 
-## 9.1 Triggers existentes
+#### 9.1 Triggers existentes
 
 | Tabla            | Trigger                         | Evento          |
 | ---------------- | ------------------------------- | --------------- |
@@ -8078,7 +8095,7 @@ Ambos ejecutan:
 public.touch_updated_at()
 ```
 
-## 9.2 Función `touch_updated_at()`
+#### 9.2 Función `touch_updated_at()`
 
 Características:
 
@@ -8090,7 +8107,7 @@ Características:
 | `search_path` | `pg_catalog`, `public`   |
 | Acción        | `NEW.updated_at = now()` |
 
-## 9.3 Funciones ausentes
+#### 9.3 Funciones ausentes
 
 No existe trigger para:
 
@@ -8105,18 +8122,18 @@ No existe trigger para:
 - generar publicación inmutable;
 - impedir borrado peligroso.
 
-## 10. Row Level Security
+#### 10. Row Level Security
 
-## 10.1 Estado de RLS
+#### 10.1 Estado de RLS
 
 | Tabla            |  RLS | FORCE RLS |
 | ---------------- | ---: | --------: |
 | `website_blocks` |   Sí |        No |
 | `website_items`  |   Sí |        No |
 
-## 10.2 Políticas vigentes confirmadas por catálogo
+#### 10.2 Políticas vigentes confirmadas por catálogo
 
-### `website_blocks`
+##### `website_blocks`
 
 ```text
 website_blocks_authenticated_read
@@ -8125,7 +8142,7 @@ TO authenticated
 USING (is_published = true)
 ```
 
-### `website_items`
+##### `website_items`
 
 ```text
 website_items_authenticated_read
@@ -8134,7 +8151,7 @@ TO authenticated
 USING (is_published = true)
 ```
 
-## 10.3 Acceso anónimo
+#### 10.3 Acceso anónimo
 
 No existe política `anon` vigente sobre estas tablas.
 
@@ -8150,7 +8167,7 @@ sin política aplicable
 sin filas accesibles
 ```
 
-## 10.4 Escritura autenticada directa
+#### 10.4 Escritura autenticada directa
 
 No existen políticas para:
 
@@ -8160,7 +8177,7 @@ No existen políticas para:
 
 Aunque el rol `authenticated` posee privilegios SQL amplios, RLS bloquea la escritura directa mediante Data API.
 
-## 10.5 Acceso privilegiado
+#### 10.5 Acceso privilegiado
 
 `service_role` omite RLS.
 
@@ -8175,7 +8192,7 @@ Por ello:
 
 La seguridad pasa a depender del servidor que conserva la clave.
 
-## 10.6 FORCE RLS
+#### 10.6 FORCE RLS
 
 Las tablas no usan `FORCE ROW LEVEL SECURITY`.
 
@@ -8188,7 +8205,7 @@ No se propone activar FORCE RLS sobre el modelo legacy sin diseñar primero:
 - migraciones;
 - pruebas de VISO.
 
-## 10.7 Discrepancia del Advisor
+#### 10.7 Discrepancia del Advisor
 
 Security Advisor y Performance Advisor reportaron nombres legacy adicionales:
 
@@ -8211,9 +8228,9 @@ Conclusión:
 - deberá volver a ejecutarse después de la próxima migración;
 - el catálogo PostgreSQL vigente se toma como fuente de verdad para esta auditoría.
 
-## 11. Privilegios SQL y exposición por Data API
+#### 11. Privilegios SQL y exposición por Data API
 
-## 11.1 Grants actuales de tablas
+#### 11.1 Grants actuales de tablas
 
 El rol `authenticated` posee en ambas tablas:
 
@@ -8231,7 +8248,7 @@ TRIGGER
 
 `anon` no posee privilegios sobre las tablas auditadas.
 
-## 11.2 Evaluación
+#### 11.2 Evaluación
 
 Los privilegios de `authenticated` son más amplios que la capacidad funcional necesaria.
 
@@ -8253,7 +8270,7 @@ Una configuración de mínimo privilegio debería declarar explícitamente:
 - qué canal utiliza el editor;
 - qué canal utiliza la web pública.
 
-## 11.3 Cambio de plataforma relevante
+#### 11.3 Cambio de plataforma relevante
 
 Supabase está migrando hacia grants explícitos para la Data API.
 
@@ -8267,7 +8284,7 @@ Toda tabla o función web futura deberá declarar:
 - políticas;
 - pruebas por rol.
 
-## 11.4 Esquemas expuestos
+#### 11.4 Esquemas expuestos
 
 La configuración exacta de `pgrst.db_schemas` no estuvo disponible mediante la consulta de esta sesión.
 
@@ -8281,11 +8298,11 @@ Debe verificarse desde la configuración del proyecto:
 
 No se asume como confirmado ningún esquema distinto de `public`.
 
-## 12. Políticas de escritura
+#### 12. Políticas de escritura
 
-## 12.1 Tablas CMS
+#### 12.1 Tablas CMS
 
-### Escritura desde cliente autenticado
+##### Escritura desde cliente autenticado
 
 Estado:
 
@@ -8293,7 +8310,7 @@ Estado:
 Bloqueada por ausencia de políticas RLS de escritura.
 ```
 
-### Escritura desde VISO
+##### Escritura desde VISO
 
 Estado:
 
@@ -8301,7 +8318,7 @@ Estado:
 Permitida mediante service_role.
 ```
 
-### Problema
+##### Problema
 
 Las acciones del CMS:
 
@@ -8310,7 +8327,7 @@ Las acciones del CMS:
 - no dependen de RLS;
 - pueden ejecutar operaciones administrativas después de una guardia de aplicación.
 
-## 12.2 Decisión recomendada
+#### 12.2 Decisión recomendada
 
 No crear políticas de escritura directa para `authenticated` sobre las tablas legacy.
 
@@ -8324,7 +8341,7 @@ El futuro flujo deberá utilizar:
 - publicación separada;
 - privilegios mínimos.
 
-## 12.3 Matriz objetivo preliminar
+#### 12.3 Matriz objetivo preliminar
 
 | Operación                | Canal objetivo                           |
 | ------------------------ | ---------------------------------------- |
@@ -8337,9 +8354,9 @@ El futuro flujo deberá utilizar:
 | Eliminar                 | Archivo o soft delete con auditoría      |
 | Leer tablas legacy       | Solo migración y compatibilidad temporal |
 
-## 13. Storage
+#### 13. Storage
 
-## 13.1 Bucket `website-media`
+#### 13.1 Bucket `website-media`
 
 | Campo               | Valor            |
 | ------------------- | ---------------- |
@@ -8352,9 +8369,9 @@ El futuro flujo deberá utilizar:
 | Lectura anónima     | No               |
 | Lectura autenticada | Sí               |
 
-## 13.2 MIME permitidos
+#### 13.2 MIME permitidos
 
-### Imágenes
+##### Imágenes
 
 - `image/jpeg`;
 - `image/png`;
@@ -8362,13 +8379,13 @@ El futuro flujo deberá utilizar:
 - `image/gif`;
 - `image/svg+xml`.
 
-### Videos
+##### Videos
 
 - `video/mp4`;
 - `video/webm`;
 - `video/quicktime`.
 
-## 13.3 Políticas vigentes de `website-media`
+#### 13.3 Políticas vigentes de `website-media`
 
 | Política                                       | Operación | Rol             |
 | ---------------------------------------------- | --------- | --------------- |
@@ -8385,7 +8402,7 @@ OR
 public.is_global_manager()
 ```
 
-## 13.4 Contradicción de entrega pública
+#### 13.4 Contradicción de entrega pública
 
 El endpoint actual de VISO:
 
@@ -8411,7 +8428,7 @@ acceso denegado
 
 Esta contradicción no se ha manifestado con objetos reales porque el bucket está vacío.
 
-## 13.5 Bucket `pass-satellite-logos`
+#### 13.5 Bucket `pass-satellite-logos`
 
 | Campo                  | Valor                                   |
 | ---------------------- | --------------------------------------- |
@@ -8429,7 +8446,7 @@ Los restaurantes actuales reutilizan logos operativos como imagen pública, pero
 - relación de uso;
 - reemplazo controlado.
 
-## 13.6 Riesgos de Storage
+#### 13.6 Riesgos de Storage
 
 - URLs públicas sobre bucket privado;
 - SVG permitido sin política de sanitización;
@@ -8443,7 +8460,7 @@ Los restaurantes actuales reutilizan logos operativos como imagen pública, pero
 - helpers de política ejecutables públicamente;
 - falta de estrategia CDN y caché explícita.
 
-## 13.7 Costos y capacidad actual
+#### 13.7 Costos y capacidad actual
 
 El bucket `website-media` contiene:
 
@@ -8472,9 +8489,9 @@ Antes de habilitar carga masiva debe definirse:
 - retención;
 - eliminación de huérfanos.
 
-## 14. Funciones auxiliares de autorización
+#### 14. Funciones auxiliares de autorización
 
-## 14.1 `current_employee_role()`
+#### 14.1 `current_employee_role()`
 
 | Campo                   | Valor              |
 | ----------------------- | ------------------ |
@@ -8486,7 +8503,7 @@ Antes de habilitar carga masiva debe definirse:
 | EXECUTE `authenticated` | Sí                 |
 | EXECUTE `PUBLIC`        | Sí                 |
 
-## 14.2 `is_owner()`
+#### 14.2 `is_owner()`
 
 | Campo                   | Valor              |
 | ----------------------- | ------------------ |
@@ -8497,7 +8514,7 @@ Antes de habilitar carga masiva debe definirse:
 | EXECUTE `authenticated` | Sí                 |
 | EXECUTE `PUBLIC`        | Sí                 |
 
-## 14.3 `is_global_manager()`
+#### 14.3 `is_global_manager()`
 
 | Campo                   | Valor                        |
 | ----------------------- | ---------------------------- |
@@ -8508,7 +8525,7 @@ Antes de habilitar carga masiva debe definirse:
 | EXECUTE `authenticated` | Sí                           |
 | EXECUTE `PUBLIC`        | Sí                           |
 
-## 14.4 Diagnóstico
+#### 14.4 Diagnóstico
 
 Los helpers:
 
@@ -8526,7 +8543,7 @@ Riesgos:
 - `search_path` mutable en `is_global_manager()`;
 - divergencia frente al catálogo de autorización definitivo.
 
-## 14.5 Recomendación
+#### 14.5 Recomendación
 
 Durante la implementación futura:
 
@@ -8538,9 +8555,9 @@ Durante la implementación futura:
 6. usar `(select helper())` dentro de políticas cuando sea aplicable;
 7. crear pruebas por rol.
 
-## 15. Relaciones e integridad referencial
+#### 15. Relaciones e integridad referencial
 
-## 15.1 Foreign keys
+#### 15.1 Foreign keys
 
 No existe ninguna foreign key:
 
@@ -8548,7 +8565,7 @@ No existe ninguna foreign key:
 - saliente desde `website_items`;
 - entrante hacia estas tablas.
 
-## 15.2 Vistas y funciones
+#### 15.2 Vistas y funciones
 
 No existen actualmente:
 
@@ -8559,9 +8576,9 @@ No existen actualmente:
 - función de preview;
 - función de migración de slug.
 
-## 15.3 Relaciones faltantes
+#### 15.3 Relaciones faltantes
 
-### `website_blocks`
+##### `website_blocks`
 
 No se relaciona con:
 
@@ -8575,7 +8592,7 @@ No se relaciona con:
 - bloque padre;
 - schema de sección.
 
-### `website_items`
+##### `website_items`
 
 No se relaciona con:
 
@@ -8590,7 +8607,7 @@ No se relaciona con:
 - autor;
 - publicación.
 
-## 15.4 Consecuencias
+#### 15.4 Consecuencias
 
 - slugs como relación informal;
 - bloques huérfanos;
@@ -8601,9 +8618,9 @@ No se relaciona con:
 - imposibilidad de probar integridad desde la base;
 - duplicación entre datos operativos y editoriales.
 
-## 16. Linaje de migraciones
+#### 16. Linaje de migraciones
 
-## 16.1 Estado inicial
+#### 16.1 Estado inicial
 
 `20260327110000_website_cms.sql` creó:
 
@@ -8614,7 +8631,7 @@ No se relaciona con:
 - lectura pública para `anon` y `authenticated`;
 - seeds publicados.
 
-## 16.2 Storage inicial
+#### 16.2 Storage inicial
 
 `20260327120000_website_media_storage.sql` creó:
 
@@ -8622,7 +8639,7 @@ No se relaciona con:
 - lectura pública;
 - escritura de propietarios y gerentes generales.
 
-## 16.3 Endurecimiento posterior
+#### 16.3 Endurecimiento posterior
 
 `20260519181000_harden_authenticated_write_policies.sql`:
 
@@ -8636,7 +8653,7 @@ No se relaciona con:
 - retiró lectura pública;
 - dejó lectura autenticada.
 
-## 16.4 Evaluación de drift
+#### 16.4 Evaluación de drift
 
 El estado vigente coincide con las migraciones de endurecimiento:
 
@@ -8647,7 +8664,7 @@ El estado vigente coincide con las migraciones de endurecimiento:
 
 No se identificó un cambio manual no representado para esos objetos.
 
-## 16.5 Supuesto obsoleto
+#### 16.5 Supuesto obsoleto
 
 La migración de Storage justificó el bucket privado porque no existía una superficie web pública conectada.
 
@@ -8661,9 +8678,9 @@ consume contenido de este proyecto
 
 La corrección debe realizarse mediante una decisión de arquitectura de medios, no revirtiendo ciegamente la migración.
 
-## 17. Calidad de datos actual
+#### 17. Calidad de datos actual
 
-## 17.1 `website_blocks`
+#### 17.1 `website_blocks`
 
 | Métrica               | Resultado |
 | --------------------- | --------: |
@@ -8692,7 +8709,7 @@ Agrupaciones:
 | `home`                             |        3 |
 | `restaurant:restaurante-destacado` |        4 |
 
-## 17.2 `website_items`
+#### 17.2 `website_items`
 
 | Métrica                     | Resultado |
 | --------------------------- | --------: |
@@ -8705,7 +8722,7 @@ Agrupaciones:
 | Acción `#`                  |         6 |
 | Fechas de evento invertidas |         0 |
 
-### Por categoría
+##### Por categoría
 
 | Categoría   | Total | Publicados | Acción `#` | Sin imagen | Sin body |
 | ----------- | ----: | ---------: | ---------: | ---------: | -------: |
@@ -8715,7 +8732,7 @@ Agrupaciones:
 | Restaurante |     3 |          3 |          0 |          1 |        3 |
 | Servicio    |     1 |          1 |          1 |          1 |        1 |
 
-## 17.3 Conclusión
+#### 17.3 Conclusión
 
 La columna `is_published` no representa un proceso editorial confiable.
 
@@ -8728,9 +8745,9 @@ Todos los registros están publicados, incluso:
 - galerías vacías;
 - entidades sin body.
 
-## 18. Security Advisor y Performance Advisor
+#### 18. Security Advisor y Performance Advisor
 
-## 18.1 Hallazgos de seguridad relevantes
+#### 18.1 Hallazgos de seguridad relevantes
 
 Los Advisors reportaron, entre otros:
 
@@ -8749,7 +8766,7 @@ La auditoría directa confirmó:
 
 Los hallazgos globales no vinculados a la web se remiten al plan integral de Vento OS.
 
-## 18.2 Hallazgos de rendimiento relevantes
+#### 18.2 Hallazgos de rendimiento relevantes
 
 El Advisor reportó:
 
@@ -8767,7 +8784,7 @@ using (
 
 No se debe aplicar este patrón hasta definir la función canónica y sus permisos.
 
-## 18.3 Regla de interpretación
+#### 18.3 Regla de interpretación
 
 Los Advisors son señales de revisión, no órdenes automáticas.
 
@@ -8779,9 +8796,9 @@ Toda corrección deberá contrastarse con:
 - pruebas;
 - migraciones versionadas.
 
-## 19. Arquitectura objetivo recomendada
+#### 19. Arquitectura objetivo recomendada
 
-## 19.1 Separación de modelos
+#### 19.1 Separación de modelos
 
 ```text
 MODELO EDITORIAL PRIVADO
@@ -8805,11 +8822,11 @@ PROYECCIÓN PÚBLICA
 └── acceso mínimo
 ```
 
-## 19.2 Lectura pública
+#### 19.2 Lectura pública
 
 Opciones válidas a decidir en arquitectura:
 
-### Opción A — Tablas o vistas públicas con RLS
+##### Opción A — Tablas o vistas públicas con RLS
 
 - `anon` recibe solo `SELECT`;
 - RLS limita a publicación vigente;
@@ -8817,7 +8834,7 @@ Opciones válidas a decidir en arquitectura:
 - grants explícitos;
 - sin acceso a revisiones privadas.
 
-### Opción B — RPC pública restringida
+##### Opción B — RPC pública restringida
 
 - función estable;
 - retorno tipado;
@@ -8826,14 +8843,14 @@ Opciones válidas a decidir en arquitectura:
 - schema privado para lógica;
 - sin SQL dinámico.
 
-### Opción C — Backend público no privilegiado
+##### Opción C — Backend público no privilegiado
 
 - conexión o rol dedicado;
 - sin `service_role`;
 - privilegios limitados;
 - endpoint cacheable.
 
-## 19.3 Decisión provisional
+#### 19.3 Decisión provisional
 
 Mientras no exista el modelo de publicación:
 
@@ -8843,7 +8860,7 @@ Mientras no exista el modelo de publicación:
 - limitar nuevos cambios al CMS legacy;
 - no usar estas tablas como contrato definitivo.
 
-## 20. Registro canónico de brechas
+#### 20. Registro canónico de brechas
 
 | Brecha        | Descripción                                                           | Severidad | Tareas responsables                         |
 | ------------- | --------------------------------------------------------------------- | --------- | ------------------------------------------- |
@@ -8873,9 +8890,9 @@ Mientras no exista el modelo de publicación:
 | `WEB-GAP-144` | No existen pruebas automáticas por rol y operación                    | Crítica   | `WEB-QA-024`                                |
 | `WEB-GAP-145` | La configuración de esquemas expuestos no quedó verificable desde SQL | Alta      | `WEB-SEC-019`, `WEB-QA-024`                 |
 
-## 21. Cambios obligatorios al plan maestro
+#### 21. Cambios obligatorios al plan maestro
 
-## 21.1 Actualizar estados
+#### 21.1 Actualizar estados
 
 Marcar:
 
@@ -8886,11 +8903,11 @@ Marcar:
 Mantener:
 
 ```text
-[ ] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Pendiente de aprobación explícita
 [ ] WEB-ARC-005 — Pendiente; borrador fuera de secuencia
 ```
 
-## 21.2 Materializar tareas ya propuestas
+#### 21.2 Materializar tareas ya propuestas
 
 Las siguientes tareas fueron creadas por auditorías previas y deben existir en sus fases propietarias:
 
@@ -8902,9 +8919,9 @@ Las siguientes tareas fueron creadas por auditorías previas y deben existir en 
 [ ] WEB-PUB-015 — Implementar guardado atómico de contenido relacionado
 ```
 
-## 21.3 Agregar `WEB-DB-020`
+#### 21.3 Agregar `WEB-DB-020`
 
-Ubicación recomendada: después de la última tarea `WEB-DB-*`.
+Ubicación recomendada: después de la última tarea tareas específicas `WEB-DB-001` a `WEB-DB-020` según `WEB-AUD-012`.
 
 ```text
 [ ] WEB-DB-020 — Crear proyección pública de publicación vigente
@@ -8926,7 +8943,7 @@ Alcance:
 - estrategia de vista, tabla materializada, RPC o función;
 - pruebas con `anon`.
 
-## 21.4 Agregar `WEB-SEC-019`
+#### 21.4 Agregar `WEB-SEC-019`
 
 Ubicación recomendada: después de `WEB-SEC-018`.
 
@@ -8949,7 +8966,7 @@ Alcance:
 - documentar service role;
 - reconciliar Advisors con catálogo real.
 
-## 21.5 Agregar `WEB-QA-024`
+#### 21.5 Agregar `WEB-QA-024`
 
 Ubicación recomendada: después de `WEB-QA-023`.
 
@@ -8982,9 +8999,9 @@ Pruebas:
 - ausencia de bypass accidental;
 - Advisors sin falsos positivos persistentes.
 
-## 22. Prioridad de resolución
+#### 22. Prioridad de resolución
 
-## 22.1 Antes de usar el CMS legacy con más usuarios
+#### 22.1 Antes de usar el CMS legacy con más usuarios
 
 1. materializar `WEB-SEC-018`;
 2. restringir acciones por permiso;
@@ -8995,7 +9012,7 @@ Pruebas:
 7. retirar EXECUTE público innecesario;
 8. auditar acciones.
 
-## 22.2 Antes de implementar el renderer definitivo
+#### 22.2 Antes de implementar el renderer definitivo
 
 1. aprobar modelo de publicación;
 2. crear `WEB-DB-020`;
@@ -9005,7 +9022,7 @@ Pruebas:
 6. definir revalidación;
 7. separar preview.
 
-## 22.3 Antes de abrir lectura anónima
+#### 22.3 Antes de abrir lectura anónima
 
 No se deberá conceder `SELECT` a `anon` hasta que:
 
@@ -9018,36 +9035,36 @@ No se deberá conceder `SELECT` a `anon` hasta que:
 - sitemap use solo contenido válido;
 - no se expongan borradores.
 
-## 23. Criterios de aprobación
+#### 23. Criterios de aprobación
 
 `WEB-AUD-006` podrá marcarse como completada cuando se apruebe:
 
-- [ ] el inventario de tablas;
-- [ ] el inventario de 9 índices;
-- [ ] el inventario de restricciones;
-- [ ] el inventario de triggers;
-- [ ] el diagnóstico de RLS;
-- [ ] el diagnóstico de grants;
-- [ ] el diagnóstico de `service_role`;
-- [ ] el diagnóstico de Storage;
-- [ ] la contradicción de `getPublicUrl()` sobre bucket privado;
-- [ ] el diagnóstico de funciones auxiliares;
-- [ ] la ausencia total de foreign keys;
-- [ ] el linaje de migraciones;
-- [ ] el estado de los 16 registros publicados;
-- [ ] el registro `WEB-GAP-121` a `WEB-GAP-145`;
-- [ ] la incorporación de `WEB-DB-020`;
-- [ ] la incorporación de `WEB-SEC-019`;
-- [ ] la incorporación de `WEB-QA-024`;
-- [ ] que las tablas legacy permanezcan cerradas a `anon` hasta existir proyección pública segura.
+- [x] el inventario de tablas;
+- [x] el inventario de 9 índices;
+- [x] el inventario de restricciones;
+- [x] el inventario de triggers;
+- [x] el diagnóstico de RLS;
+- [x] el diagnóstico de grants;
+- [x] el diagnóstico de `service_role`;
+- [x] el diagnóstico de Storage;
+- [x] la contradicción de `getPublicUrl()` sobre bucket privado;
+- [x] el diagnóstico de funciones auxiliares;
+- [x] la ausencia total de foreign keys;
+- [x] el linaje de migraciones;
+- [x] el estado de los 16 registros publicados;
+- [x] el registro `WEB-GAP-121` a `WEB-GAP-145`;
+- [x] la incorporación de `WEB-DB-020`;
+- [x] la incorporación de `WEB-SEC-019`;
+- [x] la incorporación de `WEB-QA-024`;
+- [x] que las tablas legacy permanezcan cerradas a `anon` hasta existir proyección pública segura.
 
-## 24. Estado de cierre propuesto
+#### 24. Estado de cierre propuesto
 
 ```text
-WEB-AUD-006 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-006 — APROBADA
 ```
 
-### 24.1 No ejecutar todavía
+##### 24.1 No ejecutar todavía
 
 - no crear migraciones;
 - no cambiar grants;
@@ -9063,23 +9080,22 @@ WEB-AUD-006 — PROPUESTA PARA APROBACIÓN
 - no retirar `service_role`;
 - no modificar producción.
 
-### 24.2 Continuidad después de aprobación
+##### 24.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
 [x] WEB-AUD-002 — Inventariar todos los componentes públicos
 [x] WEB-AUD-003 — Inventariar contenido hardcodeado
-[ ] WEB-AUD-004 — Pendiente de aprobación explícita
+[x] WEB-AUD-004 — Pendiente de aprobación explícita
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
-[ ] WEB-AUD-007 — Auditar contenido en producción
+[x] WEB-AUD-007 — Auditar contenido en producción
 ```
 
-La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 
-## 25. Evidencia técnica
+#### 25. Evidencia técnica
 
-### 25.1 Migraciones
+##### 25.1 Migraciones
 
 - `supabase/migrations/20260327110000_website_cms.sql`;
 - `supabase/migrations/20260327120000_website_media_storage.sql`;
@@ -9087,7 +9103,7 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 - `supabase/migrations/20260519181000_harden_authenticated_write_policies.sql`;
 - `supabase/migrations/20260519193000_harden_website_media_storage.sql`.
 
-### 25.2 Catálogos PostgreSQL
+##### 25.2 Catálogos PostgreSQL
 
 - columnas;
 - índices;
@@ -9104,7 +9120,7 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 - vistas;
 - dependencias.
 
-### 25.3 Storage
+##### 25.3 Storage
 
 - configuración de buckets;
 - conteo de objetos;
@@ -9113,7 +9129,7 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 - MIME;
 - límite de archivo.
 
-### 25.4 Aplicaciones consumidoras
+##### 25.4 Aplicaciones consumidoras
 
 - cliente Supabase de `Vento-Group`;
 - loaders de contenido;
@@ -9122,25 +9138,25 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 - cliente administrativo;
 - guardias de acceso.
 
-### 25.5 Fuentes oficiales revisadas
+##### 25.5 Fuentes oficiales revisadas
 
 - Supabase Row Level Security;
 - Supabase Securing Your Data;
 - Supabase Storage Access Control;
 - Supabase changelog sobre grants explícitos y exposición de Data API.
 
-## 26. Registro de cambios
+#### 26. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                                                    | Estado            |
 | -------------- | ---------- | ------------------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Auditoría integral de la superficie Supabase utilizada por la web pública | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Auditoría integral de la superficie Supabase utilizada por la web pública | Aprobada |
 
 
-# WEB-AUD-007 — Auditoria canonica de contenido en produccion
+### WEB-AUD-007 — Auditoria canonica de contenido en produccion
 
 > Verificacion del contenido realmente visible en `ventogroup.co`, su procedencia, los placeholders activos, las variables de entorno requeridas y las paginas funcionalmente vacias o incompletas.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                     | Valor                                                |
 | ------------------------- | ---------------------------------------------------- |
@@ -9160,7 +9176,7 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 | Cambios en produccion     | Ninguno                                              |
 | Proxima tarea             | `WEB-AUD-008 — Crear matriz editable vs hardcodeado` |
 
-### 0.1 Continuidad canonica
+##### 0.1 Continuidad canonica
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas publicas
@@ -9169,12 +9185,12 @@ La marca de `WEB-AUD-006` solo se aplicará después de aprobación explícita.
 [x] WEB-AUD-004 — Inventariar contenido administrable
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
-[ ] WEB-AUD-007 — Auditar contenido en produccion
+[x] WEB-AUD-007 — Auditar contenido en produccion
 ```
 
 `WEB-ARC-005` permanece pendiente y no forma parte de la continuidad actual.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Confirmar el estado real del sitio publicado, diferenciando claramente:
 
@@ -9186,9 +9202,9 @@ Confirmar el estado real del sitio publicado, diferenciando claramente:
 6. variables de entorno requeridas y su estado de confirmacion;
 7. riesgos que hoy afectan a visitantes, indexacion y operacion editorial.
 
-## 2. Alcance
+#### 2. Alcance
 
-### 2.1 Superficies publicas verificadas
+##### 2.1 Superficies publicas verificadas
 
 - `/`;
 - `/restaurantes`;
@@ -9202,7 +9218,7 @@ Confirmar el estado real del sitio publicado, diferenciando claramente:
 - `sitemap.xml` y `robots.txt` mediante implementacion y evidencia previa;
 - rutas faltantes ya registradas en `WEB-AUD-001`.
 
-### 2.2 Fuentes contrastadas
+##### 2.2 Fuentes contrastadas
 
 - salida publica indexada y recuperable de `ventogroup.co`;
 - contenido vigente de `website_blocks`;
@@ -9215,7 +9231,7 @@ Confirmar el estado real del sitio publicado, diferenciando claramente:
 - `README.md`;
 - plan canonico vigente.
 
-### 2.3 Limitaciones de la verificacion
+##### 2.3 Limitaciones de la verificacion
 
 No se tuvo acceso directo al panel de Vercel o proveedor de despliegue.
 
@@ -9227,9 +9243,9 @@ Por tanto:
 - algunas variables se clasifican como confirmadas por comportamiento observable, no por lectura directa del dashboard;
 - las paginas dinamicas de restaurante no pudieron recuperarse mediante el lector web externo, por lo que su estado se determino contrastando la ruta desplegada, el codigo vigente y los datos reales de Supabase.
 
-## 3. Resultado ejecutivo
+#### 3. Resultado ejecutivo
 
-### 3.1 Resumen principal
+##### 3.1 Resumen principal
 
 | Pregunta                                                    | Respuesta                                                      |
 | ----------------------------------------------------------- | -------------------------------------------------------------- |
@@ -9247,7 +9263,7 @@ Por tanto:
 | Las variables efectivas pueden leerse desde GitHub          | No                                                             |
 | El `.env.example` representa todas las variables usadas     | **No**                                                         |
 
-### 3.2 Diagnostico general
+##### 3.2 Diagnostico general
 
 La web publicada no esta funcionando exclusivamente con fallbacks locales.
 
@@ -9265,7 +9281,7 @@ FALLBACKS DE COMPONENTES
 
 La presencia de datos reales no significa que el contenido publicado sea valido. En produccion se muestran filas reales de la base, pero varias de esas filas son seeds provisionales marcados como publicados.
 
-### 3.3 Clasificacion de la produccion actual
+##### 3.3 Clasificacion de la produccion actual
 
 | Clase                   | Ejemplos                                  | Estado                     |
 | ----------------------- | ----------------------------------------- | -------------------------- |
@@ -9278,9 +9294,9 @@ La presencia de datos reales no significa que el contenido publicado sea valido.
 | Medio faltante          | Hero, banners y galerias                  | Vacio o no renderizado     |
 | Ruta sin pagina         | Eventos                                   | Redireccion                |
 
-## 4. Confirmacion de uso de datos reales
+#### 4. Confirmacion de uso de datos reales
 
-### 4.1 Evidencia de restaurantes
+##### 4.1 Evidencia de restaurantes
 
 Produccion muestra:
 
@@ -9294,7 +9310,7 @@ El fallback local solo define un restaurante ficticio llamado `Restaurante desta
 
 La aparicion de los tres restaurantes reales confirma que el sitio consulta `website_items` en produccion.
 
-### 4.2 Evidencia de Empleos
+##### 4.2 Evidencia de Empleos
 
 Produccion muestra:
 
@@ -9312,7 +9328,7 @@ Conclusion:
 El dato leido es real como fila, pero es placeholder como contenido.
 ```
 
-### 4.3 Evidencia de Servicios
+##### 4.3 Evidencia de Servicios
 
 Produccion muestra:
 
@@ -9330,7 +9346,7 @@ Conclusion:
 La entidad publicada es un seed provisional.
 ```
 
-### 4.4 Evidencia de Ecosistema
+##### 4.4 Evidencia de Ecosistema
 
 Produccion muestra:
 
@@ -9349,7 +9365,7 @@ Conclusion:
 Las aplicaciones representan productos reales, pero sus registros publicos estan incompletos.
 ```
 
-### 4.5 Evidencia de bloques de Inicio
+##### 4.5 Evidencia de bloques de Inicio
 
 Supabase contiene tres bloques `home` publicados:
 
@@ -9361,7 +9377,7 @@ Los tres carecen de `media_url`.
 
 La composicion de Inicio filtra slides sin medio y utiliza copy React para la mayor parte de las secciones. Por ello, la pagina puede consultar bloques reales sin que estos controlen la experiencia visible completa.
 
-### 4.6 Conclusion de procedencia
+##### 4.6 Conclusion de procedencia
 
 | Dominio      | Fuente real usada | Fuente dominante visible                               |
 | ------------ | ----------------- | ------------------------------------------------------ |
@@ -9373,9 +9389,9 @@ La composicion de Inicio filtra slides sin medio y utiliza copy React para la ma
 | Ecosistema   | Supabase          | Seeds incompletos de Supabase                          |
 | Eventos      | React redirect    | Sin contenido propio                                   |
 
-## 5. Confirmacion de dependencia de `service_role`
+#### 5. Confirmacion de dependencia de `service_role`
 
-### 5.1 Logica del cliente
+##### 5.1 Logica del cliente
 
 El servidor elige la clave en este orden:
 
@@ -9387,7 +9403,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 Si no existe URL o clave, retorna `null` y se activan fallbacks.
 
-### 5.2 RLS vigente
+##### 5.2 RLS vigente
 
 Las tablas CMS no tienen politica de lectura para `anon`.
 
@@ -9399,7 +9415,7 @@ authenticated
 
 El cliente de servidor no inicia una sesion autenticada.
 
-### 5.3 Inferencia
+##### 5.3 Inferencia
 
 Produccion recupera filas reales de Supabase que un cliente `anon` no podria leer bajo las politicas vigentes.
 
@@ -9417,9 +9433,9 @@ ALTO
 
 No se afirma que el valor haya sido leido directamente. Se confirma por comportamiento observable y por eliminacion de alternativas compatibles con el codigo actual.
 
-## 6. Variables de entorno
+#### 6. Variables de entorno
 
-### 6.1 Inventario de variables referenciadas
+##### 6.1 Inventario de variables referenciadas
 
 | Variable                        | Uso                                  | Sensibilidad          |
 | ------------------------------- | ------------------------------------ | --------------------- |
@@ -9430,7 +9446,7 @@ No se afirma que el valor haya sido leido directamente. Se confirma por comporta
 | `SITE_URL`                      | Alternativa server-side para dominio | Interna no secreta    |
 | `VERCEL_URL`                    | Dominio automatico del despliegue    | Publica de plataforma |
 
-### 6.2 Estado de confirmacion
+##### 6.2 Estado de confirmacion
 
 | Variable                        | Estado                       | Evidencia                                                        |
 | ------------------------------- | ---------------------------- | ---------------------------------------------------------------- |
@@ -9441,7 +9457,7 @@ No se afirma que el valor haya sido leido directamente. Se confirma por comporta
 | `SITE_URL`                      | No confirmada                | Solo alternativa en codigo                                       |
 | `VERCEL_URL`                    | No confirmada directamente   | Alternativa automatica del runtime                               |
 
-### 6.3 Inconsistencia de documentacion
+##### 6.3 Inconsistencia de documentacion
 
 `.env.example` declara:
 
@@ -9460,7 +9476,7 @@ SITE_URL
 
 El README tambien documenta solo las variables publicas y afirma que VISO escribe con `service role`, pero no documenta que la web publica tambien puede utilizar esa misma clave para lectura.
 
-### 6.4 Riesgo
+##### 6.4 Riesgo
 
 La ausencia de la clave en `.env.example` evita copiar un secreto por accidente, pero tambien oculta una dependencia operativa real.
 
@@ -9470,10 +9486,10 @@ Debe documentarse asi:
 
 ```text
 SUPABASE_SERVICE_ROLE_KEY=
-# Server only. Never expose. Legacy dependency pending removal by WEB-SEC-017.
+### Server only. Never expose. Legacy dependency pending removal by WEB-SEC-017.
 ```
 
-### 6.5 Estado del dominio
+##### 6.5 Estado del dominio
 
 El codigo resuelve el dominio en este orden:
 
@@ -9495,9 +9511,9 @@ No se pudo determinar desde el repositorio si:
 
 Esto debe verificarse en `WEB-SEC-012`, `WEB-OPS-002` y la futura auditoria SEO.
 
-## 7. Placeholders y contenido provisional visible
+#### 7. Placeholders y contenido provisional visible
 
-### 7.1 Placeholders confirmados en produccion
+##### 7.1 Placeholders confirmados en produccion
 
 | Pagina        | Contenido                                  | Fuente              | Severidad |
 | ------------- | ------------------------------------------ | ------------------- | --------- |
@@ -9512,7 +9528,7 @@ Esto debe verificarse en `WEB-SEC-012`, `WEB-OPS-002` y la futura auditoria SEO.
 | Footer        | Instagram, LinkedIn y YouTube genericos    | React               | Alta      |
 | Footer        | Newsletter no funcional                    | React               | Alta      |
 
-### 7.2 Placeholders deterministas en detalles de restaurante
+##### 7.2 Placeholders deterministas en detalles de restaurante
 
 Los tres restaurantes reales tienen:
 
@@ -9537,7 +9553,7 @@ El codigo sustituye esos faltantes con:
 
 Por tanto, cualquier detalle real de restaurante queda funcionalmente incompleto aunque la entidad exista.
 
-### 7.3 Placeholders no activados por consulta
+##### 7.3 Placeholders no activados por consulta
 
 Los fallbacks completos de `src/lib/content.ts` no parecen ser la fuente principal de las colecciones visibles, porque la produccion devuelve textos exactos de Supabase.
 
@@ -9550,7 +9566,7 @@ Sin embargo, siguen siendo un riesgo activo:
 
 En esos escenarios, los fallbacks se publican automaticamente.
 
-### 7.4 Distincion obligatoria
+##### 7.4 Distincion obligatoria
 
 ```text
 Fila real de base != contenido real aprobado
@@ -9563,31 +9579,31 @@ Ejemplos:
 - Vento Pass es una entidad real, pero el CTA publicado no tiene destino real;
 - Vento Cafe es una entidad real, pero su detalle carece de contenido editorial real.
 
-## 8. Paginas vacias, incompletas y ausentes
+#### 8. Paginas vacias, incompletas y ausentes
 
-### 8.1 Criterios
+##### 8.1 Criterios
 
-#### Activa y suficiente
+###### Activa y suficiente
 
 Tiene contenido real, accion valida y estructura util.
 
-#### Activa pero incompleta
+###### Activa pero incompleta
 
 Tiene contenido parcial, medios faltantes o acciones invalidas.
 
-#### Funcionalmente vacia
+###### Funcionalmente vacia
 
 La ruta carga, pero no cumple la finalidad prometida.
 
-#### Sin pagina propia
+###### Sin pagina propia
 
 Redirige a otra ruta.
 
-#### Inexistente
+###### Inexistente
 
 No hay implementacion de ruta.
 
-### 8.2 Matriz de estado
+##### 8.2 Matriz de estado
 
 | Ruta                       | Estado                  | Diagnostico                                                                 |
 | -------------------------- | ----------------------- | --------------------------------------------------------------------------- |
@@ -9607,7 +9623,7 @@ No hay implementacion de ruta.
 | `/cookies`                 | Inexistente             | Pendiente                                                                   |
 | `/empleos/[slug]`          | Inexistente             | No existe detalle de vacante                                                |
 
-### 8.3 Paginas completamente en blanco
+##### 8.3 Paginas completamente en blanco
 
 No se confirmo una respuesta HTML totalmente vacia en las rutas principales recuperables.
 
@@ -9617,7 +9633,7 @@ El problema predominante es distinto:
 la ruta existe, pero su contenido es provisional, incompleto o no funcional.
 ```
 
-### 8.4 Secciones visualmente vacias
+##### 8.4 Secciones visualmente vacias
 
 Se confirmaron o derivaron:
 
@@ -9629,18 +9645,18 @@ Se confirmaron o derivaron:
 - cards de empleo, servicio y apps sin medios;
 - `website-media` sin objetos.
 
-## 9. Auditoria pagina por pagina
+#### 9. Auditoria pagina por pagina
 
-### 9.1 Inicio
+##### 9.1 Inicio
 
-#### Datos reales
+###### Datos reales
 
 - Vento Cafe;
 - Saudo;
 - Molka;
 - nombres de apps desde Supabase.
 
-#### Contenido fijo
+###### Contenido fijo
 
 - introduccion editorial;
 - statement;
@@ -9650,7 +9666,7 @@ Se confirmaron o derivaron:
 - navegacion;
 - footer.
 
-#### Placeholders o degradaciones
+###### Placeholders o degradaciones
 
 - hero sin media;
 - controles `Prev` y `Next` aunque no hay slides validos;
@@ -9658,22 +9674,22 @@ Se confirmaron o derivaron:
 - enlaces de apps con `#` en la fila original;
 - CTA `Acceder a Vento OS` abre `/ecosistema`.
 
-#### Estado
+###### Estado
 
 ```text
 INCOMPLETA Y NO APTA COMO FUENTE EDITORIAL CANONICA
 ```
 
-### 9.2 Restaurantes
+##### 9.2 Restaurantes
 
-#### Datos reales
+###### Datos reales
 
 - tres restaurantes;
 - direcciones reales;
 - extractos reales;
 - logos de Vento Cafe y Molka.
 
-#### Contenido fijo
+###### Contenido fijo
 
 - hero;
 - narrativa;
@@ -9681,7 +9697,7 @@ INCOMPLETA Y NO APTA COMO FUENTE EDITORIAL CANONICA
 - CTA de eventos;
 - estructura.
 
-#### Placeholders o degradaciones
+###### Placeholders o degradaciones
 
 - medio principal faltante;
 - banner sin media real;
@@ -9689,22 +9705,22 @@ INCOMPLETA Y NO APTA COMO FUENTE EDITORIAL CANONICA
 - logos usados como imagen editorial;
 - contacto de eventos solo por correo.
 
-#### Estado
+###### Estado
 
 ```text
 FUNCIONAL COMO LISTADO, INCOMPLETA COMO PAGINA PUBLICA FINAL
 ```
 
-### 9.3 Detalles de restaurante
+##### 9.3 Detalles de restaurante
 
-#### Datos reales
+###### Datos reales
 
 - nombre;
 - direccion;
 - extracto;
 - logo cuando existe.
 
-#### Contenido provisional
+###### Contenido provisional
 
 - narrative fallback;
 - encabezados en ingles;
@@ -9714,19 +9730,19 @@ FUNCIONAL COMO LISTADO, INCOMPLETA COMO PAGINA PUBLICA FINAL
 - galeria vacia;
 - reserva redirigida a Eventos.
 
-#### Estado
+###### Estado
 
 ```text
 ENTIDADES REALES CON PLANTILLA PUBLICA PROVISIONAL
 ```
 
-### 9.4 Empleos
+##### 9.4 Empleos
 
-#### Datos reales
+###### Datos reales
 
 No hay vacantes reales confirmadas.
 
-#### Contenido visible
+###### Contenido visible
 
 - un seed publicado;
 - CTA `Aplicar`;
@@ -9734,38 +9750,38 @@ No hay vacantes reales confirmadas.
 - sin formulario;
 - sin integracion con Talento.
 
-#### Estado
+###### Estado
 
 ```text
 FUNCIONALMENTE VACIA
 ```
 
-### 9.5 Servicios
+##### 9.5 Servicios
 
-#### Datos reales
+###### Datos reales
 
 No hay servicios estructurados confirmados.
 
-#### Contenido visible
+###### Contenido visible
 
 - cuatro pilares hardcodeados;
 - un item seed;
 - CTA de contacto por correo.
 
-#### Estado
+###### Estado
 
 ```text
 PAGINA PROVISIONAL CON APARIENCIA DE CONTENIDO REAL
 ```
 
-### 9.6 Ecosistema
+##### 9.6 Ecosistema
 
-#### Datos reales
+###### Datos reales
 
 - nombres de tres productos reales;
 - descripciones seed.
 
-#### Contenido faltante
+###### Contenido faltante
 
 - URLs reales;
 - medios;
@@ -9775,7 +9791,7 @@ PAGINA PROVISIONAL CON APARIENCIA DE CONTENIDO REAL
 - paginas de producto;
 - estado de cada producto.
 
-#### Comportamiento de CTA
+###### Comportamiento de CTA
 
 Cuando `action_url = '#'`, `getItemHref()` devuelve `/ecosistema` para apps.
 
@@ -9785,13 +9801,13 @@ Resultado:
 - `Entrar` vuelve a la misma pagina;
 - la accion prometida no ocurre.
 
-#### Estado
+###### Estado
 
 ```text
 ACTIVA PERO FUNCIONALMENTE INCOMPLETA
 ```
 
-### 9.7 Eventos
+##### 9.7 Eventos
 
 El codigo ejecuta:
 
@@ -9808,15 +9824,15 @@ Aun asi:
 - el CMS permite administrar eventos;
 - existe un seed de evento publicado.
 
-#### Estado
+###### Estado
 
 ```text
 SIN PAGINA PUBLICA FUNCIONAL
 ```
 
-## 10. Contenido que no debe seguir publicado
+#### 10. Contenido que no debe seguir publicado
 
-### 10.1 Retiro prioritario
+##### 10.1 Retiro prioritario
 
 Debe ocultarse o sustituirse antes de promover la web como terminada:
 
@@ -9832,7 +9848,7 @@ Debe ocultarse o sustituirse antes de promover la web como terminada:
 - redes sociales genericas;
 - newsletter no funcional.
 
-### 10.2 No ejecutar desde esta tarea
+##### 10.2 No ejecutar desde esta tarea
 
 Esta auditoria no autoriza a borrar o despublicar contenido.
 
@@ -9844,9 +9860,9 @@ La ejecucion corresponde a:
 - `WEB-SEC-018`;
 - tareas de pagina correspondientes.
 
-## 11. Decision sobre variables de entorno
+#### 11. Decision sobre variables de entorno
 
-### 11.1 Lo confirmado
+##### 11.1 Lo confirmado
 
 - existe conectividad efectiva con Supabase;
 - produccion obtiene filas reales;
@@ -9854,7 +9870,7 @@ La ejecucion corresponde a:
 - la lectura privilegiada esta operativa;
 - el dominio publico responde bajo `www.ventogroup.co`.
 
-### 11.2 Lo no confirmado directamente
+##### 11.2 Lo no confirmado directamente
 
 - valor exacto de cada variable;
 - scopes de Vercel;
@@ -9865,7 +9881,7 @@ La ejecucion corresponde a:
 - canonical host efectivo;
 - si hay variables duplicadas.
 
-### 11.3 Tareas responsables
+##### 11.3 Tareas responsables
 
 - `WEB-SEC-011 — Auditar secretos`;
 - `WEB-SEC-012 — Auditar variables de entorno`;
@@ -9873,19 +9889,19 @@ La ejecucion corresponde a:
 - `WEB-OPS-001 — Definir ambientes`;
 - `WEB-OPS-002 — Definir variables por ambiente`.
 
-## 12. Smoke test canonico de produccion
+#### 12. Smoke test canonico de produccion
 
 La auditoria revela que falta una tarea automatizada que valide el despliegue real despues de cada publicacion.
 
 Esta necesidad ocupa el identificador vacante `WEB-QA-022`.
 
-### 12.1 Nueva tarea propuesta
+##### 12.1 Nueva tarea propuesta
 
 ```text
 [ ] WEB-QA-022 — Crear smoke test canonico de produccion
 ```
 
-### 12.2 Alcance
+##### 12.2 Alcance
 
 El smoke test debera comprobar:
 
@@ -9906,7 +9922,7 @@ El smoke test debera comprobar:
 - canonical y host son coherentes;
 - el resultado se registra como evidencia de release.
 
-### 12.3 Ubicacion
+##### 12.3 Ubicacion
 
 Agregar despues de:
 
@@ -9923,7 +9939,7 @@ WEB-QA-024 — Probar RLS, GRANTs y Storage del dominio web
 
 Esto corrige la brecha de numeracion ya detectada en el plan.
 
-## 13. Registro canonico de brechas
+#### 13. Registro canonico de brechas
 
 | Brecha        | Descripcion                                                         | Severidad | Tareas responsables                                                       |
 | ------------- | ------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
@@ -9950,9 +9966,9 @@ Esto corrige la brecha de numeracion ya detectada en el plan.
 | `WEB-GAP-166` | No se ha confirmado host canonico `www` frente a dominio raiz       | Alta      | `WEB-GLB-007`, `WEB-SEC-012`, `WEB-OPS-002`, `WEB-QA-019`                 |
 | `WEB-GAP-167` | Filas publicadas sustituyen un proceso editorial inexistente        | Critica   | `WEB-PUB-001`, `WEB-PUB-005`, `WEB-PUB-008`, `WEB-MIG-022`                |
 
-## 14. Cambios obligatorios al plan maestro
+#### 14. Cambios obligatorios al plan maestro
 
-### 14.1 Actualizar estados
+##### 14.1 Actualizar estados
 
 Marcar:
 
@@ -9966,7 +9982,7 @@ Mantener:
 [ ] WEB-ARC-005 — Pendiente; borrador fuera de secuencia
 ```
 
-### 14.2 Agregar `WEB-QA-022`
+##### 14.2 Agregar `WEB-QA-022`
 
 Agregar en Fase 15:
 
@@ -9976,7 +9992,7 @@ Agregar en Fase 15:
 
 Alcance definido en la seccion 12.
 
-### 14.3 Ampliar `WEB-SEC-012`
+##### 14.3 Ampliar `WEB-SEC-012`
 
 Agregar al alcance de `WEB-SEC-012`:
 
@@ -9990,7 +10006,7 @@ Agregar al alcance de `WEB-SEC-012`:
 - detectar variables declaradas pero no usadas;
 - detectar variables usadas pero no documentadas.
 
-### 14.4 Ampliar `WEB-OPS-002`
+##### 14.4 Ampliar `WEB-OPS-002`
 
 Agregar al alcance de `WEB-OPS-002`:
 
@@ -10004,7 +10020,7 @@ Agregar al alcance de `WEB-OPS-002`:
 - validacion post-deploy;
 - prohibicion de copiar secretos en Markdown.
 
-### 14.5 Materializar tareas pendientes
+##### 14.5 Materializar tareas pendientes
 
 Confirmar que existan en sus fases:
 
@@ -10018,9 +10034,9 @@ Confirmar que existan en sus fases:
 [ ] WEB-QA-024 — Probar RLS, GRANTs y Storage del dominio web
 ```
 
-## 15. Prioridad de resolucion
+#### 15. Prioridad de resolucion
 
-### 15.1 Contencion editorial prioritaria
+##### 15.1 Contencion editorial prioritaria
 
 Antes de presentar la web como terminada:
 
@@ -10034,7 +10050,7 @@ Antes de presentar la web como terminada:
 8. retirar newsletter si no se implementa;
 9. configurar redes reales o retirarlas.
 
-### 15.2 Contencion tecnica prioritaria
+##### 15.2 Contencion tecnica prioritaria
 
 1. documentar variables efectivas;
 2. impedir lectura publica con service role;
@@ -10043,13 +10059,13 @@ Antes de presentar la web como terminada:
 5. validar sitemap;
 6. bloquear fallbacks editoriales en produccion.
 
-### 15.3 Sin modificar produccion desde esta tarea
+##### 15.3 Sin modificar produccion desde esta tarea
 
 La prioridad anterior no constituye autorizacion de cambio.
 
 Toda correccion debe ejecutarse en su tarea propietaria.
 
-## 16. Criterios de aprobacion
+#### 16. Criterios de aprobacion
 
 `WEB-AUD-007` podra marcarse como completada cuando se apruebe:
 
@@ -10072,13 +10088,13 @@ Toda correccion debe ejecutarse en su tarea propietaria.
 - [ ] la ampliacion de `WEB-SEC-012`;
 - [ ] la ampliacion de `WEB-OPS-002`.
 
-## 17. Estado de cierre propuesto
+#### 17. Estado de cierre propuesto
 
 ```text
 WEB-AUD-007 — PROPUESTA PARA APROBACION
 ```
 
-### 17.1 No ejecutar todavia
+##### 17.1 No ejecutar todavia
 
 - no cambiar variables;
 - no rotar claves;
@@ -10092,7 +10108,7 @@ WEB-AUD-007 — PROPUESTA PARA APROBACION
 - no subir medios;
 - no cambiar produccion.
 
-### 17.2 Continuidad despues de aprobacion
+##### 17.2 Continuidad despues de aprobacion
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas publicas
@@ -10102,14 +10118,14 @@ WEB-AUD-007 — PROPUESTA PARA APROBACION
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
 [x] WEB-AUD-007 — Auditar contenido en produccion
-[ ] WEB-AUD-008 — Crear matriz editable vs hardcodeado
+[x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
 ```
 
 La marca de `WEB-AUD-007` solo se aplicara despues de aprobacion explicita.
 
-## 18. Evidencia tecnica
+#### 18. Evidencia tecnica
 
-### 18.1 Produccion publica
+##### 18.1 Produccion publica
 
 Se verificaron los contenidos recuperables de:
 
@@ -10119,14 +10135,14 @@ Se verificaron los contenidos recuperables de:
 - `https://www.ventogroup.co/servicios`;
 - `https://www.ventogroup.co/ecosistema`.
 
-### 18.2 Supabase
+##### 18.2 Supabase
 
 Se contrastaron todas las filas vigentes de:
 
 - `public.website_blocks`;
 - `public.website_items`.
 
-### 18.3 Codigo
+##### 18.3 Codigo
 
 - `src/lib/supabase.ts`;
 - `src/lib/content.ts`;
@@ -10140,18 +10156,18 @@ Se contrastaron todas las filas vigentes de:
 - `.env.example`;
 - `README.md`.
 
-## 19. Registro de cambios
+#### 19. Registro de cambios
 
 | Version        | Fecha      | Cambio                                                                            | Estado            |
 | -------------- | ---------- | --------------------------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Auditoria de datos reales, placeholders, variables y paginas vacias en produccion | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Auditoria de datos reales, placeholders, variables y paginas vacias en produccion | Aprobada |
 
 
-# WEB-AUD-008 — Matriz canónica editable vs hardcodeado
+### WEB-AUD-008 — Matriz canónica editable vs hardcodeado
 
 > Matriz de trazabilidad por página, sección y campo para separar contenido editorial, datos de dominio, configuración global y comportamiento técnico.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                 | Valor                                   |
 | --------------------- | --------------------------------------- |
@@ -10170,7 +10186,7 @@ Se contrastaron todas las filas vigentes de:
 | Cambios en producción | Ninguno                                 |
 | Próxima tarea         | `WEB-AUD-009 — Crear línea base visual` |
 
-### 0.1 Continuidad
+##### 0.1 Continuidad
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -10180,12 +10196,12 @@ Se contrastaron todas las filas vigentes de:
 [x] WEB-AUD-005 — Auditar VISO Website CMS
 [x] WEB-AUD-006 — Auditar Supabase
 [x] WEB-AUD-007 — Auditar contenido en producción
-[ ] WEB-AUD-008 — Crear matriz editable vs hardcodeado
+[x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
 ```
 
 `WEB-ARC-005` continúa pendiente y no se considera aprobada.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Crear una matriz canónica que indique para cada superficie pública:
 
@@ -10205,7 +10221,7 @@ La matriz debe impedir que durante la reconstrucción:
 - se abran fuentes legacy como contrato definitivo;
 - se pierda ownership entre VISO, la web y los dominios operativos.
 
-## 2. Alcance
+#### 2. Alcance
 
 La matriz cubre:
 
@@ -10236,7 +10252,7 @@ No define todavía:
 
 La columna **Fuente objetivo** expresa ownership lógico. Su materialización física corresponde a las fases de arquitectura y base de datos.
 
-## 3. Taxonomía de fuentes objetivo
+#### 3. Taxonomía de fuentes objetivo
 
 | Código                  | Definición                                                                                    |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
@@ -10253,7 +10269,7 @@ La columna **Fuente objetivo** expresa ownership lógico. Su materialización f�
 | `TGT-CODE`              | Código y contratos técnicos registrados.                                                      |
 | `TGT-REMOVE`            | Elemento que debe retirarse y no migrarse como contenido.                                     |
 
-### 3.1 Regla de ownership
+##### 3.1 Regla de ownership
 
 ```text
 COPY EDITORIAL
@@ -10278,7 +10294,7 @@ PLACEHOLDERS E INSTRUCCIONES
 → TGT-REMOVE
 ```
 
-## 4. Estados de migración
+#### 4. Estados de migración
 
 | Estado | Significado                                                                                         |
 | ------ | --------------------------------------------------------------------------------------------------- |
@@ -10289,7 +10305,7 @@ PLACEHOLDERS E INSTRUCCIONES
 | `C`    | Mantener en código: comportamiento técnico, seguridad, accesibilidad o estructura no editorial.     |
 | `R`    | Retirar: placeholder, instrucción interna, fallback provisional o dependencia insegura.             |
 
-### 4.1 Resultado consolidado
+##### 4.1 Resultado consolidado
 
 | Estado | Filas |
 | ------ | ----: |
@@ -10300,7 +10316,7 @@ PLACEHOLDERS E INSTRUCCIONES
 | `C`    |     9 |
 | `R`    |     4 |
 
-### 4.2 Lectura del resultado
+##### 4.2 Lectura del resultado
 
 La web no está dividida simplemente entre “editable” y “hardcodeada”.
 
@@ -10313,9 +10329,9 @@ Existen seis situaciones:
 5. comportamiento que debe permanecer en código;
 6. contenido provisional que debe retirarse.
 
-## 5. Matriz maestra
+#### 5. Matriz maestra
 
-### 5.1 Global y transversal
+##### 5.1 Global y transversal
 
 | Página | Sección   | Campo                                                    | Fuente actual                                                       | Fuente objetivo                                                   | Estado de migración |
 | ------ | --------- | -------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------- |
@@ -10341,7 +10357,7 @@ Existen seis situaciones:
 | Global | Runtime   | Guard global para rueda en inputs numéricos              | Script inline en `layout.tsx` sin uso público evidente              | `TGT-REMOVE` salvo justificación funcional                        | R                   |
 | Global | Medios    | Placeholder visual cuando falta media                    | `MediaSlot` muestra el label públicamente                           | `TGT-CODE` con estado vacío no editorial y bloqueo de publicación | M2                  |
 
-### 5.2 Home
+##### 5.2 Home
 
 | Página | Sección               | Campo                                                          | Fuente actual                                              | Fuente objetivo                                               | Estado de migración |
 | ------ | --------------------- | -------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- | ------------------- |
@@ -10376,7 +10392,7 @@ Existen seis situaciones:
 | /      | Datos estructurados   | WebSite y SearchAction                                         | Hardcodeados; no existe búsqueda real                      | `TGT-CODE` y retirar SearchAction si no existe búsqueda       | M3                  |
 | /      | Datos estructurados   | ItemList de restaurantes                                       | Items dinámicos + estructura hardcodeada                   | `TGT-ENTITY-PROJECTION.restaurant` + builder tipado           | M2                  |
 
-### 5.3 Restaurantes — listado
+##### 5.3 Restaurantes — listado
 
 | Página        | Sección             | Campo                                      | Fuente actual                                                        | Fuente objetivo                                        | Estado de migración |
 | ------------- | ------------------- | ------------------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------ | ------------------- |
@@ -10395,7 +10411,7 @@ Existen seis situaciones:
 | /restaurantes | CTA final           | Título, copy, label y email                | Hardcodeados en `CtaBanner`                                          | `TGT-PAGE-REVISION.sections[closing_cta].props`        | M0                  |
 | /restaurantes | Datos estructurados | ItemList                                   | Colección dinámica + schema hardcodeado                              | `TGT-ENTITY-PROJECTION.restaurant` + builder tipado    | M2                  |
 
-### 5.4 Restaurantes — detalle
+##### 5.4 Restaurantes — detalle
 
 | Página               | Sección             | Campo                                       | Fuente actual                                                    | Fuente objetivo                                                 | Estado de migración |
 | -------------------- | ------------------- | ------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------- | ------------------- |
@@ -10422,7 +10438,7 @@ Existen seis situaciones:
 | /restaurantes/[slug] | Datos estructurados | Restaurant                                  | Campos legacy + schema hardcodeado                               | `TGT-ENTITY-PROJECTION.restaurant` + builder tipado             | M2                  |
 | /restaurantes/[slug] | Datos estructurados | Breadcrumb labels y URLs                    | Estructura y labels hardcodeados                                 | `TGT-CODE` + navegación publicada                               | C                   |
 
-### 5.5 Empleos
+##### 5.5 Empleos
 
 | Página   | Sección             | Campo                                        | Fuente actual                                                 | Fuente objetivo                                      | Estado de migración |
 | -------- | ------------------- | -------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------- | ------------------- |
@@ -10436,7 +10452,7 @@ Existen seis situaciones:
 | /empleos | Aplicación          | Destino y flujo                              | `action_url` legacy `#`                                       | `TGT-FORM.job_application` o integración Talento     | M3                  |
 | /empleos | Datos estructurados | ItemList / JobPosting                        | Solo ItemList genérico                                        | `TGT-ENTITY-PROJECTION.job` + `JobPosting` tipado    | M3                  |
 
-### 5.6 Servicios
+##### 5.6 Servicios
 
 | Página     | Sección             | Campo                                      | Fuente actual                                     | Fuente objetivo                                   | Estado de migración |
 | ---------- | ------------------- | ------------------------------------------ | ------------------------------------------------- | ------------------------------------------------- | ------------------- |
@@ -10455,7 +10471,7 @@ Existen seis situaciones:
 | /servicios | CTA final           | Título, copy, label y email                | Hardcodeados                                      | `TGT-PAGE-REVISION.sections[closing_cta].props`   | M0                  |
 | /servicios | Datos estructurados | ItemList                                   | Items legacy + schema hardcodeado                 | `TGT-ENTITY-PROJECTION.service` + builder tipado  | M2                  |
 
-### 5.7 Ecosistema
+##### 5.7 Ecosistema
 
 | Página      | Sección             | Campo                                      | Fuente actual                           | Fuente objetivo                                | Estado de migración |
 | ----------- | ------------------- | ------------------------------------------ | --------------------------------------- | ---------------------------------------------- | ------------------- |
@@ -10468,7 +10484,7 @@ Existen seis situaciones:
 | /ecosistema | Listado             | Estado vacío                               | No definido                             | `TGT-PAGE-REVISION.sections[apps].empty_state` | M0                  |
 | /ecosistema | Datos estructurados | ItemList                                   | Schema genérico de `CategoryPage`       | `TGT-ENTITY-PROJECTION.app` + builder tipado   | M2                  |
 
-### 5.8 Eventos
+##### 5.8 Eventos
 
 | Página   | Sección          | Campo                                           | Fuente actual                                                           | Fuente objetivo                                         | Estado de migración |
 | -------- | ---------------- | ----------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------- | ------------------- |
@@ -10477,7 +10493,7 @@ Existen seis situaciones:
 | /eventos | SEO              | Indexación                                      | Ruta incluida en sitemap aunque redirige                                | `TGT-REDIRECT` + generador de sitemap                   | M3                  |
 | /eventos | CTA relacionados | Múltiples enlaces internos apuntan a `/eventos` | Hardcodeados en Home y detalle de restaurantes                          | `TGT-NAVIGATION` / page revisions tras decisión         | M3                  |
 
-### 5.9 Sistema, SEO y publicación
+##### 5.9 Sistema, SEO y publicación
 
 | Página  | Sección     | Campo                                      | Fuente actual                                       | Fuente objetivo                                         | Estado de migración |
 | ------- | ----------- | ------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------- | ------------------- |
@@ -10491,7 +10507,7 @@ Existen seis situaciones:
 | Sistema | Preview     | Separación preview vs producción           | No existe                                           | `TGT-PUBLICATION.preview_channel`                       | M3                  |
 
 
-## 6. Resumen por página
+#### 6. Resumen por página
 
 | Página                 | Campos o grupos inventariados |
 | ---------------------- | ----------------------------: |
@@ -10505,7 +10521,7 @@ Existen seis situaciones:
 | `/eventos`             |                             4 |
 | `Sistema`              |                             8 |
 
-## 7. Resumen por fuente actual
+#### 7. Resumen por fuente actual
 
 | Fuente predominante | Filas |
 | ------------------- | ----: |
@@ -10515,7 +10531,7 @@ Existen seis situaciones:
 | Legacy CMS          |    27 |
 | Mixta               |     5 |
 
-### 7.1 Diagnóstico
+##### 7.1 Diagnóstico
 
 La fuente actual predominante sigue siendo el código.
 
@@ -10530,9 +10546,9 @@ Las tablas legacy aportan datos reales en algunas colecciones, pero:
 - usan campos genéricos;
 - activan fallbacks cuando falta información.
 
-## 8. Decisiones canónicas derivadas
+#### 8. Decisiones canónicas derivadas
 
-### 8.1 Lo que debe permanecer en código
+##### 8.1 Lo que debe permanecer en código
 
 Permanecerán en código:
 
@@ -10551,7 +10567,7 @@ Permanecerán en código:
 - políticas de fallback técnico;
 - restricciones visuales.
 
-### 8.2 Lo que debe ser editable desde VISO
+##### 8.2 Lo que debe ser editable desde VISO
 
 Debe ser editable:
 
@@ -10570,7 +10586,7 @@ Debe ser editable:
 - estados vacíos;
 - configuración de colecciones dentro de límites aprobados.
 
-### 8.3 Lo que no debe duplicarse en VISO
+##### 8.3 Lo que no debe duplicarse en VISO
 
 Debe provenir de su dominio canónico:
 
@@ -10584,7 +10600,7 @@ Debe provenir de su dominio canónico:
 
 VISO podrá mantener campos editoriales complementarios, pero no una copia autónoma sin relación.
 
-### 8.4 Legacy
+##### 8.4 Legacy
 
 `website_blocks` y `website_items` se clasifican como:
 
@@ -10594,11 +10610,11 @@ NO CONTRATO FINAL
 NO PROYECCIÓN PÚBLICA DEFINITIVA
 ```
 
-### 8.5 Fallbacks
+##### 8.5 Fallbacks
 
 Se deben diferenciar:
 
-#### Fallback técnico permitido
+###### Fallback técnico permitido
 
 Ejemplos:
 
@@ -10607,7 +10623,7 @@ Ejemplos:
 - servir la última publicación válida;
 - devolver 404.
 
-#### Fallback editorial prohibido
+###### Fallback editorial prohibido
 
 Ejemplos:
 
@@ -10618,9 +10634,9 @@ Ejemplos:
 - convertir `#` en destino;
 - activar seeds cuando falla Supabase.
 
-## 9. Orden recomendado de migración
+#### 9. Orden recomendado de migración
 
-### 9.1 Lote 0 — Contención
+##### 9.1 Lote 0 — Contención
 
 1. retirar instrucciones públicas;
 2. bloquear CTA `#`;
@@ -10629,7 +10645,7 @@ Ejemplos:
 5. retirar `/eventos` del sitemap mientras redirija;
 6. evitar placeholders editoriales visibles.
 
-### 9.2 Lote 1 — Global
+##### 9.2 Lote 1 — Global
 
 1. site settings;
 2. navegación;
@@ -10638,7 +10654,7 @@ Ejemplos:
 5. redes;
 6. SEO por defecto.
 
-### 9.3 Lote 2 — Home
+##### 9.3 Lote 2 — Home
 
 1. hero;
 2. intro;
@@ -10647,7 +10663,7 @@ Ejemplos:
 5. cierre ecosistema;
 6. quick cards.
 
-### 9.4 Lote 3 — Restaurantes
+##### 9.4 Lote 3 — Restaurantes
 
 1. proyección de restaurantes;
 2. listado;
@@ -10656,7 +10672,7 @@ Ejemplos:
 5. reservas;
 6. datos estructurados.
 
-### 9.5 Lote 4 — Ecosistema, servicios y empleos
+##### 9.5 Lote 4 — Ecosistema, servicios y empleos
 
 1. apps;
 2. servicios;
@@ -10664,7 +10680,7 @@ Ejemplos:
 4. formularios y destinos reales;
 5. estados vacíos.
 
-### 9.6 Lote 5 — Eventos
+##### 9.6 Lote 5 — Eventos
 
 Solo después de decidir:
 
@@ -10674,7 +10690,7 @@ o
 RETIRAR DOMINIO PÚBLICO Y CONSOLIDAR REDIRECCIONES
 ```
 
-## 10. Dependencias documentales
+#### 10. Dependencias documentales
 
 | Resultado de esta matriz               | Tareas responsables           |
 | -------------------------------------- | ----------------------------- |
@@ -10691,7 +10707,7 @@ RETIRAR DOMINIO PÚBLICO Y CONSOLIDAR REDIRECCIONES
 | Smoke test de producción               | `WEB-QA-022`                  |
 | Redirecciones                          | `WEB-PRD-016` y `WEB-GLB-010` |
 
-## 11. Registro consolidado de brechas
+#### 11. Registro consolidado de brechas
 
 Esta tarea no crea identificadores nuevos cuando la brecha ya tiene responsable documental.
 
@@ -10706,9 +10722,9 @@ Esta tarea no crea identificadores nuevos cuando la brecha ya tiene responsable 
 | Ruta Eventos contradictoria                | `WEB-GAP-063`, `WEB-GAP-105`                 | `WEB-PAG-040`, `WEB-PRD-016`                |
 | Lectura pública privilegiada               | `WEB-GAP-068`, `WEB-GAP-123`                 | `WEB-SEC-017`                               |
 
-## 12. Cambios obligatorios al plan maestro
+#### 12. Cambios obligatorios al plan maestro
 
-### 12.1 Actualizar continuidad
+##### 12.1 Actualizar continuidad
 
 Marcar:
 
@@ -10719,14 +10735,14 @@ Marcar:
 Mantener:
 
 ```text
-[ ] WEB-AUD-008 — PROPUESTA PARA APROBACIÓN
+[x] WEB-AUD-008 — APROBADA
 ```
 
-### 12.2 Adjuntar la matriz como evidencia de migración
+##### 12.2 Adjuntar la matriz como evidencia de migración
 
 `WEB-MIG-021` y `WEB-MIG-022` deberán declarar esta matriz como input obligatorio.
 
-### 12.3 No crear tablas desde esta tarea
+##### 12.3 No crear tablas desde esta tarea
 
 La taxonomía `TGT-*` es lógica.
 
@@ -10740,33 +10756,33 @@ No autoriza:
 - refactors;
 - despliegues.
 
-## 13. Criterios de aprobación
+#### 13. Criterios de aprobación
 
 `WEB-AUD-008` podrá aprobarse cuando se acepte:
 
-- [ ] la taxonomía de fuentes objetivo;
-- [ ] la taxonomía de estados;
-- [ ] la matriz global;
-- [ ] la matriz de Home;
-- [ ] la matriz de restaurantes;
-- [ ] la matriz de detalle;
-- [ ] la matriz de empleos;
-- [ ] la matriz de servicios;
-- [ ] la matriz de ecosistema;
-- [ ] la matriz de eventos;
-- [ ] la matriz de sistema y SEO;
-- [ ] la separación código vs contenido;
-- [ ] el orden de migración;
-- [ ] que `website_blocks` y `website_items` son legacy;
-- [ ] que esta tarea no implementa cambios físicos.
+- [x] la taxonomía de fuentes objetivo;
+- [x] la taxonomía de estados;
+- [x] la matriz global;
+- [x] la matriz de Home;
+- [x] la matriz de restaurantes;
+- [x] la matriz de detalle;
+- [x] la matriz de empleos;
+- [x] la matriz de servicios;
+- [x] la matriz de ecosistema;
+- [x] la matriz de eventos;
+- [x] la matriz de sistema y SEO;
+- [x] la separación código vs contenido;
+- [x] el orden de migración;
+- [x] que `website_blocks` y `website_items` son legacy;
+- [x] que esta tarea no implementa cambios físicos.
 
-## 14. Estado de cierre propuesto
+#### 14. Estado de cierre propuesto
 
 ```text
-WEB-AUD-008 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-008 — APROBADA
 ```
 
-### 14.1 No ejecutar todavía
+##### 14.1 No ejecutar todavía
 
 - no migrar copy;
 - no modificar componentes;
@@ -10778,19 +10794,18 @@ WEB-AUD-008 — PROPUESTA PARA APROBACIÓN
 - no crear schemas;
 - no aplicar migraciones.
 
-### 14.2 Continuidad después de aprobación
+##### 14.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-007 — Auditar contenido en producción
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
-[ ] WEB-AUD-009 — Crear línea base visual
+[x] WEB-AUD-009 — Crear línea base visual
 ```
 
-La marca de `WEB-AUD-008` solo se aplicará después de aprobación explícita.
 
-## 15. Evidencia técnica
+#### 15. Evidencia técnica
 
-### 15.1 Código público
+##### 15.1 Código público
 
 - `src/app/layout.tsx`;
 - `src/app/page.tsx`;
@@ -10811,7 +10826,7 @@ La marca de `WEB-AUD-008` solo se aplicará después de aprobación explícita.
 - `src/lib/content.ts`;
 - `src/lib/supabase.ts`.
 
-### 15.2 Datos vigentes
+##### 15.2 Datos vigentes
 
 Se verificaron en modo de solo lectura:
 
@@ -10824,25 +10839,25 @@ Se verificaron en modo de solo lectura:
 - Saudo sin medio;
 - galerías legacy sin medios.
 
-## 16. Registro de cambios
+#### 16. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                     | Estado            |
 | -------------- | ---------- | ------------------------------------------ | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación de matriz editable vs hardcodeado | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación de matriz editable vs hardcodeado | Aprobada |
 
 
-# WEB-AUD-009 — Línea base visual canónica de producción
+### WEB-AUD-009 — Línea base visual canónica de producción
 
 > Captura reproducible del estado visual vigente de `https://www.ventogroup.co` en desktop, tablet y móvil.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                       | Valor                                            |
 | --------------------------- | ------------------------------------------------ |
 | Identificador               | `WEB-AUD-009`                                    |
 | Nombre                      | Crear línea base visual                          |
 | Fase                        | FASE 1 — Auditoría y línea base                  |
-| Estado                      | **PROPUESTA PARA APROBACIÓN**                    |
+| Estado                      | **APROBADA**                    |
 | Fecha de captura            | `2026-07-23T23:34:01Z`                           |
 | Dominio capturado           | `https://www.ventogroup.co`                      |
 | Método                      | Playwright Chromium en GitHub Actions            |
@@ -10856,17 +10871,17 @@ Se verificaron en modo de solo lectura:
 | Cambios en Supabase         | Ninguno                                          |
 | Próxima tarea               | `WEB-AUD-010 — Crear línea base de rendimiento`  |
 
-### 0.1 Continuidad
+##### 0.1 Continuidad
 
 ```text
 [x] WEB-AUD-007 — Auditar contenido en producción
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
-[ ] WEB-AUD-009 — Crear línea base visual
+[x] WEB-AUD-009 — Crear línea base visual
 ```
 
 `WEB-ARC-005` continúa pendiente y no se considera aprobada.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Conservar evidencia visual verificable del sitio público antes de iniciar su reconstrucción.
 
@@ -10884,7 +10899,7 @@ La línea base debe permitir comparar posteriormente:
 - redirecciones;
 - página 404.
 
-## 2. Viewports canónicos
+#### 2. Viewports canónicos
 
 | Viewport | Dimensiones CSS | Uso                            |
 | -------- | --------------: | ------------------------------ |
@@ -10894,9 +10909,9 @@ La línea base debe permitir comparar posteriormente:
 
 Las capturas son de página completa. La altura final depende del contenido de cada ruta.
 
-## 3. Cobertura
+#### 3. Cobertura
 
-### 3.1 Rutas capturadas
+##### 3.1 Rutas capturadas
 
 | Ruta solicitada                 | HTTP | Ruta final                      | Placeholders visibles | Fragmentos internos detectados |
 | ------------------------------- | ---: | ------------------------------- | --------------------: | -----------------------------: |
@@ -10911,7 +10926,7 @@ Las capturas son de página completa. La altura final depende del contenido de c
 | `/eventos`                      |  200 | `/restaurantes`                 |                     3 |                              0 |
 | `/ruta-inexistente-web-aud-009` |  404 | `/ruta-inexistente-web-aud-009` |                     0 |                              0 |
 
-### 3.2 Estados adicionales
+##### 3.2 Estados adicionales
 
 Se capturaron:
 
@@ -10924,7 +10939,7 @@ Se capturaron:
 - placeholders renderizados por `MediaSlot`;
 - copy interno visible en detalles de restaurantes.
 
-## 4. Convención de archivos
+#### 4. Convención de archivos
 
 ```text
 <viewport>__<ruta>.png
@@ -10941,9 +10956,9 @@ mobile__restaurante-vento-cafe.png
 mobile__menu-open.png
 ```
 
-## 5. Resultado visual general
+#### 5. Resultado visual general
 
-### 5.1 Home
+##### 5.1 Home
 
 La Home presenta el problema visual más severo de la línea base:
 
@@ -10963,7 +10978,7 @@ PERO VISUALMENTE INCOMPLETA
 
 No debe utilizarse como referencia estética objetivo. Solo representa el estado previo.
 
-### 5.2 Restaurantes
+##### 5.2 Restaurantes
 
 La página de restaurantes sí presenta una estructura reconocible:
 
@@ -10983,7 +10998,7 @@ Sin embargo:
 - existen grandes zonas de baja densidad;
 - la composición no tiene continuidad visual entre secciones.
 
-### 5.3 Detalles de restaurantes
+##### 5.3 Detalles de restaurantes
 
 Las tres páginas existen y responden `200`:
 
@@ -11009,7 +11024,7 @@ Problemas particulares:
 - Saudo no tiene medio y muestra un placeholder;
 - la galería almacenada no se representa como galería real.
 
-### 5.4 Empleos
+##### 5.4 Empleos
 
 La ruta responde `200`, pero visualmente funciona como un estado provisional:
 
@@ -11026,7 +11041,7 @@ PÁGINA FUNCIONALMENTE VACÍA
 DISFRAZADA MEDIANTE PLACEHOLDER PUBLICADO
 ```
 
-### 5.5 Servicios
+##### 5.5 Servicios
 
 La ruta presenta:
 
@@ -11046,7 +11061,7 @@ Problemas:
 - gran área vacía en el listado;
 - los pilares tienen más peso visual que el contenido real administrable.
 
-### 5.6 Ecosistema
+##### 5.6 Ecosistema
 
 La página muestra tres aplicaciones reales nominalmente, pero su estado visual es provisional:
 
@@ -11057,7 +11072,7 @@ La página muestra tres aplicaciones reales nominalmente, pero su estado visual 
 - destinos todavía no funcionales;
 - gran espacio vacío antes del footer.
 
-### 5.7 Eventos
+##### 5.7 Eventos
 
 La captura solicitada para `/eventos` termina en `/restaurantes`.
 
@@ -11073,7 +11088,7 @@ HTTP final 200
 
 No existe una línea base visual propia de Eventos porque la ruta no tiene página pública autónoma.
 
-### 5.8 Página 404
+##### 5.8 Página 404
 
 La ruta inexistente responde correctamente `404`, pero utiliza la pantalla genérica:
 
@@ -11092,9 +11107,9 @@ No contiene:
 - búsqueda;
 - enlace al inicio.
 
-## 6. Menús
+#### 6. Menús
 
-### 6.1 Desktop
+##### 6.1 Desktop
 
 El menú overlay se abre y conserva:
 
@@ -11111,7 +11126,7 @@ Observaciones:
 - la jerarquía entre navegación y highlights todavía es débil;
 - el menú reproduce contenido hardcodeado.
 
-### 6.2 Tablet
+##### 6.2 Tablet
 
 El menú se adapta sin desbordamiento crítico observable.
 
@@ -11122,7 +11137,7 @@ Problemas:
 - footer y navegación usan tipografía pequeña frente al viewport;
 - no existe una composición específica de tablet claramente diferenciada.
 
-### 6.3 Móvil
+##### 6.3 Móvil
 
 El menú móvil abre y permite ver las opciones principales.
 
@@ -11134,7 +11149,7 @@ Problemas:
 - el botón de cierre queda pequeño frente al encabezado;
 - necesita una jerarquía móvil dedicada, no una simple compactación del overlay.
 
-## 7. Footer
+#### 7. Footer
 
 El footer está presente en las nueve rutas que terminan renderizando una página del sitio.
 
@@ -11158,9 +11173,9 @@ Problemas visuales:
 - las tipografías son pequeñas en tablet y móvil;
 - el cierre visual no compensa las grandes áreas vacías que lo preceden.
 
-## 8. Estados vacíos y placeholders
+#### 8. Estados vacíos y placeholders
 
-### 8.1 Conteo observado por página
+##### 8.1 Conteo observado por página
 
 | Página final |                                     Placeholders por viewport |
 | ------------ | ------------------------------------------------------------: |
@@ -11177,7 +11192,7 @@ Problemas visuales:
 
 El conteo se repite en desktop, tablet y móvil.
 
-### 8.2 Textos internos visibles detectados
+##### 8.2 Textos internos visibles detectados
 
 En los detalles de restaurantes se capturaron:
 
@@ -11188,7 +11203,7 @@ En los detalles de restaurantes se capturaron:
 
 Estos textos no son estados vacíos aceptables. Son instrucciones de administración filtradas a producción.
 
-### 8.3 Regla canónica
+##### 8.3 Regla canónica
 
 Un estado vacío público deberá:
 
@@ -11200,9 +11215,9 @@ Un estado vacío público deberá:
 - no mostrar instrucciones para VISO;
 - no usar placeholders como contenido publicado.
 
-## 9. Responsive
+#### 9. Responsive
 
-### 9.1 Hallazgos positivos
+##### 9.1 Hallazgos positivos
 
 - no se observaron desbordamientos horizontales críticos en las capturas;
 - las rutas principales renderizan en los tres viewports;
@@ -11210,7 +11225,7 @@ Un estado vacío público deberá:
 - las tarjetas pasan a una distribución vertical;
 - los logos e imágenes existentes se contienen dentro de sus áreas.
 
-### 9.2 Hallazgos críticos
+##### 9.2 Hallazgos críticos
 
 - las áreas vacías se amplifican en móvil y tablet;
 - el footer adquiere un peso desproporcionado en pantallas pequeñas;
@@ -11220,9 +11235,9 @@ Un estado vacío público deberá:
 - la Home queda prácticamente vacía después del hero;
 - el menú móvil contiene demasiados niveles simultáneos.
 
-## 10. Integridad de la ejecución
+#### 10. Integridad de la ejecución
 
-### 10.1 Navegación
+##### 10.1 Navegación
 
 - 30 navegaciones completadas;
 - 27 respuestas `200` de rutas que renderizan página;
@@ -11230,13 +11245,13 @@ Un estado vacío público deberá:
 - 0 errores de navegación;
 - `/eventos` redirigió de forma consistente en los tres viewports.
 
-### 10.2 Consola
+##### 10.2 Consola
 
 Solo se registró el error esperado de recurso `404` en la ruta inexistente, una vez por viewport.
 
 No se detectaron errores de consola adicionales durante la captura automatizada.
 
-### 10.3 Limitaciones
+##### 10.3 Limitaciones
 
 La captura no demuestra por sí sola:
 
@@ -11252,7 +11267,7 @@ La captura no demuestra por sí sola:
 
 Esos puntos corresponden a QA, accesibilidad y rendimiento posteriores.
 
-## 11. Línea base visual resumida
+#### 11. Línea base visual resumida
 
 | Superficie   | Desktop               | Tablet                | Móvil                 | Estado               |
 | ------------ | --------------------- | --------------------- | --------------------- | -------------------- |
@@ -11269,26 +11284,26 @@ Esos puntos corresponden a QA, accesibilidad y rendimiento posteriores.
 | Footer       | Operativo             | Denso                 | Desproporcionado      | Requiere rediseño    |
 | 404          | Genérico              | Genérico              | Genérico              | No diseñado          |
 
-## 12. Brechas canónicas
+#### 12. Brechas canónicas
 
 No se crean identificadores duplicados cuando el hallazgo ya tiene tarea responsable.
 
 | Brecha        | Descripción                                                   | Severidad | Responsable                                  |
 | ------------- | ------------------------------------------------------------- | --------- | -------------------------------------------- |
 | `WEB-GAP-168` | Home presenta una gran superficie vacía en los tres viewports | Crítica   | `WEB-PAG-001` a `WEB-PAG-006`, `WEB-MIG-021` |
-| `WEB-GAP-169` | No existe una línea visual coherente entre secciones públicas | Alta      | `WEB-DS-001` a `WEB-DS-012`, `WEB-PAG-*`     |
+| `WEB-GAP-169` | No existe una línea visual coherente entre secciones públicas | Alta      | `WEB-DS-001` a `WEB-DS-012`, tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`     |
 | `WEB-GAP-170` | Los estados vacíos se expresan como placeholders técnicos     | Crítica   | `WEB-QA-021`, `WEB-QA-022`, `WEB-EDT-007`    |
-| `WEB-GAP-171` | El footer domina excesivamente la composición móvil           | Alta      | `WEB-GLB-005`, `WEB-GLB-006`, `WEB-RSP-*`    |
-| `WEB-GAP-172` | El menú móvil carece de jerarquía específica                  | Alta      | `WEB-GLB-003`, `WEB-GLB-004`, `WEB-RSP-*`    |
+| `WEB-GAP-171` | El footer domina excesivamente la composición móvil           | Alta      | `WEB-GLB-005`, `WEB-GLB-006`, tareas responsive identificadas en `WEB-AUD-012`    |
+| `WEB-GAP-172` | El menú móvil carece de jerarquía específica                  | Alta      | `WEB-GLB-003`, `WEB-GLB-004`, tareas responsive identificadas en `WEB-AUD-012`    |
 | `WEB-GAP-173` | La 404 usa la pantalla genérica no localizada                 | Media     | `WEB-PAG-041`, `WEB-QA-022`                  |
-| `WEB-GAP-174` | Detalles de restaurantes tienen excesivo vacío vertical       | Alta      | `WEB-PAG-010` a `WEB-PAG-018`, `WEB-RSP-*`   |
+| `WEB-GAP-174` | Detalles de restaurantes tienen excesivo vacío vertical       | Alta      | `WEB-PAG-010` a `WEB-PAG-018`, tareas responsive identificadas en `WEB-AUD-012`   |
 | `WEB-GAP-175` | Logos operativos sustituyen fotografía editorial              | Alta      | `WEB-MED-*`, `WEB-ARC-007`                   |
 | `WEB-GAP-176` | No existe página visual propia para Eventos                   | Alta      | `WEB-PAG-040`, `WEB-PRD-016`                 |
-| `WEB-GAP-177` | Tablet hereda composiciones sin adaptación específica         | Media     | `WEB-RSP-*`, `WEB-QA-*`                      |
+| `WEB-GAP-177` | Tablet hereda composiciones sin adaptación específica         | Media     | tareas responsive identificadas en `WEB-AUD-012`, `WEB-QA-*`                      |
 
-## 13. Decisiones derivadas
+#### 13. Decisiones derivadas
 
-### 13.1 La línea base no es el diseño objetivo
+##### 13.1 La línea base no es el diseño objetivo
 
 Estas capturas deberán conservarse como evidencia histórica.
 
@@ -11301,7 +11316,7 @@ No autorizan:
 - utilizar logos como hero editorial;
 - considerar una ruta `200` como página completa.
 
-### 13.2 Regresión visual futura
+##### 13.2 Regresión visual futura
 
 Las pruebas futuras deberán comparar contra:
 
@@ -11312,7 +11327,7 @@ Las pruebas futuras deberán comparar contra:
 
 La aprobación visual no se basará únicamente en “parecerse” a esta captura.
 
-### 13.3 Viewports mínimos futuros
+##### 13.3 Viewports mínimos futuros
 
 Se mantienen como mínimo:
 
@@ -11330,9 +11345,9 @@ Se agregarán después:
 - móvil landscape;
 - tablet landscape.
 
-## 14. Cambios obligatorios al plan maestro
+#### 14. Cambios obligatorios al plan maestro
 
-### 14.1 Actualizar continuidad
+##### 14.1 Actualizar continuidad
 
 Marcar:
 
@@ -11343,10 +11358,10 @@ Marcar:
 Mantener:
 
 ```text
-[ ] WEB-AUD-009 — PROPUESTA PARA APROBACIÓN
+[x] WEB-AUD-009 — APROBADA
 ```
 
-### 14.2 Usar el paquete como evidencia
+##### 14.2 Usar el paquete como evidencia
 
 La carpeta de evidencia deberá considerarse input obligatorio para:
 
@@ -11356,7 +11371,7 @@ La carpeta de evidencia deberá considerarse input obligatorio para:
 - migración;
 - validación previa al lanzamiento.
 
-### 14.3 No conservar el workflow temporal
+##### 14.3 No conservar el workflow temporal
 
 El PR técnico de captura es temporal y no debe fusionarse en `main`.
 
@@ -11366,30 +11381,30 @@ Después de descargar y validar el artifact deberá:
 - eliminarse la rama temporal;
 - implementarse posteriormente una solución canónica de visual regression dentro de la fase QA.
 
-## 15. Criterios de aprobación
+#### 15. Criterios de aprobación
 
 `WEB-AUD-009` podrá aprobarse cuando se acepte:
 
-- [ ] cobertura de 10 rutas por viewport;
-- [ ] viewports desktop, tablet y móvil;
-- [ ] capturas de menú abierto;
-- [ ] capturas de footer;
-- [ ] captura de 404;
-- [ ] diagnóstico de Home;
-- [ ] diagnóstico de páginas internas;
-- [ ] diagnóstico responsive;
-- [ ] inventario de placeholders;
-- [ ] brechas `WEB-GAP-168` a `WEB-GAP-177`;
-- [ ] conservación del ZIP como evidencia histórica;
-- [ ] que esta tarea no define el diseño objetivo.
+- [x] cobertura de 10 rutas por viewport;
+- [x] viewports desktop, tablet y móvil;
+- [x] capturas de menú abierto;
+- [x] capturas de footer;
+- [x] captura de 404;
+- [x] diagnóstico de Home;
+- [x] diagnóstico de páginas internas;
+- [x] diagnóstico responsive;
+- [x] inventario de placeholders;
+- [x] brechas `WEB-GAP-168` a `WEB-GAP-177`;
+- [x] conservación del ZIP como evidencia histórica;
+- [x] que esta tarea no define el diseño objetivo.
 
-## 16. Estado de cierre propuesto
+#### 16. Estado de cierre propuesto
 
 ```text
-WEB-AUD-009 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-009 — APROBADA
 ```
 
-### 16.1 No ejecutar todavía
+##### 16.1 No ejecutar todavía
 
 - no rediseñar páginas;
 - no modificar CSS;
@@ -11400,23 +11415,22 @@ WEB-AUD-009 — PROPUESTA PARA APROBACIÓN
 - no cambiar menú;
 - no implementar visual regression definitiva.
 
-### 16.2 Continuidad después de aprobación
+##### 16.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
 [x] WEB-AUD-009 — Crear línea base visual
-[ ] WEB-AUD-010 — Crear línea base de rendimiento
+[x] WEB-AUD-010 — Crear línea base de rendimiento
 ```
 
-La marca de `WEB-AUD-009` solo se aplicará después de aprobación explícita.
 
-## 17. Evidencias entregadas
+#### 17. Evidencias entregadas
 
-### 17.1 Documento
+##### 17.1 Documento
 
 - `WEB-AUD-009_LINEA_BASE_VISUAL_PRODUCCION.md`.
 
-### 17.2 Paquete visual
+##### 17.2 Paquete visual
 
 - `WEB-AUD-009_EVIDENCIA_VISUAL_PRODUCCION.zip`.
 
@@ -11428,18 +11442,18 @@ Incluye:
 - contact sheets desktop, tablet y móvil;
 - `report.json`.
 
-## 18. Registro de cambios
+#### 18. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                               | Estado            |
 | -------------- | ---------- | ---------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Captura automatizada y análisis visual de producción | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Captura automatizada y análisis visual de producción | Aprobada |
 
 
-# WEB-AUD-010 — Línea base canónica de rendimiento
+### WEB-AUD-010 — Línea base canónica de rendimiento
 
 > Auditoría de laboratorio y transferencia de la web pública desplegada en `https://www.ventogroup.co`.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                         | Valor                                                                                        |
 | ----------------------------- | -------------------------------------------------------------------------------------------- |
@@ -11460,13 +11474,13 @@ Incluye:
 | Cambios en Supabase           | Ninguno                                                                                      |
 | Próxima tarea                 | `WEB-AUD-011 — Crear línea base de accesibilidad`                                            |
 
-### 0.1 Continuidad
+##### 0.1 Continuidad
 
 `WEB-AUD-009` queda aprobada documentalmente.
 
 `WEB-AUD-010` permanece en propuesta hasta aprobación explícita.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Establecer una línea base verificable de:
 
@@ -11487,9 +11501,9 @@ La auditoría separa obligatoriamente:
 4. políticas de caché;
 5. fallos de medición causados por el propio renderizado.
 
-## 2. Metodología
+#### 2. Metodología
 
-### 2.1 Rutas
+##### 2.1 Rutas
 
 - `/`;
 - `/restaurantes`;
@@ -11502,12 +11516,12 @@ La auditoría separa obligatoriamente:
 - `/eventos`;
 - una ruta 404 controlada.
 
-### 2.2 Modos
+##### 2.2 Modos
 
 - móvil: configuración Lighthouse móvil;
 - desktop: preset Lighthouse desktop.
 
-### 2.3 Evidencia
+##### 2.3 Evidencia
 
 Se conservaron:
 
@@ -11519,9 +11533,9 @@ Se conservaron:
 - diagnóstico de caché;
 - registro de fallos de medición.
 
-## 3. Resultado ejecutivo
+#### 3. Resultado ejecutivo
 
-### 3.1 Diagnóstico general
+##### 3.1 Diagnóstico general
 
 | Área                          | Estado                                | Resultado                                                                                |
 | ----------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -11540,13 +11554,13 @@ Se conservaron:
 | Caché medios Supabase         | 🟡                                     | Logos con TTL de 1 hora; Lighthouse estima ahorro repetido de ~53 KB                     |
 | Core Web Vitals de campo      | ⚪ Sin evidencia suficiente            | No se obtuvo una muestra pública verificable; requiere Search Console, CrUX o RUM        |
 
-### 3.2 Conclusión principal
+##### 3.2 Conclusión principal
 
 El sitio parece liviano en bytes porque todavía carece de medios editoriales reales. Esto no equivale a una arquitectura de rendimiento validada.
 
 El problema principal no es el peso total actual, sino que numerosas páginas no producen un FCP o LCP medible de forma consistente. Los scores válidos de Restaurantes no representan a todo el sitio.
 
-## 4. Lighthouse móvil
+#### 4. Lighthouse móvil
 
 | Página       | URL final                                                | Performance |    FCP |    LCP |  CLS |   TBT | Transferencia | Estado                   |
 | ------------ | -------------------------------------------------------- | ----------: | -----: | -----: | ---: | ----: | ------------: | ------------------------ |
@@ -11561,7 +11575,7 @@ El problema principal no es el peso total actual, sino que numerosas páginas no
 | Eventos      | `https://www.ventogroup.co/restaurantes`                 |          95 | 907 ms | 3.01 s |    0 | 41 ms |      335.5 KB | OK                       |
 | 404          | `https://www.ventogroup.co/ruta-inexistente-web-aud-010` |  NO MEDIBLE |      — |      — |    — |     — |        0.0 KB | ERRORED_DOCUMENT_REQUEST |
 
-### 4.1 Medición móvil válida de referencia
+##### 4.1 Medición móvil válida de referencia
 
 `/restaurantes`:
 
@@ -11582,7 +11596,7 @@ Resultado:
 - TBT es bajo;
 - la medición no valida INP de campo.
 
-### 4.2 Impacto de la redirección de Eventos
+##### 4.2 Impacto de la redirección de Eventos
 
 | Métrica móvil | Restaurantes directo | Eventos → Restaurantes |
 | ------------- | -------------------: | ---------------------: |
@@ -11593,7 +11607,7 @@ Resultado:
 
 La redirección incrementa el LCP observado y agrega navegación sin aportar contenido propio.
 
-## 5. Lighthouse desktop
+#### 5. Lighthouse desktop
 
 | Página       | URL final                                                | Performance |    FCP |    LCP |  CLS |  TBT | Transferencia | Estado                   |
 | ------------ | -------------------------------------------------------- | ----------: | -----: | -----: | ---: | ---: | ------------: | ------------------------ |
@@ -11608,7 +11622,7 @@ La redirección incrementa el LCP observado y agrega navegación sin aportar con
 | Eventos      | `https://www.ventogroup.co/restaurantes`                 |         100 | 249 ms | 679 ms |    0 | 0 ms |      335.5 KB | OK                       |
 | 404          | `https://www.ventogroup.co/ruta-inexistente-web-aud-010` |  NO MEDIBLE |      — |      — |    — |    — |        0.0 KB | ERRORED_DOCUMENT_REQUEST |
 
-### 5.1 Medición desktop válida de referencia
+##### 5.1 Medición desktop válida de referencia
 
 | Métrica     | Resultado |
 | ----------- | --------: |
@@ -11621,9 +11635,9 @@ La redirección incrementa el LCP observado y agrega navegación sin aportar con
 
 Desktop no es actualmente el riesgo principal. La puerta de calidad debe priorizar móvil.
 
-## 6. Fallos de medición
+#### 6. Fallos de medición
 
-### 6.1 `NO_FCP`
+##### 6.1 `NO_FCP`
 
 Se presentó en:
 
@@ -11642,7 +11656,7 @@ Debe investigarse:
 - observadores que no activan bajo automatización;
 - estados vacíos sin candidato visual.
 
-### 6.2 `NO_LCP`
+##### 6.2 `NO_LCP`
 
 Se presentó en:
 
@@ -11651,11 +11665,11 @@ Se presentó en:
 
 Estas páginas transfieren recursos y producen FCP, pero no presentan un candidato LCP medible. Esto invalida el score general de Performance.
 
-### 6.3 404
+##### 6.3 404
 
 Lighthouse marca la ruta 404 como `ERRORED_DOCUMENT_REQUEST` por su status HTTP. El status es correcto; su calidad visual y accesible deberá probarse fuera del score convencional.
 
-### 6.4 Regla canónica
+##### 6.4 Regla canónica
 
 ```text
 NO FCP O NO LCP
@@ -11665,13 +11679,13 @@ PERFORMANCE APROBADA
 
 Toda ruta prioritaria deberá producir métricas Lighthouse completas antes del lanzamiento.
 
-## 7. Core Web Vitals
+#### 7. Core Web Vitals
 
-### 7.1 Laboratorio
+##### 7.1 Laboratorio
 
 Lighthouse aporta LCP, CLS, TBT, FCP y Speed Index. TBT es una señal de laboratorio; no sustituye INP de campo.
 
-### 7.2 Campo
+##### 7.2 Campo
 
 No se obtuvo una muestra pública verificable de CrUX durante esta auditoría.
 
@@ -11685,7 +11699,7 @@ No se obtuvo una muestra pública verificable de CrUX durante esta auditoría.
 
 Esto no significa que las métricas sean buenas o malas. Significa que no pueden afirmarse todavía.
 
-### 7.3 Tarea nueva necesaria
+##### 7.3 Tarea nueva necesaria
 
 ```text
 [ ] WEB-PERF-008 — Implementar medición de campo de Core Web Vitals
@@ -11704,7 +11718,7 @@ Alcance:
 - dashboard y alertas;
 - vínculo con `WEB-OPS-006`.
 
-## 8. Transferencia y requests
+#### 8. Transferencia y requests
 
 Solo se agregan reportes con inventario de red no vacío.
 
@@ -11713,9 +11727,9 @@ Solo se agregan reportes con inventario de red no vacío.
 | Móvil   |                       5 |               341.0 KB | 335.4 KB–344.9 KB |            161.4 KB | 157.5 KB–164.1 KB |           69.6 KB |              42.2 |
 | Desktop |                       6 |               329.0 KB | 268.6 KB–344.9 KB |            160.8 KB | 157.5 KB–164.1 KB |           58.8 KB |              41.3 |
 
-## 9. JavaScript enviado
+#### 9. JavaScript enviado
 
-### 9.1 Página representativa
+##### 9.1 Página representativa
 
 | Campo            |    Móvil |  Desktop |
 | ---------------- | -------: | -------: |
@@ -11733,7 +11747,7 @@ Recursos principales:
 
 `WEB-PERF-005` deberá definir presupuestos de JavaScript inicial, por ruta, main thread, hidratación y terceros.
 
-## 10. Imágenes
+#### 10. Imágenes
 
 En las páginas de restaurantes se transfieren cerca de 71 KB:
 
@@ -11747,7 +11761,7 @@ El peso es artificialmente bajo porque no existen hero images, galerías, banner
 
 `WEB-PERF-003` deberá exigir formatos modernos, variantes responsive, dimensiones, focal point, preload exclusivo del LCP, lazy loading, compresión y límites por slot.
 
-## 11. Videos
+#### 11. Videos
 
 | Campo                         | Resultado |
 | ----------------------------- | --------: |
@@ -11758,7 +11772,7 @@ El peso es artificialmente bajo porque no existen hero images, galerías, banner
 
 No es posible aprobar `WEB-PERF-004` con esta línea base.
 
-## 12. Fuentes y CSS
+#### 12. Fuentes y CSS
 
 En `/restaurantes`:
 
@@ -11769,9 +11783,9 @@ En `/restaurantes`:
 
 Las fuentes constituyen un bloque relevante del peso inicial y deberán mantenerse limitadas a subsets y pesos necesarios.
 
-## 13. Caché
+#### 13. Caché
 
-### 13.1 HTML estático
+##### 13.1 HTML estático
 
 Inicio, Restaurantes, Servicios, Empleos y Ecosistema:
 
@@ -11783,7 +11797,7 @@ age: aproximadamente 1.490–1.846 segundos
 
 Vercel conserva respuesta en edge, pero el navegador debe revalidar.
 
-### 13.2 Detalles de restaurante
+##### 13.2 Detalles de restaurante
 
 Vento Café, Saudo y Molka:
 
@@ -11795,17 +11809,17 @@ age: 0
 
 Esto coincide con `force-dynamic` y evita cachear páginas que solo leen contenido publicado. La arquitectura objetivo deberá usar publicación inmutable, revalidación por evento e invalidación selectiva.
 
-### 13.3 Eventos
+##### 13.3 Eventos
 
 `/eventos` responde 307 y luego carga Restaurantes. Ambas respuestas fueron HIT de Vercel, pero la redirección agrega navegación.
 
-### 13.4 Medios Supabase
+##### 13.4 Medios Supabase
 
 Los logos de Molka y Vento Café presentan TTL de 1 hora. Lighthouse estima ~53,4 KB de oportunidad de caché en visitas repetidas.
 
 `WEB-PERF-006` y `WEB-MED-014` deberán definir versionado por URL, TTL, invalidación, transformación y assets web independientes de logos operativos.
 
-## 14. Presupuestos iniciales propuestos
+#### 14. Presupuestos iniciales propuestos
 
 | Métrica                         |                                      Presupuesto inicial |
 | ------------------------------- | -------------------------------------------------------: |
@@ -11824,7 +11838,7 @@ Los logos de Molka y Vento Café presentan TTL de 1 hora. Lighthouse estima ~53,
 
 Se deberán revisar después de incorporar contenido visual real.
 
-## 15. Brechas canónicas
+#### 15. Brechas canónicas
 
 | Brecha        | Descripción                                                                          | Severidad | Tarea responsable               |
 | ------------- | ------------------------------------------------------------------------------------ | --------- | ------------------------------- |
@@ -11839,16 +11853,16 @@ Se deberán revisar después de incorporar contenido visual real.
 | `WEB-GAP-186` | Eventos agrega una redirección antes de servir Restaurantes                          | Media     | `WEB-PRD-016`, `WEB-GLB-010`    |
 | `WEB-GAP-187` | Animaciones o estados iniciales pueden ocultar todo el contenido durante la medición | Crítica   | `WEB-QA-014`, `WEB-PERF-007`    |
 
-## 16. Cambios obligatorios al plan maestro
+#### 16. Cambios obligatorios al plan maestro
 
-### 16.1 Actualizar continuidad
+##### 16.1 Actualizar continuidad
 
 ```text
 [x] WEB-AUD-009 — Crear línea base visual
-[ ] WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
+[x] WEB-AUD-010 — APROBADA
 ```
 
-### 16.2 Agregar después de `WEB-PERF-007`
+##### 16.2 Agregar después de `WEB-PERF-007`
 
 ```text
 [ ] WEB-PERF-008 — Implementar medición de campo de Core Web Vitals
@@ -11864,7 +11878,7 @@ Se deberán revisar después de incorporar contenido visual real.
   - alertas.
 ```
 
-### 16.3 Ampliar `WEB-PERF-007`
+##### 16.3 Ampliar `WEB-PERF-007`
 
 Debe exigir:
 
@@ -11876,26 +11890,26 @@ Debe exigir:
 - ejecución en staging;
 - repeticiones para controlar variabilidad.
 
-## 17. Criterios de aprobación
+#### 17. Criterios de aprobación
 
-- [ ] se reconoce que solo Restaurantes obtuvo un score independiente completo;
-- [ ] se acepta LCP móvil de 2,74 s como baseline no conforme;
-- [ ] se aceptan `NO_FCP` y `NO_LCP` como brechas críticas;
-- [ ] se acepta JavaScript de 161–168 KB;
-- [ ] se acepta que no existen videos reales;
-- [ ] se acepta que el peso de imágenes no representa el diseño futuro;
-- [ ] se acepta el diagnóstico de caché;
-- [ ] se agrega `WEB-PERF-008`;
-- [ ] ninguna métrica de campo se declara aprobada sin evidencia;
-- [ ] no se ejecutan optimizaciones todavía.
+- [x] se reconoce que solo Restaurantes obtuvo un score independiente completo;
+- [x] se acepta LCP móvil de 2,74 s como baseline no conforme;
+- [x] se aceptan `NO_FCP` y `NO_LCP` como brechas críticas;
+- [x] se acepta JavaScript de 161–168 KB;
+- [x] se acepta que no existen videos reales;
+- [x] se acepta que el peso de imágenes no representa el diseño futuro;
+- [x] se acepta el diagnóstico de caché;
+- [x] se agrega `WEB-PERF-008`;
+- [x] ninguna métrica de campo se declara aprobada sin evidencia;
+- [x] no se ejecutan optimizaciones todavía.
 
-## 18. Estado de cierre propuesto
+#### 18. Estado de cierre propuesto
 
 ```text
-WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-010 — APROBADA
 ```
 
-### 18.1 No ejecutar todavía
+##### 18.1 No ejecutar todavía
 
 - no modificar animaciones;
 - no cambiar caché;
@@ -11906,14 +11920,14 @@ WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
 - no modificar Vercel;
 - no modificar Supabase.
 
-### 18.2 Continuidad después de aprobación
+##### 18.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-010 — Crear línea base de rendimiento
-[ ] WEB-AUD-011 — Crear línea base de accesibilidad
+[x] WEB-AUD-011 — Crear línea base de accesibilidad
 ```
 
-## 19. Evidencia
+#### 19. Evidencia
 
 - artifact `web-aud-010-performance-baseline`;
 - 20 reportes Lighthouse JSON;
@@ -11922,18 +11936,18 @@ WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
 - PR técnico temporal no fusionable;
 - commit `5590dfc5173fb0445e54848ec66c54578a1291d4`.
 
-## 20. Registro de cambios
+#### 20. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                                           | Estado            |
 | -------------- | ---------- | ---------------------------------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Línea base Lighthouse, transferencia, medios, JavaScript y caché | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Línea base Lighthouse, transferencia, medios, JavaScript y caché | Aprobada |
 
 
-# WEB-AUD-011 — Línea base canónica de accesibilidad
+### WEB-AUD-011 — Línea base canónica de accesibilidad
 
 > Auditoría reproducible de contraste, navegación por teclado, representación para lectores de pantalla, reducción de movimiento, textos alternativos y estructura semántica de la web pública en producción.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                 | Valor                                             |
 | --------------------- | ------------------------------------------------- |
@@ -11954,7 +11968,7 @@ WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
 | Cambios en producción | Ninguno                                           |
 | Próxima tarea         | `WEB-AUD-012 — Consolidar brechas`                |
 
-### 0.1 Continuidad
+##### 0.1 Continuidad
 
 ```text
 [x] WEB-AUD-001 — Inventariar todas las rutas públicas
@@ -11967,12 +11981,12 @@ WEB-AUD-010 — PROPUESTA PARA APROBACIÓN
 [x] WEB-AUD-008 — Crear matriz editable vs hardcodeado
 [x] WEB-AUD-009 — Crear línea base visual
 [x] WEB-AUD-010 — Crear línea base de rendimiento
-[ ] WEB-AUD-011 — Crear línea base de accesibilidad
+[x] WEB-AUD-011 — Crear línea base de accesibilidad
 ```
 
 `WEB-ARC-005` continúa pendiente y no se considera aprobada.
 
-## 1. Objetivo
+#### 1. Objetivo
 
 Establecer una línea base verificable de accesibilidad antes de reconstruir la web y VISO Web Studio.
 
@@ -11989,9 +12003,9 @@ La auditoría debe responder:
 9. si los landmarks son correctos;
 10. qué brechas deben resolverse antes del lanzamiento.
 
-## 2. Metodología
+#### 2. Metodología
 
-### 2.1 Auditoría automática
+##### 2.1 Auditoría automática
 
 Se ejecutó axe-core con reglas:
 
@@ -12000,7 +12014,7 @@ Se ejecutó axe-core con reglas:
 - WCAG 2.2 A y AA;
 - buenas prácticas de axe.
 
-### 2.2 Navegación por teclado
+##### 2.2 Navegación por teclado
 
 Para cada ruta y viewport se registraron hasta 45 pulsaciones de `Tab`:
 
@@ -12013,7 +12027,7 @@ Para cada ruta y viewport se registraron hasta 45 pulsaciones de `Tab`:
 - repetición;
 - foco sobre elementos invisibles.
 
-### 2.3 Menú
+##### 2.3 Menú
 
 Se probó:
 
@@ -12025,7 +12039,7 @@ Se probó:
 - cierre con `Escape`;
 - devolución del foco al disparador.
 
-### 2.4 Lectores de pantalla
+##### 2.4 Lectores de pantalla
 
 Se capturó el árbol accesible de Chromium por ruta y viewport para revisar:
 
@@ -12045,7 +12059,7 @@ Esto no sustituye pruebas manuales posteriores con:
 - TalkBack;
 - lector de pantalla real y síntesis de voz.
 
-### 2.5 Reducción de movimiento
+##### 2.5 Reducción de movimiento
 
 Se abrió cada ruta con:
 
@@ -12058,7 +12072,7 @@ y se midieron animaciones activas aproximadamente a:
 - 600 ms;
 - 4,2 segundos.
 
-## 3. Resultado ejecutivo
+#### 3. Resultado ejecutivo
 
 | Área                 | Estado                        | Diagnóstico                                                                         |
 | -------------------- | ----------------------------- | ----------------------------------------------------------------------------------- |
@@ -12073,7 +12087,7 @@ y se midieron animaciones activas aproximadamente a:
 | 404                  | 🔴 Incorrecta                  | Sin `main`, contenido fuera de landmarks y copy genérico en inglés                  |
 | Skip link            | 🔴 Ausente                     | No existe salto directo al contenido principal                                      |
 
-### 3.1 Violaciones automáticas únicas
+##### 3.1 Violaciones automáticas únicas
 
 | Regla               | Impacto  | Auditorías afectadas | Nodos |
 | ------------------- | -------- | -------------------: | ----: |
@@ -12082,7 +12096,7 @@ y se midieron animaciones activas aproximadamente a:
 | `landmark-one-main` | moderate |                    2 |     2 |
 | `region`            | moderate |                    2 |     4 |
 
-### 3.2 Interpretación
+##### 3.2 Interpretación
 
 Se detectaron cuatro tipos de violación automática:
 
@@ -12101,13 +12115,13 @@ La ausencia de una violación automática no equivale a conformidad WCAG total. 
 - calidad de los estados de foco;
 - experiencia cognitiva.
 
-## 4. Contraste
+#### 4. Contraste
 
-### 4.1 Resultado automático
+##### 4.1 Resultado automático
 
 axe-core no detectó fallas de contraste en las 20 ejecuciones.
 
-### 4.2 Alcance real de este resultado
+##### 4.2 Alcance real de este resultado
 
 La medición cubre el contenido actualmente renderizado, que todavía carece de:
 
@@ -12127,7 +12141,7 @@ CONTRASTE ACTUAL SIN VIOLACIONES AUTOMÁTICAS
 CONTRASTE DEL SISTEMA FINAL APROBADO
 ```
 
-### 4.3 Riesgos pendientes
+##### 4.3 Riesgos pendientes
 
 Deberán validarse manualmente:
 
@@ -12150,9 +12164,9 @@ Responsable:
 WEB-QA-013 — Validar contraste
 ```
 
-## 5. Navegación por teclado
+#### 5. Navegación por teclado
 
-### 5.1 Resultado general
+##### 5.1 Resultado general
 
 No se detectaron elementos enfocados con geometría invisible durante el recorrido registrado.
 
@@ -12164,12 +12178,12 @@ aria-hidden="true"
 
 axe-core clasificó este hallazgo como **serious** en 16 de las 20 auditorías.
 
-### 5.2 Menú cerrado
+##### 5.2 Menú cerrado
 
 El nodo afectado es:
 
 ```text
-#site-overlay-menu
+### site-overlay-menu
 ```
 
 La implementación:
@@ -12186,7 +12200,7 @@ Debe corregirse mediante una estrategia real, por ejemplo:
 - gestionar `tabIndex=-1`;
 - usar un diálogo accesible correctamente implementado.
 
-### 5.3 Menú abierto
+##### 5.3 Menú abierto
 
 La secuencia observada fue:
 
@@ -12209,7 +12223,7 @@ Conclusión:
 - el fondo no se vuelve inerte;
 - el menú no funciona como modal accesible.
 
-### 5.4 Cierre con Escape
+##### 5.4 Cierre con Escape
 
 `Escape` sí cambió:
 
@@ -12221,7 +12235,7 @@ pero el foco quedó sobre el último control de fondo alcanzado y **no regresó 
 
 Esto incumple la expectativa operativa de un menú modal.
 
-### 5.5 Foco visible
+##### 5.5 Foco visible
 
 Los enlaces y botones principales utilizaron el outline del navegador.
 
@@ -12240,7 +12254,7 @@ box-shadow: none
 
 Por tanto, el usuario de teclado no recibe un indicador visual suficiente.
 
-### 5.6 Skip link
+##### 5.6 Skip link
 
 No se encontró un enlace de tipo:
 
@@ -12256,9 +12270,9 @@ Responsable principal:
 WEB-QA-011 — Probar teclado
 ```
 
-## 6. Lectores de pantalla y semántica
+#### 6. Lectores de pantalla y semántica
 
-### 6.1 Landmarks
+##### 6.1 Landmarks
 
 Las páginas funcionales exponen normalmente:
 
@@ -12269,7 +12283,7 @@ Las páginas funcionales exponen normalmente:
 
 La 404 no contiene un landmark `main`.
 
-### 6.2 Home
+##### 6.2 Home
 
 El árbol accesible contiene múltiples encabezados de nivel 2 y 3, pero:
 
@@ -12287,7 +12301,7 @@ region "Vento Group hero"
 
 sin un `h1` que nombre el propósito de la página.
 
-### 6.3 Datos falsos expuestos
+##### 6.3 Datos falsos expuestos
 
 El lector de pantalla recibe como contenido real:
 
@@ -12300,7 +12314,7 @@ El lector de pantalla recibe como contenido real:
 
 Este es simultáneamente un problema de contenido y accesibilidad: la tecnología asistiva comunica información no verificada como si fuera vigente.
 
-### 6.4 Newsletter
+##### 6.4 Newsletter
 
 El campo se anuncia correctamente como:
 
@@ -12315,7 +12329,7 @@ pero:
 - no existe mensaje de estado;
 - no existe manejo accesible de éxito o error.
 
-### 6.5 Menú oculto
+##### 6.5 Menú oculto
 
 El contenido bajo `aria-hidden="true"` sigue siendo alcanzable por teclado, creando una contradicción entre:
 
@@ -12323,7 +12337,7 @@ El contenido bajo `aria-hidden="true"` sigue siendo alcanzable por teclado, crea
 - foco;
 - visibilidad.
 
-### 6.6 Pruebas manuales obligatorias posteriores
+##### 6.6 Pruebas manuales obligatorias posteriores
 
 Responsable:
 
@@ -12340,9 +12354,9 @@ Matriz mínima:
 | iPhone + Safari  | VoiceOver |
 | Android + Chrome | TalkBack  |
 
-## 7. `prefers-reduced-motion`
+#### 7. `prefers-reduced-motion`
 
-### 7.1 Resultado
+##### 7.1 Resultado
 
 En nueve superficies no se detectaron animaciones activas durante las dos mediciones.
 
@@ -12353,13 +12367,13 @@ En Home:
 | ~600 ms |                   2 |
 | ~4,2 s  |                   0 |
 
-### 7.2 Evaluación
+##### 7.2 Evaluación
 
 El carrusel contiene lógica para detener rotación cuando `prefers-reduced-motion` está activo, pero la experiencia de entrada continúa iniciando animaciones y temporizadores.
 
 La implementación es **parcial**, no completa.
 
-### 7.3 Regla objetivo
+##### 7.3 Regla objetivo
 
 Con `reduce`:
 
@@ -12377,9 +12391,9 @@ Responsable:
 WEB-QA-014 — Validar animaciones reducidas
 ```
 
-## 8. Textos alternativos
+#### 8. Textos alternativos
 
-### 8.1 Resultado cuantitativo
+##### 8.1 Resultado cuantitativo
 
 En las 20 auditorías:
 
@@ -12395,7 +12409,7 @@ alt=""
 
 correspondientes a wordmarks decorativos del footer.
 
-### 8.2 Limitaciones
+##### 8.2 Limitaciones
 
 El resultado actual no demuestra calidad editorial porque:
 
@@ -12406,7 +12420,7 @@ El resultado actual no demuestra calidad editorial porque:
 - los videos no tienen alternativa textual;
 - no existen galerías reales para evaluar.
 
-### 8.3 Regla objetivo
+##### 8.3 Regla objetivo
 
 Cada asset deberá declarar:
 
@@ -12424,9 +12438,9 @@ Responsable:
 WEB-QA-015 — Validar alt text
 ```
 
-## 9. Estructura de encabezados
+#### 9. Estructura de encabezados
 
-### 9.1 Home
+##### 9.1 Home
 
 ```text
 No existe h1
@@ -12435,7 +12449,7 @@ h2 → h3
 
 Aunque no hay salto automático dentro de la secuencia visible, falta el nivel principal.
 
-### 9.2 Empleos
+##### 9.2 Empleos
 
 ```text
 h1 Empleos
@@ -12444,7 +12458,7 @@ h1 Empleos
 
 Falta un `h2` de sección.
 
-### 9.3 Ecosistema
+##### 9.3 Ecosistema
 
 ```text
 h1 Ecosistema
@@ -12453,7 +12467,7 @@ h1 Ecosistema
 
 Falta un `h2` de sección.
 
-### 9.4 Resto de páginas
+##### 9.4 Resto de páginas
 
 No se detectaron saltos automáticos, pero deberán revisarse nuevamente después de:
 
@@ -12469,9 +12483,9 @@ Responsable:
 WEB-QA-016 — Validar estructura de encabezados
 ```
 
-## 10. Página 404
+#### 10. Página 404
 
-### 10.1 Estado actual
+##### 10.1 Estado actual
 
 La 404:
 
@@ -12484,7 +12498,7 @@ La 404:
 - no tiene enlace de recuperación;
 - solo ofrece el foco del `body`.
 
-### 10.2 Tarea responsable
+##### 10.2 Tarea responsable
 
 ```text
 WEB-PAG-070 — Crear página 404
@@ -12502,7 +12516,7 @@ Debe incluir:
 - identidad visual;
 - pruebas de teclado y lector.
 
-## 11. Matriz por ruta y viewport
+#### 11. Matriz por ruta y viewport
 
 | Viewport | Ruta solicitada                 | Ruta final                      | HTTP | Violaciones                              |   H1 | Saltos | Alt faltantes | Alt vacíos |
 | -------- | ------------------------------- | ------------------------------- | ---: | ---------------------------------------- | ---: | -----: | ------------: | ---------: |
@@ -12527,7 +12541,9 @@ Debe incluir:
 | mobile   | `/eventos`                      | `/restaurantes`                 |  200 | aria-hidden-focus (1)                    |    1 |      0 |             0 |          2 |
 | mobile   | `/ruta-inexistente-web-aud-011` | `/ruta-inexistente-web-aud-011` |  404 | landmark-one-main (1), region (2)        |    1 |      0 |             0 |          0 |
 
-## 12. Registro canónico de brechas
+#### 12. Registro de hallazgos de origen — histórico
+
+> Esta tabla conserva la evidencia original de la auditoría. La única fuente canónica vigente para propiedad, tareas vinculadas, momento de cierre y estado es la matriz consolidada de `WEB-AUD-012`.
 
 | Brecha        | Descripción                                                                   | Severidad | Tarea responsable           |
 | ------------- | ----------------------------------------------------------------------------- | --------- | --------------------------- |
@@ -12549,9 +12565,9 @@ Debe incluir:
 | `WEB-GAP-203` | Newsletter carece de formulario y estados accesibles                          | Alta      | `WEB-FRM-011`, `WEB-QA-017` |
 | `WEB-GAP-204` | No existe presupuesto ni puerta automatizada de accesibilidad por publicación | Alta      | `WEB-QA-023`                |
 
-## 13. Decisiones canónicas derivadas
+#### 13. Decisiones canónicas derivadas
 
-### 13.1 Menú
+##### 13.1 Menú
 
 El menú global deberá implementarse como un patrón accesible explícito.
 
@@ -12575,21 +12591,21 @@ SCROLL DE FONDO BLOQUEADO
 ARIA COHERENTE
 ```
 
-### 13.2 Encabezados
+##### 13.2 Encabezados
 
 Cada página deberá tener exactamente un `h1` visible y significativo.
 
 Las tarjetas no podrán introducir `h3` sin una sección `h2` previa.
 
-### 13.3 Animación
+##### 13.3 Animación
 
 `prefers-reduced-motion` debe ser un contrato transversal del renderer y no una corrección puntual de un carrusel.
 
-### 13.4 Alt text
+##### 13.4 Alt text
 
 El alt debe almacenarse como metadata del uso editorial del asset, no inferirse siempre del título de la entidad.
 
-### 13.5 Automatización
+##### 13.5 Automatización
 
 Toda publicación deberá pasar:
 
@@ -12603,7 +12619,7 @@ Toda publicación deberá pasar:
 - alt requerido;
 - contraste automatizable.
 
-## 14. Relación con tareas existentes
+#### 14. Relación con tareas existentes
 
 | Área                 | Tarea         |
 | -------------------- | ------------- |
@@ -12622,32 +12638,32 @@ Toda publicación deberá pasar:
 
 No se crea una tarea nueva porque todas las brechas tienen propietario explícito.
 
-## 15. Criterios de aprobación
+#### 15. Criterios de aprobación
 
 `WEB-AUD-011` podrá aprobarse cuando se acepte:
 
-- [ ] la línea base de contraste;
-- [ ] el hallazgo `aria-hidden-focus`;
-- [ ] la ausencia de focus trap;
-- [ ] la falta de retorno de foco;
-- [ ] la falta de foco visible en newsletter;
-- [ ] la ausencia de skip link;
-- [ ] la falta de `h1` en Home;
-- [ ] los saltos en Empleos y Ecosistema;
-- [ ] el estado de la 404;
-- [ ] el soporte parcial de reduced motion;
-- [ ] la línea base de alt text;
-- [ ] la necesidad de pruebas con lectores reales;
-- [ ] las brechas `WEB-GAP-188` a `WEB-GAP-204`;
-- [ ] que esta tarea no implementa correcciones.
+- [x] la línea base de contraste;
+- [x] el hallazgo `aria-hidden-focus`;
+- [x] la ausencia de focus trap;
+- [x] la falta de retorno de foco;
+- [x] la falta de foco visible en newsletter;
+- [x] la ausencia de skip link;
+- [x] la falta de `h1` en Home;
+- [x] los saltos en Empleos y Ecosistema;
+- [x] el estado de la 404;
+- [x] el soporte parcial de reduced motion;
+- [x] la línea base de alt text;
+- [x] la necesidad de pruebas con lectores reales;
+- [x] las brechas `WEB-GAP-188` a `WEB-GAP-204`;
+- [x] que esta tarea no implementa correcciones.
 
-## 16. Estado de cierre propuesto
+#### 16. Estado de cierre propuesto
 
 ```text
-WEB-AUD-011 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-011 — APROBADA
 ```
 
-### 16.1 No ejecutar todavía
+##### 16.1 No ejecutar todavía
 
 - no modificar el menú;
 - no agregar focus trap;
@@ -12659,17 +12675,16 @@ WEB-AUD-011 — PROPUESTA PARA APROBACIÓN
 - no integrar axe en CI;
 - no desplegar cambios.
 
-### 16.2 Continuidad después de aprobación
+##### 16.2 Continuidad después de aprobación
 
 ```text
 [x] WEB-AUD-010 — Crear línea base de rendimiento
 [x] WEB-AUD-011 — Crear línea base de accesibilidad
-[ ] WEB-AUD-012 — Consolidar brechas
+[x] WEB-AUD-012 — Consolidar brechas
 ```
 
-La marca de `WEB-AUD-011` solo se aplicará después de aprobación explícita.
 
-## 17. Evidencia
+#### 17. Evidencia
 
 El paquete de evidencia incluye:
 
@@ -12682,18 +12697,18 @@ El paquete de evidencia incluye:
 - resultados de reduced motion;
 - detalle de nodos afectados.
 
-## 18. Registro de cambios
+#### 18. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                  | Estado            |
 | -------------- | ---------- | --------------------------------------- | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Creación de línea base de accesibilidad | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Creación de línea base de accesibilidad | Aprobada |
 
 
-# WEB-AUD-012 — Consolidación canónica de brechas
+### WEB-AUD-012 — Consolidación canónica de brechas
 
 > Registro único de brechas de la Fase 1. Cada hallazgo queda vinculado a tareas exactas, una fase de cierre y un estado verificable. Se eliminan rangos ambiguos, comodines y pendientes narrativos.
 
-## 0. Control documental
+#### 0. Control documental
 
 | Campo                             | Valor                                       |
 | --------------------------------- | ------------------------------------------- |
@@ -12717,7 +12732,7 @@ El paquete de evidencia incluye:
 | Cambios en producción             | Ninguno                                     |
 | Siguiente tarea tras aprobación   | `WEB-PRD-001 — Definir perfiles de usuario` |
 
-### 0.1 Continuidad
+##### 0.1 Continuidad
 
 ```text
 [x] WEB-AUD-001
@@ -12731,12 +12746,12 @@ El paquete de evidencia incluye:
 [x] WEB-AUD-009
 [x] WEB-AUD-010
 [x] WEB-AUD-011
-[ ] WEB-AUD-012 — Consolidar brechas
+[x] WEB-AUD-012 — Consolidar brechas
 ```
 
 `WEB-ARC-005` permanece no iniciada canónicamente. La recuperación de `WEB-GAP-072` a `WEB-GAP-084` no aprueba ese borrador ni sus decisiones arquitectónicas; únicamente regulariza identificadores que ya habían sido utilizados por documentos posteriores.
 
-## 1. Decisión canónica
+#### 1. Decisión canónica
 
 Se adopta el siguiente contrato obligatorio:
 
@@ -12751,7 +12766,7 @@ HALLAZGO
 
 Queda prohibido registrar una brecha mediante:
 
-- `WEB-PAG-*`;
+- tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`;
 - `WEB-QA-*`;
 - “se resolverá después”;
 - “pendiente para una fase futura”;
@@ -12759,7 +12774,7 @@ Queda prohibido registrar una brecha mediante:
 - una tarea citada pero no materializada;
 - una conversación sin incorporación documental.
 
-## 2. Estados y regla de cierre
+#### 2. Estados y regla de cierre
 
 | Estado               | Significado                                                                      |
 | -------------------- | -------------------------------------------------------------------------------- |
@@ -12771,13 +12786,13 @@ Queda prohibido registrar una brecha mediante:
 
 Una tarea documental aprobada no cierra automáticamente una brecha de implementación. El cierre se produce únicamente en el momento indicado en la matriz.
 
-## 3. Regularizaciones obligatorias
+#### 3. Regularizaciones obligatorias
 
-### 3.1 Recuperación de `WEB-GAP-072` a `WEB-GAP-084`
+##### 3.1 Recuperación de `WEB-GAP-072` a `WEB-GAP-084`
 
 Los identificadores fueron reservados por un borrador no aprobado de `WEB-ARC-005`, pero ya habían sido referenciados en auditorías posteriores. Eliminarlos rompería trazabilidad. Esta tarea conserva los hallazgos, corrige sus propietarios y mantiene `WEB-ARC-005` pendiente.
 
-### 3.2 Resolución del conflicto `WEB-QA-022`
+##### 3.2 Resolución del conflicto `WEB-QA-022`
 
 La decisión aprobada más reciente fija:
 
@@ -12791,15 +12806,15 @@ Por tanto, `WEB-QA-022` no se reutiliza para el Section Registry. Se crea:
 WEB-QA-025 — Validar integridad del Section Registry y sus contratos
 ```
 
-### 3.3 Corrección de la brecha de 404
+##### 3.3 Corrección de la brecha de 404
 
 `WEB-GAP-173` estaba vinculada erróneamente a `WEB-PAG-041`, que corresponde al selector de espacios de Eventos. Su propietaria correcta es `WEB-PAG-070`, con cierre adicional en `WEB-QA-022`.
 
-### 3.4 Eliminación de familias inexistentes
+##### 3.4 Eliminación de familias inexistentes
 
-Las referencias `WEB-DS-*` y `WEB-RSP-*` se sustituyen por tareas existentes y exactas de producto, renderer, páginas y QA. No se crean familias paralelas sin necesidad.
+Las referencias tareas de diseño identificadas en `WEB-AUD-012` y tareas responsive identificadas en `WEB-AUD-012` se sustituyen por tareas existentes y exactas de producto, renderer, páginas y QA. No se crean familias paralelas sin necesidad.
 
-## 4. Tareas derivadas que quedan materializadas por esta consolidación
+#### 4. Tareas derivadas que quedan materializadas por esta consolidación
 
 Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. Su definición en esta sección elimina el estado de “mención narrativa”.
 
@@ -12827,16 +12842,16 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | `WEB-RND-018`  | Crear Data Resolver Registry                                | FASE 5 — Renderer                              |
 | `WEB-RND-019`  | Crear LinkRenderer canónico                                 | FASE 5 — Renderer                              |
 
-### 4.1 Bloques listos para insertar
+##### 4.1 Bloques listos para insertar
 
-#### FASE 2 — Definición funcional
+###### FASE 2 — Definición funcional
 
 ```text
 [ ] WEB-PRD-015 — Definir taxonomía canónica de rutas públicas
 [ ] WEB-PRD-016 — Definir política canónica de redirecciones
 ```
 
-#### FASE 3 — Arquitectura y ADR
+###### FASE 3 — Arquitectura y ADR
 
 ```text
 [ ] ADR-WEB-011 — Aprobar política canónica de fallback y degradación pública
@@ -12844,7 +12859,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 [ ] WEB-ARC-009 — Definir ciclo de vida y migración de schemas de sección
 ```
 
-#### FASE 5 — Renderer
+###### FASE 5 — Renderer
 
 ```text
 [ ] WEB-RND-017 — Crear MediaRenderer canónico
@@ -12852,25 +12867,25 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 [ ] WEB-RND-019 — Crear LinkRenderer canónico
 ```
 
-#### FASE 6 — Publicación y versiones
+###### FASE 6 — Publicación y versiones
 
 ```text
 [ ] WEB-PUB-015 — Implementar guardado atómico de contenido relacionado
 ```
 
-#### FASE 9 — Biblioteca multimedia
+###### FASE 9 — Biblioteca multimedia
 
 ```text
 [ ] WEB-MED-014 — Resolver entrega pública segura de medios
 ```
 
-#### FASE 11 — Formularios
+###### FASE 11 — Formularios
 
 ```text
 [ ] WEB-FRM-011 — Implementar suscripción de newsletter o retirar la interfaz
 ```
 
-#### FASE 13 — Migración y corte
+###### FASE 13 — Migración y corte
 
 ```text
 [ ] WEB-MIG-020 — Retirar componentes y composiciones públicas legacy
@@ -12880,7 +12895,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 [ ] WEB-MIG-024 — Implementar adaptador legacy de solo lectura
 ```
 
-#### FASE 15 — Calidad, accesibilidad y rendimiento
+###### FASE 15 — Calidad, accesibilidad y rendimiento
 
 ```text
 [ ] WEB-PERF-008 — Implementar medición de campo de Core Web Vitals
@@ -12890,9 +12905,9 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 [ ] WEB-QA-025 — Validar integridad del Section Registry y sus contratos
 ```
 
-## 5. Resumen cuantitativo
+#### 5. Resumen cuantitativo
 
-### 5.1 Por severidad
+##### 5.1 Por severidad
 
 | Severidad | Cantidad |
 | --------- | -------: |
@@ -12901,7 +12916,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | Media     |       24 |
 | Baja      |        0 |
 
-### 5.2 Por fase de cierre
+##### 5.2 Por fase de cierre
 
 | Fase de cierre                                 | Brechas |
 | ---------------------------------------------- | ------: |
@@ -12920,7 +12935,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | FASE 15 — Calidad, accesibilidad y rendimiento |      82 |
 | FASE 16 — Despliegue y operación               |       6 |
 
-### 5.3 Propietarias principales con mayor carga
+##### 5.3 Propietarias principales con mayor carga
 
 | Tarea propietaria                                                             | Brechas |
 | ----------------------------------------------------------------------------- | ------: |
@@ -12945,7 +12960,7 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | `WEB-ARC-002` — Crear contrato de secciones                                   |       3 |
 | `WEB-MIG-015` — Poblar contenido real                                         |       3 |
 
-## 6. Matriz canónica completa
+#### 6. Matriz canónica completa
 
 | Brecha        | Descripción                                                                          | Severidad | Tarea propietaria | Tareas vinculadas exactas                                                                               | Momento de cierre                                                                                                                                       | Estado               | Fuente                                                               |
 | ------------- | ------------------------------------------------------------------------------------ | --------- | ----------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------- |
@@ -13154,17 +13169,17 @@ Estas tareas deben insertarse físicamente una sola vez en su fase propietaria. 
 | `WEB-GAP-203` | Newsletter carece de formulario y estados accesibles                                 | Alta      | `WEB-FRM-011`     | `WEB-QA-017`, `WEB-QA-023`                                                                              | FASE 15 — Calidad, accesibilidad y rendimiento — `WEB-QA-017`, `WEB-QA-023`                                                                             | `ASIGNADA — ABIERTA` | `WEB-AUD-011 LINEA BASE ACCESIBILIDAD`                               |
 | `WEB-GAP-204` | No existe presupuesto ni puerta automatizada de accesibilidad por publicación        | Alta      | `WEB-QA-023`      | `WEB-OPS-004`                                                                                           | FASE 16 — Despliegue y operación — `WEB-OPS-004`                                                                                                        | `ASIGNADA — ABIERTA` | `WEB-AUD-011 LINEA BASE ACCESIBILIDAD`                               |
 
-## 7. Reglas de ejecución y cierre
+#### 7. Reglas de ejecución y cierre
 
-### 7.1 Al iniciar una tarea
+##### 7.1 Al iniciar una tarea
 
 La tarea deberá listar explícitamente los `WEB-GAP-*` que asume.
 
-### 7.2 Al aprobar una definición
+##### 7.2 Al aprobar una definición
 
 Las brechas asociadas pasan como máximo a `DEFINIDA`; no a `CERRADA`.
 
-### 7.3 Al implementar
+##### 7.3 Al implementar
 
 La evidencia deberá incluir, según corresponda:
 
@@ -13176,7 +13191,7 @@ La evidencia deberá incluir, según corresponda:
 - enlace a publicación;
 - rollback o prueba de restauración.
 
-### 7.4 Al cerrar
+##### 7.4 Al cerrar
 
 Una brecha solo se marca `CERRADA` cuando:
 
@@ -13186,7 +13201,7 @@ Una brecha solo se marca `CERRADA` cuando:
 4. la evidencia está versionada;
 5. no queda fallback, placeholder o deuda narrativa equivalente.
 
-## 8. Validación mecánica de esta consolidación
+#### 8. Validación mecánica de esta consolidación
 
 ```text
 Brechas esperadas:                 204
@@ -13202,24 +13217,24 @@ WEB-GAP-173 / 404:                 CORREGIDA
 WEB-ARC-005 aprobado por herencia: NO
 ```
 
-## 9. Criterios de aprobación
+#### 9. Criterios de aprobación
 
-- [ ] la continuidad completa `WEB-GAP-001` a `WEB-GAP-204`;
-- [ ] la recuperación controlada de `WEB-GAP-072` a `WEB-GAP-084`;
-- [ ] la conservación de `WEB-ARC-005` como no aprobada;
-- [ ] la definición canónica de `WEB-QA-022` como smoke test de producción;
-- [ ] la creación de `WEB-QA-025` para el Section Registry;
-- [ ] la corrección de `WEB-GAP-173` hacia `WEB-PAG-070`;
-- [ ] la eliminación de comodines y rangos ambiguos;
-- [ ] la materialización de las tareas derivadas de la sección 4;
-- [ ] la matriz de 204 brechas con propietaria, vínculos y momento de cierre;
-- [ ] la regla de no cerrar brechas por mera aprobación documental;
-- [ ] la ausencia de cambios en código, Supabase y producción;
+- [x] la continuidad completa `WEB-GAP-001` a `WEB-GAP-204`;
+- [x] la recuperación controlada de `WEB-GAP-072` a `WEB-GAP-084`;
+- [x] la conservación de `WEB-ARC-005` como no aprobada;
+- [x] la definición canónica de `WEB-QA-022` como smoke test de producción;
+- [x] la creación de `WEB-QA-025` para el Section Registry;
+- [x] la corrección de `WEB-GAP-173` hacia `WEB-PAG-070`;
+- [x] la eliminación de comodines y rangos ambiguos;
+- [x] la materialización de las tareas derivadas de la sección 4;
+- [x] la matriz de 204 brechas con propietaria, vínculos y momento de cierre;
+- [x] la regla de no cerrar brechas por mera aprobación documental;
+- [x] la ausencia de cambios en código, Supabase y producción;
 
-## 10. Estado de cierre propuesto
+#### 10. Estado de cierre vigente
 
 ```text
-WEB-AUD-012 — PROPUESTA PARA APROBACIÓN
+WEB-AUD-012 — APROBADA
 ```
 
 Después de aprobación explícita:
@@ -13232,21 +13247,32 @@ FASE 1 — CERRADA DOCUMENTALMENTE
 
 La Fase 1 queda cerrada en sentido documental, no significa que las 204 brechas estén implementadas o cerradas. Todas permanecen `ASIGNADA — ABIERTA` hasta su momento de resolución.
 
-## 11. Registro de cambios
+#### 11. Registro de cambios
 
 | Versión        | Fecha      | Cambio                                           | Estado            |
 | -------------- | ---------- | ------------------------------------------------ | ----------------- |
-| `2026-07-23.1` | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`   | Propuesta vigente |
-| `2026-07-23.2` | 2026-07-23 | Regularización de IDs 072–084 y conflicto QA-022 | Propuesta vigente |
+| `2026-07-23.1` | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`   | Aprobada |
+| `2026-07-23.2` | 2026-07-23 | Regularización de IDs 072–084 y conflicto QA-022 | Aprobada |
 
 
-### Puerta de aprobación Fase 1
+##### Puerta de aprobación Fase 1 — CERRADA DOCUMENTALMENTE
 
-La fase se aprueba cuando exista una visión completa del estado real y no se dependa de suposiciones.
+- [x] Estado real del repositorio auditado.
+- [x] VISO Website CMS auditado.
+- [x] Supabase auditado.
+- [x] Producción auditada.
+- [x] Matriz editable vs hardcodeado creada.
+- [x] Línea base visual creada.
+- [x] Línea base de rendimiento creada.
+- [x] Línea base de accesibilidad creada.
+- [x] `WEB-GAP-001` a `WEB-GAP-204` consolidadas.
+- [x] Todas las brechas tienen tarea propietaria y momento de cierre.
+
+**Siguiente fase:** FASE 2 — Definición funcional.
 
 ---
 
-# FASE 2 — DEFINICIÓN FUNCIONAL DE VISO WEB STUDIO
+## FASE 2 — DEFINICIÓN FUNCIONAL DE VISO WEB STUDIO
 
 ## Objetivo
 
@@ -13254,14 +13280,14 @@ Definir exactamente qué podrá hacer un usuario y qué continuará controlado p
 
 ---
 
-# [ ] **WEB-PRD-001 — Definir perfiles de usuario**
+### [ ] **WEB-PRD-001 — Definir perfiles de usuario**
   - Administrador del sitio.
   - Editor.
   - Publicador.
   - Revisor.
   - Usuario de solo lectura.
 
-# [ ] **WEB-PRD-002 — Definir matriz de permisos**
+### [ ] **WEB-PRD-002 — Definir matriz de permisos**
   - Ver.
   - Editar.
   - Crear páginas.
@@ -13273,7 +13299,7 @@ Definir exactamente qué podrá hacer un usuario y qué continuará controlado p
   - Administrar formularios.
   - Administrar tema.
 
-# [ ] **WEB-PRD-003 — Definir ciclo de vida de página**
+### [ ] **WEB-PRD-003 — Definir ciclo de vida de página**
 
 ```text
 BORRADOR
@@ -13287,13 +13313,13 @@ PUBLICADA
 ARCHIVADA
 ```
 
-# [ ] **WEB-PRD-004 — Definir ciclo de vida de revisión**
+### [ ] **WEB-PRD-004 — Definir ciclo de vida de revisión**
   - Borrador mutable.
   - Revisión validada.
   - Revisión publicada inmutable.
   - Revisión restaurada.
 
-# [ ] **WEB-PRD-005 — Definir acciones sobre páginas**
+### [ ] **WEB-PRD-005 — Definir acciones sobre páginas**
   - Crear.
   - Duplicar.
   - Renombrar.
@@ -13303,7 +13329,7 @@ ARCHIVADA
   - Eliminar.
   - Restaurar.
 
-# [ ] **WEB-PRD-006 — Definir acciones sobre secciones**
+### [ ] **WEB-PRD-006 — Definir acciones sobre secciones**
   - Agregar.
   - Seleccionar.
   - Editar.
@@ -13314,7 +13340,7 @@ ARCHIVADA
   - Copiar.
   - Pegar.
 
-# [ ] **WEB-PRD-007 — Definir personalización permitida**
+### [ ] **WEB-PRD-007 — Definir personalización permitida**
   - Variante.
   - Tema.
   - Alineación.
@@ -13325,7 +13351,7 @@ ARCHIVADA
   - Comportamiento responsive.
   - Animación permitida.
 
-# [ ] **WEB-PRD-008 — Definir comportamiento responsive**
+### [ ] **WEB-PRD-008 — Definir comportamiento responsive**
   - Desktop.
   - Tablet.
   - Móvil.
@@ -13334,7 +13360,7 @@ ARCHIVADA
   - Alineación móvil.
   - Recorte y foco de imágenes.
 
-# [ ] **WEB-PRD-009 — Definir modelo de navegación**
+### [ ] **WEB-PRD-009 — Definir modelo de navegación**
   - Header.
   - Menú principal.
   - Menú móvil.
@@ -13343,7 +13369,7 @@ ARCHIVADA
   - Dropdowns.
   - Orden.
 
-# [ ] **WEB-PRD-010 — Definir modelo de plantillas**
+### [ ] **WEB-PRD-010 — Definir modelo de plantillas**
   - Inicio.
   - Página editorial.
   - Listado.
@@ -13353,7 +13379,7 @@ ARCHIVADA
   - Contacto.
   - Página legal.
 
-# [ ] **WEB-PRD-011 — Diseñar wireframe del editor**
+### [ ] **WEB-PRD-011 — Diseñar wireframe del editor**
   - Panel izquierdo.
   - Preview central.
   - Panel derecho.
@@ -13361,7 +13387,7 @@ ARCHIVADA
   - Estados de guardado.
   - Selector responsive.
 
-# [ ] **WEB-PRD-012 — Diseñar flujo de publicación**
+### [ ] **WEB-PRD-012 — Diseñar flujo de publicación**
   - Guardar.
   - Validar.
   - Previsualizar.
@@ -13370,7 +13396,7 @@ ARCHIVADA
   - Confirmar.
   - Revertir.
 
-# [ ] **WEB-PRD-013 — Definir criterios de completitud**
+### [ ] **WEB-PRD-013 — Definir criterios de completitud**
   - Campos obligatorios.
   - Medios obligatorios.
   - Alt text.
@@ -13379,9 +13405,21 @@ ARCHIVADA
   - Contraste.
   - Publicación.
 
-# [ ] **WEB-PRD-014 — Aprobar alcance MVP**
+### [ ] **WEB-PRD-014 — Aprobar alcance MVP**
   - Delimitar lo obligatorio para la primera versión operativa.
   - Asignar explícitamente todo lo aplazado.
+
+### [ ] **WEB-PRD-015 — Definir taxonomía canónica de rutas públicas**
+  - URL canónica de Nosotros y Ecosistema.
+  - Rutas de aplicaciones, eventos y servicios.
+  - Aliases, slugs reservados e idioma.
+  - Reglas para rutas dinámicas.
+
+### [ ] **WEB-PRD-016 — Definir política canónica de redirecciones**
+  - Redirecciones permanentes y temporales.
+  - Cambios de slug y rutas eliminadas.
+  - Preservación SEO y prevención de ciclos.
+  - Trazabilidad y ownership.
 
 ### Puerta de aprobación Fase 2
 
@@ -13389,7 +13427,7 @@ No se inicia diseño de base de datos hasta aprobar comportamiento, roles y alca
 
 ---
 
-# FASE 3 — ARQUITECTURA Y DECISIONES CANÓNICAS
+## FASE 3 — ARQUITECTURA Y DECISIONES CANÓNICAS
 
 ## Objetivo
 
@@ -13397,65 +13435,65 @@ Aprobar formalmente las decisiones estructurales antes de escribir migraciones.
 
 ---
 
-# [ ] **ADR-WEB-001 — Aprobar modelo híbrido**
+### [ ] **ADR-WEB-001 — Aprobar modelo híbrido**
   - Revisiones JSON para páginas.
   - Entidades normalizadas para datos empresariales.
 
-# [ ] **ADR-WEB-002 — Aprobar registro de secciones**
+### [ ] **ADR-WEB-002 — Aprobar registro de secciones**
   - Solo componentes registrados.
   - Esquema validado por tipo.
   - Variantes controladas.
 
-# [ ] **ADR-WEB-003 — Aprobar revisiones inmutables**
+### [ ] **ADR-WEB-003 — Aprobar revisiones inmutables**
   - Las versiones publicadas no se modifican.
   - Restaurar crea una nueva publicación.
 
-# [ ] **ADR-WEB-004 — Aprobar separación guardar/publicar**
+### [ ] **ADR-WEB-004 — Aprobar separación guardar/publicar**
   - Guardar no afecta producción.
   - Publicar es una acción explícita.
 
-# [ ] **ADR-WEB-005 — Aprobar estrategia de preview**
+### [ ] **ADR-WEB-005 — Aprobar estrategia de preview**
   - Token temporal.
   - Ruta privada.
   - `noindex`.
   - Sin exposición pública.
 
-# [ ] **ADR-WEB-006 — Aprobar migración progresiva**
+### [ ] **ADR-WEB-006 — Aprobar migración progresiva**
   - Adaptador legacy.
   - Corte página por página.
   - Sin interrupción del sitio.
 
-# [ ] **ADR-WEB-007 — Aprobar modelo multisitio mínimo**
+### [ ] **ADR-WEB-007 — Aprobar modelo multisitio mínimo**
   - Incluir `site_id`.
   - Primer sitio: Vento Group.
   - Preparar crecimiento sin construir aún múltiples sitios.
 
-# [ ] **ADR-WEB-008 — Aprobar estrategia de medios**
+### [ ] **ADR-WEB-008 — Aprobar estrategia de medios**
   - Archivo original.
   - Metadatos.
   - Foco visual.
   - Versiones optimizadas.
   - Referencias de uso.
 
-# [ ] **ADR-WEB-009 — Aprobar estrategia de formularios**
+### [ ] **ADR-WEB-009 — Aprobar estrategia de formularios**
   - Definiciones administrables.
   - Validación en servidor.
   - Consentimiento.
   - Anti-spam.
   - Auditoría.
 
-# [ ] **ADR-WEB-010 — Aprobar estrategia de caché**
+### [ ] **ADR-WEB-010 — Aprobar estrategia de caché**
   - Contenido publicado cacheable.
   - Borradores sin caché pública.
   - Revalidación al publicar.
 
-# [ ] **WEB-ARC-001 — Crear contrato JSON de páginas**
+### [ ] **WEB-ARC-001 — Crear contrato JSON de páginas**
   - Schema versionado.
   - Campos requeridos.
   - Validaciones.
   - Compatibilidad futura.
 
-# [ ] **WEB-ARC-002 — Crear contrato de secciones**
+### [ ] **WEB-ARC-002 — Crear contrato de secciones**
   - Contenido.
   - Medios.
   - Estilos.
@@ -13463,7 +13501,7 @@ Aprobar formalmente las decisiones estructurales antes de escribir migraciones.
   - Fuente de datos.
   - Acciones.
 
-# [ ] **WEB-ARC-003 — Crear contrato de fuentes dinámicas**
+### [ ] **WEB-ARC-003 — Crear contrato de fuentes dinámicas**
   - Restaurantes.
   - Empleos.
   - Eventos.
@@ -13473,17 +13511,35 @@ Aprobar formalmente las decisiones estructurales antes de escribir migraciones.
   - Filtros.
   - Límite.
 
-# [ ] **WEB-ARC-004 — Crear estrategia de compatibilidad de schema**
+### [ ] **WEB-ARC-004 — Crear estrategia de compatibilidad de schema**
   - `schemaVersion`.
   - Migradores internos.
   - Validación previa al render.
 
-# [ ] **WEB-ARC-005 — Definir arquitectura canónica de componentes públicos**
+### [ ] **WEB-ARC-005 — Definir arquitectura canónica de componentes públicos**
 
-# [ ] **WEB-ARC-006 — Definir ownership y fuente canónica de cada clase de contenido**
+### [ ] **WEB-ARC-006 — Definir ownership y fuente canónica de cada clase de contenido**
 
-# [ ] **WEB-ARC-007 — Definir sincronización entre entidades operativas y contenido web**
+### [ ] **WEB-ARC-007 — Definir sincronización entre entidades operativas y contenido web**
 
+
+### [ ] **ADR-WEB-011 — Aprobar política canónica de fallback y degradación pública**
+  - Prohibir placeholders, entidades ficticias y CTA `#`.
+  - Definir comportamiento sin datos y fallas temporales.
+  - Usar última publicación válida cuando corresponda.
+  - Diferenciar fallback técnico de contenido editorial.
+
+### [ ] **WEB-ARC-008 — Crear paquete compartido `@vento/web-contracts`**
+  - Schemas y tipos compartidos entre VISO y web.
+  - Versionado semántico y compatibilidad.
+  - Build y publicación interna.
+  - Pruebas de contratos.
+
+### [ ] **WEB-ARC-009 — Definir ciclo de vida y migración de schemas de sección**
+  - Versiones de schema.
+  - Migraciones de contenido.
+  - Compatibilidad hacia atrás.
+  - Deprecación y retiro seguro.
 
 ### Puerta de aprobación Fase 3
 
@@ -13491,7 +13547,7 @@ Todos los ADR deberán quedar en estado `ACCEPTED`.
 
 ---
 
-# FASE 4 — MODELO DE BASE DE DATOS Y MIGRACIONES
+## FASE 4 — MODELO DE BASE DE DATOS Y MIGRACIONES
 
 ## Objetivo
 
@@ -13501,14 +13557,14 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
 
 ---
 
-# [ ] **WEB-DB-001 — Crear migración de sitios**
+### [ ] **WEB-DB-001 — Crear migración de sitios**
   - Tabla `website_sites`.
   - Dominio.
   - Nombre.
   - estado.
   - configuración base.
 
-# [ ] **WEB-DB-002 — Crear migración de páginas**
+### [ ] **WEB-DB-002 — Crear migración de páginas**
   - Tabla `website_pages`.
   - `site_id`.
   - slug.
@@ -13518,7 +13574,7 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - orden.
   - fechas.
 
-# [ ] **WEB-DB-003 — Crear migración de revisiones**
+### [ ] **WEB-DB-003 — Crear migración de revisiones**
   - Tabla `website_page_revisions`.
   - JSON validable.
   - número de revisión.
@@ -13527,7 +13583,7 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - estado.
   - timestamps.
 
-# [ ] **WEB-DB-004 — Crear migración de publicaciones**
+### [ ] **WEB-DB-004 — Crear migración de publicaciones**
   - Tabla `website_page_publications`.
   - página.
   - revisión publicada.
@@ -13536,12 +13592,12 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - causa.
   - versión anterior.
 
-# [ ] **WEB-DB-005 — Crear migración de releases**
+### [ ] **WEB-DB-005 — Crear migración de releases**
   - `website_releases`.
   - `website_release_pages`.
   - Preparar publicación coordinada de múltiples páginas.
 
-# [ ] **WEB-DB-006 — Crear migración de medios**
+### [ ] **WEB-DB-006 — Crear migración de medios**
   - `website_media_assets`.
   - nombre.
   - tipo.
@@ -13553,12 +13609,12 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - autor.
   - estado.
 
-# [ ] **WEB-DB-007 — Crear referencias de medios**
+### [ ] **WEB-DB-007 — Crear referencias de medios**
   - `website_media_usages`.
   - Identificar dónde se utiliza cada archivo.
   - Impedir borrado accidental.
 
-# [ ] **WEB-DB-008 — Crear migración de tema**
+### [ ] **WEB-DB-008 — Crear migración de tema**
   - `website_themes`.
   - Colores.
   - Tipografías.
@@ -13567,7 +13623,7 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - botones.
   - espacios.
 
-# [ ] **WEB-DB-009 — Crear configuración global**
+### [ ] **WEB-DB-009 — Crear configuración global**
   - `website_site_settings`.
   - datos de contacto.
   - redes.
@@ -13576,7 +13632,7 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - SEO base.
   - analítica.
 
-# [ ] **WEB-DB-010 — Crear navegación**
+### [ ] **WEB-DB-010 — Crear navegación**
   - `website_navigation_menus`.
   - `website_navigation_items`.
   - jerarquía.
@@ -13584,12 +13640,12 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - visibilidad.
   - destino.
 
-# [ ] **WEB-DB-011 — Crear formularios**
+### [ ] **WEB-DB-011 — Crear formularios**
   - `website_forms`.
   - `website_form_fields`.
   - `website_form_submissions`.
 
-# [ ] **WEB-DB-012 — Crear auditoría**
+### [ ] **WEB-DB-012 — Crear auditoría**
   - `website_audit_events`.
   - acción.
   - actor.
@@ -13599,14 +13655,14 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - fecha.
   - IP cuando corresponda.
 
-# [ ] **WEB-DB-013 — Crear tokens de preview**
+### [ ] **WEB-DB-013 — Crear tokens de preview**
   - `website_preview_tokens`.
   - expiración.
   - revisión.
   - revocación.
   - creador.
 
-# [ ] **WEB-DB-014 — Crear índices**
+### [ ] **WEB-DB-014 — Crear índices**
   - Slug.
   - sitio.
   - estado.
@@ -13615,32 +13671,32 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - categorías.
   - fechas.
 
-# [ ] **WEB-DB-015 — Crear triggers**
+### [ ] **WEB-DB-015 — Crear triggers**
   - `updated_at`.
   - número de revisión.
   - auditoría cuando corresponda.
   - integridad.
 
-# [ ] **WEB-DB-016 — Crear RLS**
+### [ ] **WEB-DB-016 — Crear RLS**
   - Lectura anónima solo de contenido publicado.
   - Edición solo desde roles autorizados.
   - Publicación restringida.
   - Formularios con política específica.
   - Auditoría protegida.
 
-# [ ] **WEB-DB-017 — Crear seed inicial**
+### [ ] **WEB-DB-017 — Crear seed inicial**
   - Sitio `ventogroup.co`.
   - Páginas actuales.
   - Tema base.
   - navegación base.
 
-# [ ] **WEB-DB-018 — Crear pruebas de migración**
+### [ ] **WEB-DB-018 — Crear pruebas de migración**
   - Base vacía.
   - Base con datos actuales.
   - Reaplicación segura.
   - Rollback lógico.
 
-# [ ] **WEB-DB-019 — Documentar migraciones**
+### [ ] **WEB-DB-019 — Documentar migraciones**
   - Propósito.
   - tablas.
   - relaciones.
@@ -13648,7 +13704,7 @@ Crear la base estable para páginas, revisiones, publicaciones, medios y auditor
   - reversión.
   - dependencias.
 
-# [ ] **WEB-DB-020 — Crear proyección pública de publicación vigente**
+### [ ] **WEB-DB-020 — Crear proyección pública de publicación vigente**
   - Contrato público mínimo.
   - Publicación vigente.
   - Exclusión de borradores.
@@ -13669,7 +13725,7 @@ Las migraciones deberán estar revisadas antes de aplicarse en producción.
 
 ---
 
-# FASE 5 — REGISTRO Y MOTOR DE RENDERIZADO
+## FASE 5 — REGISTRO Y MOTOR DE RENDERIZADO
 
 ## Objetivo
 
@@ -13677,7 +13733,7 @@ Convertir `vento-group-web` en un renderizador dinámico de páginas.
 
 ---
 
-# [ ] **WEB-RND-001 — Crear tipos TypeScript canónicos**
+### [ ] **WEB-RND-001 — Crear tipos TypeScript canónicos**
   - Página.
   - Revisión.
   - Sección.
@@ -13686,14 +13742,14 @@ Convertir `vento-group-web` en un renderizador dinámico de páginas.
   - Fuente dinámica.
   - SEO.
 
-# [ ] **WEB-RND-002 — Crear schemas de validación**
+### [ ] **WEB-RND-002 — Crear schemas de validación**
   - Validación de página.
   - Validación por tipo de sección.
   - Validación de enlaces.
   - Validación de medios.
   - Validación responsive.
 
-# [ ] **WEB-RND-003 — Crear Section Registry**
+### [ ] **WEB-RND-003 — Crear Section Registry**
 
 ```text
 tipo de sección
@@ -13707,37 +13763,37 @@ variantes permitidas
 panel de propiedades
 ```
 
-# [ ] **WEB-RND-004 — Crear Page Loader**
+### [ ] **WEB-RND-004 — Crear Page Loader**
   - Resolver sitio.
   - Resolver página.
   - Resolver revisión publicada.
   - Validar contenido.
   - Entregar datos al renderer.
 
-# [ ] **WEB-RND-005 — Crear Page Renderer**
+### [ ] **WEB-RND-005 — Crear Page Renderer**
   - Iterar secciones.
   - Renderizar componente registrado.
   - Manejar secciones ocultas.
   - Aplicar tema.
   - Aplicar responsive.
 
-# [ ] **WEB-RND-006 — Crear manejo de errores**
+### [ ] **WEB-RND-006 — Crear manejo de errores**
   - Sección desconocida.
   - Schema inválido.
   - Medio faltante.
   - Fuente dinámica inválida.
   - Datos incompletos.
 
-# [ ] **WEB-RND-007 — Crear modo desarrollo**
+### [ ] **WEB-RND-007 — Crear modo desarrollo**
   - Mostrar errores visibles solo a administradores.
   - No romper completamente la página.
 
-# [ ] **WEB-RND-008 — Crear adaptador legacy**
+### [ ] **WEB-RND-008 — Crear adaptador legacy**
   - Traducir `website_blocks` al formato nuevo.
   - Traducir páginas actuales.
   - Mantener operación mientras se migra.
 
-# [ ] **WEB-RND-009 — Crear resolución de colecciones**
+### [ ] **WEB-RND-009 — Crear resolución de colecciones**
   - Restaurantes.
   - Vacantes.
   - Eventos.
@@ -13747,7 +13803,7 @@ panel de propiedades
   - Orden.
   - selección manual.
 
-# [ ] **WEB-RND-010 — Crear resolución de medios**
+### [ ] **WEB-RND-010 — Crear resolución de medios**
   - Asset por ID.
   - URL optimizada.
   - alt text.
@@ -13755,7 +13811,7 @@ panel de propiedades
   - poster de video.
   - fallback seguro.
 
-# [ ] **WEB-RND-011 — Crear estilos por tokens**
+### [ ] **WEB-RND-011 — Crear estilos por tokens**
   - Tema.
   - contraste.
   - anchura.
@@ -13763,7 +13819,7 @@ panel de propiedades
   - alineación.
   - fondos.
 
-# [ ] **WEB-RND-012 — Crear comportamiento responsive**
+### [ ] **WEB-RND-012 — Crear comportamiento responsive**
   - Overrides móviles.
   - Layout.
   - orden.
@@ -13771,7 +13827,7 @@ panel de propiedades
   - tamaño de tipografía.
   - foco multimedia.
 
-# [ ] **WEB-RND-013 — Crear metadata dinámica**
+### [ ] **WEB-RND-013 — Crear metadata dinámica**
   - título.
   - descripción.
   - canonical.
@@ -13780,7 +13836,7 @@ panel de propiedades
   - noindex.
   - imagen social.
 
-# [ ] **WEB-RND-014 — Crear datos estructurados**
+### [ ] **WEB-RND-014 — Crear datos estructurados**
   - Organización.
   - Restaurante.
   - Empleo.
@@ -13788,18 +13844,36 @@ panel de propiedades
   - Breadcrumb.
   - ItemList.
 
-# [ ] **WEB-RND-015 — Crear revalidación**
+### [ ] **WEB-RND-015 — Crear revalidación**
   - Revalidar página publicada.
   - Revalidar navegación.
   - Revalidar sitemap.
   - Revalidar colecciones.
 
-# [ ] **WEB-RND-016 — Crear pruebas unitarias**
+### [ ] **WEB-RND-016 — Crear pruebas unitarias**
   - Schemas.
   - registro.
   - loaders.
   - fuentes dinámicas.
   - errores.
+
+### [ ] **WEB-RND-017 — Crear `MediaRenderer` canónico**
+  - Resolución por asset.
+  - Imagen, video, dimensiones, focal point y crop.
+  - Alt text, poster, prioridad y lazy loading.
+  - Variantes responsive y fallback seguro.
+
+### [ ] **WEB-RND-018 — Crear `Data Resolver Registry`**
+  - Resolvers permitidos por tipo de colección.
+  - Schemas de entrada y salida.
+  - Paginación, filtros y orden.
+  - Errores y caché.
+
+### [ ] **WEB-RND-019 — Crear `LinkRenderer` canónico**
+  - Rutas internas y externas.
+  - Descargas, correo y teléfono.
+  - Validación de URL y seguridad.
+  - Estados deshabilitados y enlaces inexistentes.
 
 ### Puerta de aprobación Fase 5
 
@@ -13807,7 +13881,7 @@ Una página de prueba deberá renderizarse completamente desde una revisión alm
 
 ---
 
-# FASE 6 — BORRADORES, PREVIEW, PUBLICACIÓN Y VERSIONES
+## FASE 6 — BORRADORES, PREVIEW, PUBLICACIÓN Y VERSIONES
 
 ## Objetivo
 
@@ -13815,29 +13889,29 @@ Implementar un flujo editorial seguro.
 
 ---
 
-# [ ] **WEB-PUB-001 — Crear borrador inicial**
+### [ ] **WEB-PUB-001 — Crear borrador inicial**
   - Crear borrador desde página vacía.
   - Crear borrador desde versión publicada.
 
-# [ ] **WEB-PUB-002 — Implementar guardado manual**
+### [ ] **WEB-PUB-002 — Implementar guardado manual**
   - Validar.
   - Guardar.
   - Mostrar fecha.
   - Mostrar usuario.
 
-# [ ] **WEB-PUB-003 — Implementar autoguardado**
+### [ ] **WEB-PUB-003 — Implementar autoguardado**
   - Debounce.
   - Estado guardando.
   - Estado guardado.
   - Manejo de error.
   - Recuperación.
 
-# [ ] **WEB-PUB-004 — Implementar control de concurrencia**
+### [ ] **WEB-PUB-004 — Implementar control de concurrencia**
   - Detectar edición simultánea.
   - Evitar sobrescritura silenciosa.
   - Advertir versión desactualizada.
 
-# [ ] **WEB-PUB-005 — Implementar validación previa**
+### [ ] **WEB-PUB-005 — Implementar validación previa**
   - Campos.
   - schema.
   - enlaces.
@@ -13845,26 +13919,26 @@ Implementar un flujo editorial seguro.
   - SEO.
   - accesibilidad mínima.
 
-# [ ] **WEB-PUB-006 — Crear tokens de preview**
+### [ ] **WEB-PUB-006 — Crear tokens de preview**
   - Firmados.
   - Temporales.
   - Revocables.
   - Limitados a una revisión.
 
-# [ ] **WEB-PUB-007 — Crear ruta de preview**
+### [ ] **WEB-PUB-007 — Crear ruta de preview**
   - Cargar revisión no publicada.
   - No almacenar caché pública.
   - `noindex`.
   - Indicar modo preview.
 
-# [ ] **WEB-PUB-008 — Implementar publicación**
+### [ ] **WEB-PUB-008 — Implementar publicación**
   - Confirmación explícita.
   - Crear versión inmutable.
   - Actualizar puntero publicado.
   - Registrar auditoría.
   - Revalidar sitio.
 
-# [ ] **WEB-PUB-009 — Implementar comparación de cambios**
+### [ ] **WEB-PUB-009 — Implementar comparación de cambios**
   - Campos modificados.
   - Secciones nuevas.
   - Secciones eliminadas.
@@ -13872,7 +13946,7 @@ Implementar un flujo editorial seguro.
   - SEO.
   - navegación.
 
-# [ ] **WEB-PUB-010 — Implementar historial**
+### [ ] **WEB-PUB-010 — Implementar historial**
   - Revisión.
   - fecha.
   - autor.
@@ -13880,25 +13954,25 @@ Implementar un flujo editorial seguro.
   - estado.
   - acción.
 
-# [ ] **WEB-PUB-011 — Implementar restauración**
+### [ ] **WEB-PUB-011 — Implementar restauración**
   - Seleccionar versión.
   - Previsualizar.
   - Confirmar.
   - Crear nueva versión.
   - Publicar.
 
-# [ ] **WEB-PUB-012 — Implementar despublicación**
+### [ ] **WEB-PUB-012 — Implementar despublicación**
   - Validar impacto.
   - Mantener historial.
   - Definir respuesta pública.
 
-# [ ] **WEB-PUB-013 — Implementar releases**
+### [ ] **WEB-PUB-013 — Implementar releases**
   - Agrupar cambios de varias páginas.
   - Previsualizar conjunto.
   - Publicar conjunto.
   - Restaurar conjunto.
 
-# [ ] **WEB-PUB-014 — Crear auditoría editorial**
+### [ ] **WEB-PUB-014 — Crear auditoría editorial**
   - Crear.
   - editar.
   - publicar.
@@ -13906,13 +13980,19 @@ Implementar un flujo editorial seguro.
   - eliminar.
   - cambiar permisos.
 
+### [ ] **WEB-PUB-015 — Implementar guardado atómico de contenido relacionado**
+  - Guardar revisión y relaciones en una transacción lógica.
+  - Evitar publicaciones parciales.
+  - Idempotencia y recuperación.
+  - Registro de auditoría.
+
 ### Puerta de aprobación Fase 6
 
 Se debe poder editar una página, previsualizarla, publicarla y restaurar la versión anterior.
 
 ---
 
-# FASE 7 — FUNDAMENTO DE VISO WEB STUDIO
+## FASE 7 — FUNDAMENTO DE VISO WEB STUDIO
 
 ## Objetivo
 
@@ -13920,46 +14000,46 @@ Construir el contenedor principal del editor.
 
 ---
 
-# [ ] **WEB-EDT-001 — Crear ruta `/website-studio`**
+### [ ] **WEB-EDT-001 — Crear ruta `/website-studio`**
   - Mantener temporalmente `/website-cms`.
 
-# [ ] **WEB-EDT-002 — Crear selector de sitio**
+### [ ] **WEB-EDT-002 — Crear selector de sitio**
   - Inicialmente solo Vento Group.
   - Preparado para múltiples sitios.
 
-# [ ] **WEB-EDT-003 — Crear selector de página**
+### [ ] **WEB-EDT-003 — Crear selector de página**
   - Buscar.
   - filtrar.
   - estado.
   - fecha.
   - autor.
 
-# [ ] **WEB-EDT-004 — Crear árbol de páginas**
+### [ ] **WEB-EDT-004 — Crear árbol de páginas**
   - Inicio.
   - internas.
   - legales.
   - ocultas.
   - archivadas.
 
-# [ ] **WEB-EDT-005 — Crear lista de secciones**
+### [ ] **WEB-EDT-005 — Crear lista de secciones**
   - Orden.
   - tipo.
   - título interno.
   - estado visible/oculto.
   - error.
 
-# [ ] **WEB-EDT-006 — Crear panel central**
+### [ ] **WEB-EDT-006 — Crear panel central**
   - Preview mediante iframe.
   - Recarga controlada.
   - Sin abandonar VISO.
 
-# [ ] **WEB-EDT-007 — Crear panel de propiedades**
+### [ ] **WEB-EDT-007 — Crear panel de propiedades**
   - Campos según tipo de sección.
   - Validaciones.
   - ayuda.
   - estados.
 
-# [ ] **WEB-EDT-008 — Crear barra superior**
+### [ ] **WEB-EDT-008 — Crear barra superior**
   - Guardar.
   - preview.
   - publicar.
@@ -13967,37 +14047,37 @@ Construir el contenedor principal del editor.
   - dispositivo.
   - salir.
 
-# [ ] **WEB-EDT-009 — Crear selector responsive**
+### [ ] **WEB-EDT-009 — Crear selector responsive**
   - Desktop.
   - tablet.
   - móvil.
   - ancho personalizado de prueba.
 
-# [ ] **WEB-EDT-010 — Crear comunicación editor-preview**
+### [ ] **WEB-EDT-010 — Crear comunicación editor-preview**
   - `postMessage`.
   - selección de sección.
   - scroll hacia sección.
   - actualización temporal.
 
-# [ ] **WEB-EDT-011 — Crear indicador de guardado**
+### [ ] **WEB-EDT-011 — Crear indicador de guardado**
   - Sin cambios.
   - cambios pendientes.
   - guardando.
   - guardado.
   - error.
 
-# [ ] **WEB-EDT-012 — Crear navegación segura**
+### [ ] **WEB-EDT-012 — Crear navegación segura**
   - Advertir cambios sin guardar.
   - evitar pérdida accidental.
 
-# [ ] **WEB-EDT-013 — Crear manejo de errores**
+### [ ] **WEB-EDT-013 — Crear manejo de errores**
   - Error de carga.
   - error de schema.
   - error de permisos.
   - error de guardado.
   - error de preview.
 
-# [ ] **WEB-EDT-014 — Crear accesibilidad del editor**
+### [ ] **WEB-EDT-014 — Crear accesibilidad del editor**
   - teclado.
   - foco.
   - etiquetas.
@@ -14010,7 +14090,7 @@ El editor deberá cargar una página, mostrar sus secciones y presentar preview 
 
 ---
 
-# FASE 8 — EDICIÓN VISUAL Y OPERACIONES SOBRE SECCIONES
+## FASE 8 — EDICIÓN VISUAL Y OPERACIONES SOBRE SECCIONES
 
 ## Objetivo
 
@@ -14018,40 +14098,40 @@ Convertir el editor en un constructor funcional.
 
 ---
 
-# [ ] **WEB-BLD-001 — Crear biblioteca de secciones**
+### [ ] **WEB-BLD-001 — Crear biblioteca de secciones**
   - categorías.
   - búsqueda.
   - miniatura.
   - descripción.
   - variantes.
 
-# [ ] **WEB-BLD-002 — Agregar sección**
+### [ ] **WEB-BLD-002 — Agregar sección**
   - Seleccionar tipo.
   - crear configuración por defecto.
   - insertar en posición elegida.
 
-# [ ] **WEB-BLD-003 — Reordenar secciones**
+### [ ] **WEB-BLD-003 — Reordenar secciones**
   - Drag-and-drop.
   - alternativa por teclado.
   - actualización inmediata del preview.
 
-# [ ] **WEB-BLD-004 — Duplicar sección**
+### [ ] **WEB-BLD-004 — Duplicar sección**
   - Nuevo ID.
   - conservar configuración.
   - conservar medios.
   - registrar cambios.
 
-# [ ] **WEB-BLD-005 — Ocultar sección**
+### [ ] **WEB-BLD-005 — Ocultar sección**
   - Ocultar sin eliminar.
   - mostrar estado en editor.
   - excluir en producción.
 
-# [ ] **WEB-BLD-006 — Eliminar sección**
+### [ ] **WEB-BLD-006 — Eliminar sección**
   - Confirmación.
   - advertencia.
   - posibilidad de deshacer antes de guardar.
 
-# [ ] **WEB-BLD-007 — Editar contenido**
+### [ ] **WEB-BLD-007 — Editar contenido**
   - título.
   - subtítulo.
   - cuerpo.
@@ -14059,12 +14139,12 @@ Convertir el editor en un constructor funcional.
   - enlaces.
   - etiquetas.
 
-# [ ] **WEB-BLD-008 — Seleccionar variante**
+### [ ] **WEB-BLD-008 — Seleccionar variante**
   - Variante visual compatible.
   - Preview inmediato.
   - valores por defecto.
 
-# [ ] **WEB-BLD-009 — Configurar apariencia**
+### [ ] **WEB-BLD-009 — Configurar apariencia**
   - tema claro/oscuro.
   - fondo.
   - alineación.
@@ -14072,14 +14152,14 @@ Convertir el editor en un constructor funcional.
   - espaciado.
   - contraste.
 
-# [ ] **WEB-BLD-010 — Configurar responsive**
+### [ ] **WEB-BLD-010 — Configurar responsive**
   - propiedades por dispositivo.
   - orden.
   - ocultamiento.
   - alineación.
   - foco multimedia.
 
-# [ ] **WEB-BLD-011 — Conectar colecciones**
+### [ ] **WEB-BLD-011 — Conectar colecciones**
   - categoría.
   - filtro.
   - orden.
@@ -14087,50 +14167,50 @@ Convertir el editor en un constructor funcional.
   - selección manual.
   - elementos destacados.
 
-# [ ] **WEB-BLD-012 — Seleccionar elementos manuales**
+### [ ] **WEB-BLD-012 — Seleccionar elementos manuales**
   - Restaurantes.
   - eventos.
   - empleos.
   - servicios.
   - apps.
 
-# [ ] **WEB-BLD-013 — Crear edición desde el preview**
+### [ ] **WEB-BLD-013 — Crear edición desde el preview**
   - Clic sobre sección.
   - selección.
   - resaltado.
   - apertura de propiedades.
 
-# [ ] **WEB-BLD-014 — Crear undo/redo**
+### [ ] **WEB-BLD-014 — Crear undo/redo**
   - Historial local.
   - deshacer.
   - rehacer.
   - reiniciar borrador.
 
-# [ ] **WEB-BLD-015 — Crear copiar y pegar**
+### [ ] **WEB-BLD-015 — Crear copiar y pegar**
   - Dentro de la misma página.
   - Entre páginas compatibles.
 
-# [ ] **WEB-BLD-016 — Crear anclas**
+### [ ] **WEB-BLD-016 — Crear anclas**
   - ID de sección.
   - navegación interna.
   - validación de duplicados.
 
-# [ ] **WEB-BLD-017 — Crear páginas**
+### [ ] **WEB-BLD-017 — Crear páginas**
   - Desde cero.
   - desde plantilla.
   - duplicar existente.
 
-# [ ] **WEB-BLD-018 — Administrar URL**
+### [ ] **WEB-BLD-018 — Administrar URL**
   - slug.
   - redirecciones.
   - colisiones.
   - URL reservadas.
 
-# [ ] **WEB-BLD-019 — Archivar páginas**
+### [ ] **WEB-BLD-019 — Archivar páginas**
   - No eliminar directamente una página publicada.
   - conservar historial.
 
-# [ ] **WEB-BLD-020 — Crear plantillas**
+### [ ] **WEB-BLD-020 — Crear plantillas**
   - Guardar estructura.
   - aplicar plantilla.
   - actualizar catálogo.
@@ -14141,7 +14221,7 @@ Una persona no técnica deberá poder crear una página completa sin modificar c
 
 ---
 
-# FASE 9 — BIBLIOTECA MULTIMEDIA
+## FASE 9 — BIBLIOTECA MULTIMEDIA
 
 ## Objetivo
 
@@ -14149,28 +14229,28 @@ Administrar imágenes y videos de forma visual, segura y eficiente.
 
 ---
 
-# [ ] **WEB-MED-001 — Definir bucket y estructura**
+### [ ] **WEB-MED-001 — Definir bucket y estructura**
   - Sitio.
   - tipo.
   - fecha.
   - recurso.
   - versión.
 
-# [ ] **WEB-MED-002 — Crear biblioteca visual**
+### [ ] **WEB-MED-002 — Crear biblioteca visual**
   - Grid.
   - lista.
   - miniaturas.
   - búsqueda.
   - filtros.
 
-# [ ] **WEB-MED-003 — Crear subida de archivos**
+### [ ] **WEB-MED-003 — Crear subida de archivos**
   - Arrastrar.
   - seleccionar.
   - múltiples archivos.
   - progreso.
   - cancelación.
 
-# [ ] **WEB-MED-004 — Validar archivos**
+### [ ] **WEB-MED-004 — Validar archivos**
   - formato.
   - tamaño.
   - dimensiones.
@@ -14178,7 +14258,7 @@ Administrar imágenes y videos de forma visual, segura y eficiente.
   - MIME.
   - extensión.
 
-# [ ] **WEB-MED-005 — Crear metadatos**
+### [ ] **WEB-MED-005 — Crear metadatos**
   - título.
   - descripción.
   - alt text.
@@ -14186,26 +14266,26 @@ Administrar imágenes y videos de forma visual, segura y eficiente.
   - autor.
   - copyright interno.
 
-# [ ] **WEB-MED-006 — Crear punto focal**
+### [ ] **WEB-MED-006 — Crear punto focal**
   - Foco horizontal.
   - foco vertical.
   - preview por dispositivo.
 
-# [ ] **WEB-MED-007 — Crear recorte**
+### [ ] **WEB-MED-007 — Crear recorte**
   - Relaciones permitidas.
   - portada.
   - tarjeta.
   - hero.
   - Open Graph.
 
-# [ ] **WEB-MED-008 — Crear optimización de imágenes**
+### [ ] **WEB-MED-008 — Crear optimización de imágenes**
   - WebP/AVIF.
   - tamaños.
   - compresión.
   - lazy loading.
   - placeholder.
 
-# [ ] **WEB-MED-009 — Crear manejo de videos**
+### [ ] **WEB-MED-009 — Crear manejo de videos**
   - poster.
   - duración.
   - autoplay permitido.
@@ -14213,28 +14293,34 @@ Administrar imágenes y videos de forma visual, segura y eficiente.
   - móvil.
   - fallback.
 
-# [ ] **WEB-MED-010 — Crear reemplazo global**
+### [ ] **WEB-MED-010 — Crear reemplazo global**
   - Identificar usos.
   - reemplazar.
   - advertir impacto.
 
-# [ ] **WEB-MED-011 — Impedir borrado peligroso**
+### [ ] **WEB-MED-011 — Impedir borrado peligroso**
   - Mostrar usos.
   - bloquear si está publicado.
   - permitir reemplazo.
 
-# [ ] **WEB-MED-012 — Crear limpieza de huérfanos**
+### [ ] **WEB-MED-012 — Crear limpieza de huérfanos**
   - Detectar.
   - revisar.
   - archivar.
   - eliminar posteriormente.
 
-# [ ] **WEB-MED-013 — Crear permisos multimedia**
+### [ ] **WEB-MED-013 — Crear permisos multimedia**
   - Subir.
   - editar.
   - reemplazar.
   - eliminar.
   - administrar.
+
+### [ ] **WEB-MED-014 — Resolver entrega pública segura de medios**
+  - URLs públicas firmadas o CDN según política.
+  - Cache-control y versionado.
+  - Separación entre originales y derivados.
+  - Revocación y eliminación segura.
 
 ### Puerta de aprobación Fase 9
 
@@ -14242,7 +14328,7 @@ Todo medio publicado deberá tener trazabilidad, optimización y uso identificab
 
 ---
 
-# FASE 10 — CONFIGURACIÓN GLOBAL DEL SITIO
+## FASE 10 — CONFIGURACIÓN GLOBAL DEL SITIO
 
 ## Objetivo
 
@@ -14250,7 +14336,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
 
 ---
 
-# [ ] **WEB-GLB-001 — Crear editor de tema**
+### [ ] **WEB-GLB-001 — Crear editor de tema**
   - Paleta.
   - fondos.
   - tipografías.
@@ -14259,7 +14345,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - espacios.
   - sombras.
 
-# [ ] **WEB-GLB-002 — Crear configuración de logos**
+### [ ] **WEB-GLB-002 — Crear configuración de logos**
   - principal.
   - claro.
   - oscuro.
@@ -14267,14 +14353,14 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - favicon.
   - Open Graph.
 
-# [ ] **WEB-GLB-003 — Crear editor de header**
+### [ ] **WEB-GLB-003 — Crear editor de header**
   - estilo.
   - transparencia.
   - comportamiento al scroll.
   - CTA.
   - menú móvil.
 
-# [ ] **WEB-GLB-004 — Crear editor de navegación**
+### [ ] **WEB-GLB-004 — Crear editor de navegación**
   - añadir.
   - ordenar.
   - anidar.
@@ -14282,7 +14368,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - enlaces externos.
   - páginas internas.
 
-# [ ] **WEB-GLB-005 — Crear editor de footer**
+### [ ] **WEB-GLB-005 — Crear editor de footer**
   - columnas.
   - enlaces.
   - redes.
@@ -14290,7 +14376,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - legales.
   - marcas.
 
-# [ ] **WEB-GLB-006 — Crear información corporativa**
+### [ ] **WEB-GLB-006 — Crear información corporativa**
   - nombre.
   - correo.
   - teléfono.
@@ -14298,7 +14384,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - horarios.
   - redes.
 
-# [ ] **WEB-GLB-007 — Crear configuración SEO global**
+### [ ] **WEB-GLB-007 — Crear configuración SEO global**
   - título base.
   - descripción base.
   - imagen base.
@@ -14306,7 +14392,7 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - idioma.
   - organización.
 
-# [ ] **WEB-GLB-008 — Crear SEO por página**
+### [ ] **WEB-GLB-008 — Crear SEO por página**
   - title.
   - description.
   - canonical.
@@ -14314,31 +14400,31 @@ Permitir administrar desde VISO los elementos que afectan todas las páginas.
   - indexación.
   - schema.
 
-# [ ] **WEB-GLB-009 — Crear sitemap**
+### [ ] **WEB-GLB-009 — Crear sitemap**
   - páginas publicadas.
   - restaurantes.
   - eventos.
   - fechas de modificación.
 
-# [ ] **WEB-GLB-010 — Crear redirecciones**
+### [ ] **WEB-GLB-010 — Crear redirecciones**
   - URL anterior.
   - URL nueva.
   - tipo 301/302.
   - prevención de ciclos.
 
-# [ ] **WEB-GLB-011 — Crear configuración analítica**
+### [ ] **WEB-GLB-011 — Crear configuración analítica**
   - proveedor.
   - identificador.
   - eventos.
   - consentimiento.
 
-# [ ] **WEB-GLB-012 — Crear banner de cookies**
+### [ ] **WEB-GLB-012 — Crear banner de cookies**
   - categorías.
   - consentimiento.
   - persistencia.
   - política.
 
-# [ ] **WEB-GLB-013 — Crear páginas legales**
+### [ ] **WEB-GLB-013 — Crear páginas legales**
   - privacidad.
   - tratamiento de datos.
   - términos.
@@ -14350,7 +14436,7 @@ Header, footer, tema, SEO y navegación deberán poder cambiarse sin despliegue 
 
 ---
 
-# FASE 11 — FORMULARIOS Y CONVERSIONES
+## FASE 11 — FORMULARIOS Y CONVERSIONES
 
 ## Objetivo
 
@@ -14358,7 +14444,7 @@ Gestionar contacto, reservas, eventos y aplicaciones desde la web.
 
 ---
 
-# [ ] **WEB-FRM-001 — Crear catálogo de formularios**
+### [ ] **WEB-FRM-001 — Crear catálogo de formularios**
   - Contacto.
   - eventos.
   - reserva.
@@ -14366,7 +14452,7 @@ Gestionar contacto, reservas, eventos y aplicaciones desde la web.
   - proveedores.
   - prensa.
 
-# [ ] **WEB-FRM-002 — Crear constructor controlado de formularios**
+### [ ] **WEB-FRM-002 — Crear constructor controlado de formularios**
   - Campo texto.
   - email.
   - teléfono.
@@ -14376,53 +14462,59 @@ Gestionar contacto, reservas, eventos y aplicaciones desde la web.
   - fecha.
   - archivo permitido.
 
-# [ ] **WEB-FRM-003 — Crear validaciones**
+### [ ] **WEB-FRM-003 — Crear validaciones**
   - requerido.
   - formato.
   - longitud.
   - archivo.
   - consentimiento.
 
-# [ ] **WEB-FRM-004 — Crear envío seguro**
+### [ ] **WEB-FRM-004 — Crear envío seguro**
   - Validación servidor.
   - rate limit.
   - anti-spam.
   - CAPTCHA cuando corresponda.
 
-# [ ] **WEB-FRM-005 — Crear almacenamiento de envíos**
+### [ ] **WEB-FRM-005 — Crear almacenamiento de envíos**
   - estado.
   - fecha.
   - origen.
   - página.
   - consentimiento.
 
-# [ ] **WEB-FRM-006 — Crear notificaciones**
+### [ ] **WEB-FRM-006 — Crear notificaciones**
   - correo.
   - destinatarios.
   - asunto.
   - plantilla.
 
-# [ ] **WEB-FRM-007 — Crear bandeja en VISO**
+### [ ] **WEB-FRM-007 — Crear bandeja en VISO**
   - Nuevos.
   - en gestión.
   - atendidos.
   - descartados.
 
-# [ ] **WEB-FRM-008 — Crear exportación**
+### [ ] **WEB-FRM-008 — Crear exportación**
   - CSV.
   - filtros.
   - rango de fechas.
 
-# [ ] **WEB-FRM-009 — Crear política de retención**
+### [ ] **WEB-FRM-009 — Crear política de retención**
   - datos personales.
   - archivos.
   - tiempos.
   - eliminación.
 
-# [ ] **WEB-FRM-010 — Integrar empleos con Vento Talento**
+### [ ] **WEB-FRM-010 — Integrar empleos con Vento Talento**
   - Definir si redirige.
   - Definir si comparte vacantes.
   - Definir si recibe aplicaciones.
+
+### [ ] **WEB-FRM-011 — Implementar suscripción de newsletter o retirar la interfaz**
+  - Decidir alcance funcional.
+  - Consentimiento, validación y almacenamiento o proveedor.
+  - Estados de éxito y error accesibles.
+  - Retirar la interfaz si no se implementa.
 
 ### Puerta de aprobación Fase 11
 
@@ -14430,7 +14522,7 @@ Los formularios deberán funcionar sin exponer credenciales ni permitir spam bá
 
 ---
 
-# FASE 12 — RECONSTRUCCIÓN DE PÁGINAS ESTILO DARLING
+## FASE 12 — RECONSTRUCCIÓN DE PÁGINAS ESTILO DARLING
 
 ## Objetivo
 
@@ -14440,7 +14532,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.1 Inicio
 
-# [ ] **WEB-PAG-001 — Definir blueprint de Inicio**
+### [ ] **WEB-PAG-001 — Definir blueprint de Inicio**
   - Splash.
   - hero.
   - venues.
@@ -14451,11 +14543,11 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - ecosistema.
   - CTA.
 
-# [ ] **WEB-PAG-002 — Migrar Inicio al renderer**
+### [ ] **WEB-PAG-002 — Migrar Inicio al renderer**
   - Eliminar dependencia estructural de código específico.
   - Mantener animaciones existentes.
 
-# [ ] **WEB-PAG-003 — Hacer Inicio editable desde VISO**
+### [ ] **WEB-PAG-003 — Hacer Inicio editable desde VISO**
   - Orden.
   - textos.
   - slides.
@@ -14467,7 +14559,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.2 Restaurantes
 
-# [ ] **WEB-PAG-010 — Definir blueprint de Restaurantes**
+### [ ] **WEB-PAG-010 — Definir blueprint de Restaurantes**
   - Hero.
   - showcase.
   - editorial.
@@ -14475,13 +14567,13 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - portafolio.
   - CTA.
 
-# [ ] **WEB-PAG-011 — Migrar listado de restaurantes**
+### [ ] **WEB-PAG-011 — Migrar listado de restaurantes**
   - Contenido dinámico.
   - filtros.
   - destacados.
   - orden.
 
-# [ ] **WEB-PAG-012 — Crear plantilla de restaurante**
+### [ ] **WEB-PAG-012 — Crear plantilla de restaurante**
   - Hero.
   - introducción.
   - ubicación.
@@ -14492,19 +14584,19 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - reserva.
   - restaurantes relacionados.
 
-# [ ] **WEB-PAG-013 — Migrar Vento Café**
+### [ ] **WEB-PAG-013 — Migrar Vento Café**
   - Contenido real.
   - medios reales.
   - SEO.
   - CTA.
 
-# [ ] **WEB-PAG-014 — Migrar Saudo**
+### [ ] **WEB-PAG-014 — Migrar Saudo**
   - Contenido real.
   - medios reales.
   - SEO.
   - CTA.
 
-# [ ] **WEB-PAG-015 — Migrar Molka**
+### [ ] **WEB-PAG-015 — Migrar Molka**
   - Confirmar estado de marca.
   - contenido.
   - medios.
@@ -14515,7 +14607,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.3 Empleos
 
-# [ ] **WEB-PAG-020 — Definir blueprint de Empleos**
+### [ ] **WEB-PAG-020 — Definir blueprint de Empleos**
   - Hero.
   - cultura.
   - editorial.
@@ -14524,7 +14616,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - vacantes.
   - CTA.
 
-# [ ] **WEB-PAG-021 — Crear lista de vacantes**
+### [ ] **WEB-PAG-021 — Crear lista de vacantes**
   - Cargo.
   - sede.
   - modalidad.
@@ -14532,14 +14624,14 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - fecha.
   - aplicar.
 
-# [ ] **WEB-PAG-022 — Crear detalle de vacante**
+### [ ] **WEB-PAG-022 — Crear detalle de vacante**
   - Descripción.
   - responsabilidades.
   - requisitos.
   - beneficios.
   - formulario o integración.
 
-# [ ] **WEB-PAG-023 — Integrar con Vento Talento**
+### [ ] **WEB-PAG-023 — Integrar con Vento Talento**
   - Fuente canónica de vacantes.
   - evitar duplicados.
   - estado de publicación.
@@ -14548,7 +14640,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.4 Ecosistema
 
-# [ ] **WEB-PAG-030 — Definir blueprint de Ecosistema**
+### [ ] **WEB-PAG-030 — Definir blueprint de Ecosistema**
   - Hero.
   - historia.
   - visión.
@@ -14558,17 +14650,17 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - cultura.
   - CTA.
 
-# [ ] **WEB-PAG-031 — Crear secciones de Vento Pass**
+### [ ] **WEB-PAG-031 — Crear secciones de Vento Pass**
   - propósito.
   - beneficios.
   - CTA.
 
-# [ ] **WEB-PAG-032 — Crear secciones de Anima**
+### [ ] **WEB-PAG-032 — Crear secciones de Anima**
   - propósito.
   - beneficios.
   - CTA.
 
-# [ ] **WEB-PAG-033 — Crear secciones de Vento OS**
+### [ ] **WEB-PAG-033 — Crear secciones de Vento OS**
   - propósito.
   - módulos.
   - CTA.
@@ -14577,7 +14669,7 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.5 Eventos
 
-# [ ] **WEB-PAG-040 — Definir blueprint de Eventos**
+### [ ] **WEB-PAG-040 — Definir blueprint de Eventos**
   - Hero.
   - espacios.
   - capacidades.
@@ -14585,14 +14677,14 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
   - galería.
   - formulario.
 
-# [ ] **WEB-PAG-041 — Crear selector de espacios**
+### [ ] **WEB-PAG-041 — Crear selector de espacios**
   - restaurante.
   - zona.
   - capacidad.
   - tipo de evento.
   - media.
 
-# [ ] **WEB-PAG-042 — Crear formulario de eventos**
+### [ ] **WEB-PAG-042 — Crear formulario de eventos**
   - tipo.
   - fecha.
   - personas.
@@ -14604,18 +14696,18 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.6 Servicios
 
-# [ ] **WEB-PAG-050 — Definir blueprint de Servicios**
+### [ ] **WEB-PAG-050 — Definir blueprint de Servicios**
   - Hero.
   - editorial.
   - servicios.
   - beneficios.
   - CTA.
 
-# [ ] **WEB-PAG-051 — Definir servicios reales**
+### [ ] **WEB-PAG-051 — Definir servicios reales**
   - No publicar categorías vacías.
   - No utilizar placeholders.
 
-# [ ] **WEB-PAG-052 — Crear detalle opcional de servicio**
+### [ ] **WEB-PAG-052 — Crear detalle opcional de servicio**
   - Descripción.
   - alcance.
   - contacto.
@@ -14625,14 +14717,14 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.7 Contacto
 
-# [ ] **WEB-PAG-060 — Crear página Contacto**
+### [ ] **WEB-PAG-060 — Crear página Contacto**
   - Hero.
   - formulario.
   - áreas de contacto.
   - sedes.
   - redes.
 
-# [ ] **WEB-PAG-061 — Reemplazar enlaces mailto dispersos**
+### [ ] **WEB-PAG-061 — Reemplazar enlaces mailto dispersos**
   - Centralizar contacto.
   - mantener correos solo cuando aporten valor.
 
@@ -14640,12 +14732,12 @@ Migrar cada página al nuevo sistema y llevarla al nivel visual definido.
 
 ## 12.8 Páginas auxiliares
 
-# [ ] **WEB-PAG-070 — Crear página 404**
-# [ ] **WEB-PAG-071 — Crear página de error**
-# [ ] **WEB-PAG-072 — Crear privacidad**
-# [ ] **WEB-PAG-073 — Crear tratamiento de datos**
-# [ ] **WEB-PAG-074 — Crear términos**
-# [ ] **WEB-PAG-075 — Crear cookies**
+### [ ] **WEB-PAG-070 — Crear página 404**
+### [ ] **WEB-PAG-071 — Crear página de error**
+### [ ] **WEB-PAG-072 — Crear privacidad**
+### [ ] **WEB-PAG-073 — Crear tratamiento de datos**
+### [ ] **WEB-PAG-074 — Crear términos**
+### [ ] **WEB-PAG-075 — Crear cookies**
 
 ### Puerta de aprobación Fase 12
 
@@ -14653,7 +14745,7 @@ Todas las páginas públicas prioritarias deberán estar administradas desde VIS
 
 ---
 
-# FASE 13 — MIGRACIÓN DE CONTENIDO Y CORTE PROGRESIVO
+## FASE 13 — MIGRACIÓN DE CONTENIDO Y CORTE PROGRESIVO
 
 ## Objetivo
 
@@ -14661,7 +14753,7 @@ Mover el contenido actual al sistema nuevo sin interrupciones.
 
 ---
 
-# [ ] **WEB-MIG-001 — Crear inventario de contenido migrable**
+### [ ] **WEB-MIG-001 — Crear inventario de contenido migrable**
   - Bloques.
   - items.
   - imágenes.
@@ -14669,50 +14761,76 @@ Mover el contenido actual al sistema nuevo sin interrupciones.
   - SEO.
   - enlaces.
 
-# [ ] **WEB-MIG-002 — Crear transformador legacy**
+### [ ] **WEB-MIG-002 — Crear transformador legacy**
   - `website_blocks` → revisión de página.
   - `website_items` → colecciones dinámicas.
 
-# [ ] **WEB-MIG-003 — Crear reporte de incompatibilidades**
+### [ ] **WEB-MIG-003 — Crear reporte de incompatibilidades**
   - campos perdidos.
   - claves desconocidas.
   - medios faltantes.
   - enlaces inválidos.
 
-# [ ] **WEB-MIG-004 — Migrar Inicio**
-# [ ] **WEB-MIG-005 — Migrar Restaurantes**
-# [ ] **WEB-MIG-006 — Migrar detalles de restaurante**
-# [ ] **WEB-MIG-007 — Migrar Empleos**
-# [ ] **WEB-MIG-008 — Migrar Ecosistema**
-# [ ] **WEB-MIG-009 — Migrar Eventos**
-# [ ] **WEB-MIG-010 — Migrar Servicios**
-# [ ] **WEB-MIG-011 — Migrar navegación**
-# [ ] **WEB-MIG-012 — Migrar footer**
-# [ ] **WEB-MIG-013 — Migrar SEO**
-# [ ] **WEB-MIG-014 — Migrar medios**
+### [ ] **WEB-MIG-004 — Migrar Inicio**
+### [ ] **WEB-MIG-005 — Migrar Restaurantes**
+### [ ] **WEB-MIG-006 — Migrar detalles de restaurante**
+### [ ] **WEB-MIG-007 — Migrar Empleos**
+### [ ] **WEB-MIG-008 — Migrar Ecosistema**
+### [ ] **WEB-MIG-009 — Migrar Eventos**
+### [ ] **WEB-MIG-010 — Migrar Servicios**
+### [ ] **WEB-MIG-011 — Migrar navegación**
+### [ ] **WEB-MIG-012 — Migrar footer**
+### [ ] **WEB-MIG-013 — Migrar SEO**
+### [ ] **WEB-MIG-014 — Migrar medios**
 
-# [ ] **WEB-MIG-015 — Poblar contenido real**
+### [ ] **WEB-MIG-015 — Poblar contenido real**
   - Eliminar placeholders.
   - Confirmar datos.
   - confirmar imágenes.
   - confirmar CTA.
 
-# [ ] **WEB-MIG-016 — Bloquear edición legacy por página migrada**
+### [ ] **WEB-MIG-016 — Bloquear edición legacy por página migrada**
   - Evitar doble fuente de verdad.
 
-# [ ] **WEB-MIG-017 — Mantener rollback legacy temporal**
+### [ ] **WEB-MIG-017 — Mantener rollback legacy temporal**
   - Periodo de seguridad.
   - documentación.
   - responsables.
 
-# [ ] **WEB-MIG-018 — Archivar CMS legacy**
+### [ ] **WEB-MIG-018 — Archivar CMS legacy**
   - Solo después de validar todas las páginas.
 
-# [ ] **WEB-MIG-019 — Definir destino de tablas legacy**
+### [ ] **WEB-MIG-019 — Definir destino de tablas legacy**
   - mantener lectura histórica;
   - renombrar;
   - archivar;
   - eliminar en una migración posterior.
+
+### [ ] **WEB-MIG-020 — Retirar componentes y composiciones públicas legacy**
+  - Retirar `CategoryPage` y `HomeEditorialBand` actual.
+  - Eliminar adaptadores e imports muertos.
+  - Confirmar que ninguna ruta depende del código retirado.
+
+### [ ] **WEB-MIG-021 — Migrar contenido hardcodeado a fuentes canónicas**
+  - Textos, CTA, navegación, contactos y redes.
+  - Logos, metadata, pilares y destinos.
+  - Preservar microcopia técnica en código.
+
+### [ ] **WEB-MIG-022 — Depurar y clasificar datos CMS legacy existentes**
+  - Clasificar registros reales, seeds y placeholders.
+  - Corregir categorías, slugs y medios.
+  - Definir conservar, migrar, archivar o eliminar.
+
+### [ ] **WEB-MIG-023 — Migrar estilos públicos a tokens y CSS Modules**
+  - Extraer tokens globales.
+  - Reducir acoplamiento a `globals.css`.
+  - Definir ownership de estilos por componente.
+  - Mantener equivalencia visual.
+
+### [ ] **WEB-MIG-024 — Implementar adaptador legacy de solo lectura**
+  - Leer páginas no migradas sin permitir nueva edición legacy.
+  - Registrar dependencias pendientes.
+  - Retirar adaptador al terminar la migración.
 
 ### Puerta de aprobación Fase 13
 
@@ -14720,7 +14838,7 @@ Cada página migrada deberá tener equivalencia funcional y visual antes de desa
 
 ---
 
-# FASE 14 — SEGURIDAD
+## FASE 14 — SEGURIDAD
 
 ## Objetivo
 
@@ -14728,25 +14846,25 @@ Evitar acceso indebido, publicación accidental y contenido inseguro.
 
 ---
 
-# [ ] **WEB-SEC-001 — Validar permisos por acción**
-# [ ] **WEB-SEC-002 — Probar RLS anónima**
-# [ ] **WEB-SEC-003 — Probar RLS autenticada**
-# [ ] **WEB-SEC-004 — Probar publicación restringida**
-# [ ] **WEB-SEC-005 — Proteger preview**
-# [ ] **WEB-SEC-006 — Sanitizar texto enriquecido**
-# [ ] **WEB-SEC-007 — Validar URLs**
-# [ ] **WEB-SEC-008 — Validar archivos**
-# [ ] **WEB-SEC-009 — Aplicar rate limiting**
-# [ ] **WEB-SEC-010 — Proteger formularios**
-# [ ] **WEB-SEC-011 — Auditar secretos**
-# [ ] **WEB-SEC-012 — Auditar variables de entorno**
-# [ ] **WEB-SEC-013 — Registrar eventos sensibles**
-# [ ] **WEB-SEC-014 — Probar restauración ante error**
-# [ ] **WEB-SEC-015 — Crear revisión de seguridad previa a producción**
-# [ ] **WEB-SEC-016 — Endurecer serialización y validación de JSON-LD**
-# [ ] **WEB-SEC-017 — Eliminar dependencia de service role para lectura pública**
-# [ ] **WEB-SEC-018 — Endurecer el CMS legacy mientras continúe operativo**
-# [ ] **WEB-SEC-019 — Reducir privilegios SQL y endurecer funciones del dominio web**
+### [ ] **WEB-SEC-001 — Validar permisos por acción**
+### [ ] **WEB-SEC-002 — Probar RLS anónima**
+### [ ] **WEB-SEC-003 — Probar RLS autenticada**
+### [ ] **WEB-SEC-004 — Probar publicación restringida**
+### [ ] **WEB-SEC-005 — Proteger preview**
+### [ ] **WEB-SEC-006 — Sanitizar texto enriquecido**
+### [ ] **WEB-SEC-007 — Validar URLs**
+### [ ] **WEB-SEC-008 — Validar archivos**
+### [ ] **WEB-SEC-009 — Aplicar rate limiting**
+### [ ] **WEB-SEC-010 — Proteger formularios**
+### [ ] **WEB-SEC-011 — Auditar secretos**
+### [ ] **WEB-SEC-012 — Auditar variables de entorno**
+### [ ] **WEB-SEC-013 — Registrar eventos sensibles**
+### [ ] **WEB-SEC-014 — Probar restauración ante error**
+### [ ] **WEB-SEC-015 — Crear revisión de seguridad previa a producción**
+### [ ] **WEB-SEC-016 — Endurecer serialización y validación de JSON-LD**
+### [ ] **WEB-SEC-017 — Eliminar dependencia de service role para lectura pública**
+### [ ] **WEB-SEC-018 — Endurecer el CMS legacy mientras continúe operativo**
+### [ ] **WEB-SEC-019 — Reducir privilegios SQL y endurecer funciones del dominio web**
 
 ### Criterio obligatorio
 
@@ -14754,7 +14872,7 @@ La web pública nunca deberá poder consultar borradores ni versiones privadas.
 
 ---
 
-# FASE 15 — CALIDAD, ACCESIBILIDAD Y RENDIMIENTO
+## FASE 15 — CALIDAD, ACCESIBILIDAD Y RENDIMIENTO
 
 ## Objetivo
 
@@ -14762,66 +14880,78 @@ Garantizar que el nuevo editor no degrade el sitio.
 
 ---
 
-# [ ] **WEB-QA-001 — Crear pruebas unitarias**
-# [ ] **WEB-QA-002 — Crear pruebas de integración**
-# [ ] **WEB-QA-003 — Crear pruebas E2E**
-# [ ] **WEB-QA-004 — Crear pruebas de publicación**
-# [ ] **WEB-QA-005 — Crear pruebas de rollback**
-# [ ] **WEB-QA-006 — Crear regresión visual**
-# [ ] **WEB-QA-007 — Probar Chrome desktop**
-# [ ] **WEB-QA-008 — Probar Android**
-# [ ] **WEB-QA-009 — Probar iPhone/Safari**
-# [ ] **WEB-QA-010 — Probar tablet**
-# [ ] **WEB-QA-011 — Probar teclado**
-# [ ] **WEB-QA-012 — Probar lector de pantalla**
-# [ ] **WEB-QA-013 — Validar contraste**
-# [ ] **WEB-QA-014 — Validar animaciones reducidas**
-# [ ] **WEB-QA-015 — Validar alt text**
-# [ ] **WEB-QA-016 — Validar estructura de encabezados**
-# [ ] **WEB-QA-017 — Validar formularios**
-# [ ] **WEB-QA-018 — Validar enlaces**
-# [ ] **WEB-QA-019 — Validar SEO**
-# [ ] **WEB-QA-020 — Validar datos estructurados**
-# [ ] **WEB-QA-021 — Bloquear placeholders y contenido provisional en publicación**
-# [ ] **WEB-QA-022 — Crear smoke test canónico de producción**
-# [ ] **WEB-QA-023 — Validar calidad integral de VISO Web Studio**
-# [ ] **WEB-QA-024 — Probar RLS, GRANTs y Storage del dominio web**
+### [ ] **WEB-QA-001 — Crear pruebas unitarias**
+### [ ] **WEB-QA-002 — Crear pruebas de integración**
+### [ ] **WEB-QA-003 — Crear pruebas E2E**
+### [ ] **WEB-QA-004 — Crear pruebas de publicación**
+### [ ] **WEB-QA-005 — Crear pruebas de rollback**
+### [ ] **WEB-QA-006 — Crear regresión visual**
+### [ ] **WEB-QA-007 — Probar Chrome desktop**
+### [ ] **WEB-QA-008 — Probar Android**
+### [ ] **WEB-QA-009 — Probar iPhone/Safari**
+### [ ] **WEB-QA-010 — Probar tablet**
+### [ ] **WEB-QA-011 — Probar teclado**
+### [ ] **WEB-QA-012 — Probar lector de pantalla**
+### [ ] **WEB-QA-013 — Validar contraste**
+### [ ] **WEB-QA-014 — Validar animaciones reducidas**
+### [ ] **WEB-QA-015 — Validar alt text**
+### [ ] **WEB-QA-016 — Validar estructura de encabezados**
+### [ ] **WEB-QA-017 — Validar formularios**
+### [ ] **WEB-QA-018 — Validar enlaces**
+### [ ] **WEB-QA-019 — Validar SEO**
+### [ ] **WEB-QA-020 — Validar datos estructurados**
+### [ ] **WEB-QA-021 — Bloquear placeholders y contenido provisional en publicación**
+### [ ] **WEB-QA-022 — Crear smoke test canónico de producción**
+### [ ] **WEB-QA-023 — Validar calidad integral de VISO Web Studio**
+### [ ] **WEB-QA-024 — Probar RLS, GRANTs y Storage del dominio web**
 ---
 
 ## 15.1 Objetivos de rendimiento
 
-# [ ] **WEB-PERF-001 — LCP objetivo**
+### [ ] **WEB-PERF-001 — LCP objetivo**
   - Menor de 2,5 segundos en condiciones representativas.
 
-# [ ] **WEB-PERF-002 — CLS objetivo**
+### [ ] **WEB-PERF-002 — CLS objetivo**
   - Menor de 0,1.
 
-# [ ] **WEB-PERF-003 — Imágenes**
+### [ ] **WEB-PERF-003 — Imágenes**
   - Responsive.
   - optimizadas.
   - lazy loading cuando corresponda.
 
-# [ ] **WEB-PERF-004 — Videos**
+### [ ] **WEB-PERF-004 — Videos**
   - poster.
   - carga diferida.
   - compresión.
   - alternativa móvil.
 
-# [ ] **WEB-PERF-005 — JavaScript**
+### [ ] **WEB-PERF-005 — JavaScript**
   - Evitar cargar editor en la web pública.
   - Dividir componentes pesados.
 
-# [ ] **WEB-PERF-006 — Caché**
+### [ ] **WEB-PERF-006 — Caché**
   - Contenido publicado.
   - medios.
   - colecciones.
   - revalidación.
 
-# [ ] **WEB-PERF-007 — Lighthouse**
+### [ ] **WEB-PERF-007 — Lighthouse**
   - Performance móvil objetivo ≥ 85.
   - Accesibilidad objetivo ≥ 95.
   - SEO objetivo ≥ 95.
   - Best Practices objetivo ≥ 90.
+
+### [ ] **WEB-PERF-008 — Implementar medición de campo de Core Web Vitals**
+  - Capturar LCP, INP y CLS p75.
+  - Segmentar por ruta, dispositivo y release.
+  - Dashboard y alertas.
+  - Integración con CrUX, Search Console o RUM.
+
+### [ ] **WEB-QA-025 — Validar integridad del Section Registry y sus contratos**
+  - Verificar claves únicas y schemas.
+  - Confirmar renderer y editor asociados.
+  - Validar migraciones de versión.
+  - Bloquear secciones desconocidas o incompatibles.
 
 ### Puerta de aprobación Fase 15
 
@@ -14829,7 +14959,7 @@ No se aprobará el lanzamiento si el nuevo sistema empeora de forma crítica la 
 
 ---
 
-# FASE 16 — DESPLIEGUE Y OPERACIÓN
+## FASE 16 — DESPLIEGUE Y OPERACIÓN
 
 ## Objetivo
 
@@ -14837,13 +14967,13 @@ Lanzar el sistema con procesos reproducibles y seguros.
 
 ---
 
-# [ ] **WEB-OPS-001 — Definir ambientes**
+### [ ] **WEB-OPS-001 — Definir ambientes**
   - local.
   - desarrollo.
   - staging.
   - producción.
 
-# [ ] **WEB-OPS-002 — Definir variables por ambiente**
+### [ ] **WEB-OPS-002 — Definir variables por ambiente**
   - Supabase.
   - dominio.
   - preview.
@@ -14851,108 +14981,108 @@ Lanzar el sistema con procesos reproducibles y seguros.
   - correo.
   - analítica.
 
-# [ ] **WEB-OPS-003 — Crear ambiente staging**
+### [ ] **WEB-OPS-003 — Crear ambiente staging**
   - Sitio.
   - VISO.
   - datos de prueba.
   - preview.
 
-# [ ] **WEB-OPS-004 — Crear pipeline de validación**
+### [ ] **WEB-OPS-004 — Crear pipeline de validación**
   - lint.
   - tipos.
   - tests.
   - build.
   - migraciones.
 
-# [ ] **WEB-OPS-005 — Crear proceso de migración**
+### [ ] **WEB-OPS-005 — Crear proceso de migración**
   - respaldo.
   - aplicación.
   - validación.
   - rollback.
 
-# [ ] **WEB-OPS-006 — Crear monitoreo**
+### [ ] **WEB-OPS-006 — Crear monitoreo**
   - errores.
   - formularios.
   - publicaciones.
   - rendimiento.
   - storage.
 
-# [ ] **WEB-OPS-007 — Crear alertas**
+### [ ] **WEB-OPS-007 — Crear alertas**
   - error de publicación.
   - página no disponible.
   - error Supabase.
   - formularios fallidos.
 
-# [ ] **WEB-OPS-008 — Crear runbook de incidentes**
+### [ ] **WEB-OPS-008 — Crear runbook de incidentes**
   - sitio caído.
   - publicación incorrecta.
   - medio eliminado.
   - formulario detenido.
   - rollback.
 
-# [ ] **WEB-OPS-009 — Crear respaldo**
+### [ ] **WEB-OPS-009 — Crear respaldo**
   - base de datos.
   - medios.
   - configuración.
   - revisiones.
 
-# [ ] **WEB-OPS-010 — Probar recuperación**
+### [ ] **WEB-OPS-010 — Probar recuperación**
   - restaurar página.
   - restaurar release.
   - restaurar datos.
 
-# [ ] **WEB-OPS-011 — Crear guía editorial**
+### [ ] **WEB-OPS-011 — Crear guía editorial**
   - textos.
   - imágenes.
   - SEO.
   - publicación.
   - revisión.
 
-# [ ] **WEB-OPS-012 — Capacitar usuarios**
+### [ ] **WEB-OPS-012 — Capacitar usuarios**
   - editor.
   - publicador.
   - administrador.
 
-# [ ] **WEB-OPS-013 — Ejecutar lanzamiento progresivo**
+### [ ] **WEB-OPS-013 — Ejecutar lanzamiento progresivo**
   - Página por página.
   - monitoreo.
   - confirmación.
 
-# [ ] **WEB-OPS-014 — Cerrar periodo de estabilización**
+### [ ] **WEB-OPS-014 — Cerrar periodo de estabilización**
   - errores resueltos.
   - métricas estables.
   - legacy archivado.
 
 ---
 
-# FASE 17 — FUNCIONES AVANZADAS POSTERIORES
+## FASE 17 — FUNCIONES AVANZADAS POSTERIORES
 
 Estas tareas no pertenecen al MVP, pero quedan registradas para evitar pendientes informales.
 
 ---
 
-# [ ] **WEB-ADV-001 — Publicación programada**
-# [ ] **WEB-ADV-002 — Despublicación programada**
-# [ ] **WEB-ADV-003 — Comentarios editoriales**
-# [ ] **WEB-ADV-004 — Flujo formal de aprobación**
-# [ ] **WEB-ADV-005 — Multiidioma**
-# [ ] **WEB-ADV-006 — Traducciones por revisión**
-# [ ] **WEB-ADV-007 — Sitios adicionales para marcas**
-# [ ] **WEB-ADV-008 — Plantillas compartidas entre marcas**
-# [ ] **WEB-ADV-009 — Secciones globales reutilizables**
-# [ ] **WEB-ADV-010 — Pruebas A/B**
-# [ ] **WEB-ADV-011 — Personalización por audiencia**
-# [ ] **WEB-ADV-012 — Generación asistida de copy**
-# [ ] **WEB-ADV-013 — Sugerencias SEO asistidas**
-# [ ] **WEB-ADV-014 — Integraciones con CRM**
-# [ ] **WEB-ADV-015 — Integraciones con campañas**
-# [ ] **WEB-ADV-016 — Analítica editorial**
-# [ ] **WEB-ADV-017 — Historial visual de cambios**
-# [ ] **WEB-ADV-018 — Edición colaborativa en tiempo real**
+### [ ] **WEB-ADV-001 — Publicación programada**
+### [ ] **WEB-ADV-002 — Despublicación programada**
+### [ ] **WEB-ADV-003 — Comentarios editoriales**
+### [ ] **WEB-ADV-004 — Flujo formal de aprobación**
+### [ ] **WEB-ADV-005 — Multiidioma**
+### [ ] **WEB-ADV-006 — Traducciones por revisión**
+### [ ] **WEB-ADV-007 — Sitios adicionales para marcas**
+### [ ] **WEB-ADV-008 — Plantillas compartidas entre marcas**
+### [ ] **WEB-ADV-009 — Secciones globales reutilizables**
+### [ ] **WEB-ADV-010 — Pruebas A/B**
+### [ ] **WEB-ADV-011 — Personalización por audiencia**
+### [ ] **WEB-ADV-012 — Generación asistida de copy**
+### [ ] **WEB-ADV-013 — Sugerencias SEO asistidas**
+### [ ] **WEB-ADV-014 — Integraciones con CRM**
+### [ ] **WEB-ADV-015 — Integraciones con campañas**
+### [ ] **WEB-ADV-016 — Analítica editorial**
+### [ ] **WEB-ADV-017 — Historial visual de cambios**
+### [ ] **WEB-ADV-018 — Edición colaborativa en tiempo real**
 
 ---
 
-# 18. RUTA CRÍTICA
+## 18. RUTA CRÍTICA
 
 Las siguientes tareas no podrán alterarse de orden sin una decisión arquitectónica explícita:
 
@@ -14984,7 +15114,7 @@ WEB-OPS
 
 ---
 
-# 19. TRABAJO PARALELIZABLE
+## 19. TRABAJO PARALELIZABLE
 
 Después de aprobar la arquitectura, podrán avanzar en paralelo:
 
@@ -15002,7 +15132,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 ---
 
-# 20. RIESGOS PRINCIPALES
+## 20. RIESGOS PRINCIPALES
 
 ## RIESGO 1 — Personalización excesiva
 
@@ -15103,7 +15233,7 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 **Tareas vinculadas:**
 
-- `WEB-PAG-*`
+- tareas específicas `WEB-PAG-001` a `WEB-PAG-075` según `WEB-AUD-012`
 - revisión de contenido previa al lanzamiento.
 
 ---
@@ -15123,40 +15253,40 @@ No podrán publicarse páginas nuevas hasta que el renderer y el flujo de public
 
 - `ADR-WEB-001`
 - `WEB-ARC-001`
-- `WEB-DB-*`
+- tareas específicas `WEB-DB-001` a `WEB-DB-020` según `WEB-AUD-012`
 
 ---
 
-# 21. DEFINICIÓN DE MVP
+## 21. DEFINICIÓN DE MVP
 
 El MVP se considerará completo únicamente cuando:
 
-# [ ] VISO permita editar páginas visualmente.
-# [ ] Se puedan agregar y ordenar secciones.
-# [ ] Exista preview responsive.
-# [ ] Existan borradores.
-# [ ] Publicar sea una acción independiente.
-# [ ] Exista historial.
-# [ ] Exista restauración.
-# [ ] Inicio esté migrado.
-# [ ] Restaurantes esté migrado.
-# [ ] Empleos esté migrado.
-# [ ] Ecosistema esté migrado.
-# [ ] Eventos esté migrado.
-# [ ] Servicios esté migrado.
-# [ ] Contacto exista.
-# [ ] Header y footer sean administrables.
-# [ ] SEO sea administrable.
-# [ ] Los medios sean administrables.
-# [ ] No existan placeholders visibles.
-# [ ] Las páginas críticas funcionen en móvil.
-# [ ] Las políticas RLS estén verificadas.
-# [ ] Las migraciones estén en `vento-shell`.
-# [ ] Exista documentación de operación.
+### [ ] VISO permita editar páginas visualmente.
+### [ ] Se puedan agregar y ordenar secciones.
+### [ ] Exista preview responsive.
+### [ ] Existan borradores.
+### [ ] Publicar sea una acción independiente.
+### [ ] Exista historial.
+### [ ] Exista restauración.
+### [ ] Inicio esté migrado.
+### [ ] Restaurantes esté migrado.
+### [ ] Empleos esté migrado.
+### [ ] Ecosistema esté migrado.
+### [ ] Eventos esté migrado.
+### [ ] Servicios esté migrado.
+### [ ] Contacto exista.
+### [ ] Header y footer sean administrables.
+### [ ] SEO sea administrable.
+### [ ] Los medios sean administrables.
+### [ ] No existan placeholders visibles.
+### [ ] Las páginas críticas funcionen en móvil.
+### [ ] Las políticas RLS estén verificadas.
+### [ ] Las migraciones estén en `vento-shell`.
+### [ ] Exista documentación de operación.
 
 ---
 
-# 22. DEFINICIÓN DE PROGRAMA COMPLETO
+## 22. DEFINICIÓN DE PROGRAMA COMPLETO
 
 El programa completo se considerará terminado cuando:
 
@@ -15181,7 +15311,7 @@ y sin comprometer la identidad visual del sitio.
 
 ---
 
-# 23. REGLAS DE ACTUALIZACIÓN DEL PLAN
+## 23. REGLAS DE ACTUALIZACIÓN DEL PLAN
 
 ## 23.1 Identificadores
 
@@ -15226,54 +15356,50 @@ Para evitar microactualizaciones ineficientes:
 
 ---
 
-# 24. REGISTRO DE CAMBIOS
+## 24. REGISTRO DE CAMBIOS
 
-| Versión      | Fecha      | Cambio                             | Estado    |
-| ------------ | ---------- | ---------------------------------- | --------- |
-| 2026-07-23.1 | 2026-07-23 | Creación inicial del plan canónico | Propuesta |
+| Versión      | Fecha      | Cambio                                                       | Estado      |
+| ------------ | ---------- | ------------------------------------------------------------ | ----------- |
+| 2026-07-23.1 | 2026-07-23 | Creación inicial del plan canónico                            | Reemplazada |
+| 2026-07-23.2 | 2026-07-23 | Incorporación de `WEB-AUD-001` a `WEB-AUD-006`                | Aprobada    |
+| 2026-07-23.3 | 2026-07-23 | Incorporación de `WEB-AUD-007` a `WEB-AUD-011`                | Aprobada    |
+| 2026-07-23.4 | 2026-07-23 | Consolidación de `WEB-GAP-001` a `WEB-GAP-204`                | Aprobada    |
+| 2026-07-23.5 | 2026-07-23 | Cierre documental de Fase 1 y apertura de Fase 2              | Vigente     |
 
 ---
 
-# 25. PUNTO DE CONTINUIDAD
+## 25. PUNTO DE CONTINUIDAD
 
 ## FASE ACTUAL
 
-**FASE 1 — Auditoría y línea base**
+**FASE 2 — DEFINICIÓN FUNCIONAL DE VISO WEB STUDIO**
 
-## PRIMERA TAREA
+## ÚLTIMA TAREA APROBADA
 
-```text
-WEB-AUD-001 — Inventariar todas las rutas públicas
-```
+`WEB-AUD-012 — Consolidar brechas`
 
-## NO SE DEBE HACER TODAVÍA
+## SIGUIENTE TAREA
+
+`WEB-PRD-001 — Definir perfiles de usuario`
+
+## ESTADO DE LA FASE ANTERIOR
+
+**FASE 1 — CERRADA DOCUMENTALMENTE**
+
+Las 204 brechas permanecen `ASIGNADA — ABIERTA` hasta su momento de implementación y validación.
+
+## RESTRICCIONES VIGENTES
 
 - No crear migraciones.
-- No modificar tablas.
-- No reemplazar el CMS.
-- No eliminar contenido legacy.
-- No reconstruir páginas adicionales.
-- No iniciar drag-and-drop.
-- No cambiar producción.
-
-## RESULTADO ESPERADO DE LA PRIMERA SESIÓN
-
-Una matriz completa con:
-
-- ruta;
-- tipo;
-- componente principal;
-- fuente de datos;
-- contenido editable;
-- contenido hardcodeado;
-- estado visual;
-- estado responsive;
-- brechas;
-- tarea futura asociada.
+- No modificar Supabase.
+- No implementar el renderer.
+- No iniciar el editor visual.
+- No modificar producción.
+- No iniciar la Fase 3 antes de aprobar la puerta completa de la Fase 2.
 
 ---
 
-# 26. DECISIÓN RECOMENDADA
+## 26. DECISIÓN RECOMENDADA
 
 El proyecto deberá ejecutarse como una evolución progresiva:
 
