@@ -1,0 +1,39 @@
+name: WEB-AUD-011 Accessibility Baseline
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install accessibility tooling
+        run: |
+          npm install --no-save playwright@1.54.1 @axe-core/playwright@4.10.2 axe-core@4.10.3
+          npx playwright install --with-deps chromium
+
+      - name: Run accessibility baseline
+        env:
+          BASE_URL: https://www.ventogroup.co
+        run: node scripts/web-aud-011-accessibility.mjs artifacts/web-aud-011
+
+      - name: Upload accessibility baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-aud-011-accessibility-baseline
+          path: artifacts/web-aud-011
+          retention-days: 30
