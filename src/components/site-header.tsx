@@ -61,8 +61,8 @@ export function PersistentSiteHeader({ venues }: PersistentSiteHeaderProps) {
   const tickingRef = useRef(false);
   const menuOpenRef = useRef(false);
   const closeTimerRef = useRef<number | null>(null);
-  const [visible, setVisible] = useState(true);
-  const [tone, setTone] = useState<HeaderTone>("light");
+  const [visible, setVisible] = useState(pathname !== "/");
+  const [tone, setTone] = useState<HeaderTone>(pathname === "/" ? "dark" : "light");
   const [menuMounted, setMenuMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeVenueIndex, setActiveVenueIndex] = useState(0);
@@ -120,7 +120,8 @@ export function PersistentSiteHeader({ venues }: PersistentSiteHeaderProps) {
     clearCloseTimer();
     setMenuOpen(false);
     setMenuMounted(false);
-    setVisible(true);
+    setVisible(pathname !== "/");
+    setTone(pathname === "/" ? "dark" : "light");
     setActiveVenueIndex(0);
     lastYRef.current = window.scrollY;
     directionRef.current = null;
@@ -136,8 +137,9 @@ export function PersistentSiteHeader({ venues }: PersistentSiteHeaderProps) {
       if (menuOpenRef.current) return;
 
       const currentY = Math.max(window.scrollY, 0);
-      if (pathname === "/" && currentY < 96 && !document.body.classList.contains("home-intro-complete")) {
-        setTone("light");
+      const introBlocking = pathname === "/" && !document.body.classList.contains("home-intro-complete");
+      if (introBlocking) {
+        setTone("dark");
         return;
       }
 
@@ -168,6 +170,17 @@ export function PersistentSiteHeader({ venues }: PersistentSiteHeaderProps) {
     const update = () => {
       tickingRef.current = false;
       const currentY = Math.max(window.scrollY, 0);
+      const introBlocking = pathname === "/" && !document.body.classList.contains("home-intro-complete");
+
+      if (introBlocking) {
+        setVisible(false);
+        setTone("dark");
+        lastYRef.current = currentY;
+        directionRef.current = null;
+        travelRef.current = 0;
+        return;
+      }
+
       const delta = currentY - lastYRef.current;
       readTone();
 
