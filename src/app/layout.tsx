@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 
+import { RouteTransition } from "@/components/route-transition";
+import { PersistentSiteHeader, type HeaderVenue } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { getItems } from "@/lib/content";
 import { getMetadataBase } from "@/lib/seo";
 import "./globals.css";
 
@@ -39,11 +42,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const restaurants = await getItems("restaurant", 12);
+  const headerVenues: HeaderVenue[] = restaurants.map((restaurant) => ({
+    id: restaurant.id,
+    title: restaurant.title,
+    href: `/restaurantes/${restaurant.slug}`,
+    excerpt: restaurant.excerpt,
+    imageUrl: restaurant.image_url,
+    videoUrl: restaurant.video_url,
+  }));
+
   return (
     <html lang="es">
       <body className={`${display.variable} ${sans.variable}`}>
@@ -64,7 +77,8 @@ export default function RootLayout({
             }, { passive: false });
           })();`}
         </Script>
-        {children}
+        <PersistentSiteHeader venues={headerVenues} />
+        <RouteTransition>{children}</RouteTransition>
       </body>
     </html>
   );
