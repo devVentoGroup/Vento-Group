@@ -32,12 +32,12 @@ export function HomeHeroIntro({ slides, venues }: HomeHeroIntroProps) {
       };
     }
 
-    const venuesTimer = window.setTimeout(() => setPhase("venues"), 1320);
-    const exitTimer = window.setTimeout(() => setPhase("exit"), 2460);
+    const venuesTimer = window.setTimeout(() => setPhase("venues"), 1780);
+    const exitTimer = window.setTimeout(() => setPhase("exit"), 5000);
     const completeTimer = window.setTimeout(() => {
       setPhase("complete");
       document.body.classList.add("home-intro-complete");
-    }, 3120);
+    }, 5800);
 
     return () => {
       window.clearTimeout(venuesTimer);
