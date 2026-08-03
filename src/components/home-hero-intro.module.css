@@ -47,7 +47,7 @@
 .logoMark {
   position: absolute;
   inset: 50% auto auto 50%;
-  width: min(86vw, 1180px);
+  width: min(86vw, 156svh, 1180px);
   transform: translate3d(-50%, -50%, 0);
 }
 
@@ -199,7 +199,7 @@
 
 @media (max-width: 760px) {
   .logoMark {
-    width: min(94vw, 720px);
+    width: min(94vw, 156svh, 720px);
   }
 
   .logoTop,
