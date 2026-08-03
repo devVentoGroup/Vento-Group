@@ -66,18 +66,26 @@ export function HomeHeroIntro({ slides, venues }: HomeHeroIntroProps) {
 
       <div className={splashClass} aria-hidden={phase === "complete" || phase === "exit"}>
         <div className={styles.stage}>
-          <h1 className={styles.title} aria-label="Vento Group">
-            <span className={`${styles.word} ${styles.wordTop}`}>Vento</span>
-            <span className={`${styles.word} ${styles.wordBottom}`}>Group</span>
-          </h1>
+          <h1 className={styles.srOnly}>Vento Group</h1>
 
-          <nav className={styles.links} aria-label="Restaurantes destacados">
-            {venues.slice(0, 11).map((venue) => (
-              <Link key={venue.href} href={venue.href} tabIndex={linksEnabled ? 0 : -1}>
-                {venue.title}
-              </Link>
-            ))}
-          </nav>
+          <div className={styles.logoMark}>
+            <div className={styles.logoArtwork} aria-hidden="true">
+              <div className={`${styles.logoHalf} ${styles.logoTop}`}>
+                <img src="/branding/vento-wordmark-white.svg" alt="" draggable={false} />
+              </div>
+              <div className={`${styles.logoHalf} ${styles.logoBottom}`}>
+                <img src="/branding/vento-wordmark-white.svg" alt="" draggable={false} />
+              </div>
+            </div>
+
+            <nav className={styles.links} aria-label="Restaurantes destacados">
+              {venues.slice(0, 11).map((venue) => (
+                <Link key={venue.href} href={venue.href} tabIndex={linksEnabled ? 0 : -1}>
+                  {venue.title}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
 
