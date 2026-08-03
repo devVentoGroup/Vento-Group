@@ -28,38 +28,16 @@ export const metadata: Metadata = {
 };
 
 const layers = [
-  {
-    title: "Cliente",
-    copy: "Productos que acompañan la relación, identificación y experiencia del cliente.",
-  },
-  {
-    title: "Equipo",
-    copy: "Herramientas orientadas a la cultura, la comunicación y la experiencia de las personas.",
-  },
-  {
-    title: "Operación",
-    copy: "Sistemas que conectan información, procesos y decisiones dentro de la organización.",
-  },
+  { title: "Cliente", copy: "Productos que acompañan la relación, identificación y experiencia del cliente." },
+  { title: "Equipo", copy: "Herramientas orientadas a la cultura, la comunicación y la experiencia de las personas." },
+  { title: "Operación", copy: "Sistemas que conectan información, procesos y decisiones dentro de la organización." },
 ];
 
 const principles = [
-  {
-    title: "Una sola fuente de verdad",
-    copy: "Cada producto debe consumir información coherente y evitar duplicidades entre aplicaciones.",
-  },
-  {
-    title: "Experiencias conectadas",
-    copy: "La interacción del cliente, el trabajo del equipo y la operación deben reforzarse mutuamente.",
-  },
-  {
-    title: "Evolución controlada",
-    copy: "Los estados, enlaces y capacidades públicas se muestran únicamente cuando están configurados y publicados.",
-  },
+  { title: "Una sola fuente de verdad", copy: "Cada producto debe consumir información coherente y evitar duplicidades entre aplicaciones." },
+  { title: "Experiencias conectadas", copy: "La interacción del cliente, el trabajo del equipo y la operación deben reforzarse mutuamente." },
+  { title: "Evolución controlada", copy: "Los estados, enlaces y capacidades públicas se muestran únicamente cuando están configurados y publicados." },
 ];
-
-function isLegacyPlaceholder(item: { slug: string; action_url: string | null }) {
-  return item.slug === "vento-anima" && item.action_url === "#" && !item.body && !item.image_url && !item.video_url;
-}
 
 export default async function EcosistemaPage() {
   const [blocks, allItems] = await Promise.all([getPageBlocks("ecosistema"), getItems("app")]);
@@ -97,15 +75,11 @@ export default async function EcosistemaPage() {
   return (
     <>
       <StructuredData data={productSchema} />
-
       <main className={styles.page}>
         <EditorialPageHero
           eyebrow={heroBlock?.subtitle ?? "Vento Group"}
           title={heroBlock?.title ?? "Ecosistema"}
-          copy={
-            heroBlock?.body ??
-            "Productos digitales que conectan la experiencia del cliente, el trabajo de los equipos y la operación de Vento Group."
-          }
+          copy={heroBlock?.body ?? "Productos digitales que conectan la experiencia del cliente, el trabajo de los equipos y la operación de Vento Group."}
           mediaUrl={heroMediaUrl}
           mediaType={heroMediaType}
           mediaLabel="Ecosistema digital Vento Group"
@@ -116,20 +90,11 @@ export default async function EcosistemaPage() {
         <EditorialIntro
           eyebrow="Una arquitectura conectada"
           title={introBlock?.title ?? "Cada producto cumple una función distinta dentro del mismo sistema."}
-          copy={
-            introBlock?.body ??
-            "El ecosistema se organiza por capas. Algunas experiencias están orientadas al cliente, otras al equipo y otras a la operación. La conexión entre ellas permite trabajar con mayor continuidad y contexto."
-          }
+          copy={introBlock?.body ?? "El ecosistema se organiza por capas. Algunas experiencias están orientadas al cliente, otras al equipo y otras a la operación. La conexión entre ellas permite trabajar con mayor continuidad y contexto."}
           aside={
             <dl className={styles.stats}>
-              <div>
-                <dt>Productos publicados</dt>
-                <dd>{String(items.length).padStart(2, "0")}</dd>
-              </div>
-              <div>
-                <dt>Capas del ecosistema</dt>
-                <dd>{String(layers.length).padStart(2, "0")}</dd>
-              </div>
+              <div><dt>Productos publicados</dt><dd>{String(items.length).padStart(2, "0")}</dd></div>
+              <div><dt>Capas del ecosistema</dt><dd>{String(layers.length).padStart(2, "0")}</dd></div>
             </dl>
           }
         />
@@ -140,8 +105,7 @@ export default async function EcosistemaPage() {
               <Reveal key={layer.title} delayMs={index * 70} mode="once" threshold={0.1}>
                 <article className={styles.layer}>
                   <span className={styles.layerNumber}>{String(index + 1).padStart(2, "0")}</span>
-                  <h3>{layer.title}</h3>
-                  <p>{layer.copy}</p>
+                  <h3>{layer.title}</h3><p>{layer.copy}</p>
                 </article>
               </Reveal>
             ))}
@@ -152,32 +116,17 @@ export default async function EcosistemaPage() {
           <div className={styles.shell}>
             <div className={styles.productsHeader}>
               <Reveal mode="once" threshold={0.12}>
-                <span className={styles.eyebrow}>Productos publicados</span>
-                <h2>Una vista clara de cada componente.</h2>
+                <span className={styles.eyebrow}>Productos publicados</span><h2>Una vista clara de cada componente.</h2>
               </Reveal>
               <Reveal delayMs={90} mode="once" threshold={0.12}>
-                <p>
-                  La información, plataforma, estado y enlaces dependen exclusivamente de lo configurado en VISO Web
-                  Studio. Cuando un producto no tiene un acceso público válido, la página no muestra un CTA.
-                </p>
+                <p>La información, plataforma, estado y enlaces dependen exclusivamente de lo configurado en VISO Web Studio. Cuando un producto no tiene un acceso público válido, la página no muestra un CTA.</p>
               </Reveal>
             </div>
-
-            <EcosystemProducts
-              items={items.map((item) => ({
-                id: item.id,
-                slug: item.slug,
-                title: item.title,
-                excerpt: item.excerpt,
-                body: item.body,
-                platform: item.location,
-                status: item.schedule_text,
-                imageUrl: item.image_url,
-                videoUrl: item.video_url,
-                actionLabel: item.action_label,
-                actionUrl: item.action_url,
-              }))}
-            />
+            <EcosystemProducts items={items.map((item) => ({
+              id: item.id, slug: item.slug, title: item.title, excerpt: item.excerpt, body: item.body,
+              platform: item.location, status: item.schedule_text, imageUrl: item.image_url,
+              videoUrl: item.video_url, actionLabel: item.action_label, actionUrl: item.action_url,
+            }))} />
           </div>
         </section>
 
@@ -185,24 +134,17 @@ export default async function EcosistemaPage() {
           <div className={styles.shell}>
             <div className={styles.principlesIntro}>
               <Reveal mode="once" threshold={0.12}>
-                <span className={styles.eyebrow}>Principios de integración</span>
-                <h2>Conectar sin perder control.</h2>
+                <span className={styles.eyebrow}>Principios de integración</span><h2>Conectar sin perder control.</h2>
               </Reveal>
               <Reveal delayMs={90} mode="once" threshold={0.12}>
-                <p>
-                  El valor del ecosistema no está en acumular aplicaciones, sino en definir responsabilidades claras,
-                  datos consistentes y una evolución verificable.
-                </p>
+                <p>El valor del ecosistema no está en acumular aplicaciones, sino en definir responsabilidades claras, datos consistentes y una evolución verificable.</p>
               </Reveal>
             </div>
-
             <div className={styles.principlesList}>
               {principles.map((principle, index) => (
                 <Reveal key={principle.title} mode="once" threshold={0.08}>
                   <article className={styles.principle}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <h3>{principle.title}</h3>
-                    <p>{principle.copy}</p>
+                    <span>{String(index + 1).padStart(2, "0")}</span><h3>{principle.title}</h3><p>{principle.copy}</p>
                   </article>
                 </Reveal>
               ))}
@@ -213,10 +155,7 @@ export default async function EcosistemaPage() {
         <EditorialMediaBand
           eyebrow="Un sistema en evolución"
           title={bannerBlock?.title ?? "Cada producto avanza cuando su función, estado y acceso están definidos."}
-          copy={
-            bannerBlock?.body ??
-            "VISO Web Studio conserva el control editorial de lo que se presenta públicamente. La página refleja únicamente información publicada y enlaces válidos."
-          }
+          copy={bannerBlock?.body ?? "VISO Web Studio conserva el control editorial de lo que se presenta públicamente. La página refleja únicamente información publicada y enlaces válidos."}
           mediaUrl={bannerMediaUrl}
           mediaType={bannerMediaType}
           mediaLabel="Productos y operación Vento Group"
@@ -227,14 +166,10 @@ export default async function EcosistemaPage() {
           eyebrow="Explora Vento Group"
           title="El ecosistema digital acompaña una operación real."
           copy="Conoce los restaurantes, las oportunidades y las experiencias que conectan estos productos con el día a día de Vento Group."
-          actions={[
-            { label: "Ver restaurantes", href: "/restaurantes" },
-            { label: "Ver oportunidades", href: "/empleos" },
-          ]}
+          actions={[{ label: "Ver restaurantes", href: "/restaurantes" }, { label: "Ver oportunidades", href: "/empleos" }]}
           dark
         />
       </main>
-
       <SiteFooter />
     </>
   );
