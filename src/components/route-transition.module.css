@@ -1,0 +1,90 @@
+.pageFrame {
+  min-height: 100vh;
+  background: #f5f1ea;
+  animation: pageEnter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.transitionLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  background: #f3efe8;
+  color: #242321;
+}
+
+.covering {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 240ms ease;
+}
+
+.revealing {
+  visibility: visible;
+  opacity: 0;
+  pointer-events: auto;
+  transition: opacity 540ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transitionMark {
+  display: grid;
+  justify-items: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 0.82;
+  transform: translateY(-4px);
+}
+
+.transitionLine {
+  position: absolute;
+  left: 50%;
+  bottom: 48px;
+  width: min(220px, 36vw);
+  height: 1px;
+  overflow: hidden;
+  background: rgba(36, 35, 33, 0.18);
+  transform: translateX(-50%);
+}
+
+.transitionLine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #242321;
+  transform-origin: left;
+  animation: transitionProgress 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes transitionProgress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageFrame,
+  .transitionLine::after {
+    animation: none;
+  }
+
+  .covering,
+  .revealing {
+    transition-duration: 1ms;
+  }
+}
