@@ -1,0 +1,476 @@
+.home {
+  background: #f3efe7;
+  color: #25231f;
+  overflow: clip;
+}
+
+.section {
+  position: relative;
+  padding: clamp(84px, 11vw, 170px) 0;
+}
+
+.shell {
+  width: min(1280px, calc(100% - 56px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #776f65;
+}
+
+.display {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(3.4rem, 8.2vw, 8.8rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+}
+
+.copy {
+  margin: 0;
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.72;
+  color: #595249;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.textLink::after {
+  content: "↗";
+  font-size: 0.9rem;
+}
+
+.manifesto {
+  padding-top: clamp(110px, 14vw, 210px);
+}
+
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.45fr);
+  gap: clamp(44px, 8vw, 130px);
+  align-items: end;
+}
+
+.manifestoTitle {
+  max-width: 10.2ch;
+}
+
+.manifestoAside {
+  display: grid;
+  gap: 30px;
+  padding-bottom: 0.7vw;
+}
+
+.signature {
+  margin-top: clamp(70px, 10vw, 150px);
+  overflow: hidden;
+  border-top: 1px solid rgba(42, 37, 31, 0.18);
+  border-bottom: 1px solid rgba(42, 37, 31, 0.18);
+}
+
+.signatureTrack {
+  display: flex;
+  width: max-content;
+  padding: 20px 0 24px;
+  animation: marquee 24s linear infinite;
+}
+
+.signatureTrack span {
+  padding-right: 54px;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.1rem, 4vw, 4.7rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: #342f29;
+}
+
+.signatureTrack span::after {
+  content: "✦";
+  margin-left: 54px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.42em;
+  vertical-align: middle;
+}
+
+.portfolio {
+  background: #252822;
+  color: #f5f0e7;
+}
+
+.portfolio .eyebrow,
+.portfolio .copy {
+  color: rgba(245, 240, 231, 0.62);
+}
+
+.portfolioHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: clamp(56px, 8vw, 110px);
+}
+
+.portfolioTitle {
+  max-width: 8ch;
+}
+
+.venueRail {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.venueRow {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) minmax(220px, 0.36fr) 36px;
+  gap: 24px;
+  align-items: center;
+  min-height: clamp(94px, 10vw, 138px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background-color 320ms ease, padding 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.venueRow:hover {
+  padding-inline: 20px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.venueNumber {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.44);
+}
+
+.venueName {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.2rem, 5.3vw, 5.6rem);
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+
+.venueMeta {
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.venueArrow {
+  font-size: 1.4rem;
+  transition: transform 260ms ease;
+}
+
+.venueRow:hover .venueArrow {
+  transform: translate(5px, -5px);
+}
+
+.editorial {
+  background: #eee7dd;
+}
+
+.editorialGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1.18fr);
+  gap: clamp(40px, 8vw, 120px);
+  align-items: center;
+}
+
+.editorialMedia {
+  min-height: clamp(480px, 68vw, 860px);
+  overflow: hidden;
+}
+
+.editorialMedia :global(.media-shell) {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border-radius: 0;
+}
+
+.editorialMedia :global(.media) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorialMedia:hover :global(.media) {
+  transform: scale(1.035);
+}
+
+.editorialCopy {
+  display: grid;
+  gap: 30px;
+}
+
+.editorialTitle {
+  max-width: 7.2ch;
+  font-size: clamp(3rem, 6.8vw, 7.3rem);
+}
+
+.eventBand {
+  min-height: min(88svh, 900px);
+  display: grid;
+  align-items: end;
+  color: #fff;
+  background: #1d1d1b;
+}
+
+.eventMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.eventMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 16, 14, 0.08), rgba(17, 16, 14, 0.8));
+}
+
+.eventMedia :global(.media-shell),
+.eventMedia :global(.media),
+.eventMedia :global(.placeholder) {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.eventContent {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: 60px;
+  align-items: end;
+  padding-bottom: clamp(54px, 8vw, 100px);
+}
+
+.eventTitle {
+  max-width: 7.6ch;
+}
+
+.eventAside {
+  display: grid;
+  gap: 26px;
+}
+
+.eventAside .copy {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.cards {
+  background: #f4f0e9;
+}
+
+.cardsHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: clamp(50px, 7vw, 96px);
+}
+
+.cardsTitle {
+  max-width: 7ch;
+  font-size: clamp(3rem, 6.6vw, 7rem);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(42, 37, 31, 0.18);
+}
+
+.card {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 34px 30px 30px;
+  border-right: 1px solid rgba(42, 37, 31, 0.18);
+}
+
+.card:last-child {
+  border-right: 0;
+}
+
+.cardNumber {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  color: #847a6f;
+}
+
+.card h3 {
+  margin: auto 0 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.3rem, 4vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.card p {
+  margin: 0;
+  color: #635b51;
+  line-height: 1.65;
+}
+
+.ecosystem {
+  padding: clamp(100px, 14vw, 210px) 0 clamp(80px, 10vw, 150px);
+  background: #1f211d;
+  color: #f4efe6;
+  text-align: center;
+}
+
+.ecosystemTitle {
+  max-width: 10ch;
+  margin-inline: auto;
+}
+
+.ecosystemCopy {
+  margin: 36px auto 0;
+  color: rgba(244, 239, 230, 0.64);
+}
+
+.appList {
+  margin-top: clamp(54px, 8vw, 100px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 38px;
+}
+
+.appList a {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.appList a:hover {
+  color: #fff;
+}
+
+.ecosystemCta {
+  margin-top: 46px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    width: min(100%, calc(100% - 32px));
+  }
+
+  .manifestoGrid,
+  .portfolioHeader,
+  .editorialGrid,
+  .eventContent {
+    grid-template-columns: 1fr;
+  }
+
+  .manifestoAside,
+  .eventAside {
+    max-width: 540px;
+  }
+
+  .venueRow {
+    grid-template-columns: 48px minmax(0, 1fr) 28px;
+  }
+
+  .venueMeta {
+    display: none;
+  }
+
+  .editorialMedia {
+    min-height: 64svh;
+  }
+
+  .eventContent {
+    gap: 34px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 310px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(42, 37, 31, 0.18);
+  }
+
+  .card:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 78px 0;
+  }
+
+  .manifesto {
+    padding-top: 94px;
+  }
+
+  .display {
+    font-size: clamp(3.1rem, 17vw, 5.4rem);
+  }
+
+  .signatureTrack span {
+    font-size: 2.2rem;
+  }
+
+  .venueRow {
+    min-height: 92px;
+    gap: 12px;
+  }
+
+  .venueName {
+    font-size: clamp(2rem, 12vw, 3.5rem);
+  }
+
+  .cardsHeader {
+    display: grid;
+  }
+
+  .card {
+    padding-inline: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signatureTrack {
+    animation: none;
+  }
+
+  .editorialMedia :global(.media),
+  .venueRow,
+  .venueArrow {
+    transition: none;
+  }
+}
