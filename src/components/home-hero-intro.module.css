@@ -1,3 +1,7 @@
+:global(body.home-intro-active:not(.home-intro-complete) [data-persistent-header]) {
+  transform: translate3d(0, -112%, 0) !important;
+}
+
 .splash {
   position: absolute;
   inset: 0;
