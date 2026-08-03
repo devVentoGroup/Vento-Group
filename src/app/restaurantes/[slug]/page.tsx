@@ -8,6 +8,11 @@ import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
+import {
+  formatCommercialVenueHours,
+  getCommercialVenueBySlug,
+  getOpeningHoursSpecification,
+} from "@/lib/commercial-venues";
 import { getItemByCategoryAndSlug, getItems, getPageBlocksFromCandidates } from "@/lib/content";
 import { absoluteUrl, truncateForMeta } from "@/lib/seo";
 
@@ -77,21 +82,26 @@ export async function generateMetadata({
     };
   }
 
+  const commercialVenue = await getCommercialVenueBySlug(slug, venue.title);
+  const displayName = commercialVenue?.name ?? venue.title;
   const detailHero = detailBlocks.find(
     (block) => block.block_type === "detail_hero" || block.block_key === "detail_hero",
   );
   const imageUrl = toAbsolute(detailHero?.media_url ?? venue.image_url ?? venue.video_url ?? null);
-  const description = truncateForMeta(venue.excerpt ?? venue.body ?? "Restaurante de Vento Group.", 155);
+  const description = truncateForMeta(
+    venue.excerpt ?? commercialVenue?.subtitle ?? venue.body ?? `Restaurante ${displayName} de Vento Group.`,
+    155,
+  );
   const canonicalPath = `/restaurantes/${venue.slug}`;
 
   return {
-    title: `${venue.title} | Vento Group`,
+    title: `${displayName} | Vento Group`,
     description,
     alternates: {
       canonical: canonicalPath,
     },
     openGraph: {
-      title: `${venue.title} | Vento Group`,
+      title: `${displayName} | Vento Group`,
       description,
       url: canonicalPath,
       type: "article",
@@ -99,7 +109,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: imageUrl ? "summary_large_image" : "summary",
-      title: `${venue.title} | Vento Group`,
+      title: `${displayName} | Vento Group`,
       description,
       images: imageUrl ? [imageUrl] : undefined,
     },
@@ -122,6 +132,13 @@ export default async function RestaurantDetailPage({
   if (!venue) {
     notFound();
   }
+
+  const commercialVenue = await getCommercialVenueBySlug(slug, venue.title);
+  const displayName = commercialVenue?.name ?? venue.title;
+  const displaySubtitle = commercialVenue?.subtitle ?? venue.excerpt;
+  const displayAddress = commercialVenue?.address ?? venue.location;
+  const displayHours =
+    (commercialVenue ? formatCommercialVenueHours(commercialVenue.hours) : null) ?? venue.schedule_text;
 
   const currentIndex = allRestaurants.findIndex((item) => item.slug === venue.slug);
   const nextVenue =
@@ -146,29 +163,31 @@ export default async function RestaurantDetailPage({
   const narrative =
     description ||
     venue.excerpt ||
-    `${venue.title} reúne cocina, ambiente y hospitalidad en una experiencia con identidad propia.`;
+    commercialVenue?.subtitle ||
+    `${displayName} reúne cocina, ambiente y hospitalidad en una experiencia con identidad propia.`;
 
   const heroMediaUrl = detailHero?.media_url ?? venue.video_url ?? venue.image_url;
   const heroMediaType = detailHero?.media_type ?? (venue.video_url ? "video" : "image");
-  const reservationHref = venue.action_url && venue.action_url !== "#" ? venue.action_url : "mailto:reservas@ventogroup.co";
+  const reservationHref =
+    venue.action_url && venue.action_url !== "#" ? venue.action_url : "mailto:reservas@ventogroup.co";
   const eventHref = `/eventos?restaurante=${encodeURIComponent(venue.slug)}`;
 
   const galleryMedia = [
     ...galleryBlocks.map((block) => ({
       id: block.id,
-      label: block.title ?? venue.title,
+      label: block.title ?? displayName,
       mediaUrl: block.media_url,
       mediaType: block.media_type,
     })),
     {
       id: `${venue.id}-primary`,
-      label: venue.title,
+      label: displayName,
       mediaUrl: venue.image_url,
       mediaType: "image" as const,
     },
     {
       id: `${venue.id}-video`,
-      label: venue.title,
+      label: displayName,
       mediaUrl: venue.video_url,
       mediaType: "video" as const,
     },
@@ -178,26 +197,54 @@ export default async function RestaurantDetailPage({
   });
 
   const conceptMedia = conceptBlock?.media_url ?? galleryMedia[1]?.mediaUrl ?? venue.image_url ?? heroMediaUrl;
-  const conceptMediaType = conceptBlock?.media_type ?? galleryMedia[1]?.mediaType ?? (venue.image_url ? "image" : heroMediaType);
+  const conceptMediaType =
+    conceptBlock?.media_type ?? galleryMedia[1]?.mediaType ?? (venue.image_url ? "image" : heroMediaType);
   const eventMedia = privateEventsBlock?.media_url ?? galleryMedia[2]?.mediaUrl ?? heroMediaUrl;
   const eventMediaType = privateEventsBlock?.media_type ?? galleryMedia[2]?.mediaType ?? heroMediaType;
 
+  const sourceFeatures = features.length > 0 ? features : (commercialVenue?.tags ?? []);
   const featureItems =
-    features.length > 0
-      ? features.slice(0, 4).map((feature) => ({ title: feature, copy: "Una característica que define la experiencia de este restaurante." }))
+    sourceFeatures.length > 0
+      ? sourceFeatures.slice(0, 4).map((feature) => ({
+          title: feature,
+          copy: "Una característica que forma parte de la identidad y la experiencia de esta sede.",
+        }))
       : getDefaultFeatures();
 
   const canonicalUrl = absoluteUrl(`/restaurantes/${venue.slug}`);
   const heroMediaAbsolute = toAbsolute(heroMediaUrl);
+  const openingHoursSpecification = commercialVenue
+    ? getOpeningHoursSpecification(commercialVenue.hours)
+    : undefined;
   const restaurantSchema = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: venue.title,
+    name: displayName,
     description: truncateForMeta(narrative, 240) || undefined,
     url: canonicalUrl,
     image: heroMediaAbsolute ? [heroMediaAbsolute] : undefined,
-    address: venue.location ?? undefined,
-    openingHours: venue.schedule_text ?? undefined,
+    address: displayAddress
+      ? {
+          "@type": "PostalAddress",
+          streetAddress: displayAddress,
+          addressLocality: "Cúcuta",
+          addressCountry: "CO",
+        }
+      : undefined,
+    geo:
+      commercialVenue?.latitude !== null && commercialVenue?.latitude !== undefined &&
+      commercialVenue?.longitude !== null && commercialVenue?.longitude !== undefined
+        ? {
+            "@type": "GeoCoordinates",
+            latitude: commercialVenue.latitude,
+            longitude: commercialVenue.longitude,
+          }
+        : undefined,
+    openingHoursSpecification:
+      openingHoursSpecification && openingHoursSpecification.length > 0
+        ? openingHoursSpecification
+        : undefined,
+    sameAs: [commercialVenue?.mapsUrl, commercialVenue?.reviewUrl].filter(Boolean),
   };
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -218,7 +265,7 @@ export default async function RestaurantDetailPage({
       {
         "@type": "ListItem",
         position: 3,
-        name: venue.title,
+        name: displayName,
         item: canonicalUrl,
       },
     ],
@@ -231,14 +278,14 @@ export default async function RestaurantDetailPage({
 
       <main className={styles.page}>
         <EditorialPageHero
-          eyebrow={detailHero?.subtitle ?? "Vento Group"}
-          title={venue.title}
-          copy={venue.excerpt ?? narrative}
+          eyebrow={detailHero?.subtitle ?? displaySubtitle ?? "Vento Group"}
+          title={displayName}
+          copy={venue.excerpt ?? displaySubtitle ?? narrative}
           mediaUrl={heroMediaUrl}
           mediaType={heroMediaType}
           primaryAction={{ label: venue.action_label ?? "Reservar", href: reservationHref }}
           secondaryAction={{ label: "Planear un evento", href: eventHref }}
-          mediaLabel={venue.title}
+          mediaLabel={displayName}
         />
 
         <section className={styles.intro} data-header-theme="light">
@@ -253,20 +300,37 @@ export default async function RestaurantDetailPage({
               <div className={styles.introLower}>
                 <p className={styles.introCopy}>{narrative}</p>
 
-                <dl className={styles.facts}>
-                  <div>
-                    <dt>Ubicación</dt>
-                    <dd>{venue.location ?? "Cúcuta, Colombia"}</dd>
-                  </div>
-                  <div>
-                    <dt>Horario</dt>
-                    <dd>{venue.schedule_text ?? "Consultar disponibilidad"}</dd>
-                  </div>
-                  <div>
-                    <dt>Reservas</dt>
-                    <dd>{venue.action_label ?? "Disponibles"}</dd>
-                  </div>
-                </dl>
+                <div>
+                  <dl className={styles.facts}>
+                    <div>
+                      <dt>Ubicación</dt>
+                      <dd>{displayAddress ?? "Cúcuta, Colombia"}</dd>
+                    </div>
+                    <div>
+                      <dt>Horario</dt>
+                      <dd>{displayHours ?? "Consultar disponibilidad"}</dd>
+                    </div>
+                    <div>
+                      <dt>Reservas</dt>
+                      <dd>{venue.action_label ?? "Disponibles"}</dd>
+                    </div>
+                  </dl>
+
+                  {(commercialVenue?.mapsUrl || commercialVenue?.reviewUrl) && (
+                    <div className={styles.factLinks}>
+                      {commercialVenue.mapsUrl ? (
+                        <a href={commercialVenue.mapsUrl} target="_blank" rel="noreferrer noopener">
+                          Cómo llegar
+                        </a>
+                      ) : null}
+                      {commercialVenue.reviewUrl ? (
+                        <a href={commercialVenue.reviewUrl} target="_blank" rel="noreferrer noopener">
+                          Ver reseñas
+                        </a>
+                      ) : null}
+                    </div>
+                  )}
+                </div>
               </div>
             </Reveal>
           </div>
@@ -281,14 +345,14 @@ export default async function RestaurantDetailPage({
                   <h2>El espacio, el ambiente y los detalles.</h2>
                 </Reveal>
                 <Reveal delayMs={90} mode="once" threshold={0.12}>
-                  <p>Una mirada a los momentos, la cocina y la atmósfera que dan forma a {venue.title}.</p>
+                  <p>Una mirada a los momentos, la cocina y la atmósfera que dan forma a {displayName}.</p>
                 </Reveal>
               </div>
 
               <div className={styles.galleryGrid}>
                 <Reveal className={styles.galleryPrimary} mode="once" threshold={0.08}>
                   <MediaSlot
-                    label={galleryMedia[0]?.label ?? venue.title}
+                    label={galleryMedia[0]?.label ?? displayName}
                     mediaUrl={galleryMedia[0]?.mediaUrl ?? null}
                     mediaType={galleryMedia[0]?.mediaType}
                   />
@@ -326,7 +390,7 @@ export default async function RestaurantDetailPage({
           <div className={`${styles.shell} ${styles.conceptGrid}`}>
             <Reveal className={styles.conceptMedia} mode="once" threshold={0.1}>
               <MediaSlot
-                label={conceptBlock?.title ?? `Concepto de ${venue.title}`}
+                label={conceptBlock?.title ?? `Concepto de ${displayName}`}
                 mediaUrl={conceptMedia ?? null}
                 mediaType={conceptMediaType}
               />
@@ -337,7 +401,7 @@ export default async function RestaurantDetailPage({
               <h2>{conceptBlock?.title ?? "Cocina, servicio y ambiente en una sola experiencia."}</h2>
               <p>
                 {conceptBlock?.body ??
-                  `En ${venue.title}, cada decisión —desde el producto hasta la música, la iluminación y el ritmo del servicio— busca construir una experiencia coherente y fácil de recordar.`}
+                  `En ${displayName}, cada decisión —desde el producto hasta la música, la iluminación y el ritmo del servicio— busca construir una experiencia coherente y fácil de recordar.`}
               </p>
               <a className={styles.textLink} href={reservationHref}>
                 {venue.action_label ?? "Reservar"}
@@ -378,7 +442,7 @@ export default async function RestaurantDetailPage({
         <section className={styles.privateEvents} data-header-theme="dark">
           <div className={styles.privateEventsMedia} aria-hidden="true">
             <MediaSlot
-              label={privateEventsBlock?.title ?? `Eventos en ${venue.title}`}
+              label={privateEventsBlock?.title ?? `Eventos en ${displayName}`}
               mediaUrl={eventMedia ?? null}
               mediaType={eventMediaType}
             />
@@ -394,7 +458,7 @@ export default async function RestaurantDetailPage({
             <Reveal className={styles.privateEventsAside} delayMs={100} mode="once" threshold={0.1}>
               <p>
                 {privateEventsBlock?.body ??
-                  `Celebraciones, reuniones de grupo y experiencias de marca pueden encontrar en ${venue.title} un escenario diseñado alrededor de la ocasión.`}
+                  `Celebraciones, reuniones de grupo y experiencias de marca pueden encontrar en ${displayName} un escenario diseñado alrededor de la ocasión.`}
               </p>
               <Link className={styles.lightLink} href={eventHref}>
                 {privateEventsBlock?.cta_label ?? "Planear un evento"}
