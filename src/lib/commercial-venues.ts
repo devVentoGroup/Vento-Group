@@ -11,6 +11,7 @@ export type CommercialVenueHour = {
 export type CommercialVenue = {
   businessId: string;
   businessCode: string;
+  slug: string;
   name: string;
   subtitle: string | null;
   tags: string[];
@@ -29,6 +30,7 @@ export type CommercialVenue = {
   address: string | null;
   latitude: number | null;
   longitude: number | null;
+  sortOrder: number;
   hours: CommercialVenueHour[];
 };
 
@@ -66,6 +68,7 @@ type SiteRow = {
 };
 
 type BusinessHourRow = {
+  site_id: string;
   iso_weekday: number;
   opens_at: string | null;
   closes_at: string | null;
@@ -139,12 +142,9 @@ function buildMapsUrl(
   return null;
 }
 
-export async function getCommercialVenueBySlug(
-  slug: string,
-  title?: string | null,
-): Promise<CommercialVenue | null> {
+export async function getCommercialVenues(): Promise<CommercialVenue[]> {
   const supabase = getServerSupabaseClient();
-  if (!supabase) return null;
+  if (!supabase) return [];
 
   const { data: satellitesData, error: satellitesError } = await supabase
     .schema("pass")
@@ -157,84 +157,116 @@ export async function getCommercialVenueBySlug(
 
   if (satellitesError) {
     console.warn("pass_satellites query error:", satellitesError.message);
-    return null;
+    return [];
   }
 
+  const satellites = (satellitesData ?? []) as SatelliteRow[];
+  const siteIds = [...new Set(satellites.map((row) => row.site_id).filter(Boolean))];
+  if (siteIds.length === 0) return [];
+
+  const [sitesResult, hoursResult] = await Promise.all([
+    supabase
+      .from("sites")
+      .select("id,code,name,site_type,address,latitude,longitude,is_active,is_public")
+      .in("id", siteIds)
+      .eq("is_active", true)
+      .eq("is_public", true),
+    supabase
+      .schema("pass")
+      .from("site_business_hours")
+      .select("site_id,iso_weekday,opens_at,closes_at,is_closed")
+      .in("site_id", siteIds)
+      .order("iso_weekday", { ascending: true }),
+  ]);
+
+  if (sitesResult.error) {
+    console.warn("sites query error:", sitesResult.error.message);
+    return [];
+  }
+
+  if (hoursResult.error) {
+    console.warn("site_business_hours query error:", hoursResult.error.message);
+  }
+
+  const sitesById = new Map(
+    ((sitesResult.data ?? []) as SiteRow[]).map((site) => [site.id, site]),
+  );
+  const hoursBySite = new Map<string, CommercialVenueHour[]>();
+
+  for (const row of (hoursResult.data ?? []) as BusinessHourRow[]) {
+    const current = hoursBySite.get(row.site_id) ?? [];
+    current.push({
+      isoWeekday: row.iso_weekday,
+      dayLabel: WEEKDAYS[row.iso_weekday] || `Día ${row.iso_weekday}`,
+      opensAt: formatTime(row.opens_at),
+      closesAt: formatTime(row.closes_at),
+      isClosed: row.is_closed,
+    });
+    hoursBySite.set(row.site_id, current);
+  }
+
+  return satellites.flatMap((satellite) => {
+    const site = sitesById.get(satellite.site_id);
+    if (!site) return [];
+
+    const latitude = numericValue(satellite.latitude_override) ?? numericValue(site.latitude);
+    const longitude = numericValue(satellite.longitude_override) ?? numericValue(site.longitude);
+    const address = cleanText(satellite.address_override) ?? cleanText(site.address);
+    const mapsUrl = buildMapsUrl(cleanText(satellite.maps_url), address, latitude, longitude);
+
+    return [
+      {
+        businessId: satellite.id,
+        businessCode: satellite.code,
+        slug: normalizeCommercialSlug(satellite.name || satellite.code),
+        name: satellite.name,
+        subtitle: cleanText(satellite.subtitle),
+        tags: (satellite.tags ?? []).map((tag) => tag.trim()).filter(Boolean),
+        logoUrl:
+          cleanText(satellite.header_logo_url) ??
+          cleanText(satellite.card_logo_url) ??
+          cleanText(satellite.logo_url),
+        cardLogoUrl: cleanText(satellite.card_logo_url) ?? cleanText(satellite.logo_url),
+        headerLogoUrl: cleanText(satellite.header_logo_url) ?? cleanText(satellite.logo_url),
+        reviewUrl: cleanText(satellite.review_url),
+        mapsUrl,
+        accentColor: cleanText(satellite.accent_color),
+        primaryColor: cleanText(satellite.primary_color),
+        backgroundColor: cleanText(satellite.background_color),
+        siteId: site.id,
+        siteCode: site.code,
+        siteName: site.name,
+        siteType: site.site_type,
+        address,
+        latitude,
+        longitude,
+        sortOrder: satellite.sort_order,
+        hours: (hoursBySite.get(site.id) ?? []).sort((a, b) => a.isoWeekday - b.isoWeekday),
+      },
+    ];
+  });
+}
+
+export async function getCommercialVenueBySlug(
+  slug: string,
+  title?: string | null,
+): Promise<CommercialVenue | null> {
+  const venues = await getCommercialVenues();
   const targetSlug = normalizeCommercialSlug(slug);
   const targetTitle = title ? normalizeCommercialSlug(title) : "";
-  const satellite = ((satellitesData ?? []) as SatelliteRow[]).find((row) => {
-    const candidates = [normalizeCommercialSlug(row.name), normalizeCommercialSlug(row.code)];
-    return candidates.includes(targetSlug) || Boolean(targetTitle && candidates.includes(targetTitle));
-  });
 
-  if (!satellite?.site_id) return null;
-
-  const { data: siteData, error: siteError } = await supabase
-    .from("sites")
-    .select("id,code,name,site_type,address,latitude,longitude,is_active,is_public")
-    .eq("id", satellite.site_id)
-    .eq("is_active", true)
-    .eq("is_public", true)
-    .maybeSingle();
-
-  if (siteError) {
-    console.warn(`sites query error (${satellite.site_id}):`, siteError.message);
-    return null;
-  }
-
-  const site = siteData as SiteRow | null;
-  if (!site) return null;
-
-  const { data: hoursData, error: hoursError } = await supabase
-    .schema("pass")
-    .from("site_business_hours")
-    .select("iso_weekday,opens_at,closes_at,is_closed")
-    .eq("site_id", site.id)
-    .order("iso_weekday", { ascending: true });
-
-  if (hoursError) {
-    console.warn(`site_business_hours query error (${site.id}):`, hoursError.message);
-  }
-
-  const latitude = numericValue(satellite.latitude_override) ?? numericValue(site.latitude);
-  const longitude = numericValue(satellite.longitude_override) ?? numericValue(site.longitude);
-  const address = cleanText(satellite.address_override) ?? cleanText(site.address);
-  const mapsUrl = buildMapsUrl(cleanText(satellite.maps_url), address, latitude, longitude);
-
-  const hours = ((hoursData ?? []) as BusinessHourRow[]).map((row) => ({
-    isoWeekday: row.iso_weekday,
-    dayLabel: WEEKDAYS[row.iso_weekday] || `Día ${row.iso_weekday}`,
-    opensAt: formatTime(row.opens_at),
-    closesAt: formatTime(row.closes_at),
-    isClosed: row.is_closed,
-  }));
-
-  return {
-    businessId: satellite.id,
-    businessCode: satellite.code,
-    name: satellite.name,
-    subtitle: cleanText(satellite.subtitle),
-    tags: (satellite.tags ?? []).map((tag) => tag.trim()).filter(Boolean),
-    logoUrl:
-      cleanText(satellite.header_logo_url) ??
-      cleanText(satellite.card_logo_url) ??
-      cleanText(satellite.logo_url),
-    cardLogoUrl: cleanText(satellite.card_logo_url) ?? cleanText(satellite.logo_url),
-    headerLogoUrl: cleanText(satellite.header_logo_url) ?? cleanText(satellite.logo_url),
-    reviewUrl: cleanText(satellite.review_url),
-    mapsUrl,
-    accentColor: cleanText(satellite.accent_color),
-    primaryColor: cleanText(satellite.primary_color),
-    backgroundColor: cleanText(satellite.background_color),
-    siteId: site.id,
-    siteCode: site.code,
-    siteName: site.name,
-    siteType: site.site_type,
-    address,
-    latitude,
-    longitude,
-    hours,
-  };
+  return (
+    venues.find((venue) => {
+      const candidates = [
+        venue.slug,
+        normalizeCommercialSlug(venue.name),
+        normalizeCommercialSlug(venue.businessCode),
+        normalizeCommercialSlug(venue.siteName),
+        normalizeCommercialSlug(venue.siteCode),
+      ];
+      return candidates.includes(targetSlug) || Boolean(targetTitle && candidates.includes(targetTitle));
+    }) ?? null
+  );
 }
 
 export function formatCommercialVenueHours(hours: CommercialVenueHour[]): string | null {
