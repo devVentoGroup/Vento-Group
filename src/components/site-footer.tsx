@@ -24,7 +24,7 @@ export function SiteFooter({ venues = [] }: SiteFooterProps) {
           <nav className="footer-links-group" aria-label="Footer navigation">
             <Link href="/ecosistema">Nosotros</Link>
             <Link href="/empleos">Empleos</Link>
-            <a href="mailto:hola@ventogroup.co">Contacto</a>
+            <Link href="/contacto">Contacto</Link>
           </nav>
 
           <div className="footer-subscribe">
